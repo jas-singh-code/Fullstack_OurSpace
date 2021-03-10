@@ -21,6 +21,7 @@
     "test": "test"
   },
   "scripts": {
+    "start": "webpack --mode=development --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,4 +35,38 @@
     "url": "https://github.com/jas-singh-code/Fullstack_OurSpace/issues"
   },
   "homepage": "https://github.com/jas-singh-code/Fullstack_OurSpace#readme"
+}
+
+
+
+{
+  entities: {
+    users: {
+      7: {
+        id: 11,
+        lastname: "Wangdu"
+        firstname: "Phunsuk"       
+      },
+      13: {
+        id: 13,
+        lastname: "Sugrim"
+        username: "Angelique",
+      }
+    },
+    posts: {
+      {1:{
+        id: 4
+        
+      }}
+    }
+      
+  },
+  ui: {
+    loading: true/false,
+  },
+  errors: {
+    login: ["Incorrect username and/or password"],
+    chirpForm: ["Chirp body cannot be blank"],
+  },
+  session: { currentUserId: 41 }
 }
