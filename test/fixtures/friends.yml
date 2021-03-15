@@ -2,11 +2,12 @@
 #
 # Table name: friends
 #
-#  id                   :bigint           not null, primary key
-#  friend_id            :integer
-#  assoicated_friend_id :integer
-#  created_at           :datetime         not null
-#  updated_at           :datetime         not null
+#  id          :bigint           not null, primary key
+#  sender_id   :integer
+#  receiver_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  pending     :boolean
 #
 
 one:
