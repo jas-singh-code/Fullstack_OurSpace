@@ -3,10 +3,7 @@
 # Table name: users
 #
 #  id              :bigint           not null, primary key
-<<<<<<< HEAD
-=======
 #  username        :string
->>>>>>> 95d101ecb45f1422300b9b55d078c92f47648c95
 #  session_token   :string
 #  password_digest :string
 #  created_at      :datetime         not null
