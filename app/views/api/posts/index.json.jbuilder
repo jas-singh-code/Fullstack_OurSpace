@@ -1,0 +1,1 @@
+jsopn.extract! @posts

@@ -13,7 +13,11 @@
 class Comment < ApplicationRecord
     belongs_to :commenter,
     class_name: :User,
-    foreign_key: :commenter_id
+    foreign_key: :author_id
+
+    belongs_to :post,
+    class_name: :Post,
+    foreign_key: :post_id
 
     has_many :likes, as: :likeable
 end

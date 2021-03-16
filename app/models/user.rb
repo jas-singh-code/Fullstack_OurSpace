@@ -3,7 +3,6 @@
 # Table name: users
 #
 #  id              :bigint           not null, primary key
-#  username        :string
 #  session_token   :string
 #  password_digest :string
 #  created_at      :datetime         not null
@@ -28,6 +27,10 @@ class User < ApplicationRecord
     has_many :posts,
     class_name: :Post,
     foreign_key: :poster_id
+
+    has_many :comments,
+    class_name: :Comment,
+    foreign_key: :author_id
 
     has_many :friends, 
     class_name: :Friend,

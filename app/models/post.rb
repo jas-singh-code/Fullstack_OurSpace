@@ -10,11 +10,15 @@
 #  updated_at :datetime         not null
 #
 class Post < ApplicationRecord
-    validates :title, presence:true
+    validates :title, presence:true, length: {minimum: 2, maximum: 100}
 
     belongs_to :user,
     foreign_key: :poster_id,
     class_name: :User
+
+    has_many :comments,
+    foreign_key: :post_id,
+    class_name: :Comment
 
     has_many :likes, as: :likeable
 end
