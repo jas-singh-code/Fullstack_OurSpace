@@ -20,9 +20,7 @@ class User < ApplicationRecord
     validates :session_token, presence: true, uniqueness: true
     attr_reader :password
 
-    has_many :likes,
-    class_name: :Like,
-    foreign_key: :liker_id
+    has_many :likes, as: :likeable
 
     has_many :posts,
     class_name: :Post,
@@ -31,10 +29,6 @@ class User < ApplicationRecord
     has_many :comments,
     class_name: :Comment,
     foreign_key: :author_id
-
-    has_many :friends, 
-    class_name: :Friend,
-    foreign_key: :sender_id
 
     has_many :friends, 
     class_name: :Friend,

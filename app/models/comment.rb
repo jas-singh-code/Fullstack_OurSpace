@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #  post_id    :integer
 #  body       :string
-#  likes      :text             default([]), is an Array
+#  likes      :text             default([]), is an Array  make sure to delete this column from your db
 #
 class Comment < ApplicationRecord
     belongs_to :commenter,
@@ -19,5 +19,5 @@ class Comment < ApplicationRecord
     class_name: :Post,
     foreign_key: :post_id
 
-    has_many :likes, as: :likeable
+    # has_many :likes, as: :likeable we dont need this anymore because w ehave a likes tables for this
 end

@@ -17,6 +17,11 @@ class Api::PostsController < ApplicationController
         end
     end
 
+    def destroy
+        @post = Post.find_by(params[:id])
+        @post.destroy
+    end
+
     def post_params
         params.require(:post).permit(:title, :message)
     end

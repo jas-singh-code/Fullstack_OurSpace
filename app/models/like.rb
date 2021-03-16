@@ -7,6 +7,6 @@
 #  likable_id   :bigint
 #
 class Like < ApplicationRecord
-    validates :likeable_type, inclusion: { in: ['Post', 'Comment'] }
-    belongs_to :likeable, polymorphic: true
+    validates :likable_type, inclusion: { in: ['Post', 'Comment'] }
+    belongs_to :likable, polymorphic: true
 end
