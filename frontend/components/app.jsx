@@ -6,9 +6,9 @@ import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 
 const App = () => (
     <div className="App">
+        <Modal />
      <Switch>
-         <Route exact path='/signup' component={SignupFromContainer} />
-         <Route exact path='/login' component={LoginFromContainer} />
+         <Route exact path='/' component={LoginFromContainer} />
      </Switch>
     </div>
 );

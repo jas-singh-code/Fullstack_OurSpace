@@ -14,7 +14,8 @@
  *= require_self
  */
 
- @import "variables";
+@import "variables";
+@import "components/session_form";
 
 html {
   height: 100%;
@@ -22,8 +23,8 @@ html {
 
 body {
   font-family: sans-serif;
-  background: white;
-  color: $grey;
+  background: $white;
+  color:$black;
   font-size: 12px;
   height: 100%;
 }
@@ -31,7 +32,7 @@ body {
 header {
   display: flex;
   justify-content: center;
-  background-color: $red;
+  background-color: $raspberry;
   padding: 10px;
 
   img {
@@ -47,11 +48,37 @@ header {
 }
 
 h2 {
-  font-size: 32px;
+    font-size: 32px;
 }
 
 h3 {
-  font-size: 24px;
-  text-align: center;
-  color: $black;
+    font-size: 24px;
+    text-align: center;
+    color: $black;
+}
+
+// .App {
+
+// }
+
+// // sessionForm login-input, session-submit
+// .login-input {
+
+// }
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
