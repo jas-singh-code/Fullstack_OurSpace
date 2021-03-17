@@ -1,5 +1,5 @@
 {
-  "name": "OurSpace",
+  "name": "ourspace",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.13.8",
@@ -24,9 +24,9 @@
     "test": "test"
   },
   "scripts": {
-    "postinstall": "webpack",
     "webpack": "webpack --mode=development --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack"
   },
   "engines": {
     "node": "14.16.0",
