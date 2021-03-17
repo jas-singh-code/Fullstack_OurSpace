@@ -57,9 +57,7 @@ class LoginForm extends React.Component {
                         <br/>
                         <input className="btn-login" type="submit" value="Log In" />
                     </div>
-                    <div>Create New Account
-                                                
-                    </div>
+                    <div>{this.props.signupFormButton}</div>
                 </form>
             </div>
         );
