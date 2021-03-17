@@ -10,46 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_03_17_235420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.integer "author_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "post_id"
     t.string "body"
-    t.text "likes", default: [], array: true
-  end
-
-  create_table "friends", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "receiver_id"
+    t.integer "author_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "pending"
+    t.index ["author_id"], name: "index_comments_on_author_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.string "message"
+    t.text "message"
     t.integer "poster_id"
+    t.integer "wall_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["poster_id"], name: "index_posts_on_poster_id"
+    t.index ["wall_id"], name: "index_posts_on_wall_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "session_token"
+    t.string "last_name"
+    t.string "first_name"
+    t.integer "age"
+    t.text "gender"
+    t.string "location"
+    t.string "occupation"
+    t.string "email"
     t.string "password_digest"
+    t.string "session_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.text "friends", default: [], array: true
-    t.string "email"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["password_digest"], name: "index_users_on_password_digest"
+    t.index ["session_token"], name: "index_users_on_session_token"
   end
 
 end
