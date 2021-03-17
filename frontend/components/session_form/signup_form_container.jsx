@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_action';
 import SignupForm from './signup_form';
 
