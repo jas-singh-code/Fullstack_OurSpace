@@ -19,7 +19,7 @@
     width: 400px;
     height: auto;
     margin: 3px;
-    padding: 17px;
+    padding: 0 17px;
     position: absolute;
     right: 380px;
     top: 240px;
@@ -37,18 +37,18 @@
     display: flex;
     width: 450px;
     display: block;
-    height: 400px;
+    height: 350px;
     align-items: center;
 }
 
 .login-form-div{
-    padding: 3px;
     width: auto;
     display: flex;
-    height: 250px;
+    height: 210px;
     align-items: center;
     flex-direction: column;
     font-size: 16px;
+    border-bottom: lightgrey thin solid;
 }
 
 .login-input {
@@ -62,31 +62,26 @@
 }
 
 .btn-login {
-    width: 340px;
-    height: 55px;
+    width: 360px;
+    height: 45px;
     padding: 2px;
     border-radius: 11px;
     background: $blue-btn;
     color: white;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 26px;
     border: $blue-btn;
 }
 
-.btn-signup {
-    width: 240px;
-    height: 55px;
-    padding: 2px;
-    border-radius: 11px;
-    background: #42b72a;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    border: #42b72a;
-}
+
 
 .button-holder{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 19px;
+    width: 400px;
+    position: fixed;
+    right: 382px;
+    top: 488px;
 }

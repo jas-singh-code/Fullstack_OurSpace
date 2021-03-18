@@ -1,20 +1,51 @@
 //  App
-.App {
-
-}
 
 // sessionForm login-input, session-submit
 .signup-form-container {
     display: block;
     /* justify-content: center; */
     /* align-items: center; */
-    width: 380px;
+    width: 425px;
     border: solid lightgrey thin;
     border-radius: 15px;
     height: 500px;
     background-color: white;
     padding: 24px;
-    font-size: 22px;
+}
+
+.signup-header{
+    border-bottom: thin lightgrey solid;
+}
+
+.signup-div1 {
+    font-size: 35px;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.signup-div2 {
+    font-size: 16px;
+    padding: 3px;
+}
+
+#btn-signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+
+}
+
+.btn-signup {
+    width: 240px;
+    height: 55px;
+    padding: 2px;
+    border-radius: 11px;
+    background: #42b72a;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: #42b72a;
 }
 
 .birthday {
@@ -27,6 +58,12 @@
     font-size: 16px;
     margin: 3px;
     padding: 3px;
+}
+
+#gender{
+    border-radius: 5px;
+    padding: 7px;
+    margin: 8px;
 }
 
 #dob-day{

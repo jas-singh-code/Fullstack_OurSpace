@@ -41,8 +41,11 @@ class SignupForm extends React.Component {
     render () {
         return(
             <div>
-                <form  className="signup-form-container" onSubmit={this.handleSubmit}> Sign Up
-                    <br/>
+                <form  className="signup-form-container" onSubmit={this.handleSubmit}>
+                    <div className="signup-header">
+                        <div className="signup-div1">Sign Up</div>
+                        <div className="signup-div2">It's quick and easy.</div>
+                    </div>
                     {this.renderErrors()}
                     <div>
                         <br />
@@ -236,14 +239,18 @@ class SignupForm extends React.Component {
                         </div>
                         <div className="gender">
                             <label>Gender:
-                                <input type='text'
-                                value={this.state.gender}
-                                onChange={this.update('gender')}
-                                className="login-input" />
+                                <select id="gender" onChange={this.update('gender')}>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="trans">Trans</option>
+                                    <option value="other">Other</option>
+                                </select>
                             </label>
                             <br/>
                         </div>
-                        <input className="btn-signup" type="submit" value="Sign Up" />
+                        <div id="btn-signup">
+                            <input className="btn-signup" type="submit" value="Sign Up" />
+                        </div>
                     </div>
                 </form>
             </div>
