@@ -1,3 +1,92 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+.full-container{
+    width: 900px;
+    height: auto;
+}
+.logo-icon{
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    display: block;
+    position: relative;
+}
+
+.login-form-container {
+    background-color: white;
+    width: 400px;
+    height: auto;
+    margin: 3px;
+    padding: 17px;
+    position: absolute;
+    right: 380px;
+    top: 240px;
+    color: #EADEDB;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    font-size: 22px;
+    box-shadow: 0 2px 4px, 0 8px 16px;
+}
+
+.login-form{
+    padding: 4px;
+    display: flex;
+    width: 450px;
+    display: block;
+    height: 400px;
+    align-items: center;
+}
+
+.login-form-div{
+    padding: 3px;
+    width: auto;
+    display: flex;
+    height: 250px;
+    align-items: center;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.login-input {
+    width: 337px;
+    height: 23px;
+    padding: 12px;
+    margin: 3px;
+    border-radius: 11px;
+    color: purple;
+    border: solid lightgrey thin;
+}
+
+.btn-login {
+    width: 340px;
+    height: 55px;
+    padding: 2px;
+    border-radius: 11px;
+    background: $blue-btn;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: $blue-btn;
+}
+
+.btn-signup {
+    width: 240px;
+    height: 55px;
+    padding: 2px;
+    border-radius: 11px;
+    background: #42b72a;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: #42b72a;
+}
+
+.button-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

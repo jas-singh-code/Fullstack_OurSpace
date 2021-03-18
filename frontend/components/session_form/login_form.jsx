@@ -36,30 +36,35 @@ class LoginForm extends React.Component {
 
     render () {
         return(
+        <div className="full-container">
+            <img className="logo-icon" src={logoiconURL}></img>
             <div className="login-form-container">
-                <form onSubmit={this.handleSubmit}>Welcome to OurSpace!
+                <form onSubmit={this.handleSubmit} className="login-form">
                     <br/>
                     {this.renderErrors()}
-                    <div>
+                    <div className="login-form-div">
                         <br />
-                        <label>Email:
+                        <label className="login-label">
                             <input type='text'
                             value={this.state.email}
+                            placeholder="Email"
                             onChange={this.update('email')}
                             className="login-input" />
                         </label>
-                        <label>Password:
+                        <label className="login-label">
                             <input type='text'
                             value={this.state.password}
+                            placeholder="Password"
                             onChange={this.update('password')}
                             className="login-input" />
                         </label>
                         <br/>
                         <input className="btn-login" type="submit" value="Log In" />
                     </div>
-                    <div>{this.props.signupFormButton}</div>
+                    <div className="button-holder">{this.props.signupFormButton}</div>
                 </form>
             </div>
+        </div>
         );
     }
 };

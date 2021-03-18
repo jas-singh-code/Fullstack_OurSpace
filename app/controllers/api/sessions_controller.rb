@@ -12,7 +12,7 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             render "api/users/show"
         else 
-            flash.new[:errors] = ['Invalid Username or Password']
+            flash.now[:errors] = ['Invalid Username or Password']
         end
     end
     

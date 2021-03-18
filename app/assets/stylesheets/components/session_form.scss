@@ -4,6 +4,51 @@
 }
 
 // sessionForm login-input, session-submit
-.login-input {
+.signup-form-container {
+    display: block;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 380px;
+    border: solid lightgrey thin;
+    border-radius: 15px;
+    height: 500px;
+    background-color: white;
+    padding: 24px;
+    font-size: 22px;
+}
 
+.birthday {
+    font-size: 16px;
+    margin: 3px;
+    padding: 3px;
+}
+
+.gender{
+    font-size: 16px;
+    margin: 3px;
+    padding: 3px;
+}
+
+#dob-day{
+    width: 100px;
+    height: 32px;
+    padding: 7px;
+    border-radius: 5px;
+    margin: 8px;
+}
+
+#dob-month{
+    width: 100px;
+    height: 32px;
+    padding: 7px;
+    border-radius: 5px;
+    margin: 8px;
+}
+
+#dob-year{
+    width: 100px;
+    height: 32px;
+    padding: 7px;
+    border-radius: 5px;
+    margin: 8px;
 }
