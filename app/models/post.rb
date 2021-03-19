@@ -10,4 +10,10 @@
 #  updated_at :datetime         not null
 #
 class Post < ApplicationRecord
+    validates :message, presence: true
+
+    belongs_to :author,
+    foreign_key: :poster_id,
+    class_name: :User
+
 end

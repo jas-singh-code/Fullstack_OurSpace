@@ -5,7 +5,7 @@
 #  id              :bigint           not null, primary key
 #  last_name       :string
 #  first_name      :string
-#  birthday        :integer
+#  birthday        :string
 #  gender          :text
 #  location        :string
 #  occupation      :string
@@ -16,7 +16,8 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-    # validates :first_name, :last_name, presence: true, length: {minimum: 2, maximum: 40}
+    # validates :first_name, presence: true
+    # validates :last_name, presence: true
     validates :email, presence: true, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
     validates :password_digest, :birthday, :gender, presence: true
@@ -25,9 +26,9 @@ class User < ApplicationRecord
   
     # has_many :likes, as: :likeable
   
-    # has_many :posts,
-    # class_name: :Post,
-    # foreign_key: :poster_id
+    has_many :posts,
+    class_name: :Post,
+    foreign_key: :poster_id
   
     # has_many :comments,
     # class_name: :Comment,
@@ -57,7 +58,7 @@ class User < ApplicationRecord
   
     def reset_session_token!
         self.session_token = SecureRandom.urlsafe_base64
-        self.save
+        self.save!
         self.session_token
     end
   

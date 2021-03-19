@@ -3,9 +3,9 @@ import React from 'react';
 class SignupForm extends React.Component {
     constructor(props){
         super(props);
-        this.state ={
-            firstName: '',
-            lastName: '',
+        this.state = {
+            first_name: '',
+            last_name: '',
             email: '',
             password: '',
             gender: '',
@@ -25,6 +25,9 @@ class SignupForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        delete this.state.month;
+        delete this.state.day;
+        delete this.state.year;
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
@@ -53,15 +56,15 @@ class SignupForm extends React.Component {
                     <div>
                         <br />
                         <input type='text'
-                        value={this.state.firstName}
+                        onChange={this.update('first_name')}
+                        value={this.state.first_name}
                         placeholder="First Name"
-                        onChange={this.update('firstName')}
                         className="login-input" />
 
                         <input type='text'
-                        value={this.state.lastName}
+                        onChange={this.update('last_name')}
+                        value={this.state.last_name}
                         placeholder="Last Name"
-                        onChange={this.update('lastName')}
                         className="login-input" />
 
                         <input type='text'
@@ -70,7 +73,7 @@ class SignupForm extends React.Component {
                         onChange={this.update('email')}
                         className="login-input" />
 
-                        <input type='text'
+                        <input type='password'
                         value={this.state.password}
                         placeholder="Password"
                         onChange={this.update('password')}
