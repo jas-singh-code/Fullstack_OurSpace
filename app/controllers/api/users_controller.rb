@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
 
     def index
         render :index
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         if @user.save
             render "api/users/show"
         else
-            flash.now[:errors]= @user.errors.full_messages
+            render json: @user.errors.full_messages, status: 422
         end
     end
 
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:username, :password)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :birthday, :gender)
     end
 
 end

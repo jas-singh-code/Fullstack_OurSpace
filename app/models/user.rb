@@ -16,7 +16,7 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-    validates :first_name, :last_name, presence: true, length: {minimum: 2, maximum: 20}
+    # validates :first_name, :last_name, presence: true, length: {minimum: 2, maximum: 40}
     validates :email, presence: true, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
     validates :password_digest, :birthday, :gender, presence: true

@@ -8,8 +8,11 @@ class SignupForm extends React.Component {
             lastName: '',
             email: '',
             password: '',
-            birthday: '',
             gender: '',
+            month: '',
+            day: '',
+            year: '',
+            birthday: `${this.month}/${this.day}/${this.year}`
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     };
@@ -49,37 +52,33 @@ class SignupForm extends React.Component {
                     {this.renderErrors()}
                     <div>
                         <br />
-                        <label>
-                            <input type='text'
-                            value={this.state.firstName}
-                            placeholder="First Name"
-                            onChange={this.update('firstName')}
-                            className="login-input" />
-                        </label>
-                        <label>
-                            <input type='text'
-                            value={this.state.lastName}
-                            placeholder="Last Name"
-                            onChange={this.update('lastName')}
-                            className="login-input" />
-                        </label>
-                        <label>
-                            <input type='text'
-                            value={this.state.email}
-                            placeholder="Email"
-                            onChange={this.update('email')}
-                            className="login-input" />
-                        </label>
-                        <label>
-                            <input type='text'
-                            value={this.state.password}
-                            placeholder="Password"
-                            onChange={this.update('password')}
-                            className="login-input" />
-                        </label>
+                        <input type='text'
+                        value={this.state.firstName}
+                        placeholder="First Name"
+                        onChange={this.update('firstName')}
+                        className="login-input" />
+
+                        <input type='text'
+                        value={this.state.lastName}
+                        placeholder="Last Name"
+                        onChange={this.update('lastName')}
+                        className="login-input" />
+
+                        <input type='text'
+                        value={this.state.email}
+                        placeholder="Email"
+                        onChange={this.update('email')}
+                        className="login-input" />
+
+                        <input type='text'
+                        value={this.state.password}
+                        placeholder="Password"
+                        onChange={this.update('password')}
+                        className="login-input" />
+
                         <div className="birthday">
                             <label>Birthday:
-                                <select name="dob-day" id="dob-day">
+                                <select name="dob-day" id="dob-day" onChange={this.update('day')}>
                                     <option value="">Day</option>
                                     <option value="">---</option>
                                     <option value="01">01</option>
@@ -114,7 +113,7 @@ class SignupForm extends React.Component {
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="dob-month" id="dob-month">
+                                <select name="dob-month" id="dob-month" onChange={this.update('month')}>
                                     <option value="">Month</option>
                                     <option value="">-----</option>
                                     <option value="01">January</option>
@@ -130,7 +129,7 @@ class SignupForm extends React.Component {
                                     <option value="11">November</option>
                                     <option value="12">December</option>
                                 </select>
-                                <select name="dob-year" id="dob-year">
+                                <select name="dob-year" id="dob-year" onChange={this.update('year')}>
                                     <option value="">Year</option>
                                     <option value="">----</option>
                                     <option value="2021">2012</option>
@@ -240,6 +239,8 @@ class SignupForm extends React.Component {
                         <div className="gender">
                             <label>Gender:
                                 <select id="gender" onChange={this.update('gender')}>
+                                    <option value="">Gender</option>
+                                    <option value="">---</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                     <option value="trans">Trans</option>
