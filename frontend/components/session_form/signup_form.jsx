@@ -25,26 +25,36 @@ class SignupForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        //make state shape 
+        debugger
         delete this.state.month;
         delete this.state.day;
         delete this.state.year;
+        debugger
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
 
-    renderErrors() {
-        return(
-          <ul>
-            {this.props.errors.map((error, i) => (
-              <li key={`error-${i}`}>
-                {error}
-              </li>
-            ))}
-          </ul>
-        );
-    }
+    // renderErrors() {
+    //     return(
+    //       <ul>
+    //         {this.props.errors.map((error, i) => (
+    //           <li key={`error-${i}`}>
+    //             {error}
+    //           </li>
+    //         ))}
+    //       </ul>
+    //     );
+    // }
 
     render () {
+        debugger
+        const firstNameError = this.props.errors.first_name != undefined ? this.props.errors.first_name[0] : '' ;
+        const lastNameError = this.props.errors.last_name != undefined ? this.props.errors.last_name[0] : '' ;
+        const emailError = this.props.errors.email != undefined ? this.props.errors.email[0] : '' ;
+        const passwordError = this.props.errors.password != undefined ? this.props.errors.password[0] : '' ;
+        const genderError = this.props.errors.gender != undefined ? this.props.errors.gender[0] : '' ;
+        const birthdayError = this.props.errors.birthday != undefined ? this.props.errors.birthday[0] : '' ;
         return(
             <div>
                 <form  className="signup-form-container" onSubmit={this.handleSubmit}>
@@ -52,7 +62,6 @@ class SignupForm extends React.Component {
                         <div className="signup-div1">Sign Up</div>
                         <div className="signup-div2">It's quick and easy.</div>
                     </div>
-                    {this.renderErrors()}
                     <div>
                         <br />
                         <input type='text'
@@ -60,24 +69,28 @@ class SignupForm extends React.Component {
                         value={this.state.first_name}
                         placeholder="First Name"
                         className="login-input" />
+                        <div>{firstNameError}</div>
 
                         <input type='text'
                         onChange={this.update('last_name')}
                         value={this.state.last_name}
                         placeholder="Last Name"
                         className="login-input" />
+                        <div>{lastNameError}</div>
 
                         <input type='text'
                         value={this.state.email}
                         placeholder="Email"
                         onChange={this.update('email')}
                         className="login-input" />
+                        <div>{emailError}</div>
 
                         <input type='password'
                         value={this.state.password}
                         placeholder="Password"
                         onChange={this.update('password')}
                         className="login-input" />
+                        <div>{passwordError}</div>
 
                         <div className="birthday">
                             <label>Birthday:

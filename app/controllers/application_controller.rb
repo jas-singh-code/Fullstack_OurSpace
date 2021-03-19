@@ -22,12 +22,12 @@ class ApplicationController < ActionController::Base
         !!current_user
     end
 
-    def require_logged_in
-        redirect_to new_api_session_url unless logged_in?
-    end
+    # def require_logged_in
+    #     redirect_to new_api_session_url unless logged_in?
+    # end
 
-    def require_logged_out
-        redirect_to api_users_url if logged_in?
-    end
+    # def require_logged_out
+    #     redirect_to api_users_url if logged_in?
+    # end
 
 end

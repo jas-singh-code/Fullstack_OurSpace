@@ -5,6 +5,8 @@
 .full-container{
     width: 900px;
     height: auto;
+    position: absolute;
+    top: 0px;
 }
 .logo-icon{
     max-width: 100%;
@@ -21,8 +23,8 @@
     margin: 3px;
     padding: 0 17px;
     position: absolute;
-    right: 380px;
-    top: 240px;
+    right: 200px;
+    top: 100px;
     color: #EADEDB;
     border-radius: 8px;
     display: flex;
@@ -33,12 +35,14 @@
 }
 
 .login-form{
-    padding: 4px;
-    display: flex;
-    width: 450px;
-    display: block;
-    height: 350px;
-    align-items: center;
+     padding: 4px; 
+     display: flex; 
+     width: 450px; 
+     display: block; 
+     height: 350px; 
+     align-items: center; 
+    position: relative;
+    left: 266px;
 }
 
 .login-form-div{
@@ -81,7 +85,7 @@
     align-items: center;
     margin: 19px;
     width: 400px;
-    position: fixed;
-    right: 382px;
-    top: 488px;
+    right: 61px;
+    position: relative;
+    top: 259px;
 }

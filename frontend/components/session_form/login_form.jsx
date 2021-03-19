@@ -22,17 +22,17 @@ class LoginForm extends React.Component {
         this.props.processForm(user);
     }
 
-    renderErrors() {
-        return(
-          <ul>
-            {this.props.errors.map((error, i) => (
-              <li key={`error-${i}`}>
-                {error}
-              </li>
-            ))}
-          </ul>
-        );
-    }
+    // renderErrors() {
+    //     return(
+    //       <ul>
+    //         {this.props.errors.map((error, i) => (
+    //           <li key={`error-${i}`}>
+    //             {error}
+    //           </li>
+    //         ))}
+    //       </ul>
+    //     );
+    // }
 
     render () {
         return(
@@ -41,7 +41,7 @@ class LoginForm extends React.Component {
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form">
                     <br/>
-                    {this.renderErrors()}
+                    
                     <div className="login-form-div">
                         <br />
                         <input type='text'
@@ -54,6 +54,7 @@ class LoginForm extends React.Component {
                         placeholder="Password"
                         onChange={this.update('password')}
                         className="login-input" />
+                      
                         <br/>
                         <input className="btn-login" type="submit" value="Log In"  />
                     </div>
