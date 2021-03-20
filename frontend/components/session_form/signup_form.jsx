@@ -12,7 +12,6 @@ class SignupForm extends React.Component {
             month: '',
             day: '',
             year: '',
-            birthday: `${this.month}/${this.day}/${this.year}`
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     };
@@ -26,35 +25,36 @@ class SignupForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         //make state shape 
-        debugger
-        delete this.state.month;
-        delete this.state.day;
-        delete this.state.year;
-        debugger
-        const user = Object.assign({}, this.state);
+        // debugger
+        const stateShape = {
+            first_name: this.state.first_name ,
+            last_name: this.state.last_name,
+            email: this.state.email,
+            password: this.state.password,
+            gender: this.state.gender,
+            birthday: `${this.state.month}${this.state.day}${this.state.year}`
+        }
+        // debugger
+        const user = stateShape;
         this.props.processForm(user);
     }
 
-    // renderErrors() {
-    //     return(
-    //       <ul>
-    //         {this.props.errors.map((error, i) => (
-    //           <li key={`error-${i}`}>
-    //             {error}
-    //           </li>
-    //         ))}
-    //       </ul>
-    //     );
-    // }
-
     render () {
-        debugger
-        const firstNameError = this.props.errors.first_name != undefined ? this.props.errors.first_name[0] : '' ;
-        const lastNameError = this.props.errors.last_name != undefined ? this.props.errors.last_name[0] : '' ;
-        const emailError = this.props.errors.email != undefined ? this.props.errors.email[0] : '' ;
-        const passwordError = this.props.errors.password != undefined ? this.props.errors.password[0] : '' ;
-        const genderError = this.props.errors.gender != undefined ? this.props.errors.gender[0] : '' ;
-        const birthdayError = this.props.errors.birthday != undefined ? this.props.errors.birthday[0] : '' ;
+        // debugger
+        // const addClass = document.getElementsByClassName("fname-err").classList.add('err-render');
+        const errTriangleFname = this.props.errors.first_name != undefined ? <div className="side-err-fname"></div> : '';
+        const errTriangleLname = this.props.errors.last_name != undefined ? <div className="side-err-lname"></div> : '';
+        const errTrianglePass = this.props.errors.password != undefined ? <div className="side-err-pass"></div> : '';
+        const errTriangleEmail = this.props.errors.email != undefined ? <div className="side-err-email"></div> : '';
+        const errTriangleGender = this.props.errors.gender != undefined ? <div className="side-err-gender"></div> : '';
+        const errTrianglebday = this.props.errors.birthday != undefined ? <div className="side-err-bday"></div> : '';
+        
+        const firstNameError = this.props.errors.first_name != undefined ? <div className="fname-err"> {"First Name " + this.props.errors.first_name[0]}</div> : '' ;
+        const lastNameError = this.props.errors.last_name != undefined ? <div className="lname-err"> {"Last Name " + this.props.errors.last_name[0]} </div> : '' ;
+        const emailError = this.props.errors.email != undefined ? <div className="email-err">{"Email input " + this.props.errors.email[0]}</div> : '' ;
+        const passwordError = this.props.errors.password != undefined ? <div className="pass-err">{"Password " + this.props.errors.password[0]}</div> : '' ;
+        const genderError = this.props.errors.gender != undefined ? <div className="gender-err">{"Gender " + this.props.errors.gender[0]}</div> : '' ;
+        const birthdayError = this.props.errors.birthday != undefined ? <div className="birthday-err">{"Birthday " + this.props.errors.birthday[0]}</div> : '' ;
         return(
             <div>
                 <form  className="signup-form-container" onSubmit={this.handleSubmit}>
@@ -69,28 +69,36 @@ class SignupForm extends React.Component {
                         value={this.state.first_name}
                         placeholder="First Name"
                         className="login-input" />
-                        <div>{firstNameError}</div>
+
+                        {errTriangleFname}
+                        {firstNameError}
 
                         <input type='text'
                         onChange={this.update('last_name')}
                         value={this.state.last_name}
                         placeholder="Last Name"
                         className="login-input" />
-                        <div>{lastNameError}</div>
+
+                        {errTriangleLname}
+                        {lastNameError}
 
                         <input type='text'
                         value={this.state.email}
                         placeholder="Email"
                         onChange={this.update('email')}
                         className="login-input" />
-                        <div>{emailError}</div>
+                        
+                        {errTriangleEmail}
+                        {emailError}
 
                         <input type='password'
                         value={this.state.password}
                         placeholder="Password"
                         onChange={this.update('password')}
                         className="login-input" />
-                        <div>{passwordError}</div>
+
+                        {errTrianglePass}
+                        {passwordError}
 
                         <div className="birthday">
                             <label>Birthday:
@@ -251,6 +259,8 @@ class SignupForm extends React.Component {
                                     <option value="1921">1921</option>
                                 </select>
                             </label>
+                            {errTrianglebday}
+                            {birthdayError}
                         </div>
                         <div className="gender">
                             <label>Gender:
@@ -263,6 +273,9 @@ class SignupForm extends React.Component {
                                     <option value="other">Other</option>
                                 </select>
                             </label>
+\                            
+                            {errTriangleGender}
+                            {genderError}
                             <br/>
                         </div>
                         <div id="btn-signup">
