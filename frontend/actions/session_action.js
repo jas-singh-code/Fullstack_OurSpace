@@ -40,3 +40,12 @@ export const logout = () => dispatch => (
         dispatch(logoutCurrentUser())
     ))
 )
+
+// export const createNewUser = formUser => dispatch => APIUtil.postUser(formUser)
+//   .then( user => dispatch(receiveCurrentUser(user)))
+
+// export const login = formUser => dispatch => APIUtil.postSession(formUser)
+//  .then( user => dispatch(receiveCurrentUser(user)))
+
+//  export const logout = () => dispatch => APIUtil.deleteSession()
+//    .then( () => dispatch(logoutCurrentUser()))

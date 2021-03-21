@@ -6,7 +6,11 @@ class Api::PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
-        render "api/posts/post"
+        if @post
+            render "api/posts/post"
+        else 
+            render json: @post.errors, status: 422
+        end
     end
 
     def create
@@ -14,7 +18,7 @@ class Api::PostsController < ApplicationController
         if @post.save
             render "api/posts/post"
         else 
-            flash.now[:errors] = @post.errors.full_messages
+            render json: @post.errors
         end
     end
 
