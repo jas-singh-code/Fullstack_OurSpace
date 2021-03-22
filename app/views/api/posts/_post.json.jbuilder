@@ -1,3 +1,6 @@
 json.set! :post.id do
-    json.extract! post, :title, :message, :poster_id, :created_at, :post.likes
+    json.message post.message
+    json.posterId post.poster_id
+    json.wallId post.wall_id
+    json.postedOn post.created_at
 end
