@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { createPost } from '../../actions/post_actions';
 import PostCreate from './post_create'
+import { closeModal } from '../../actions/modal_actions';
+
 
 const mSTP = (state, ownProps) => {
     return {
@@ -9,13 +11,15 @@ const mSTP = (state, ownProps) => {
             message: '',
             image_url:'',
             poster_id: [state.session.currentUser.id]
-        }
+        },
+        errors: state.errors.postErrorsReducer
     }
 }
 
 const mDTP = dispatch => {
     return {
-        createPost: post => dispatch(createPost(post))
+        createPost: post => dispatch(createPost(post)),
+        closeModal: () => dispatch(closeModal())
     }
 }
 

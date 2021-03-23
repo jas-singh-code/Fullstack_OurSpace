@@ -1,5 +1,6 @@
 import React from 'react';
 import PostIndexContainer from '../posts/post_index_container';
+// import { NavLink } from 'react-router-dom';
 
 export default ({ currentUser, logout}) => {
     
@@ -10,8 +11,10 @@ export default ({ currentUser, logout}) => {
         <header className="nav-bar">
             <h1 className="logo"> Our Space</h1>
             <div>
-                <button onClick={logout}>Log out</button>
-                <a onClick={bringHome}></a>
+                <button className="logout-btn" onClick={logout}>Log out</button>
+                <button onClick={bringHome}>
+                    <i className="fa fa-home" >Home</i>
+                </button>
             </div>
         </header>    
     )
