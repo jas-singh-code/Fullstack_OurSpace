@@ -13,13 +13,21 @@ class SignupForm extends React.Component {
             day: '',
             year: '',
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.closeSignup = this.closeSignup.bind(this);
     };
 
     update(field) {
         return e => this.setState({
           [field]: e.currentTarget.value
         });
+    }
+
+    closeSignup(){
+        // debugger
+        if (this.props.errors.length === 0){
+            return this.props.closeModal()
+        } else {console.log("skipped if")}
     }
 
     handleSubmit(e){
@@ -35,8 +43,8 @@ class SignupForm extends React.Component {
         // debugger
         const user = stateShape;
         this.props.processForm(user)
-        .then(setTimeout(() => this.props.closeModal(), 1000))
-         .then(() => this.props.history.push('/home'))
+        .then(this.closeSignup)
+        .then(() => this.props.history.push('/home'))
     }
 
     render () {

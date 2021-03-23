@@ -4,7 +4,7 @@ import { Route } from "react-router";
 import {Redirect, withRouter } from "react-router-dom";
 
 const mSTP = state => {
-    debugger
+    // debugger
     return {loggedIn: Boolean(state.session.currentUser)}
 }
 
