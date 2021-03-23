@@ -15,7 +15,7 @@ class Api::PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        # @post.poster_id = params[:poster_id]
+        # debugger
         if @post.save
             render "api/posts/post"
         else 

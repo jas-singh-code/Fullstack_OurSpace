@@ -1,6 +1,6 @@
 import React from 'react';
-import PostCreateContainer from './post_create_container';
 import NavContainer from '../nav/nav_container';
+import PostItem from "./post_item"
 
 class PostIndex extends React.Component{
     constructor(props){
@@ -9,7 +9,17 @@ class PostIndex extends React.Component{
     }
 
     render() {
-        const {currentUser} = this.props
+        // debugger
+        const {currentUser, posts} = this.props
+        // debugger
+        // const postItem = posts.map(post => (
+        //     <PostItem 
+        //      key={post.id}
+        //      author = {post.author}
+        //      message={post.message}
+        //      postedOn={post.postedOn}/>
+        //     )
+        // )
         return (
             <div className="post-nav-create-index">
                 <div>
@@ -21,10 +31,8 @@ class PostIndex extends React.Component{
                     <div className="add-photo">Photo</div>
                 </div>
                 <div className="post-index-cont">
-                    <ul className="post-index-ul">Post index container
-                        {/* {this.state.posts.map(post => {
-                            <li key={post.id} props={postIndexItemContainer}></li>
-                        })} */}
+                    <ul className="post-index-ul">
+                        {/* {postItem} */}
                     </ul>
                 </div>
             </div>

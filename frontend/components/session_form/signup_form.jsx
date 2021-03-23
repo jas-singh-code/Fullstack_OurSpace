@@ -44,7 +44,7 @@ class SignupForm extends React.Component {
         const user = stateShape;
         this.props.processForm(user)
         .then(this.closeSignup)
-        .then(() => this.props.history.push('/home'))
+        // .then(() => this.props.history.push('/home'))
     }
 
     render () {

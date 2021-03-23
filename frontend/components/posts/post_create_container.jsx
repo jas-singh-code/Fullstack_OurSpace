@@ -7,11 +7,7 @@ import { closeModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
     return {
-        post: {
-            message: '',
-            image_url:'',
-            poster_id: [state.session.currentUser.id]
-        },
+        currentUser: state.session.currentUser,
         errors: state.errors.postErrorsReducer
     }
 }

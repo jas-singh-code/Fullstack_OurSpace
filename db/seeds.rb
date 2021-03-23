@@ -6,24 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-    users = User.create!([
-        {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password_digest: 'aorighwrhvdfvrg'},
-        {first_name: 'Phunsuk', last_name: 'Wangroo', email: 'pwangroo121@gmail.com', password_digest: 'aorigfvhwrhrg'},
-        {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password_digest: 'aorighwfbgfwefrhrg'},
-        {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password_digest: 'aorigfwefhnhntfdxhwrhrg'},
-        {first_name: 'Mintu', last_name: 'Sing', email: 'msingh12@gmail.com', password_digest: 'aorighwxsqqxul8rwfwfwehrg'}
-    ])
-
-    # posts = Post.create! ([
-    #     {id: 1, title: 'hello world', message: 'what a lovely day to be on the interweb!', poster_id: 3},
-    #     {id: 2, title: 'why does this app only have old ppl!?', message: 'why are there only old people on this app! Also, im secretly in love with user 3!', poster_id: 1},
-    #     {id: 3, title: 'whats better? a ripe lemon, or a rotten apple?', message: 'asking for a friend, but whats worse to eat whole? ripe lemon or rotten apple?', poster_id: 5},
-    #     {id: 4, title: 'Lovleen\'/s Blog 1', message: 'hello OurSpace, well its kind of only MY own SPACE...', poster_id: 4},
-    #     {id: 5, title: 'Lovleen\'/s Blog 2', message: 'wish me luck on passing my NCLX exam', poster_id: 4},
-    #     {id: 6, title: 'Lovleen\'/s Blog 3', message: 'okay really bored with this pandemic, can i go on a vacation already', poster_id: 4},
-    #     {id: 7, title: 'Mr. Wangroo here', message: 'ehy does my name sound so familiar?', poster_id: 2},
-    #     {id: 8, title: 'whats the meaning of life?', message: 'should i try to make a sandwich? kinda dreading the cleanup :/', poster_id: 3},
+    # users = User.create!([
+    #     {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password_digest: 'aorighwrhvdfvrg'},
+    #     {first_name: 'Phunsuk', last_name: 'Wangroo', email: 'pwangroo121@gmail.com', password_digest: 'aorigfvhwrhrg'},
+    #     {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password_digest: 'aorighwfbgfwefrhrg'},
+    #     {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password_digest: 'aorigfwefhnhntfdxhwrhrg'},
+    #     {first_name: 'Mintu', last_name: 'Sing', email: 'msingh12@gmail.com', password_digest: 'aorighwxsqqxul8rwfwfwehrg'}
     # ])
+
+    posts = Post.create! ([
+        {id: 1, wall_id: 1, message: 'what a lovely day to be on the interweb!', poster_id: 3},
+        {id: 2, wall_id: 1, message: 'why are there only old people on this app! Also, im secretly in love with user 3!', poster_id: 1},
+        {id: 3, wall_id: 1, message: 'asking for a friend, but whats worse to eat whole? ripe lemon or rotten apple?', poster_id: 5},
+        {id: 4, wall_id: 1, message: 'hello OurSpace, well its kind of only MY own SPACE...', poster_id: 4},
+        {id: 5, wall_id: 1, message: 'wish me luck on passing my NCLX exam', poster_id: 4},
+        {id: 6, wall_id: 1, message: 'okay really bored with this pandemic, can i go on a vacation already', poster_id: 4},
+        {id: 7, wall_id: 1, message: 'ehy does my name sound so familiar?', poster_id: 2},
+        {id: 8, wall_id: 1, message: 'should i try to make a sandwich? kinda dreading the cleanup :/', poster_id: 3},
+    ])
 
     # likes = Like.create!([
     #     {id: 1, likable_id: 3, likable_type: 'Post'},

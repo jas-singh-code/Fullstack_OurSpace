@@ -1,9 +1,13 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 
 class PostCreate extends React.Component{
     constructor(props){
         super(props);
-        this.state = this.props.post
+        this.state = {
+            message: '',
+            poster_id: this.props.currentUser.id
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.sendInfo = this.sendInfo.bind(this)
         this.updateMessage = this.updateMessage.bind(this)
@@ -31,10 +35,11 @@ class PostCreate extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        const post = this.state
+        const post = this.state;
+        debugger
         this.props.createPost(post)
         .then(this.closeForm)
-        .then(() => this.props.history.push("/home"))
+        .then(() => <Redirect to="home"/>)
     }
 
     render () {

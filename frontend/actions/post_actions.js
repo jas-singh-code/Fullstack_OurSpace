@@ -32,13 +32,14 @@ export const fetchPosts = () => dispatch => (
       .then(posts => dispatch(receivePosts(posts)))
 )
 
-export const createPost = (post) => dispatch => (
-    APIPosts.createPost(post)
+export const createPost = (post) => dispatch => {
+    debugger
+    return (APIPosts.createPost(post)
       .then(post => (dispatch(receivePost(post))
       ), err => (
           dispatch(receiveErrors(err.responseJSON))
       ))
-)
+    )}
 
 export const updatePost = (post) => dispatch => (
     APIPosts.fetchPost(post)
