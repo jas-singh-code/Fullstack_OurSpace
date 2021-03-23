@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { deletePost, fetchPosts, updatePost } from '../../actions/post_actions';
+import { destroyPost, fetchPosts, updatePost } from '../../actions/post_actions';
 import PostIndex from './post_index';
 
 const mSTP = ({ entities }) => {
@@ -7,12 +7,12 @@ const mSTP = ({ entities }) => {
         posts: entities.posts
     }
 }
-
+// debugger
 const mDTP = dispatch => {
     return {
         fetchPosts: () => dispatch(fetchPosts()),
         updatePost: post => dispatch(updatePost(post)),
-        deletePost: post => dispatch(deletePost(post))
+        destroyPost: post => dispatch(destroyPost(post))
     }
 }
 

@@ -1,13 +1,24 @@
-import { RECEIVE_POSTS, RECEIVE_POST } from "../actions/post_actions";
+import { RECEIVE_POSTS, RECEIVE_SINGLE_POST, DELETE_POST } from "../actions/post_actions";
 
-export default (state, action) => {
+const _nullPosts = {
+    posts: null
+}
+
+export default (state= _nullPosts, action) => {
+    // debugger
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_POSTS:
-            return action.posts
-        case RECEIVE_POST:
-            return action.post
+            const posts = {};
+            action.posts.forEach(post => {
+                posts[post.id] = post;
+            });
+            return posts;
+        case RECEIVE_SINGLE_POST:
+            return Object.assign( {}, state, { [action.post.id]: action.post });
+        case DELETE_POST:
+            return _nullPosts
         default:
-            state;
+            return state;
     }
 }

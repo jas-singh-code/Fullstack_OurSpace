@@ -7,16 +7,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <% if current_user %>
+      <script>
+        window.currentUser = {
+          "id": "<%= current_user.id%>",
+          "firstName": "<%= current_user.first_name %>",
+          "lastName": "<%= current_user.last_name %>",
+          "email": "<%= current_user.email%>",
+          "birthday": "<%= current_user.birthday %>",
+          "gender": "<%= current_user.gender %>"
+        }
+      </script>
+    <% end %>
     <script type="text/javascript">window.logoiconURL= "<%= image_url('logo_with_icon_transparent.png')%>";</script>
   </head>
 
   <body>
-  <% if logged_in? %>
-    <script type="text/javascript">
-        window.currentUser =
-          <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
-    </script>
-  <% end %>
     <%= yield %>
   </body>
 </html>

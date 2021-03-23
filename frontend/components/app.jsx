@@ -1,16 +1,18 @@
 import React from 'react';
-import SignupFromContainer from './session_form/signup_form_container';
 import LoginFromContainer from './session_form/login_form_container';
 // import { Provider } from 'react-redux';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
-import Modal from './modal/modal'
+import Modal from './modal/modal';
+import { AuthRoute } from "../util/route_utils";
+import PostIndexContainer from "../components/posts/post_index_container"
 
 const App = () => (
     <div className="App">
         <Modal />
-     <Switch>
-         <Route exact path='/' component={LoginFromContainer} />
-     </Switch>
+        <Switch>
+            <AuthRoute exact path="/login" component={LoginFromContainer} />
+            <Route exact path="/home" component={PostIndexContainer} />
+        </Switch>
     </div>
 );
 

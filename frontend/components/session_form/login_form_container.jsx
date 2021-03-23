@@ -9,6 +9,7 @@ const mapStateToProps = ({ errors }) => {
     errors: errors.sessionErrorsReducer
   };
 };
+// debugger
 
 const mapDispatchToProps = dispatch => {
   return {

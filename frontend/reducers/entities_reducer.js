@@ -3,7 +3,7 @@ import posts from "./post_reducer"
 
 export default combineReducers ({
     // users,
-    posts,
+    posts
     // comments,
     // likes, 
     // friends
