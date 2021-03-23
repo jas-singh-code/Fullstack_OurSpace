@@ -24,8 +24,6 @@ class SignupForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        //make state shape 
-        // debugger
         const stateShape = {
             first_name: this.state.first_name ,
             last_name: this.state.last_name,
@@ -37,6 +35,7 @@ class SignupForm extends React.Component {
         // debugger
         const user = stateShape;
         this.props.processForm(user)
+        .then(setTimeout(() => this.props.closeModal(), 1000))
          .then(() => this.props.history.push('/home'))
     }
 

@@ -1,29 +1,19 @@
 import React from 'react';
+import PostIndexContainer from '../posts/post_index_container';
 
 export default ({ currentUser, logout}) => {
-    const display = currentUser ? (
-         <div>
-             <p>Hello {currentUser.firstName}</p>
-             <button onClick={logout}>Log out</button>
-         </div>
-    ) : (
-        <div>
-            <Link className="btn" to="/login">Sign Up</Link>
-            <Link className="btn" to="/login">Log In</Link>
-        </div>
-
-    );
-
+    
+    function bringHome(){
+        return (<PostIndexContainer />)
+    }
     return (
         <header className="nav-bar">
             <h1 className="logo"> Our Space</h1>
             <div>
-                {display}
+                <button onClick={logout}>Log out</button>
+                <a onClick={bringHome}></a>
             </div>
         </header>    
     )
     
 }
-
-export default Nav;
-

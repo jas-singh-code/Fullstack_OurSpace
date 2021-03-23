@@ -10,7 +10,7 @@ const App = () => (
     <div className="App">
         <Modal />
         <Switch>
-            <AuthRoute exact path="/login" component={LoginFromContainer} />
+            <AuthRoute exact path="/" component={LoginFromContainer} />
             <Route exact path="/home" component={PostIndexContainer} />
         </Switch>
     </div>
