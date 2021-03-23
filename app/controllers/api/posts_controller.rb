@@ -15,10 +15,12 @@ class Api::PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        # debugger
+        debugger
         if @post.save
-            render "api/posts/post"
-        else 
+            debugger
+            render "api/posts/show"
+        else
+            debugger
             render json: @post.errors
         end
     end

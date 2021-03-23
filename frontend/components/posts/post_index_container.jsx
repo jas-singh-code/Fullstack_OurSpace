@@ -4,6 +4,7 @@ import { destroyPost, fetchPosts, updatePost } from '../../actions/post_actions'
 import PostIndex from './post_index';
 
 const mSTP = ( state ) => {
+    debugger
     return{
         // posts: Object.values(state.entities.posts),
         posts: state.entities.posts,

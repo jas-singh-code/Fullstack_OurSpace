@@ -20,10 +20,13 @@ const deletePost = ( postId ) => ({
     postId,
 })
 
-const receiveErrors = errors => ({
-    type: RECEIVE_POST_ERRORS,
-    errors,
-})
+const receiveErrors = errors => {
+    debugger
+    return {
+        type: RECEIVE_POST_ERRORS,
+        errors,
+    }
+}
 
 // thunk action creators
 

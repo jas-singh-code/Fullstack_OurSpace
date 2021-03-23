@@ -14,16 +14,16 @@
     #     {first_name: 'Mintu', last_name: 'Sing', email: 'msingh12@gmail.com', password_digest: 'aorighwxsqqxul8rwfwfwehrg'}
     # ])
 
-    posts = Post.create! ([
-        {id: 1, wall_id: 1, message: 'what a lovely day to be on the interweb!', poster_id: 3},
-        {id: 2, wall_id: 1, message: 'why are there only old people on this app! Also, im secretly in love with user 3!', poster_id: 1},
-        {id: 3, wall_id: 1, message: 'asking for a friend, but whats worse to eat whole? ripe lemon or rotten apple?', poster_id: 5},
-        {id: 4, wall_id: 1, message: 'hello OurSpace, well its kind of only MY own SPACE...', poster_id: 4},
-        {id: 5, wall_id: 1, message: 'wish me luck on passing my NCLX exam', poster_id: 4},
-        {id: 6, wall_id: 1, message: 'okay really bored with this pandemic, can i go on a vacation already', poster_id: 4},
-        {id: 7, wall_id: 1, message: 'ehy does my name sound so familiar?', poster_id: 2},
-        {id: 8, wall_id: 1, message: 'should i try to make a sandwich? kinda dreading the cleanup :/', poster_id: 3},
-    ])
+    # posts = Post.create! ([
+    #     {id: 1, wall_id: 3, message: 'what a lovely day to be on the interweb!', poster_id: 3},
+    #     {id: 2, wall_id: 3, message: 'why are there only old people on this app! Also, im secretly in love with user 3!', poster_id: 1},
+    #     {id: 3, wall_id: 3, message: 'asking for a friend, but whats worse to eat whole? ripe lemon or rotten apple?', poster_id: 5},
+    #     {id: 4, wall_id: 3, message: 'hello OurSpace, well its kind of only MY own SPACE...', poster_id: 4},
+    #     {id: 5, wall_id: 3, message: 'wish me luck on passing my NCLX exam', poster_id: 4},
+    #     {id: 6, wall_id: 3, message: 'okay really bored with this pandemic, can i go on a vacation already', poster_id: 4},
+    #     {id: 7, wall_id: 3, message: 'ehy does my name sound so familiar?', poster_id: 2},
+    #     {id: 8, wall_id: 3, message: 'should i try to make a sandwich? kinda dreading the cleanup :/', poster_id: 3},
+    # ])
 
     # likes = Like.create!([
     #     {id: 1, likable_id: 3, likable_type: 'Post'},
