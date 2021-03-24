@@ -23,9 +23,9 @@
 .post-index-ul{
     padding: 6px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    background-color: purple;
     width: 1000px;
     height: 2000px;
+    align-items: center;
 }

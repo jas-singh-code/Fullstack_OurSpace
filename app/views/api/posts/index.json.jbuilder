@@ -1,4 +1,3 @@
-debugger
 @posts.each do |post|
     json.set! post.id do
         json.id post.id
@@ -6,9 +5,7 @@ debugger
         json.posterId post.poster_id
         json.wallId post.wall_id
         json.createdAt post.created_at
-        json.author do 
-            json.extract! post.author (:first_name, :last_name)
-        end
+        json.author post.author.first_name
         # json.likes do |like|
         #     json.like_id like.id
         #     json.user_id like.likable_type

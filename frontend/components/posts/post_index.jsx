@@ -20,7 +20,7 @@ class PostIndex extends React.Component{
         const postItem = Object.values(posts).map(post => (
             <PostItem 
              key={post.id}
-             author = {post.author}
+             author= {post.author}
              message={post.message}
              createdAt={post.createdAt.slice(0, 10)}
              className="post-index-item"/>

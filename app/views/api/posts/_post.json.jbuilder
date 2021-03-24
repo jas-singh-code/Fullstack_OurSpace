@@ -1,4 +1,4 @@
-debugger
+# 
 json.set! @post.id do
     json.id post.id
     json.message post.message
@@ -7,4 +7,4 @@ json.set! @post.id do
     json.poster post.poster_id
     json.author post.author
 end
-# debugger
+# 

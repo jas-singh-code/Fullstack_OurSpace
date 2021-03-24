@@ -29,8 +29,8 @@ class User < ApplicationRecord
   
     has_many :posts,
     class_name: :Post,
-    foreign_key: :poster_id,
-    dependent: :destroy
+    foreign_key: :poster_id
+    # dependent: :destroy
   
     # has_many :comments,
     # class_name: :Comment,
