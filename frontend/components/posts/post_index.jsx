@@ -9,15 +9,14 @@ class PostIndex extends React.Component{
     }
 
     componentDidMount() {
-        
         this.props.getAllPosts()
     }
 
     render() {
-        
-        const { posts1 } = this.props
-        if (!posts1) return null;
-        const postItem = Object.values(posts1).map(post => (
+        const { currentUser } = this.props;
+        const { posts } = this.props;
+        if (!posts) return null;
+        const postItem = Object.values(posts).map(post => (
             <PostItem 
              key={post.id}
              author = {post.author}

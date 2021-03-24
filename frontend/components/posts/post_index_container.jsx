@@ -6,9 +6,7 @@ import PostIndex from './post_index';
 const mSTP = ( state ) => {
     // debugger
     return{
-        // posts2: Object.values(state.entities.posts),
-        // posts: Object.keys(state.entities.posts).map(key => state.entities.posts[key]),
-        posts1: state.entities.posts,
+        posts: state.entities.posts,
         currentUser: state.session.currentUser,
     }
 }
