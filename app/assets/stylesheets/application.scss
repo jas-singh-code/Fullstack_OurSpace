@@ -44,7 +44,7 @@ header {
 #root {
   // 63px for header(43px picture, 10px padding), 40 px for padding
   height: calc(100% - 63px - 40px);
-  padding: 20px 0;
+  background-color: #f0f2f5;
 }
 
 h2 {
@@ -58,14 +58,12 @@ h3 {
 }
 
 .App {
-  background-color: white;
-  padding: 4px;
-  margin: 4px;
-  width: auto;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #f0f2f5;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 // // sessionForm login-input, session-submit

@@ -1,0 +1,154 @@
+// class add-photo  btn-post
+@import "variables";
+
+.post-create-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 16px 10px;
+    border-radius: 10px;
+    background-color: white;
+    width: 677px;
+    align-items: center;
+    box-shadow: 0px 0px 0px 0, 0px 3px 5px 1px lightgrey;
+    margin: 18px;
+    position: static;
+    height: 130px;
+}
+
+.post-create-component{
+    display: flex;
+    justify-content: center;
+    width: 554px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-pic{
+    display: flex;
+    justify-content: center;
+    border: thin solid lightgrey;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    padding: 0px 0 15px 0;
+    top: -14px;
+    position: relative;
+}
+
+.profile-pic{
+    margin: 3px;
+}
+
+.add-photo{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    width: 213px;
+    height: 31px;
+    position: absolute;
+    top: 172px;
+    align-items: center;
+    border-radius: 11px;
+}
+.add-photo:hover{
+    background-color: $grey;
+    cursor: pointer;
+}
+
+.photo-icon1{
+    color: green;
+    font-size: 26px;
+}
+
+.photo-icon{
+    color: white;
+    font-size: 26px;
+}
+
+#create-post-uneditable {
+    border-radius: 28px;
+    width: 535px;
+    background-color: whitesmoke;
+    height: 6px;
+    padding: 17px;
+    font-family: sans-serif;
+    font-size: initial;
+    border: none;
+}
+
+.create-form{
+    width: 550px;
+    height: 526px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.create-input{
+    padding: 5px;
+    margin: 2px;
+    width: 500px;
+    height: 300px;
+    font-size: 28px;
+    border: thin solid lightgrey;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.create-form h2{
+    font-weight: bold;
+    font-size: 22px;
+    padding: 17px;
+    width: 483px;
+    text-align: center;
+    border: 1px solid lightgrey;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.addd-photo-create{
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    width: 491px;
+    height: 36px;
+    top: 172px;
+    align-items: center;
+    position: static;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    margin: 7px;
+    font-size: 16px;
+    background-color: green;
+    text-align: center;
+}
+.add-photo-create:hover{
+    cursor: pointer;
+    background-color: $grey;
+}
+
+.btn-post{
+    padding: 6px;
+    width: 506px;
+    height: 50px;
+    border-radius: 12px;
+    border: none;
+    margin: 7px;
+    background-color: #1877f2;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-post:hover{
+    cursor: pointer;
+    background-color: #183cf2;
+}

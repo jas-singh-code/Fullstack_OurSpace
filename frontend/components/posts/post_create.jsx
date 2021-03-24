@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
+import { IoMdPhotos } from 'react-icons/io';
 
 class PostCreate extends React.Component{
     constructor(props){
@@ -42,12 +43,13 @@ class PostCreate extends React.Component{
     }
 
     render () {
+        const { currentUser } = this.props
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>This is the post create form
-                    <input onChange={this.updateMessage()} value={this.state.message}></input>
-                    <br/>
-                    <div className="add-photo">Add Photo</div>
+                <form className="create-form" onSubmit={this.handleSubmit}>
+                    <h2>Create Post</h2>
+                    <input autoFocus placeholder={`What's on you're mind, ${currentUser.firstName}?`} className="create-input" onChange={this.updateMessage()} value={this.state.message}></input>
+                    <div className="addd-photo-create"><IoMdPhotos className="photo-icon" />Photo</div>
                     <input className="btn-post" type="submit" value="Post"></input>
                 </form>
             </div>

@@ -1,0 +1,53 @@
+// classes nav-bar logo logout-btn fa fa-home
+@import "variables";
+.nav-bar {
+    box-shadow: lightgrey 0px 0px, lightgrey 0px 1px 2px;
+    width: 1499px;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    position: sticky;
+    z-index: 9;
+    margin-bottom: 12px;
+}
+
+.logout-btn{
+    padding: 1px;
+}
+
+.logo-init {
+    width: 168px;
+    height: 122px;
+}
+/* Resize images */
+.logo-init img {
+    width: 100%;
+    height: auto;
+}
+
+.logo-init img:hover {
+  cursor: pointer;
+}
+
+.home-icon{
+    font-size: 32px;
+    color: blue;
+    display: flex;
+    width: 50px;
+    /* border-bottom: thick; */
+    border: thick solid blue;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    justify-content: center;
+    position: relative;
+    top: 17px;
+    padding-bottom: 6px;
+}
+.home-icon:hover{
+    background-color: $grey;
+}

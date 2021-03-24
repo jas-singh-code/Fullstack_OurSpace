@@ -1,6 +1,7 @@
 import React from 'react';
 import NavContainer from '../nav/nav_container';
 import PostItem from "./post_item"
+import { IoMdPhotos } from 'react-icons/io';
 
 class PostIndex extends React.Component{
     constructor(props){
@@ -27,13 +28,19 @@ class PostIndex extends React.Component{
       
         return (
             <div className="post-nav-create-index">
-                <div>
+                <div className="nav-bar">
                     {<NavContainer />}
                 </div>
-                <div className="post-create-cont">
-                    <input id="create-post-uneditable" type="text"  onClick={this.props.openCreatePost} placeholder={`What's on you're mind, ${currentUser.firstName}`}/>
-                    <br/>
-                    <div className="add-photo">Photo</div>
+                <div className="post-create-container">
+                    <div className="post-create-component">
+                        <div className="input-pic">
+                            <div className="profile-pic">PIC</div>
+                            <input id="create-post-uneditable" type="text"  onClick={this.props.openCreatePost} placeholder={`What's on you're mind, ${currentUser.firstName}?`}/>
+                        </div>
+                        <br/>
+                        <div className="add-photo"><IoMdPhotos className="photo-icon1" />Photo</div>
+                        
+                    </div>
                 </div>
                 <div className="post-index-cont">
                     <ul className="post-index-ul">

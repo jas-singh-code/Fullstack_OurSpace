@@ -1,0 +1,31 @@
+// class post-nav-create-index add-photo post-index-cont post-index-ul
+// id create-post-uneditable
+
+.post-nav-create-index{
+    width: 1900px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.post-index-cont{
+    width: auto;
+    padding: 6px;
+    display: flex;
+    background-color: yellow;
+    justify-content: center;
+
+}
+
+.post-index-ul{
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: purple;
+    width: 1000px;
+    height: 2000px;
+}
