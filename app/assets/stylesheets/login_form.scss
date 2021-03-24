@@ -7,13 +7,17 @@
     height: auto;
     position: absolute;
     top: 0px;
+    display: flex;
+    justify-content: space-between;
 }
 .logo-icon{
     max-width: 100%;
-    width: 300px;
+    width: 488px;
     height: auto;
     display: block;
     position: relative;
+    left: -269px;
+    top: 53px;
 }
 
 .login-form-container {
@@ -23,8 +27,8 @@
     margin: 3px;
     padding: 0 17px;
     position: absolute;
-    right: 200px;
-    top: 100px;
+    right: 0px;
+    top: 139px;
     color: #EADEDB;
     border-radius: 8px;
     display: flex;
@@ -63,6 +67,50 @@
     border-radius: 11px;
     color: purple;
     border: solid lightgrey thin;
+    background-color: $grey;
+}
+
+.signup-input-fname{
+    width: 337px;
+    height: 23px;
+    padding: 12px;
+    margin: 3px;
+    border-radius: 11px;
+    color: purple;
+    border: solid lightgrey thin;
+    background-color: $grey;
+}
+
+.signup-input-lname{
+    width: 337px;
+    height: 23px;
+    padding: 12px;
+    margin: 3px;
+    border-radius: 11px;
+    color: purple;
+    border: solid lightgrey thin;
+    background-color: $grey;
+}
+.signup-input-email{
+    width: 337px;
+    height: 23px;
+    padding: 12px;
+    margin: 3px;
+    border-radius: 11px;
+    color: purple;
+    border: solid lightgrey thin;
+    background-color: $grey;
+}
+
+.signup-input-pword{
+    width: 337px;
+    height: 23px;
+    padding: 12px;
+    margin: 3px;
+    border-radius: 11px;
+    color: purple;
+    border: solid lightgrey thin;
+    background-color: $grey;
 }
 
 .btn-login {
@@ -77,6 +125,15 @@
     border: $blue-btn;
 }
 
+.btn-login:hover{
+    cursor: pointer;
+    background-color: blue;
+}
+
+.btn-signup:hover{
+    cursor: pointer;
+    background-color: green;
+}
 
 
 .button-holder{
@@ -88,4 +145,36 @@
     right: 61px;
     position: relative;
     top: 259px;
+}
+
+.login-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 696px;
+    left: -508px;
+    width: 1927px;
+    background-color: white;
+    height: 221px;
+}
+
+.login-footer p{
+    font-size: 18px;
+}
+
+.login-title{
+    display: inline-table;
+    position: relative;
+    top: 315px;
+    right: 601px;
+    width: 584px;
+    justify-content: center;
+    flex-direction: column;
+    height: 103px;
+}
+
+.on-error{
+    border: thin solid red;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { BiCopyright } from "react-icons/bi";
 
 class LoginForm extends React.Component {
     constructor(props){
@@ -22,22 +23,15 @@ class LoginForm extends React.Component {
         this.props.processForm(user);
     }
 
-    // renderErrors() {
-    //     return(
-    //       <ul>
-    //         {this.props.errors.map((error, i) => (
-    //           <li key={`error-${i}`}>
-    //             {error}
-    //           </li>
-    //         ))}
-    //       </ul>
-    //     );
-    // }
+
 
     render () {
+        // const emailErr = this.props.errors.email != undefined;
+        // const passErr = this.props.errors.password != undefined;
         return(
         <div className="full-container">
             <img className="logo-icon" src={logoiconURL}></img>
+            <h2 className="login-title">Connect with friends and the world around you on Ourspace.</h2>
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form">
                     <br/>
@@ -48,12 +42,17 @@ class LoginForm extends React.Component {
                         value={this.state.email}
                         placeholder="Email"
                         onChange={this.update('email')}
-                        className="login-input" />
+                        className="login-input" 
+                        // style={emailErr ? {border:' thin solid red'} : {} }
+                        />
+
                         <input type='password'
                         value={this.state.password}
                         placeholder="Password"
                         onChange={this.update('password')}
-                        className="login-input" />
+                        className="login-input" 
+                        // style={passErr ? {border:' thin solid red'} : {} }
+                        />
                       
                         <br/>
                         <input className="btn-login" type="submit" value="Log In"  />
@@ -61,6 +60,10 @@ class LoginForm extends React.Component {
                 </form>
                 <div className="button-holder">{this.props.signupFormButton}</div>
             </div>
+            <footer className="login-footer">
+                <p> a Jaspreet Singh Production </p>
+                <p>TheOurspace <BiCopyright /> 2021</p>
+            </footer>
         </div>
         );
     }

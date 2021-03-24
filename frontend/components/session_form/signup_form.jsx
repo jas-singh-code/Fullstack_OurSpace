@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.closeSignup = this.closeSignup.bind(this);
+        
     };
 
     update(field) {
@@ -48,8 +49,14 @@ class SignupForm extends React.Component {
     }
 
     render () {
-        // debugger
-        // const addClass = document.getElementsByClassName("fname-err").classList.add('err-render');
+        const fnameErr = this.props.errors.first_name != undefined;
+        const lnameErr = this.props.errors.last_name != undefined;
+        const emailErr = this.props.errors.email != undefined;
+        const passErr = this.props.errors.password != undefined;
+        const genderErr = this.props.errors.gender != undefined;
+        const bdayErr = this.props.errors.birthday != undefined;
+
+
         const errTriangleFname = this.props.errors.first_name != undefined ? <div className="side-err-fname"></div> : '';
         const errTriangleLname = this.props.errors.last_name != undefined ? <div className="side-err-lname"></div> : '';
         const errTrianglePass = this.props.errors.password != undefined ? <div className="side-err-pass"></div> : '';
@@ -76,7 +83,8 @@ class SignupForm extends React.Component {
                         onChange={this.update('first_name')}
                         value={this.state.first_name}
                         placeholder="First Name"
-                        className="login-input" />
+                        className="signup-input-fname"
+                        style={fnameErr ? {border:' thin solid red'} : {} } />
 
                         {errTriangleFname}
                         {firstNameError}
@@ -85,7 +93,8 @@ class SignupForm extends React.Component {
                         onChange={this.update('last_name')}
                         value={this.state.last_name}
                         placeholder="Last Name"
-                        className="login-input" />
+                        className="signup-input-lname" 
+                        style={lnameErr ? {border:' thin solid red'} : {} }/>
 
                         {errTriangleLname}
                         {lastNameError}
@@ -94,7 +103,8 @@ class SignupForm extends React.Component {
                         value={this.state.email}
                         placeholder="Email"
                         onChange={this.update('email')}
-                        className="login-input" />
+                        className="signup-input-email"
+                        style={emailErr ? {border:' thin solid red'} : {} } />
                         
                         {errTriangleEmail}
                         {emailError}
@@ -103,14 +113,16 @@ class SignupForm extends React.Component {
                         value={this.state.password}
                         placeholder="Password"
                         onChange={this.update('password')}
-                        className="login-input" />
+                        className="signup-input-pword"
+                        style={passErr ? {border:' thin solid red'} : {} } />
 
                         {errTrianglePass}
                         {passwordError}
 
                         <div className="birthday">
                             <label>Birthday:
-                                <select name="dob-day" id="dob-day" onChange={this.update('day')}>
+                                <select name="dob-day" id="dob-day" onChange={this.update('day')}
+                                style={bdayErr ? {border:' thin solid red'} : {} }>
                                     <option value="">Day</option>
                                     <option value="">---</option>
                                     <option value="01">01</option>
@@ -145,7 +157,8 @@ class SignupForm extends React.Component {
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="dob-month" id="dob-month" onChange={this.update('month')}>
+                                <select name="dob-month" id="dob-month" onChange={this.update('month')}
+                                style={bdayErr ? {border:' thin solid red'} : {} }>
                                     <option value="">Month</option>
                                     <option value="">-----</option>
                                     <option value="01">January</option>
@@ -161,18 +174,19 @@ class SignupForm extends React.Component {
                                     <option value="11">November</option>
                                     <option value="12">December</option>
                                 </select>
-                                <select name="dob-year" id="dob-year" onChange={this.update('year')}>
+                                <select name="dob-year" id="dob-year" onChange={this.update('year')}
+                                style={bdayErr ? {border:' thin solid red'} : {} }>
                                     <option value="">Year</option>
                                     <option value="">----</option>
-                                    <option value="2021">2012</option>
-                                    <option value="2020">2012</option>
-                                    <option value="2019">2012</option>
-                                    <option value="2018">2012</option>
-                                    <option value="2017">2012</option>
-                                    <option value="2016">2012</option>
-                                    <option value="2015">2012</option>
-                                    <option value="2014">2012</option>
-                                    <option value="2013">2012</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
                                     <option value="2012">2012</option>
                                     <option value="2011">2011</option>
                                     <option value="2010">2010</option>
@@ -265,6 +279,8 @@ class SignupForm extends React.Component {
                                     <option value="1923">1923</option>
                                     <option value="1922">1922</option>
                                     <option value="1921">1921</option>
+                                    <option value="1920">Very Old</option>
+                                    <option value="1919">should'nt even be on fb old</option>
                                 </select>
                             </label>
                             {errTrianglebday}
@@ -272,7 +288,8 @@ class SignupForm extends React.Component {
                         </div>
                         <div className="gender">
                             <label>Gender:
-                                <select id="gender" onChange={this.update('gender')}>
+                                <select id="gender" onChange={this.update('gender')}
+                                style={genderErr ? {border:' thin solid red'} : {} }>
                                     <option value="">Gender</option>
                                     <option value="">---</option>
                                     <option value="male">Male</option>
@@ -281,7 +298,6 @@ class SignupForm extends React.Component {
                                     <option value="other">Other</option>
                                 </select>
                             </label>
-\                            
                             {errTriangleGender}
                             {genderError}
                             <br/>

@@ -22,7 +22,8 @@ class PostIndex extends React.Component{
              key={post.id}
              author = {post.author}
              message={post.message}
-             postedOn={post.postedOn}/>
+             postedOn={post.postedOn}
+             className="post-index-item"/>
             )
         )
       
@@ -37,9 +38,7 @@ class PostIndex extends React.Component{
                             <div className="profile-pic">PIC</div>
                             <input id="create-post-uneditable" type="text"  onClick={this.props.openCreatePost} placeholder={`What's on you're mind, ${currentUser.firstName}?`}/>
                         </div>
-                        <br/>
                         <div className="add-photo"><IoMdPhotos className="photo-icon1" />Photo</div>
-                        
                     </div>
                 </div>
                 <div className="post-index-cont">
