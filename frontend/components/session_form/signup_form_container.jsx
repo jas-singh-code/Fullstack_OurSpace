@@ -5,7 +5,6 @@ import SignupForm from './signup_form';
 import { closeModal } from '../../actions/modal_actions';
 
 const mSTP = ({ errors }) => {
-    // debugger
     return {
         errors: errors.sessionErrorsReducer
     }

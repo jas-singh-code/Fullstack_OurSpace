@@ -18,7 +18,6 @@ const deletePost = ( postId ) => ({
 })
 
 const receiveErrors = errors => {
-    // debugger
     return {
         type: RECEIVE_POST_ERRORS,
         errors,
@@ -38,7 +37,6 @@ export const fetchPosts = () => dispatch => {
 }
 
 export const createPost = (post) => dispatch => {
-    // debugger
     return (APIPosts.createPost(post)
       .then(post => (dispatch(receivePost(post))
       ), err => (

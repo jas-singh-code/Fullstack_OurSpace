@@ -25,7 +25,6 @@ class SignupForm extends React.Component {
     }
 
     closeSignup(){
-        // debugger
         if (this.props.errors.length === 0){
             return this.props.closeModal()
         } else {console.log("skipped if")}
@@ -41,7 +40,6 @@ class SignupForm extends React.Component {
             gender: this.state.gender,
             birthday: `${this.state.month}${this.state.day}${this.state.year}`
         }
-        // debugger
         const user = stateShape;
         this.props.processForm(user)
         .then(this.closeSignup)

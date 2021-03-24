@@ -5,24 +5,12 @@ class Api::PostsController < ApplicationController
         #need to use .where( !id: current_user.id)
     end
 
-    # def show
-    #     @post = Post.find(params[:id])
-    #     if @post
-    #         render "api/posts/post"
-    #     else 
-    #         render json: @post.errors, status: 422
-    #     end
-    # end
-
     def create
         @post = Post.new(post_params)
-        # debugger
         @post.poster_id = current_user.id
         if @post.save
-            # debugger
             render "api/posts/show"
         else
-            # debugger
             render json: @post.errors
         end
     end

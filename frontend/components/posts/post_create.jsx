@@ -27,7 +27,6 @@ class PostCreate extends React.Component{
     }
 
     closeForm(){
-        // debugger
         if (this.props.errors.length === 0){
             return this.props.closeModal()
         } else {console.log("skipped if")} //only production
@@ -36,7 +35,6 @@ class PostCreate extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         const post = this.state;
-        // debugger
         this.props.createPost(post)
         .then(this.closeForm)
         .then(() => <Redirect to="home"/>)

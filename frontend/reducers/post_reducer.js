@@ -4,7 +4,6 @@ import { RECEIVE_POSTS, RECEIVE_SINGLE_POST, DELETE_POST } from "../actions/post
 export default (state = {}, action) => {
     let postsReturn = {};
     Object.freeze(state);
-    // debugger
     switch (action.type) {
         case RECEIVE_POSTS:
             Object.values(action.posts).forEach(post => {

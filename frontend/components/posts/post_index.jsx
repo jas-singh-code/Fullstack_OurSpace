@@ -13,7 +13,6 @@ class PostIndex extends React.Component{
     }
 
     render() {
-        // debugger
         const { currentUser } = this.props;
         const { posts } = this.props;
         if (!posts) return null;
