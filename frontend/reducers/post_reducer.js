@@ -2,17 +2,16 @@ import { RECEIVE_POSTS, RECEIVE_SINGLE_POST, DELETE_POST } from "../actions/post
 
 
 export default (state = {}, action) => {
-    let posts = {};
+    let postsReturn = {};
     Object.freeze(state);
+    // debugger
     switch (action.type) {
         case RECEIVE_POSTS:
-            debugger;
-            action.posts.forEach(post => {
-                posts[post.id] = post;
+            Object.values(action.posts).forEach(post => {
+                postsReturn[post.id] = post;
             });
-            return posts;
+            return postsReturn ;
         case RECEIVE_SINGLE_POST:
-            debugger;
             return Object.assign( {}, state, action.post);
         case DELETE_POST:
             return {}

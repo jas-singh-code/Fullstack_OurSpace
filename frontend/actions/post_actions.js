@@ -10,10 +10,7 @@ const receivePost = ( post ) => ({  // can change to postId if needed
     post,
 })
 
-const receivePosts = ( posts ) => ({
-    type: RECEIVE_POSTS,
-    posts,
-})
+
 
 const deletePost = ( postId ) => ({
     type: DELETE_POST,
@@ -21,22 +18,27 @@ const deletePost = ( postId ) => ({
 })
 
 const receiveErrors = errors => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_POST_ERRORS,
         errors,
     }
 }
 
+const receivePosts = ( posts ) => ({
+    type: RECEIVE_POSTS,
+    posts,
+})
+
 // thunk action creators
 
-export const fetchPosts = () => dispatch => (
-    APIPosts.fetchPosts()
+export const fetchPosts = () => dispatch => {
+    return APIPosts.getPosts()
       .then(posts => dispatch(receivePosts(posts)))
-)
+}
 
 export const createPost = (post) => dispatch => {
-    debugger
+    // debugger
     return (APIPosts.createPost(post)
       .then(post => (dispatch(receivePost(post))
       ), err => (

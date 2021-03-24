@@ -6,7 +6,6 @@ class PostCreate extends React.Component{
         super(props);
         this.state = {
             message: '',
-            poster_id: this.props.currentUser.id
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.sendInfo = this.sendInfo.bind(this)
@@ -36,7 +35,7 @@ class PostCreate extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         const post = this.state;
-        debugger
+        // debugger
         this.props.createPost(post)
         .then(this.closeForm)
         .then(() => <Redirect to="home"/>)

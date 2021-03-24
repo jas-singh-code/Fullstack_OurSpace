@@ -1,7 +1,9 @@
 class Api::PostsController < ApplicationController
     def index
+        # debugger
         @posts = Post.all
         render "api/posts/index"
+        #need to use .where( !id: current)
     end
 
     # def show
@@ -15,12 +17,13 @@ class Api::PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        debugger
+        # debugger
+        @post.poster_id = current_user.id
         if @post.save
-            debugger
+            # debugger
             render "api/posts/show"
         else
-            debugger
+            # debugger
             render json: @post.errors
         end
     end

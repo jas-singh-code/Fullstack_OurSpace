@@ -5,21 +5,26 @@ import PostItem from "./post_item"
 class PostIndex extends React.Component{
     constructor(props){
         super(props);
+    }
 
+    componentDidMount() {
+        
+        this.props.getAllPosts()
     }
 
     render() {
-        // debugger
-        const {currentUser, posts} = this.props
-        // debugger
-        // const postItem = posts.map(post => (
-        //     <PostItem 
-        //      key={post.id}
-        //      author = {post.author}
-        //      message={post.message}
-        //      postedOn={post.postedOn}/>
-        //     )
-        // )
+        
+        const { posts1 } = this.props
+        if (!posts1) return null;
+        const postItem = Object.values(posts1).map(post => (
+            <PostItem 
+             key={post.id}
+             author = {post.author}
+             message={post.message}
+             postedOn={post.postedOn}/>
+            )
+        )
+      
         return (
             <div className="post-nav-create-index">
                 <div>
@@ -32,7 +37,7 @@ class PostIndex extends React.Component{
                 </div>
                 <div className="post-index-cont">
                     <ul className="post-index-ul">
-                        {/* {postItem} */}
+                        {postItem}
                     </ul>
                 </div>
             </div>

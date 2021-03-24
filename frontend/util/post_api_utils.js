@@ -1,7 +1,7 @@
-export const fetchPosts = () => (
+export const getPosts = () => (
     $.ajax({
         method: "GET",
-        url: "/api/posts"
+        url: "/api/posts",
     })
 )
 
