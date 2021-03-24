@@ -13,6 +13,7 @@ class PostIndex extends React.Component{
     }
 
     render() {
+        // debugger
         const { currentUser } = this.props;
         const { posts } = this.props;
         if (!posts) return null;
@@ -21,7 +22,7 @@ class PostIndex extends React.Component{
              key={post.id}
              author = {post.author}
              message={post.message}
-             postedOn={post.postedOn}
+             createdAt={post.createdAt.slice(0, 10)}
              className="post-index-item"/>
             )
         )

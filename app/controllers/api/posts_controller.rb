@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
     def index
-        # debugger
+        debugger
         @posts = Post.all
         render "api/posts/index"
         #need to use .where( !id: current)

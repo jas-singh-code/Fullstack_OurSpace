@@ -14,9 +14,9 @@ class Post < ApplicationRecord
 
     has_one_attached :photo
 
-    # belongs_to :author,
-    # foreign_key: :poster_id,
-    # class_name: :User
+    belongs_to :author,
+    foreign_key: :poster_id,
+    class_name: :User
     
     
     # belongs_to :wall,
