@@ -2,10 +2,10 @@
 @import "variables";
 .nav-bar {
     box-shadow: lightgrey 0px 0px, lightgrey 0px 1px 2px;
-    width: 1499px;
+    width: inherit;
     height: 55px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: white;
     top: 0;
@@ -49,5 +49,29 @@
     padding-bottom: 6px;
 }
 .home-icon:hover{
+    cursor: pointer;
     background-color: $grey;
 }
+
+.dropdown-acc{
+    font-size: 32px;
+    display: flex;
+    width: 60px;
+    justify-content: center;
+    position: relative;
+    top: 14px;
+    padding-bottom: 6px;
+    border-radius: 90px;
+    align-items: center;
+    height: 40px;
+}
+
+
+.dropdown-acc:hover{
+    cursor: pointer;
+    background-color: $grey;
+}
+
+// .dropdown-acc-icon{
+
+// }

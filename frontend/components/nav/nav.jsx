@@ -2,6 +2,7 @@ import React from 'react';
 import PostIndexContainer from '../posts/post_index_container';
 // import { NavLink } from 'react-router-dom';
 import {AiFillHome} from 'react-icons/ai'
+import { IoMdArrowDropdownCircle } from 'react-icons/io'
 
 export default ({ currentUser, logout}) => {
     
@@ -16,6 +17,9 @@ export default ({ currentUser, logout}) => {
 
             <div className="home-icon">
                 <AiFillHome className="home-icon-html"/>
+            </div>
+            <div className="dropdown-acc">
+                <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
             </div>
         </header>    
     )

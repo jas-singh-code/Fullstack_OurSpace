@@ -1,6 +1,8 @@
 // class post-nav-create-index add-photo post-index-cont post-index-ul
 // id create-post-uneditable
 
+@import "variables";
+
 .post-nav-create-index{
     width: 1900px;
     height: auto;
@@ -15,7 +17,7 @@
     width: auto;
     padding: 6px;
     display: flex;
-    background-color: yellow;
+    background-color: $grey;
     justify-content: center;
 
 }
@@ -26,6 +28,6 @@
     justify-content: flex-start;
     flex-direction: column;
     width: 1000px;
-    height: 2000px;
+    height: fit-content;
     align-items: center;
 }
