@@ -20,9 +20,11 @@ The framework of the website is Ruby on Rails, for the backend with ActiveRecord
 
 ## Features
 
-###User Auth
+### User Auth
 
-
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/75297616/112651238-954fcf80-8e22-11eb-8e43-2a2f4cd0084f.gif)
+* Users will see which feilds are incorrect upon improper signup or login.
+- Full video: 
 https://user-images.githubusercontent.com/75297616/112650189-84eb2500-8e21-11eb-809c-bed9e8a0d564.mp4
 
 
