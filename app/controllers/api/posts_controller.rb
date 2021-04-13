@@ -1,4 +1,9 @@
 class Api::PostsController < ApplicationController
+    # def wall
+    #     @posts = Post.all.order(created_at: :asc).where.not(id: current_user.id)
+    #     render "api/posts/wall"
+    # end
+
     def index
         @posts = Post.all.order(created_at: :asc)
         render "api/posts/index"
