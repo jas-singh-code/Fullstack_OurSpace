@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
     def index
-        @posts = Post.all.order(created_at: :desc)
+        @posts = Post.all.order(created_at: :asc)
         render "api/posts/index"
         #need to use .where( !id: current_user.id)
     end

@@ -26,7 +26,8 @@ class User < ApplicationRecord
     attr_reader :password
   
     # has_many :likes, as: :likeable
-  
+    has_one_attached :photo
+    
     has_many :posts,
     class_name: :Post,
     foreign_key: :poster_id

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_095340) do
+ActiveRecord::Schema.define(version: 2021_04_13_201223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_03_24_095340) do
     t.integer "wall_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "post_img"
     t.index ["poster_id"], name: "index_posts_on_poster_id"
     t.index ["wall_id"], name: "index_posts_on_wall_id"
   end
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_03_24_095340) do
     t.string "session_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_pic"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["password_digest"], name: "index_users_on_password_digest"
     t.index ["session_token"], name: "index_users_on_session_token"
