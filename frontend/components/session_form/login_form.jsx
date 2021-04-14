@@ -26,8 +26,7 @@ class LoginForm extends React.Component {
 
 
     render () {
-        // const emailErr = this.props.errors.email != undefined;
-        // const passErr = this.props.errors.password != undefined;
+  
         return(
         <div className="full-container">
             <img className="logo-icon" src={logoiconURL}></img>
