@@ -1,5 +1,7 @@
 import React from 'react';
 import { BiCopyright } from "react-icons/bi";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { BsFillPersonLinesFill } from "react-icons/bs"
 
 class LoginForm extends React.Component {
     constructor(props){
@@ -44,39 +46,46 @@ class LoginForm extends React.Component {
         const {errors} = this.props;  
         return(
         <div className="full-container">
-            <div>
-                {/* <img className="logo-icon" src={logoiconURL}></img> */}
-                <h2>Ourspace</h2>
-                <h4 className="login-title">Connect with friends and the world around you on Ourspace.</h4>
-            </div>
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form">
-                    <br/>
-                    <div className="login-form-div">
-                        <br />
-                        <input type='text'
-                        value={this.state.email}
-                        placeholder="Email"
-                        onChange={this.update('email')}
-                        className="login-input" 
-                        // style={emailErr ? {border:' thin solid red'} : {} }
-                        />
-
-                        <input type='password'
-                        value={this.state.password}
-                        placeholder="Password"
-                        onChange={this.update('password')}
-                        className="login-input" 
-                        // style={passErr ? {border:' thin solid red'} : {} }
-                        />
+            <div className="login-and-logo">
+                <div className="login-text">
+                    {/* <img className="logo-icon" src={logoiconURL}></img> */}
+                    <h2>Ourspace</h2>
+                    <h4 className="login-title">Connect with friends and the world around you on Ourspace.</h4>
+                </div>
+                <div className="login-form-container">
+                    <form onSubmit={this.handleSubmit} className="login-form">
                         <br/>
-                        <input className="btn-login" type="submit" value="Log In"  />
-                    </div>
-                </form>
-                <div className="button-holder">{this.props.signupFormButton}</div>
-                <button className="btn-signup" onClick={this.handleUser}>Demo User</button>
+                        <div className="login-form-div">
+                            <br />
+                            <input type='text'
+                            value={this.state.email}
+                            placeholder="Email"
+                            onChange={this.update('email')}
+                            className="login-input" 
+                            // style={emailErr ? {border:' thin solid red'} : {} }
+                            />
+
+                            <input type='password'
+                            value={this.state.password}
+                            placeholder="Password"
+                            onChange={this.update('password')}
+                            className="login-input" 
+                            // style={passErr ? {border:' thin solid red'} : {} }
+                            />
+                            <br/>
+                            <input className="btn-login" type="submit" value="Log In"  />
+                        </div>
+                    </form>
+                    <div className="button-holder">{this.props.signupFormButton}</div>
+                    <button className="btn-signup" onClick={this.handleUser}>Demo User</button>
+                </div>
             </div>
             <footer className="login-footer">
+                <div className="btn-links">
+                    <div>{<FaGithub size="1g"/>}</div>
+                    <div><FaLinkedin size="1g"/></div>
+                    <div><BsFillPersonLinesFill size="1g"/></div>
+                </div>
                 <p> a Jaspreet Singh Production </p>
                 <p>TheOurspace <BiCopyright /> 2021</p>
             </footer>
