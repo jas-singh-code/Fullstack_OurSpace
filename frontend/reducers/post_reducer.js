@@ -9,7 +9,6 @@ export default (state = {}, action) => {
             Object.values(action.posts).forEach(post => {
                 newState[post.id] = post;
             });
-            debugger;
             return newState ;
         case RECEIVE_SINGLE_POST:
             newState[action.post.id] = action.post;
