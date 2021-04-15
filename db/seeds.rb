@@ -13,7 +13,8 @@ Post.destroy_all
         {first_name: 'Phunsuk', last_name: 'Wangroo', email: 'pwangroo121@gmail.com', password_digest: 'aorigfvhwrhrg', birthday: '12345678', gender: 'male'},
         {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password_digest: 'aorighwfbgfwefrhrg', birthday: '12345678', gender: 'male'},
         {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password_digest: 'aorigfwefhnhntfdxhwrhrg', birthday: '12345678', gender: 'male'},
-        {first_name: 'Mintu', last_name: 'Sing', email: 'msingh12@gmail.com', password_digest: 'aorighwxsqqxul8rwfwfwehrg', birthday: '12345678', gender: 'male'}
+        {first_name: 'Mintu', last_name: 'Sing', email: 'msingh12@gmail.com', password_digest: 'aorighwxsqqxul8rwfwfwehrg', birthday: '12345678', gender: 'male'},
+        {first_name: 'Guest', last_name: 'User', email: 'guest@ourspace.com', password: 'demouser', password_digest: 'aorighwxsqqxul8rwfwfwehrg', birthday: '12345678', gender: 'other'},
     ])
 
     posts = Post.create! ([
@@ -35,7 +36,11 @@ Post.destroy_all
         { wall_id: 2, message: 'okay really bored with this pandemic, can i go on a vacation already', poster_id: 4},
         { wall_id: 2, message: 'ehy does my name sound so familiar?', poster_id: 2},
         { wall_id: 1, message: 'should i try to make a sandwich? kinda dreading the cleanup :/', poster_id: 3},
-        { wall_id: 1, message: 'what a lovely day to be on the interweb!', poster_id: 3}
+        { wall_id: 1, message: 'what a lovely day to be on the interweb!', poster_id: 3},
+        { wall_id: 6, message: 'Wow did you guys checkout the cool app i made on THREE.js!? Modeled after Simon Dev', poster_id: 6},
+        { wall_id: 6, message: 'whats the big deal with crypto anyway...', poster_id: 6},
+        { wall_id: 6, message: 'what a lovely day to be on the interweb!', poster_id: 6},
+        { wall_id: 6, message: 'hey, psst... there are links to the owners github page everyhere! You can see their source code there as well!', poster_id: 6}
     ])
 
     # likes = Like.create!([

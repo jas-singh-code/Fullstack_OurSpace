@@ -10,6 +10,9 @@ class Api::UsersController < ApplicationController
             login!(@user)
             render "api/users/show"
         else
+            print("user.errors is")
+            print(@user.errors)
+            debugger
             render json: @user.errors, status: 422
         end
     end

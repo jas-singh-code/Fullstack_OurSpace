@@ -14,6 +14,7 @@
 #  session_token   :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  profile_pic     :string
 #
 class User < ApplicationRecord
     validates :first_name, presence: true
@@ -26,7 +27,8 @@ class User < ApplicationRecord
     attr_reader :password
   
     # has_many :likes, as: :likeable
-    has_one_attached :photo
+    has_one_attached :profile_picture
+    has_one_attached :cover_picture
     
     has_many :posts,
     class_name: :Post,
@@ -43,6 +45,10 @@ class User < ApplicationRecord
   
   
     after_initialize :ensure_session_token
+
+    def is_password?(password)
+        BCrypt::Password.new(self.password_digest).is_password?(password)
+    end
     
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
@@ -53,10 +59,6 @@ class User < ApplicationRecord
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
-    end
-  
-    def is_password?(password)
-        BCrypt::Password.New(password_digest).is_password?(password)
     end
   
     def reset_session_token!

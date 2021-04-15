@@ -8,6 +8,7 @@
 #  wall_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  post_img   :string
 #
 class Post < ApplicationRecord
     validates :message, presence: true
@@ -17,7 +18,6 @@ class Post < ApplicationRecord
     belongs_to :author,
     foreign_key: :poster_id,
     class_name: :User
-    
     
     # belongs_to :wall,
     # foreign_key: :wall_id,

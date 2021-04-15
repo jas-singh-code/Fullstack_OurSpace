@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
             password: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleUser = this.handleUser.bind(this)
     };
 
     update(field) {
@@ -20,6 +21,15 @@ class LoginForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
+        this.props.processForm(user);
+    }
+
+    handleUser(e){
+        e.preventDefault();
+        const user = {
+            email: 'guest@ourspace.com',
+            password: 'demouser'
+        }
         this.props.processForm(user);
     }
 
@@ -58,6 +68,7 @@ class LoginForm extends React.Component {
                     </div>
                 </form>
                 <div className="button-holder">{this.props.signupFormButton}</div>
+                <button onClick={this.handleUser}>Demo User</button>
             </div>
             <footer className="login-footer">
                 <p> a Jaspreet Singh Production </p>
