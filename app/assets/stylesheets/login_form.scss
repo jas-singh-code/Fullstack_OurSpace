@@ -25,28 +25,28 @@
     width: 400px;
     height: auto;
     margin: 3px;
-    padding: 0 17px;
+    padding: 17px 17px;
     position: absolute;
     right: 0px;
     top: 139px;
     color: #EADEDB;
     border-radius: 8px;
     display: flex;
-    justify-content: flex-end;
-    align-items: end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: 22px;
     box-shadow: 0 2px 4px, 0 8px 16px;
 }
 
 .login-form{
-     padding: 4px; 
-     display: flex; 
-     width: 450px; 
-     display: block; 
-     height: 350px; 
-     align-items: center; 
+    padding: 6px;
+    width: 400px;
+    display: block;
+    align-items: center;
     position: relative;
-    left: 266px;
+    left: 0;
+    height: auto;
 }
 
 .login-form-div{
@@ -135,11 +135,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 19px;
-    width: 400px;
-    right: 61px;
+    margin: 14px;
+    width: 320px;
+    right: 0;
     position: relative;
-    top: 259px;
+    top: 0;
 }
 
 .login-footer {

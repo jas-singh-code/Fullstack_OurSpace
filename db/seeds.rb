@@ -11,12 +11,12 @@ Post.destroy_all
 Post.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1') 
 
     users = User.create!([
-        {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password_digest: 'aorighwrhvdfvrg', birthday: '12345678', gender: 'male'},
-        {first_name: 'Phunsuk', last_name: 'Wangroo', email: 'pwangroo121@gmail.com', password_digest: 'aorigfvhwrhrg', birthday: '12345678', gender: 'male'},
-        {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password_digest: 'aorighwfbgfwefrhrg', birthday: '12345678', gender: 'male'},
-        {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password_digest: 'aorigfwefhnhntfdxhwrhrg', birthday: '12345678', gender: 'male'},
-        {first_name: 'Mintu', last_name: 'Sing', email: 'msingh12@gmail.com', password_digest: 'aorighwxsqqxul8rwfwfwehrg', birthday: '12345678', gender: 'male'},
-        {first_name: 'Guest', last_name: 'User', email: 'guest@ourspace.com', password: 'demouser', password_digest: 'aorighwxsqqxul8rwfwfwehrg', birthday: '12345678', gender: 'other'},
+        {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '12345678', gender: 'male'},
+        {first_name: 'Phunsuk', last_name: 'Wangroo', email: 'pwangroo121@gmail.com', password: 'Phunsuk', birthday: '12345678', gender: 'male'},
+        {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password: 'Jaspreet', birthday: '12345678', gender: 'male'},
+        {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password: 'Loveleen', birthday: '12345678', gender: 'male'},
+        {first_name: 'Mintu', last_name: 'Sing', email: 'msingh12@gmail.com', password: 'Mintuuu', birthday: '12345678', gender: 'male'},
+        {first_name: 'Guest', last_name: 'User', email: 'guest@ourspace.com', password: 'demouser', birthday: '12345678', gender: 'other'},
     ])
 
     posts = Post.create! ([

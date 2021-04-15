@@ -33,10 +33,15 @@ class LoginForm extends React.Component {
         this.props.processForm(user);
     }
 
-
+    renderErrors(){
+        const {errors} = this.props
+        // if (errors.length > 0){
+        //     if (errors.includes())
+        // }
+    }
 
     render () {
-  
+        const {errors} = this.props;  
         return(
         <div className="full-container">
             <img className="logo-icon" src={logoiconURL}></img>
@@ -68,7 +73,7 @@ class LoginForm extends React.Component {
                     </div>
                 </form>
                 <div className="button-holder">{this.props.signupFormButton}</div>
-                <button className="btn-login" onClick={this.handleUser}>Demo User</button>
+                <button className="btn-signup" onClick={this.handleUser}>Demo User</button>
             </div>
             <footer className="login-footer">
                 <p> a Jaspreet Singh Production </p>

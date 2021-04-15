@@ -21,8 +21,8 @@ class PostIndex extends React.Component{
              key={post.id}
              author= {post.author}
              message={post.message}
-             photoURL= {post.photoURL}
-             createdAt={post.createdAt.slice(0, 10)}
+             photoURL= {post.photoURL || ""}
+            //  createdAt={post.createdAt.slice(0, 10) || ""}
              className="post-index-item"/>
             )
         )
