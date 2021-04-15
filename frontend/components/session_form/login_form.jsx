@@ -44,12 +44,14 @@ class LoginForm extends React.Component {
         const {errors} = this.props;  
         return(
         <div className="full-container">
-            <img className="logo-icon" src={logoiconURL}></img>
-            <h2 className="login-title">Connect with friends and the world around you on Ourspace.</h2>
+            <div>
+                {/* <img className="logo-icon" src={logoiconURL}></img> */}
+                <h2>Ourspace</h2>
+                <h4 className="login-title">Connect with friends and the world around you on Ourspace.</h4>
+            </div>
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form">
                     <br/>
-                    
                     <div className="login-form-div">
                         <br />
                         <input type='text'
@@ -67,7 +69,6 @@ class LoginForm extends React.Component {
                         className="login-input" 
                         // style={passErr ? {border:' thin solid red'} : {} }
                         />
-                      
                         <br/>
                         <input className="btn-login" type="submit" value="Log In"  />
                     </div>

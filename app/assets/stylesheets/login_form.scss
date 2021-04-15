@@ -3,32 +3,45 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 .full-container{
-    width: 900px;
-    height: auto;
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: relative;
     top: 0px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .logo-icon{
     max-width: 100%;
-    width: 488px;
+    width: 395px;
     height: auto;
     display: block;
-    position: relative;
-    left: -269px;
-    top: 53px;
+    position: absolute;
+    left: 30px;
+    top: 0;
 }
+
+.login-title{
+    display: inline-table;
+    position: absolute;
+    top: 320px;
+    right: 545px;
+    width: 584px;
+    justify-content: center;
+    flex-direction: column;
+    height: 103px;
+}
+
 
 .login-form-container {
     background-color: white;
-    width: 400px;
+    width: 352px;
     height: auto;
     margin: 3px;
-    padding: 17px 17px;
+    padding: 0px 17px 17px;
     position: absolute;
-    right: 0px;
-    top: 139px;
+    right: 90px;
+    top: 100px;
     color: #EADEDB;
     border-radius: 8px;
     display: flex;
@@ -40,8 +53,8 @@
 }
 
 .login-form{
-    padding: 6px;
-    width: 400px;
+    padding: 0 6px 6px;
+    width: 352px;
     display: block;
     align-items: center;
     position: relative;
@@ -60,14 +73,52 @@
 }
 
 .login-input {
-    width: 337px;
+    width: 323px;
     height: 23px;
     padding: 12px;
     margin: 3px;
-    border-radius: 11px;
+    border-radius: 7px;
     border: solid lightgrey thin;
-    background-color: $grey;
 }
+
+.login-input:focus{
+    border-color: blue;
+}
+
+.btn-login {
+    width: 324px;
+    height: 45px;
+    padding: 2px;
+    border-radius: 11px;
+    background: $blue-btn;
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+    border: $blue-btn;
+}
+
+.btn-login:hover{
+    cursor: pointer;
+    background-color: blue;
+}
+
+.btn-signup:hover{
+    cursor: pointer;
+    background-color: green;
+}
+
+
+.button-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 14px;
+    width: 320px;
+    right: 0;
+    position: relative;
+    top: 0;
+}
+
 
 .signup-input-fname{
     width: 337px;
@@ -108,66 +159,21 @@
     background-color: $grey;
 }
 
-.btn-login {
-    width: 360px;
-    height: 45px;
-    padding: 2px;
-    border-radius: 11px;
-    background: $blue-btn;
-    color: white;
-    font-weight: bold;
-    font-size: 26px;
-    border: $blue-btn;
-}
-
-.btn-login:hover{
-    cursor: pointer;
-    background-color: blue;
-}
-
-.btn-signup:hover{
-    cursor: pointer;
-    background-color: green;
-}
-
-
-.button-holder{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 14px;
-    width: 320px;
-    right: 0;
-    position: relative;
-    top: 0;
-}
-
 .login-footer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: absolute;
-    top: 696px;
-    left: -508px;
-    width: 1927px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
     background-color: white;
-    height: 221px;
 }
 
 .login-footer p{
     font-size: 18px;
-}
-
-.login-title{
-    display: inline-table;
-    position: relative;
-    top: 315px;
-    right: 601px;
-    width: 584px;
-    justify-content: center;
-    flex-direction: column;
-    height: 103px;
 }
 
 .on-error{
