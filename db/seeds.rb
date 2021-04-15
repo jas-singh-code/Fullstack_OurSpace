@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
+User.connection.execute('ALTER SEQUENCE users_id_seq RESTART WITH 1') 
 Post.destroy_all
+Post.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1') 
 
     users = User.create!([
         {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password_digest: 'aorighwrhvdfvrg', birthday: '12345678', gender: 'male'},

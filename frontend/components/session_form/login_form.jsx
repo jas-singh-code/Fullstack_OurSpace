@@ -68,7 +68,7 @@ class LoginForm extends React.Component {
                     </div>
                 </form>
                 <div className="button-holder">{this.props.signupFormButton}</div>
-                <button onClick={this.handleUser}>Demo User</button>
+                <button className="btn-login" onClick={this.handleUser}>Demo User</button>
             </div>
             <footer className="login-footer">
                 <p> a Jaspreet Singh Production </p>

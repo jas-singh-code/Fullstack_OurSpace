@@ -6,6 +6,8 @@ json.set! @post.id do
     json.createdAt post.created_at
     json.poster post.poster_id
     json.author post.author
-    json.photoURL url_for(post.photo)
+    if post.photo.attached?
+        json.photoURL url_for(post.photo)
+    end
 end
 # 
