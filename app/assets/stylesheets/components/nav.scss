@@ -58,8 +58,9 @@
     display: flex;
     width: 60px;
     justify-content: center;
-    position: relative;
-    top: 14px;
+    position: absolute;
+    top: 28px;
+    right: 2px;
     padding-bottom: 6px;
     border-radius: 90px;
     align-items: center;
@@ -75,3 +76,24 @@
 // .dropdown-acc-icon{
 
 // }
+
+.arrow-drop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    padding: 3px;
+    border-radius: 8px;
+    font-size: large;
+    border: thin solid black;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 70px;
+    right: 0;
+}
+.show-arrow{
+    background-color: brown;
+    display: flex;
+}

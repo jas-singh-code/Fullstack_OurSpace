@@ -4,63 +4,82 @@ import PostIndexContainer from '../posts/post_index_container';
 import {AiFillHome} from 'react-icons/ai'
 import { IoMdArrowDropdownCircle } from 'react-icons/io'
 
-export default ({ currentUser, logout}) => {
-    
-    function bringHome(){
+class Nav extends React.Component{
+    constructor(props){
+        super(props);
+        this.bringHome.bind(this);
+        this.setState={
+            dropDown: false
+        }
+        this.showDropDown = this.showDropDown.bind(this);
+        this.hideDropDown = this.hideDropDown.bind(this);
+    }
+
+    bringHome(){
         return (<PostIndexContainer />)
     }
 
-    return (
-        <header className="nav-bar">
-            <div className="search-bar"></div>
-            <div className="logo-init" onClick={bringHome}>
-                <img src={logoInitialsURL}></img>
-            </div>
-            <div className="home-icon">
-                <AiFillHome className="home-icon-html"/>
-            </div>
-            <div>
-                <img>
-                </img>
-                <p>{currentUser.firstName}</p>
-            </div>
-
-            <div className="dropdown-acc">
-                <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
-            </div>
-
-
-            <ul className="arrow-drop">
-                <div>
-                    <img className="profile-pic-lrg">
-                    </img>
-                    <li>
-                        {currentUser.firstName} {currentUser.lastName}
-                    </li>
-                    <li>
-                        See Your Profile
-                    </li>
+    showDropDown(feild){
+        this.setState[feild] = true;
+    }
+    hideDropDown(feild){
+        this.setState[feild] = false;
+    }
+ 
+    render(){
+        return (
+            <header className="nav-bar">
+                <div className="search-bar"></div>
+                <div className="logo-init" onClick={bringHome}>
+                    <img src={logoInitialsURL}></img>
                 </div>
-                <li>
-                    Logout
-                </li>
-            </ul>
-            
+                <div className="home-icon">
+                    <AiFillHome className="home-icon-html"/>
+                </div>
+                <div>
+                    <img>
+                    </img>
+                    <p>{currentUser.firstName}</p>
+                </div>
 
-            <ul className="create-drop">
-                <li>
-                    Create Post
-                </li>
-            </ul>
-            <ul className="notifications">
-                <li>
-                    Notifications
-                </li>
-            </ul>
-        </header>    
-    )
-    
+                <div className="dropdown-acc" onClick={() => this.showDropDown} onBlur={() => this.hideDropDown}>
+                    <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
+                </div>
+
+
+                <ul className={this.state.dropdown ? "arrow-drop" : ""} >
+                    <div>
+                        <img className="profile-pic-lrg">
+                        </img>
+                        <li>
+                            {currentUser.firstName} {currentUser.lastName}
+                        </li>
+                        <li>
+                            See Your Profile
+                        </li>
+                    </div>
+                    <li onClick={() => logout}>
+                        Logout
+                    </li>
+                </ul>
+
+
+                <ul className="create-drop">
+                    <li>
+                        Create Post
+                    </li>
+                </ul>
+                <ul className="notifications">
+                    <li>
+                        Notifications
+                    </li>
+                </ul>
+            </header>    
+        );
+    };
 }
+
+export default Nav;
 
 
 {/* <h1 className="logo"> Our Space</h1>
