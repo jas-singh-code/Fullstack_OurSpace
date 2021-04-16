@@ -18,7 +18,7 @@
 @import "login_form";
 
 html {
-  height: 100%;
+  height: auto;
 }
 
 body {
@@ -26,6 +26,7 @@ body {
   background: $white;
   color:$black;
   font-size: 12px;
+  height: auto;
   // height: 100%;
 }
 
@@ -41,14 +42,15 @@ header {
   }
 }
 
-// #root {
-//   // // 63px for header(43px picture, 10px padding), 40 px for padding
-//   // // height: calc(100% - 63px - 40px);
-//   // height: 100%;
-//   //   background-color: #f0f2f5;
-//   //   width: 100%;
-//   // background-color: #f0f2f5;
-// }
+#root {
+  height: auto;
+  // // 63px for header(43px picture, 10px padding), 40 px for padding
+  // // height: calc(100% - 63px - 40px);
+  // height: 100%;
+  //   background-color: #f0f2f5;
+  //   width: 100%;
+  // background-color: #f0f2f5;
+}
 
 h2 {
     font-weight: bold;
@@ -71,6 +73,7 @@ h4 {
 
 .App {
   background-color: #f0f2f5;
+  height: auto;
 }
 
 .modal-background {
