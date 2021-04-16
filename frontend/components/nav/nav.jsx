@@ -14,13 +14,14 @@ class Nav extends React.Component{
         this.hideDropDown = this.hideDropDown.bind(this);
     }
 
-    componentDidMount(){
-        this.prop.currentUser();
-    }
+    // componentDidMount(){
+    //     this.prop.currentUser;
+    // }
 
     showDropDown(feild){
         return (e) => {
-            this.setState({[feild]: true});
+            e.preventDefault();
+            this.setState({[feild]: !this.state.dropDown});
         }
     }
     hideDropDown(feild){
@@ -30,10 +31,8 @@ class Nav extends React.Component{
     }
  
     render(){
+        // document.body.addEventListener("click", this.hideDropDown("dropDown"));
         const {currentUser, logout} = this.props;
-        // document.body.addEventListener("click", () => {
-        //     this.setState({[dropDown]: false})
-        // });
         return (
             <header className="nav-bar">
                 <div className="search-bar"></div>
@@ -51,7 +50,7 @@ class Nav extends React.Component{
                     <p>{currentUser.firstName}</p>
                 </div>
 
-                <div className="dropdown-acc" onMouseDown={this.showDropDown("dropDown")} onMouseUp={this.hideDropDown("dropDown")}>
+                <div className="dropdown-acc" onClick={this.showDropDown("dropDown")} tabIndex="0" onBlur={this.hideDropDown("dropDown")} >
                     <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
                 </div>
 
