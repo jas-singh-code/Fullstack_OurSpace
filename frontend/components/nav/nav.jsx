@@ -1,8 +1,10 @@
 import React from 'react';
 import PostIndexContainer from '../posts/post_index_container';
 import { Link } from 'react-router-dom';
-import {AiFillHome} from 'react-icons/ai'
-import { IoMdArrowDropdownCircle } from 'react-icons/io'
+import {AiFillHome} from 'react-icons/ai';
+import { IoMdArrowDropdownCircle} from 'react-icons/io';
+import { HiPlusCircle } from "react-icons/hi";
+import { MdNotifications } from "react-icons/md";
 
 class Nav extends React.Component{
     constructor(props){
@@ -14,13 +16,10 @@ class Nav extends React.Component{
         this.hideDropDown = this.hideDropDown.bind(this);
     }
 
-    // componentDidMount(){
-    //     this.prop.currentUser;
-    // }
-
     showDropDown(feild){
         return (e) => {
             e.preventDefault();
+            e.stopPropagation();
             this.setState({[feild]: !this.state.dropDown});
         }
     }
@@ -32,7 +31,7 @@ class Nav extends React.Component{
  
     render(){
         // document.body.addEventListener("click", this.hideDropDown("dropDown"));
-        const {currentUser, logout} = this.props;
+        const {currentUser, logout, create} = this.props;
         return (
             <header className="nav-bar">
                 <div className="search-bar"></div>
@@ -49,24 +48,33 @@ class Nav extends React.Component{
                     </img>
                     <p>{currentUser.firstName}</p>
                 </div>
-
-                <div className="dropdown-acc" onClick={this.showDropDown("dropDown")} tabIndex="0" onBlur={this.hideDropDown("dropDown")} >
-                    <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
+                <div className="create-icon" onClick={create}>
+                    < HiPlusCircle />
                 </div>
 
+                <div className="notif-icon">
+                    <MdNotifications/>
+                </div>
 
-                <ul id={ this.state.dropDown ? "arrow-drop" : "hide-drop"}>
+                <div className="dropdown-acc" onClick={this.showDropDown("dropDown")} tabIndex="0" >
+                    <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
+                </div>
+                <div className="notif-back"></div>
+                <div className="create-back"></div>
+                <div className="arrow-back" onClick={this.showDropDown("dropDown")}></div>
+
+                <ul id={ this.state.dropDown ? "arrow-drop" : "hide-drop"} tabIndex="0" onBlur={this.hideDropDown("dropDown")}>
                     <div>
                         <img className="profile-pic-lrg">
                         </img>
-                        <li>
+                        <li className="dropdown-btn">
                             {currentUser.firstName} {currentUser.lastName}
                         </li>
-                        <li>
+                        <li className="dropdown-btn">
                             See Your Profile
                         </li>
                     </div>
-                    <li onClick={() => logout}>
+                    <li className="dropdown-btn" onClick={logout}>
                         Logout
                     </li>
                 </ul>
