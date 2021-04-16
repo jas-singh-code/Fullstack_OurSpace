@@ -1,38 +1,47 @@
 import React from 'react';
 import PostIndexContainer from '../posts/post_index_container';
-// import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {AiFillHome} from 'react-icons/ai'
 import { IoMdArrowDropdownCircle } from 'react-icons/io'
 
 class Nav extends React.Component{
     constructor(props){
         super(props);
-        this.bringHome.bind(this);
-        this.setState={
-            dropDown: false
+        this.state={
+            dropDown: false,
         }
         this.showDropDown = this.showDropDown.bind(this);
         this.hideDropDown = this.hideDropDown.bind(this);
     }
 
-    bringHome(){
-        return (<PostIndexContainer />)
+    componentDidMount(){
+        this.prop.currentUser();
     }
 
     showDropDown(feild){
-        this.setState[feild] = true;
+        return (e) => {
+            this.setState({[feild]: true});
+        }
     }
     hideDropDown(feild){
-        this.setState[feild] = false;
+        return (e) => {
+            this.setState({[feild]: false});
+        }
     }
  
     render(){
+        const {currentUser, logout} = this.props;
+        // document.body.addEventListener("click", () => {
+        //     this.setState({[dropDown]: false})
+        // });
         return (
             <header className="nav-bar">
                 <div className="search-bar"></div>
-                <div className="logo-init" onClick={bringHome}>
-                    <img src={logoInitialsURL}></img>
-                </div>
+                <Link to={'/home'}>
+                    <div className="logo-init">
+                        <img src={logoInitialsURL}></img>
+                    </div>
+                </Link>
                 <div className="home-icon">
                     <AiFillHome className="home-icon-html"/>
                 </div>
@@ -42,12 +51,12 @@ class Nav extends React.Component{
                     <p>{currentUser.firstName}</p>
                 </div>
 
-                <div className="dropdown-acc" onClick={() => this.showDropDown} onBlur={() => this.hideDropDown}>
+                <div className="dropdown-acc" onMouseDown={this.showDropDown("dropDown")} onMouseUp={this.hideDropDown("dropDown")}>
                     <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
                 </div>
 
 
-                <ul className={this.state.dropdown ? "arrow-drop" : ""} >
+                <ul id={ this.state.dropDown ? "arrow-drop" : "hide-drop"}>
                     <div>
                         <img className="profile-pic-lrg">
                         </img>

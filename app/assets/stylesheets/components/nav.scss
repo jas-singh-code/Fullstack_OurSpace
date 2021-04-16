@@ -77,7 +77,7 @@
 
 // }
 
-.arrow-drop{
+#arrow-drop{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,7 +93,6 @@
     top: 70px;
     right: 0;
 }
-.show-arrow{
-    background-color: brown;
-    display: flex;
+#hide-drop{
+    display: none;
 }
