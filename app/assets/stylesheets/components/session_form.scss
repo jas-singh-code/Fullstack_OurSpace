@@ -15,12 +15,14 @@
 
 .signup-header{
     border-bottom: thin lightgrey solid;
+    height: auto;
 }
 
 .signup-div1 {
     font-size: 35px;
     font-weight: bold;
     padding: 3px;
+    height: auto;
 }
 
 .signup-div2 {
@@ -32,8 +34,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: auto;
     margin: 16px;
-
 }
 
 .btn-signup {
@@ -51,12 +53,14 @@
 .birthday {
     font-size: 16px;
     margin: 3px;
+    height: auto;
     padding: 3px;
 }
 
 .gender{
     font-size: 16px;
     margin: 3px;
+    height: auto;
     padding: 3px;
 }
 
@@ -165,6 +169,7 @@
     position: absolute;
     left: -152px;
     top: 110px;
+    height: auto;
     font-size: 14px;
 }
 
@@ -178,6 +183,7 @@
     left: -151px;
     top: 165px;
     font-size: 14px;
+    height: auto;
 }
 
 .email-err{
@@ -190,6 +196,7 @@
     left: -153px;
     top: 221px;
     font-size: 14px;
+    height: auto;
 }
 
 .pass-err{
@@ -202,6 +209,7 @@
     left: -292px;
     top: 275px;
     font-size: 14px;
+    height: auto;
 }
 
 
@@ -215,6 +223,7 @@
     left: -136px;
     top: 389px;
     font-size: 14px;
+    height: auto;
 }
 
 .birthday-err{
@@ -227,4 +236,5 @@
     left: -139px;
     top: 333px;
     font-size: 14px;
+    height: auto;
 }
