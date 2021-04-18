@@ -9,7 +9,7 @@ export default ({message, author, photoURL, createdAt}) => {
         <div className="post-item-div">
             <li className="post-ltem-li">
                 <span>{author.first_name}, {createdAt}</span>
-                <h3>{message}</h3>
+                <p>{message}</p>
             </li>
         </div>
     )
