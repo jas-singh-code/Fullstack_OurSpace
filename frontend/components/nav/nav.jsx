@@ -60,7 +60,7 @@ class Nav extends React.Component{
                     <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
                 </div>
                 <div className="notif-back"></div>
-                <div className="create-back"></div>
+                <div className="create-back" onClick={create}></div>
                 <div className="arrow-back" onClick={this.showDropDown("dropDown")}></div>
 
                 <ul id={ this.state.dropDown ? "arrow-drop" : "hide-drop"} tabIndex="0" onBlur={this.hideDropDown("dropDown")}>
