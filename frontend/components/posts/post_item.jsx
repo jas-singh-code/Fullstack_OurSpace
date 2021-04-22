@@ -10,15 +10,15 @@ export default ({message, author, photoURL, createdAt}) => {
     }else{
         image = ""
     }
-    function toggle(icon){
-        debugger;
-        if(icon === 'like'){
-           const btn = document.getElementsByClassName('like-icon');
-           const p = document.getElementsByClassName('p-comment');
-           btn.style.color = blue;
-           p.style.color = blue;
-        }
-    }
+    // function toggle(icon){
+    //     debugger;
+    //     if(icon === 'like'){
+    //        const btn = document.getElementsByClassName('like-icon');
+    //        const p = document.getElementsByClassName('p-like');
+    //        btn.classList.add("active-btn");
+    //        p.classList.add('active-btn');
+    //     }
+    // }
     return (
         <div className="post-item-div">
             <li className="post-ltem-li">
@@ -31,7 +31,7 @@ export default ({message, author, photoURL, createdAt}) => {
                     <span>
                         <div className="likes-btn" onClick={() => toggle('like')}>
                             <AiOutlineLike className="like-icon" size="0.7g"/>
-                            <p>Like</p>
+                            <p className="p-like">Like</p>
                         </div>
                     </span>
                     <span>
