@@ -32,6 +32,7 @@ class Nav extends React.Component{
     render(){
         // document.body.addEventListener("click", this.hideDropDown("dropDown"));
         const {currentUser, logout, create} = this.props;
+        debugger;
         return (
             <header className="nav-bar">
                 <div className="search-bar"></div>
