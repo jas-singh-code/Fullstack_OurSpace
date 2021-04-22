@@ -8,5 +8,5 @@ json.birthday @user.birthday
 json.occupation @user.occupation
 json.location @user.location
 json.education @user.education
-json.profilePicture @user.profile_picture
-json.coverPicture @user.cover_picture
+json.profilePicture url_for(@user.profile_picture)
+json.coverPicture url_for(@user.cover_picture)
