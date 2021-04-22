@@ -5,10 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 User.destroy_all
 User.connection.execute('ALTER SEQUENCE users_id_seq RESTART WITH 1') 
 Post.destroy_all
 Post.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1') 
+
 
     users = User.create!([
         {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '12345678', gender: 'male'},
@@ -18,6 +20,14 @@ Post.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
         {first_name: 'Mintu', last_name: 'Sing', email: 'msingh12@gmail.com', password: 'Mintuuu', birthday: '12345678', gender: 'male'},
         {first_name: 'Guest', last_name: 'User', email: 'guest@ourspace.com', password: 'demouser', birthday: '12345678', gender: 'other'},
     ])
+
+    post1 = Post.create({ wall_id: 3, message: 'Took this beautiful shot by the beach today. Click the like button below to show some support!', poster_id: 6})
+    file1 = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/post1.jfif')
+    post1.photo.attach(io: file1, filename: 'post1.jfif')
+
+    post2 = Post.create({ wall_id: 3, message: 'Took a strool to look at the city and captured this amazing photo. Click the like button below to show some support!', poster_id: 6})
+    file2 = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/post2.jfif')
+    post2.photo.attach(io: file2, filename: 'post2.jfif')
 
     posts = Post.create! ([
         { wall_id: 3, message: 'Wine is constant proof that God loves us and loves to see us happy - Ben. Franklin', poster_id: 3},
