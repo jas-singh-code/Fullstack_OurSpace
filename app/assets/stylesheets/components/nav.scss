@@ -20,13 +20,17 @@
 }
 
 .logo-init {
-    width: 168px;
-    height: 122px;
+width: 87px;
+    height: 87px;
+    position: absolute;
+    top: -44px;
+    left: -56px;
 }
 /* Resize images */
 .logo-init img {
-    width: 100%;
+    width: 250%;
     height: auto;
+    position: relative;
 }
 
 .logo-init img:hover {
@@ -37,18 +41,63 @@
     font-size: 32px;
     color: blue;
     display: flex;
-    width: 50px;
+    width: 42px;
     border-bottom: thick;
     border: thick solid blue;
     border-top: 0;
     border-left: 0;
     border-right: 0;
     justify-content: center;
-    position: relative;
-    top: 17px;
+    position: absolute;
+    top: 33px;
     padding-bottom: 0px;
+    height: auto;
+}
+
+.home-icon-html{
+    height: auto;
+    width: 40px;
 }
 .home-icon:hover{
+    cursor: pointer;
+    background-color: $grey;
+}
+
+.user-profile-module{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: 30px;
+    position: absolute;
+    right: 185px;
+    top: 32px;
+    border-radius: 44px;
+    padding: 3px;
+}
+
+.user-profile-module img {
+    border-radius: 170px;
+    max-height: 26px;
+    max-width: 26px;
+    min-height: 26px;
+    min-width: 26px;
+    border: thin solid black;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.user-profile-module > p {
+    height: 15px;
+    width: auto;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 3px;
+    margin-right: 11px;
+}
+
+.user-profile-module:hover{
     cursor: pointer;
     background-color: $grey;
 }

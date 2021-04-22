@@ -15,6 +15,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  profile_pic     :string
+#  education       :string
 #
 class User < ApplicationRecord
     validates :first_name, presence: true

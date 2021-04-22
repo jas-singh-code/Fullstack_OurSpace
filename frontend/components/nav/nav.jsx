@@ -35,15 +35,15 @@ class Nav extends React.Component{
         return (
             <header className="nav-bar">
                 <div className="search-bar"></div>
-                <Link to={'/home'}>
-                    <div className="logo-init">
-                        <img src={logoInitialsURL}></img>
-                    </div>
-                </Link>
+                    <Link to={'/home'}>
+                        <div className="logo-init">
+                            <img src={logoInitialsURL}></img>
+                        </div>
+                    </Link>
                 <div className="home-icon">
                     <AiFillHome className="home-icon-html"/>
                 </div>
-                <div>
+                <div className='user-profile-module'>
                     <img>
                     </img>
                     <p>{currentUser.firstName}</p>
@@ -79,17 +79,6 @@ class Nav extends React.Component{
                     </li>
                 </ul>
 
-
-                <ul className="create-drop">
-                    <li>
-                        Create Post
-                    </li>
-                </ul>
-                <ul className="notifications">
-                    <li>
-                        Notifications
-                    </li>
-                </ul>
             </header>    
         );
     };
