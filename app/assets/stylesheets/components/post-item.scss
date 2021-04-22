@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 16px 10px 16px;
+    padding: 10px 0px 10px 0px;
     border-radius: 10px;
     background-color: white;
     width: 580px;
@@ -30,6 +30,8 @@
 }
 
 .post-item-div p{
+    width: auto;
+    padding-left: 7px;
     font-size: 16px;
     font-family: sans-serif;
     height: auto;
@@ -37,16 +39,21 @@
     margin-bottom: 3px;
 }
 
+.post-item-div span{
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
 .photos{
-    margin: 1px;
     height: auto;
     width: inherit;
 }
 .module-holder{
     display: flex;
+    width: auto;
     justify-content: space-around;
     align-items: center;
-    margin: 1px;
+    margin: 0px;
     border-top: thin solid #6b6b6b;
     border-bottom: thin solid #6b6b6b;
     padding: 2px;
