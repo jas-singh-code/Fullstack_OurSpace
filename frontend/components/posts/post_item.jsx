@@ -16,7 +16,7 @@ export default ({message, author, photoURL, createdAt}) => {
                 <span>{author.first_name}, {createdAt}</span>
                 <p>{message}</p>
                 <div className="photos">
-                    {img}
+                    {image}
                 </div>
                 <div className='module-holder'>
                     <span>

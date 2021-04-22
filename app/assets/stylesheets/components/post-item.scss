@@ -39,17 +39,20 @@
 
 .photos{
     margin: 1px;
+    height: auto;
+    width: inherit;
 }
 .module-holder{
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin: 1px;
-    border-top: thin solid black;
-    border-bottom: thin solid black;
+    border-top: thin solid #6b6b6b;
+    border-bottom: thin solid #6b6b6b;
     padding: 2px;
     margin-top: 8px;
     margin-bottom: 8px;
+    height: 33px;
 }
 
 .module-holder span{
