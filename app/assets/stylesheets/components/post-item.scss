@@ -3,18 +3,22 @@
 }
 
 .post-item-li{
-    display: flex;
-    justify-content: center;
-    width: 554px;
-    align-items: center;
-    flex-direction: column;
+    // display: flex;
+    // justify-content: center;
+    // width: 554px;
+    // align-items: center;
+    // flex-direction: column;
+
+    height: 69px;
+    padding: 7px;
+    position: relative;
 }
 
 .post-item-div{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0px 16px 10px;
+    padding: 10px 16px 10px 16px;
     border-radius: 10px;
     background-color: white;
     width: 580px;
@@ -22,10 +26,81 @@
     box-shadow: 0px 0px 0px 0, 0px 3px 5px 1px lightgrey;
     margin: 18px;
     position: static;
-    height: 155px;
+    height: auto;
 }
 
 .post-item-div p{
     font-size: 16px;
     font-family: sans-serif;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+
+.photos{
+    margin: 1px;
+}
+.module-holder{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1px;
+    border-top: thin solid black;
+    border-bottom: thin solid black;
+    padding: 2px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.module-holder span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.module-holder span:hover{
+    cursor: pointer;
+    background-color: #eeeeee;
+    border-radius: 3px;
+}
+
+.comments-btn, .likes-btn p{
+    color: #6b6b6b;
+}
+
+.likes-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+    border-radius: 7px;
+    height: 30px;
+    padding: 4px;
+    width: 94px;
+}
+
+.comments-btn p{
+    margin-left: 4px;
+}
+.comments-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+    border-radius: 7px;
+    height: 30px;
+    padding: 4px;
+    padding-left: 15px;
+    width: 107px;
+}
+.comment-icon{
+    width: 26px;
+    color: #6b6b6b;
+    margin-right: 5px;
+}
+.like-icon{
+    width: 26px;;
+    color: #6b6b6b;
+}
+.likes-btn p{
+    margin-left: 7px;
 }
