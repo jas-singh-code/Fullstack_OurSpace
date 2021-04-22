@@ -1,6 +1,6 @@
 import React from 'react';
 import {AiOutlineLike} from "react-icons/ai"
-import {FaRegCommentAlt} from "react-icons/fa"
+import {FaRegCommentAlt, FaToggleOff} from "react-icons/fa"
 
 export default ({message, author, photoURL, createdAt}) => {
     let image;
@@ -9,6 +9,15 @@ export default ({message, author, photoURL, createdAt}) => {
         <img src={photoURL}></img>
     }else{
         image = ""
+    }
+    function toggle(icon){
+        debugger;
+        if(icon === 'like'){
+           const btn = document.getElementsByClassName('like-icon');
+           const p = document.getElementsByClassName('p-comment');
+           btn.style.color = blue;
+           p.style.color = blue;
+        }
     }
     return (
         <div className="post-item-div">
@@ -20,7 +29,7 @@ export default ({message, author, photoURL, createdAt}) => {
                 </div>
                 <div className='module-holder'>
                     <span>
-                        <div className="likes-btn">
+                        <div className="likes-btn" onClick={() => toggle('like')}>
                             <AiOutlineLike className="like-icon" size="0.7g"/>
                             <p>Like</p>
                         </div>
@@ -28,7 +37,7 @@ export default ({message, author, photoURL, createdAt}) => {
                     <span>
                         <div className="comments-btn">
                             <FaRegCommentAlt className="comment-icon" size="0.7g"/>
-                            <p>Comment</p>
+                            <p className='p-comment'>Comment</p>
                         </div>
                     </span>
                 </div>
