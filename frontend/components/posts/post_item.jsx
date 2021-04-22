@@ -4,15 +4,20 @@ import {FaRegCommentAlt} from "react-icons/fa"
 
 export default ({message, author, photoURL, createdAt}) => {
     let image;
-    // if(photoURL){
-    //     image = photoURL
-    // }
+     if(photoURL){
+        image = 
+        <img src={photoURL}></img>
+    }else{
+        image = ""
+    }
     return (
         <div className="post-item-div">
             <li className="post-ltem-li">
                 <span>{author.first_name}, {createdAt}</span>
                 <p>{message}</p>
-                <div className="photos"></div>
+                <div className="photos">
+                    {img}
+                </div>
                 <div className='module-holder'>
                     <span>
                         <div className="likes-btn">
