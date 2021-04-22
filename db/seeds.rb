@@ -11,15 +11,31 @@ User.connection.execute('ALTER SEQUENCE users_id_seq RESTART WITH 1')
 Post.destroy_all
 Post.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1') 
 
-
     users = User.create!([
         {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '12345678', gender: 'male'},
-        {first_name: 'Phunsuk', last_name: 'Wangroo', email: 'pwangroo121@gmail.com', password: 'Phunsuk', birthday: '12345678', gender: 'male'},
         {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password: 'Jaspreet', birthday: '12345678', gender: 'male'},
-        {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password: 'Loveleen', birthday: '12345678', gender: 'male'},
-        {first_name: 'Mintu', last_name: 'Sing', email: 'msingh12@gmail.com', password: 'Mintuuu', birthday: '12345678', gender: 'male'},
-        {first_name: 'Guest', last_name: 'User', email: 'guest@ourspace.com', password: 'demouser', birthday: '12345678', gender: 'other'},
+        {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password: 'Loveleen', birthday: '12345678', gender: 'male'}
     ])
+
+    demo = User.create({first_name: 'Guest', last_name: 'User', email: 'guest@ourspace.com', password: 'demouser', birthday: '12345678', gender: 'other', education: 'College University', location: 'New York City', occupation: 'Social Worker'})
+    demo_file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/user2.jfif')
+    demo.profile_picture.attach(io: demo_file, filename: 'user2.jfif')
+    demo_cover = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/cover1.jpg')
+    demo.cover_picture.attach(io: demo_cover, filename: 'cover1.jpg')
+
+    mintu = User.create({first_name: 'Mintu', last_name: 'Sing', email: 'msingh12@gmail.com', password: 'Mintuuu', birthday: '12345678', gender: 'male', education: 'City College of New York', location: 'New York City', occupation: 'Electrician'})
+    mintu_file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/user1.jfif')
+    mintu.profile_picture.attach(io: mintu_file, filename: 'user1.jfif')
+    mintu_cover = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/cover_car.jpg')
+    mintu.cover_picture.attach(io: mintu_cover, filename: 'cover_car.jpg')
+
+    p_user = User.create({first_name: 'Phunsuk', last_name: 'Wangroo', email: 'pwangroo121@gmail.com', password: 'Phunsuk', birthday: '12345678', gender: 'male', education: 'Howard University', location: 'New York City', occupation: 'Plumber'})
+    p_file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/user3.jpg')
+    p_user.profile_picture.attach(io: p_file, filename: 'user3.jpg')
+    p_cover= open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/cover_phunsuk.jpg')
+    p_user.cover_picture.attach(io: p_cover, filename: 'cover_phunsuk.jpg')
+
+    ##########################POSTS###################################
 
     post1 = Post.create({ wall_id: 3, message: 'Took this beautiful shot by the beach today. Click the like button below to show some support!', poster_id: 6})
     file1 = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/post1.jfif')

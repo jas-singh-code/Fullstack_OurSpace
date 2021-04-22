@@ -3,13 +3,14 @@ import {AiOutlineLike} from "react-icons/ai"
 import {FaRegCommentAlt, FaToggleOff} from "react-icons/fa"
 
 export default ({message, author, photoURL, createdAt}) => {
-    let image;
-     if(photoURL){
-        image = 
+    let postImage;
+    if(photoURL){
+        postImage = 
         <img src={photoURL}></img>
     }else{
-        image = ""
+        postImage = ""
     }
+    let userImage;
     // function toggle(icon){
     //     debugger;
     //     if(icon === 'like'){
@@ -22,10 +23,15 @@ export default ({message, author, photoURL, createdAt}) => {
     return (
         <div className="post-item-div">
             <li className="post-ltem-li">
-                <span>{author.first_name}, {createdAt}</span>
+                <div className="poster-info">
+                    <span>
+                        {author.first_name}
+                    </span>
+                </div>
+                <span>{createdAt}</span>
                 <p>{message}</p>
                 <div className="photos">
-                    {image}
+                    {postImage}
                 </div>
                 <div className='module-holder'>
                     <span>
