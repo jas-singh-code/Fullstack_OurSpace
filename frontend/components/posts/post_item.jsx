@@ -7,7 +7,7 @@ export default ({message, author, photoURL, createdAt}) => {
     let postImage;
     if(photoURL){
         postImage = 
-        <img src={photoURL}></img>
+        photoURL
     }else{
         postImage = ""
     }
@@ -15,6 +15,7 @@ export default ({message, author, photoURL, createdAt}) => {
         <div className="post-item-div">
             <li className="post-ltem-li">
                 <div className="poster-info">
+                    <img src={}></img>
                     <span>
                         {author.first_name}
                     </span>
