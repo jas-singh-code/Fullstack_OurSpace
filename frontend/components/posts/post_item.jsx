@@ -6,16 +6,25 @@ export default ({message, author, photoURL, createdAt}) => {
     // debugger;
     let postImage;
     if(photoURL){
-        postImage = 
-        photoURL
+        postImage = photoURL
     }else{
         postImage = ""
+    }
+    let profilePic;
+    if (author.profilePicutre){
+        profilePic = author.profilePicture
+    }else{
+        if (author.gender === "male"){
+            profilePic = def_pic_man
+        }else{
+            profilePic = def_pic_woman
+        }
     }
     return (
         <div className="post-item-div">
             <li className="post-ltem-li">
                 <div className="poster-info">
-                    <img src={}></img>
+                    <img src={profilePic} className="profile-pic"></img>
                     <span>
                         {author.first_name}
                     </span>
@@ -23,7 +32,7 @@ export default ({message, author, photoURL, createdAt}) => {
                 <span>{createdAt}</span>
                 <p>{message}</p>
                 <div className="photos">
-                    {postImage}
+                    <img src={postImage}></img>
                 </div>
                 <div className='module-holder'>
                     <span>

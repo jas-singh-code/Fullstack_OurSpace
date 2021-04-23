@@ -48,6 +48,17 @@
     height: auto;
     width: inherit;
 }
+
+.profile-pic{
+    border-radius: 170px;
+    max-height: 26px;
+    max-width: 26px;
+    min-height: 26px;
+    min-width: 26px;
+    border: thin solid black;
+    margin-left: 3px;
+    margin-right: 3px;
+}
 .module-holder{
     display: flex;
     width: auto;
