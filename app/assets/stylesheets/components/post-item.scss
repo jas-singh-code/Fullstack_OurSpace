@@ -44,6 +44,25 @@
     padding-right: 7px;
 }
 
+.poster-info {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.poster-name-create{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.poster-name-create + span{
+    font-weight: bold;
+    font-size: 16px;
+}
+
 .photos{
     height: auto;
     width: inherit;
@@ -55,7 +74,7 @@
     max-width: 26px;
     min-height: 26px;
     min-width: 26px;
-    border: thin solid black;
+    // border: thin solid black;
     margin-left: 3px;
     margin-right: 3px;
 }

@@ -25,11 +25,11 @@ export default ({message, author, photoURL, createdAt}) => {
             <li className="post-ltem-li">
                 <div className="poster-info">
                     <img src={profilePic} className="profile-pic"></img>
-                    <span>
-                        {author.first_name}
-                    </span>
+                    <div className='poster-name-create'>
+                        <span>{author.first_name}</span>
+                        <span>{createdAt}</span>
+                    </div>
                 </div>
-                <span>{createdAt}</span>
                 <p>{message}</p>
                 <div className="photos">
                     <img src={postImage}></img>

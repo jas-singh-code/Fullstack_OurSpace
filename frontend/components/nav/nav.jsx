@@ -44,7 +44,7 @@ class Nav extends React.Component{
                     <AiFillHome className="home-icon-html"/>
                 </div>
                 <div className='user-profile-module'>
-                    <img>
+                    <img src={currentUser.profilePicture}>
                     </img>
                     <p>{currentUser.firstName}</p>
                 </div>
