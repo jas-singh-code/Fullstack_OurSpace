@@ -26,7 +26,7 @@ export default ({message, author, photoURL, createdAt}) => {
                 <div className="poster-info">
                     <img src={profilePic} className="profile-pic"></img>
                     <div className='poster-name-create'>
-                        <span>{author.first_name}</span>
+                        <span className='poster-name'>{author.first_name}</span>
                         <span>{createdAt}</span>
                     </div>
                 </div>

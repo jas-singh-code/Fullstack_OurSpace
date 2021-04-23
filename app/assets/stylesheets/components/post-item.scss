@@ -58,9 +58,9 @@
     align-items: flex-start;
 }
 
-.poster-name-create + span{
+.poster-name{
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .photos{
@@ -70,10 +70,10 @@
 
 .profile-pic{
     border-radius: 170px;
-    max-height: 26px;
-    max-width: 26px;
-    min-height: 26px;
-    min-width: 26px;
+    max-height: 36px;
+    max-width: 36px;
+    min-height: 36px;
+    min-width: 36px;
     // border: thin solid black;
     margin-left: 3px;
     margin-right: 3px;

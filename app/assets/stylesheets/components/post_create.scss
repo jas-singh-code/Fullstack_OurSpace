@@ -27,23 +27,18 @@
 }
 
 .input-pic{
-display: flex;
+    display: flex;
     justify-content: center;
-    border: thin solid lightgrey;
+    border: thin solid #a2a2a2;
     border-top: 0;
     border-left: 0;
     border-right: 0;
     padding: 0px 0 16px 0;
-    /* top: 57px; */
     position: relative;
     height: auto;
-    width: 90%;
+    width: 95%;
     align-items: center;
-}
-
-.profile-pic{
-    margin: 3px;
-    width: 20px;
+    margin-bottom: 10px;
 }
 
 .add-photo{
