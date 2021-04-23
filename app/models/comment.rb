@@ -10,4 +10,17 @@
 #  updated_at :datetime         not null
 #
 class Comment < ApplicationRecord
+    validates :author_id, :body, :post_id, presence: true
+
+    belongs_to :author,
+    foreign_key: :author_id,
+    class_name: :User
+
+    belongs_to :post,
+    foreign_key: :post_id,
+    class_name: :Post
+
+    has_many :likes,
+    as: :likeable,
+    dependant: :destroy
 end
