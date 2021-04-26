@@ -1,6 +1,7 @@
 import React from 'react';
 import {AiOutlineLike} from "react-icons/ai"
 import {FaRegCommentAlt, FaToggleOff} from "react-icons/fa"
+import CommentContainer from '../comments/comment_container';
 
 export default ({message, author, photoURL, createdAt}) => {
     // debugger;
@@ -49,6 +50,7 @@ export default ({message, author, photoURL, createdAt}) => {
                     </span>
                 </div>
             </li>
+            <CommentContainer/>
         </div>
     )
 }

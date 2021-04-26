@@ -1,5 +1,5 @@
 import { RECEIVE_COMMENT, DELETE_COMMENT } from "../actions/comment_action";
-import { DELETE_POST } from "../actions/post_actions";
+import { DELETE_POST, RECEIVE_ALL_POSTS } from "../actions/post_actions";
 
 const commentsReducer = (state = {}, action) => {
     Object.freeze(state);

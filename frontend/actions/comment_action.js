@@ -12,7 +12,7 @@ const receiveComment = comment => {
     })
 }
 
-const deleteComment = comment => {
+const destroyComment = comment => {
     return ({
         type: DELETE_COMMENT,
         comment
@@ -33,7 +33,7 @@ export const deleteComment = comment => dispatch => {
     return (
         CommentAPIUtil.deleteComment(comment)
         .then(
-            comment => dispatch(deleteComment(comment)),
+            comment => dispatch(destroyComment(comment)),
             err => dispatch(receiveErrors(err))
         )
     )
