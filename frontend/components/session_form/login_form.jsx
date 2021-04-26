@@ -43,7 +43,22 @@ class LoginForm extends React.Component {
     }
 
     render () {
-        const {errors} = this.props;  
+        let {errors} = this.props;
+        // debugger;
+        let error = "";
+        let error2 = "";
+        let sidePass = "";
+        let sideEmail = "";
+        if(errors[0] && errors[0]["password"]){
+            error = <div className="login-pass-err">{"Invalid Password"}</div>
+            sidePass = <div className="login-pass-side-err2"></div>
+        }else if(errors[0] && errors[0]["email_and_pass"]){
+            error = <div className="login-email-err">{errors[0]["email_and_pass"]}</div>;
+            error2 = <div className="login-pass-err2">{"Invalid Password"}</div>;
+            sidePass = <div className="login-pass-side-err"></div>;
+            sideEmail = <div className="login-email-side-err"></div>;
+        }
+        // debugger;
         return(
         <div className="full-container">
             <div className="login-and-logo">
@@ -62,7 +77,7 @@ class LoginForm extends React.Component {
                             placeholder="Email"
                             onChange={this.update('email')}
                             className="login-input" 
-                            // style={emailErr ? {border:' thin solid red'} : {} }
+                            style={sideEmail !== "" ? {border:' thin solid red'} : {} }
                             />
 
                             <input type='password'
@@ -70,7 +85,7 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                             onChange={this.update('password')}
                             className="login-input" 
-                            // style={passErr ? {border:' thin solid red'} : {} }
+                            style={sidePass !== "" ? {border:' thin solid red'} : {} }
                             />
                             <br/>
                             <input className="btn-login" type="submit" value="Log In"  />
@@ -78,6 +93,10 @@ class LoginForm extends React.Component {
                     </form>
                     <div className="button-holder">{this.props.signupFormButton}</div>
                     <button className="btn-signup" onClick={this.handleUser}>Demo User</button>
+                    {error}
+                    {error2}
+                    {sidePass}
+                    {sideEmail}
                 </div>
             </div>
             <footer className="login-footer">

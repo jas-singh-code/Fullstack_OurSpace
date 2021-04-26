@@ -191,8 +191,78 @@
     cursor: pointer;
 }
 
-
-
 .on-error{
     border: thin solid red;
+}
+
+.login-pass-err{
+    background-color: darkred;
+    color: white;
+    width: fit-content;
+    border-radius: 4px;
+    padding: 11px;
+    position: relative;
+    height: auto;
+    font-size: 14px;
+    top: -255px;
+    right: 238px;
+}
+
+.login-pass-err2{
+    background-color: darkred;
+    color: white;
+    width: fit-content;
+    border-radius: 4px;
+    padding: 11px;
+    position: relative;
+    height: auto;
+    font-size: 14px;
+    top: -291px;
+    right: 237px;
+}
+
+.login-pass-side-err{
+    width: 0px;
+    height: 0px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid darkred;
+    position: relative;
+    bottom: 313px;
+    right: 171px;
+}
+
+.login-pass-side-err2{
+    width: 0px;
+    height: 0px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid darkred;
+    position: relative;
+    bottom: 278px;
+    right: 171px;
+}
+
+.login-email-err{
+    background-color: darkred;
+    color: white;
+    width: fit-content;
+    border-radius: 4px;
+    padding: 11px;
+    position: relative;
+    height: auto;
+    font-size: 14px;
+    top: -310px;
+    right: 270px;
+}
+
+.login-email-side-err{
+    width: 0px;
+    height: 0px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid darkred;
+    position: relative;
+    bottom: 381px;
+    right: 171px;
 }
