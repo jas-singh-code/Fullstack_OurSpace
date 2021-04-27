@@ -54,14 +54,16 @@ class PostItem extends React.Component{
             }
         }
         
-        let postComments;
+        let postComments ="";
         if (comments){
             console.log(comments);
-            // postComments = (
-            //     <div className="comment-item">
-            //         <div className="comment-body"></div>
-            //     </div>
-            // )
+            postComments = Object.values(comments).map(commentObj => {
+                return(
+                    postComments =(
+                        <div>{commentObj.body}</div>
+                    )
+                )
+            })
         }
         return (
             <div className="post-item-div">
