@@ -27,9 +27,9 @@ const receivePostComments = comments => {
     })
 }
 
-export const fetchPostComments = () => dispatch => {
+export const fetchPostComments = postId => dispatch => {
     return (
-        CommentAPIUtil.postComments()
+        CommentAPIUtil.postComments(postId)
         .then(
             comments => dispatch(receivePostComments(comments)),
             err => dispatch(receiveErrors(err.responseJSON))

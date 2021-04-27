@@ -59,7 +59,7 @@ Comment.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
         # { wall_id: 3, message: 'Is it just me or the name of this app sounds like 2005', poster_id: 3},
         { wall_id: 2, message: 'I dont know if you guys noticed, but theres a birthday option that lets you choose veryold when you sign up', poster_id: 2},
         # { wall_id: 4, message: 'Is it winter yet or what???', poster_id: 1},
-        { wall_id: 4, message: 'Why are there only old people on this app! Also, im secretly in love with user 3!', poster_id: 1},
+        { wall_id: 4, message: 'Why are there only old people on this app!? Also, im secretly in love with user 3!', poster_id: 1},
         { wall_id: 5, message: 'Asking for a friend, but whats worse to eat whole? ripe lemon or rotten apple?', poster_id: 4},
         # { wall_id: 3, message: 'Hello OurSpace, well its kind of only MY own SPACE...', poster_id: 4},
         { wall_id: 5, message: 'Wish me luck on passing my NCLX exam', poster_id: 4},
@@ -96,12 +96,13 @@ Comment.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
     # ])
 
     comments = Comment.create!([
-        {body: "lemons for sure man", author_id: 3, post_id: 3},
-        {body: "you heard of a fridge", author_id: 2, post_id: 3},
-        {body: "why are you asing this again", author_id: 1, post_id: 3},
-        {body: "Whats up jassi! its me, Loveleen from highschool!", author_id: 4, post_id: 1},
-        {body: "hey jas, watch my movie!", author_id: 2, post_id: 1},
-        {body: "hey jassi! nice post!", author_id: 1, post_id: 1}
+        {body: "lemons for sure man", author_id: 3, post_id: 6},
+        {body: "Nice shot! why wasnt i invited!?", author_id: 2, post_id: 1},
+        {body: "why are you asing this again", author_id: 1, post_id: 5},
+        {body: "Whats up jassi! its me, Loveleen from highschool!", author_id: 3, post_id: 4},
+        {body: "hey jas, watch my movie!", author_id: 2, post_id: 9},
+        {body: "hey jassi! nice post!", author_id: 1, post_id: 9},
+        {body: "okay okay lets keeo it PG-13 here", author_id: 5, post_id: 3}
     ])
 
     # friends = Friend.create!([

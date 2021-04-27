@@ -28,9 +28,7 @@ class Api::CommentsController < ApplicationController
     end
 
     def index
-        debugger
-        @comments = Comment.all.where(post_id: params[:post_id])
-        debugger
+        @comments = Comment.all.where(post_id: params["postId"])
         render :index
     end
 

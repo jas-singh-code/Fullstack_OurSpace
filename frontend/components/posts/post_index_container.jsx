@@ -15,7 +15,7 @@ const mDTP = dispatch => {
     return {
         getAllPosts: () => dispatch(fetchPosts()),
         openCreatePost: () => dispatch(openModal('createPost')),
-        fetchComments: () => dispatch(fetchPostComments())
+        fetchComments: postId => dispatch(fetchPostComments(postId))
     }
 }
 

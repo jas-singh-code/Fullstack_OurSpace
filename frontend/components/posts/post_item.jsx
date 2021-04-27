@@ -31,7 +31,7 @@ class PostItem extends React.Component{
         })
     }
     componentDidMount(){
-        this.props.fetchComments();
+        this.props.fetchComments(this.props.id);
     }
     render(){
         const {author, comments, createdAt, message, id, photoURL} = this.props;
@@ -57,6 +57,11 @@ class PostItem extends React.Component{
         let postComments;
         if (comments){
             console.log(comments);
+            // postComments = (
+            //     <div className="comment-item">
+            //         <div className="comment-body"></div>
+            //     </div>
+            // )
         }
         return (
             <div className="post-item-div">
