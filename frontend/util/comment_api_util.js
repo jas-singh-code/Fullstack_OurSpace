@@ -16,6 +16,16 @@ export const editComment = comment => {
     )
 }
 
+export const postComments = postId => {
+    reutrn (
+        $.ajax({
+            url: '/api/comments',
+            method: 'GET',
+            data: { postId }
+        })
+    )
+}
+
 export const deleteComment = (commentId) => {
     return (
         $.ajax({

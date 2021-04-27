@@ -16,7 +16,7 @@ class Comment extends React.Component{
         }
     }
 
-    update(){
+    updatebody(){
         return e => this.setState({
             body: e.currentTarget.value
         })
@@ -26,7 +26,7 @@ class Comment extends React.Component{
             <div>
                 <form onSubmit={this.handelSubmit} className="create-comment">
                     <img className="profile-pic"></img>
-                    <input onChange={this.update} placeholder="Write a comment..." ></input>
+                    <input onChange={this.updatebody} placeholder="Write a comment..." value={this.state.body} onKeyDown={this.handelSubmit}></input>
                 </form>
             </div>
         )

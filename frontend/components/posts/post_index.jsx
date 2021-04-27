@@ -19,11 +19,14 @@ class PostIndex extends React.Component{
         const postItem = Object.values(posts).map(post => (
             <PostItem 
              key={post.id}
+             id={post.id}
+             currentUser={this.props.currentUser}
              author= {post.author}
              message={post.message}
              photoURL= {post.photoURL || ""}
              createdAt={post.createdAt.slice(0, 10) || ""}
-             className="post-index-item"/>
+             className="post-index-item"
+             comments= {this.props.comments}/>
             )
         )
       
