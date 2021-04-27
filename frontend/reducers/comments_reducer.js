@@ -12,11 +12,10 @@ const commentsReducer = (state = {}, action) => {
             delete newState[action.comment.id];
             return newState;
         case POST_COMMENTS:
-            // debugger
             Object.values(action.comments).forEach(comment => {
                 newState[comment.id] = comment;
             });
-            // debugger
+            // debugger;
             return newState;
         default:
             return state;

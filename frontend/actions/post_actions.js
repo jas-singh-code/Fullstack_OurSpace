@@ -5,6 +5,11 @@ export const RECEIVE_POST_ERRORS = "RECEIVE_POST_ERRORS";
 export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const DELETE_POST = "DELETE_POST";
 export const CLEAR_POSTS = "CLEAR_POSTS";
+export const RECEIVE_POST_COMMENTS = "RECEIVE_POST_COMMENTS";
+
+const receivePostComments = (postId) => ({
+    
+})
 
 const receivePost = ( post ) => ({  // can change to postId if needed
     type: RECEIVE_SINGLE_POST,

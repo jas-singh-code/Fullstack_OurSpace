@@ -11,11 +11,11 @@ class PostItem extends React.Component{
             post_id: this.props.id,
             author_id: this.props.currentUser.id
         })
-        this.updateBody = this.updateBody.bind(this);
-        this.handelSubmit = this.handelSubmit.bind(this);
+        this.update = this.update.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
-    handelSubmit(e){
-        e.preventDefault();
+    handleInput(e){
+        // e.preventDefault(); blocks user input
         if(e.key === 'Enter'){
             let comment = {
                 body: this.state.body,
@@ -25,14 +25,12 @@ class PostItem extends React.Component{
             this.props.createComment(comment);
         }
     }
-    updateBody(){
-        return e => this.setState({
-            body: e.currentTarget.value
-        })
+    update(field){
+        return e => this.setState({[field]: e.currentTarget.value})
     }
-    componentDidMount(){
-        this.props.fetchComments(this.props.id);
-    }
+    // componentDidUpdate(){
+        // need to update postItems comment 
+    // }
     render(){
         const {author, comments, createdAt, message, id, photoURL} = this.props;
 
@@ -56,7 +54,7 @@ class PostItem extends React.Component{
         
         let postComments ="";
         if (comments){
-            console.log(comments);
+            console.log("comments", comments);
             postComments = Object.values(comments).map(commentObj => {
                 return(
                     postComments =(
@@ -96,9 +94,9 @@ class PostItem extends React.Component{
                 </li>
                 {postComments}
                 <div>
-                    <form onSubmit={this.handelSubmit} className="create-comment">
+                    <form onSubmit={this.handleInput} className="create-comment">
                         <img src={this.props.currentUser.profilePicture} className="profile-pic"></img>
-                        <input onChange={this.updateBody} placeholder="Write a comment..." value={this.state.body} onKeyDown={this.handelSubmit}></input>
+                        <input type="text" placeholder="Write a comment..." onKeyDown={this.handleInput} onChange={this.update("body")}></input>
                     </form>
                 </div>
                 {/* <CommentContainer/> */}

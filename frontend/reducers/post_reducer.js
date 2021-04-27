@@ -1,4 +1,5 @@
-import { RECEIVE_ALL_POSTS, RECEIVE_SINGLE_POST, DELETE_POST, CLEAR_POSTS } from "../actions/post_actions";
+import { RECEIVE_ALL_POSTS, RECEIVE_SINGLE_POST, DELETE_POST, CLEAR_POSTS, RECEIVE_POST_COMMENTS} from "../actions/post_actions";
+import { RECEIVE_COMMENT } from "../actions/comment_action"
 
 
 export default (state = {}, action) => {
