@@ -17,7 +17,7 @@ export const editComment = comment => {
 }
 
 export const postComments = postId => {
-    reutrn (
+    return (
         $.ajax({
             url: '/api/comments',
             method: 'GET',

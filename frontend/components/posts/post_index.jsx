@@ -26,7 +26,8 @@ class PostIndex extends React.Component{
              photoURL= {post.photoURL || ""}
              createdAt={post.createdAt.slice(0, 10) || ""}
              className="post-index-item"
-             comments= {this.props.comments}/>
+             comments= {this.props.comments}
+             fetchComments={this.props.fetchComments}/>
             )
         )
       

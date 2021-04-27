@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
+import { fetchPostComments } from '../../actions/comment_action';
 import { openModal } from '../../actions/modal_actions';
 import { destroyPost, fetchPosts, updatePost } from '../../actions/post_actions';
 import PostIndex from './post_index';
-import { getCommentsByPost } from '../../reducers/selectors/comment_selectors'
 
 const mSTP = ( state ) => {
     return{
@@ -14,7 +14,8 @@ const mSTP = ( state ) => {
 const mDTP = dispatch => {
     return {
         getAllPosts: () => dispatch(fetchPosts()),
-        openCreatePost: () => dispatch(openModal('createPost'))
+        openCreatePost: () => dispatch(openModal('createPost')),
+        fetchComments: () => dispatch(fetchPostComments())
     }
 }
 

@@ -17,7 +17,12 @@ class PostItem extends React.Component{
     handelSubmit(e){
         e.preventDefault();
         if(e.key === 'Enter'){
-            this.props.createComment(this.state);
+            let comment = {
+                body: this.state.body,
+                post_id: this.state.post_id,
+                author_id: this.state.author_id
+            }
+            this.props.createComment(comment);
         }
     }
     updateBody(){
@@ -25,8 +30,11 @@ class PostItem extends React.Component{
             body: e.currentTarget.value
         })
     }
+    componentDidMount(){
+        this.props.fetchComments();
+    }
     render(){
-        const {author, createdAt, message, id, photoURL} = this.props;
+        const {author, comments, createdAt, message, id, photoURL} = this.props;
 
         let postImage;
         if(photoURL){
@@ -47,6 +55,9 @@ class PostItem extends React.Component{
         }
         
         let postComments;
+        if (comments){
+            console.log(comments);
+        }
         return (
             <div className="post-item-div">
                 <li className="post-ltem-li">
