@@ -1,21 +1,29 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { deleteComment, postComment } from '../../actions/comment_action';
+import { deleteComment, postComment, fetchPostComments} from '../../actions/comment_action';
 import CommentIndex from './comment_index';
 
 
 const mSTP = (state, ownProps) => {
-    return {
-        currentUser: state.session.currentUser,
-        errors: state.errors.postErrorsReducer,
-        post: state.entities.posts[ownProps.post.id]
+    let comments = [];
+    if (ownProps.post.commentIds){
+        ownProps.post.commentIds.forEach(commentId => {
+            comments.push(state.entities.comments[commentId])
+        })
     }
+
+    return ({
+        comments: comments,
+        post: ownProps.post,
+        currentUser: state.session.currentUser
+    })
+
+
 }
 
 const mDTP = dispatch => {
     return {
-        createComment: comment => dispatch(postComment(comment)),
-        deleteComment: comment => dispatch(deleteComment(comment))
+        fetchPostComments: postId => dispatch(fetchPostComments(postId))
     }
 }
 

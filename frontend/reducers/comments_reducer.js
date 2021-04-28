@@ -15,7 +15,6 @@ const commentsReducer = (state = {}, action) => {
             Object.values(action.comments).forEach(comment => {
                 newState[comment.id] = comment;
             });
-            // debugger;
             return newState;
         default:
             return state;
