@@ -96,14 +96,14 @@ Comment.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
     # ])
 
     comments = Comment.create!([
-        {body: "lemons for sure man", author_id: 3, post_id: 6},
+        {body: "Lemons for sure man", author_id: 3, post_id: 6},
         {body: "Nice shot! why wasnt i invited!?", author_id: 2, post_id: 1},
         {body: "I think ive been there before...", author_id: 3, post_id: 1},
-        {body: "why are you asing this again", author_id: 1, post_id: 5},
+        {body: "Why are you asking this again", author_id: 1, post_id: 5},
         {body: "Whats up jassi! its me, Loveleen from highschool!", author_id: 3, post_id: 4},
-        {body: "hey jas, watch my movie!", author_id: 2, post_id: 9},
-        {body: "hey jassi! nice post!", author_id: 1, post_id: 9},
-        {body: "okay okay lets keeo it PG-13 here", author_id: 5, post_id: 3}
+        {body: "Hey jas, watch my movie!", author_id: 2, post_id: 9},
+        {body: "Hey jassi! nice post!", author_id: 1, post_id: 9},
+        {body: "Okay okay lets keep it PG-13 here", author_id: 5, post_id: 3}
     ])
 
     # friends = Friend.create!([

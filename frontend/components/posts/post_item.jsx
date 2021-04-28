@@ -32,7 +32,7 @@ class PostItem extends React.Component{
         // need to update postItems comment 
     // }
     render(){
-        const {author, comments, createdAt, message, id, photoURL} = this.props;
+        const {author, comments, createdAt, message, id, photoURL, post} = this.props;
 
         let postImage;
         if(photoURL){
@@ -52,17 +52,17 @@ class PostItem extends React.Component{
             }
         }
         
-        let postComments ="";
-        if (comments){
-            console.log("comments", comments);
-            postComments = Object.values(comments).map(commentObj => {
-                return(
-                    postComments =(
-                        <div>{commentObj.body}</div>
-                    )
-                )
-            })
-        }
+        // let postComments ="";
+        // if (comments){
+        //     console.log("comments", comments);
+        //     postComments = Object.values(comments).map(commentObj => {
+        //         return(
+        //             postComments =(
+        //                 <div>{commentObj.body}</div>
+        //             )
+        //         )
+        //     })
+        // }
         return (
             <div className="post-item-div">
                 <li className="post-ltem-li">
@@ -92,14 +92,8 @@ class PostItem extends React.Component{
                         </span>
                     </div>
                 </li>
-                {postComments}
-                <div>
-                    <form onSubmit={this.handleInput} className="create-comment">
-                        <img src={this.props.currentUser.profilePicture} className="profile-pic"></img>
-                        <input type="text" placeholder="Write a comment..." onKeyDown={this.handleInput} onChange={this.update("body")}></input>
-                    </form>
-                </div>
-                {/* <CommentContainer/> */}
+                {/* {postComments} */}
+                <CommentContainer post={post}/>
             </div>
         )
     }

@@ -7,7 +7,8 @@ import { deleteComment, postComment } from '../../actions/comment_action';
 const mSTP = (state, ownProps) => {
     return {
         currentUser: state.session.currentUser,
-        errors: state.errors.postErrorsReducer
+        errors: state.errors.postErrorsReducer,
+        post: state.entities.posts[ownProps.post.id]
     }
 }
 
