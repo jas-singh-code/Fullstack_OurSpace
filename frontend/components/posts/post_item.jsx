@@ -2,37 +2,15 @@ import React from 'react';
 import {AiOutlineLike} from "react-icons/ai"
 import {FaRegCommentAlt, FaToggleOff} from "react-icons/fa"
 import CommentContainer from '../comments/comment_container';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class PostItem extends React.Component{
     constructor(props){
         super(props);
-        this.state = ({
-            body: '',
-            post_id: this.props.id,
-            author_id: this.props.currentUser.id
-        })
-        this.update = this.update.bind(this);
-        this.handleInput = this.handleInput.bind(this);
     }
-    handleInput(e){
-        // e.preventDefault(); blocks user input
-        if(e.key === 'Enter'){
-            let comment = {
-                body: this.state.body,
-                post_id: this.state.post_id,
-                author_id: this.state.author_id
-            }
-            this.props.createComment(comment);
-        }
-    }
-    update(field){
-        return e => this.setState({[field]: e.currentTarget.value})
-    }
-    // componentDidUpdate(){
-        // need to update postItems comment 
-    // }
+
     render(){
-        const {author, comments, createdAt, message, id, photoURL, post} = this.props;
+        const {author, createdAt, message, id, photoURL, post} = this.props;
 
         let postImage;
         if(photoURL){
@@ -52,17 +30,6 @@ class PostItem extends React.Component{
             }
         }
         
-        // let postComments ="";
-        // if (comments){
-        //     console.log("comments", comments);
-        //     postComments = Object.values(comments).map(commentObj => {
-        //         return(
-        //             postComments =(
-        //                 <div>{commentObj.body}</div>
-        //             )
-        //         )
-        //     })
-        // }
         return (
             <div className="post-item-div">
                 <li className="post-ltem-li">
@@ -92,7 +59,7 @@ class PostItem extends React.Component{
                         </span>
                     </div>
                 </li>
-                {/* {postComments} */}
+                <CommentIndexContainer post={post}/>
                 <CommentContainer post={post}/>
             </div>
         )
