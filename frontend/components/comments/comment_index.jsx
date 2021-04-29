@@ -17,7 +17,6 @@ class CommentIndex extends React.Component{
         if (post.comments){
             allComments = (
                 Object.values(post.comments).map(comment => {
-                    debugger;
                     return(
                         <div className="comment-item">
                             <div className="comment-item-body">{comment.body}</div>

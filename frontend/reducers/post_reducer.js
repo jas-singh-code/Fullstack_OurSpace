@@ -10,9 +10,12 @@ export default (state = {}, action) => {
             Object.values(action.posts.posts).forEach(post => {
                 newState[post.id] = post;
             });
-            return newState ;
+            return newState;
         case RECEIVE_SINGLE_POST:
             newState[action.post.id] = action.post;
+            return newState;
+        case RECEIVE_COMMENT: 
+            newState[action.comment.post_id]["comments"][action.comment.id] = action.comment;
             return newState;
         case DELETE_POST:
             delete newState[action.post.id];
