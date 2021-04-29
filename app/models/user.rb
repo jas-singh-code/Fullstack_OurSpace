@@ -33,12 +33,13 @@ class User < ApplicationRecord
     
     has_many :posts,
     class_name: :Post,
-    foreign_key: :poster_id
-    # dependent: :destroy
+    foreign_key: :poster_id,
+    :dependent => :destroy
   
-    # has_many :comments,
-    # class_name: :Comment,
-    # foreign_key: :author_id
+    has_many :comments,
+    class_name: :Comment,
+    foreign_key: :author_id,
+    :dependent => :destroy
   
     # has_many :friends, 
     # class_name: :Friend,

@@ -16,8 +16,7 @@ class Post < ApplicationRecord
     has_one_attached :photo
 
     has_many :comments,
-    foreign_key: :post_id,
-    class_name: :Comment
+    :dependent => :destroy
 
     belongs_to :author,
     foreign_key: :poster_id,

@@ -13,17 +13,20 @@ class CommentIndex extends React.Component{
 
     render(){
         const { post } = this.props;
-        let allComments = ''
+        let allComments = '';
         if (post.comments){
             allComments = (
-                post.comments.map(comment => {
+                Object.values(post.comments).map(comment => {
+                    debugger;
                     return(
-                    <div>{comment.body}</div>
+                        <div className="comment-item">
+                            <div className="comment-item-body">{comment.body}</div>
+                            <div>{comment.createdAt}</div>
+                        </div>
                     )
                 })
             )
         }
-        debugger;
         return(
             <div>{allComments}</div>
         )

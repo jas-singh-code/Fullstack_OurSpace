@@ -6,17 +6,10 @@ class Api::UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        if @user && @user.gender == "male"
-            file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/def_pic_man.jpg')
-            @user.profile_picture.attach(io: file, filename: def_pic_man)
-        elsif @user && (@user.gender == "female" || @user.gender == "other")
-            file2 = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/def_pic_woman.jpg')
-            @user.profile_picture.attach(io: file2, filename: def_pic_woman)
-        end
 
         if @user.save
             login!(@user)
-            render "api/users/show"
+            render :show
         else
             render json: @user.errors, status: 422
         end
@@ -30,7 +23,10 @@ class Api::UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :password, :birthday, :gender)
+        params.require(:user).permit(
+         :first_name, :last_name, :email,
+         :password, :birthday, :gender, 
+         :location, :occupation, :education)
     end
 
 end

@@ -14,9 +14,9 @@ Comment.destroy_all
 Comment.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1') 
 
     users = User.create!([
-        {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '12345678', gender: 'male'},
+        {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '12345678', gender: 'female'},
         {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password: 'Jaspreet', birthday: '12345678', gender: 'male'},
-        {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password: 'Loveleen', birthday: '12345678', gender: 'male'}
+        {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password: 'Loveleen', birthday: '12345678', gender: 'female'}
     ])
 
     demo = User.create({first_name: 'Guest', last_name: 'User', email: 'guest@ourspace.com', password: 'demouser', birthday: '12345678', gender: 'other', education: 'College University', location: 'New York City', occupation: 'Social Worker'})
