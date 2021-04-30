@@ -28,7 +28,7 @@ class Comment extends React.Component{
     }
     render () {
         return (
-            <div>
+            <div className="comment-input-full">
                 <img src={this.props.currentUser.profilePicture} className="profile-pic"></img>
                 <form onSubmit={this.handelSubmit} className="create-comment">
                     <input className="comment-input" 

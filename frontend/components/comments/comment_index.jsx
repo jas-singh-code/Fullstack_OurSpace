@@ -19,7 +19,7 @@ class CommentIndex extends React.Component{
                 Object.values(post.comments).map(comment => {
                     return(
                         <div key={comment.id} className="full-comment">
-                            <img className="profile-pic" src={this.props.currentUser.profilePicture}></img>
+                            <img className="profile-pic margin-top" src={this.props.currentUser.profilePicture}></img>
                             <div className="comment-item">
                                 <div className="comment-item-head">
                                     <div className="comment-author">{comment.author.firstName}</div>

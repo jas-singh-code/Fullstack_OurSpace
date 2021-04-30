@@ -47,13 +47,13 @@ class PostItem extends React.Component{
                     <div className='module-holder'>
                         <span>
                             <div className="likes-btn" onClick={() => toggle('like')}>
-                                <AiOutlineLike className="like-icon" size=""/>
+                                <AiOutlineLike className="like-icon" size="1g"/>
                                 <p className="p-like">Like</p>
                             </div>
                         </span>
                         <span>
                             <div className="comments-btn">
-                                <FaRegCommentAlt className="comment-icon" size=""/>
+                                <FaRegCommentAlt className="comment-icon" size="1g"/>
                                 <p className='p-comment'>Comment</p>
                             </div>
                         </span>

@@ -1,3 +1,5 @@
+@import "variables";
+
 .comment-item {
     display: flex;
     justify-content: center;
@@ -23,7 +25,7 @@
 .full-comment{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: -webkit-fill-available;
     height: auto;
     margin: 4px;
@@ -45,7 +47,7 @@
     padding: 5px;
     margin-top: 3px;
     margin-bottom: 3px;
-    background-color: lightgrey;
+    background-color: $lightgrey;
     border-radius: 7px;
     width: auto;
     padding-right: 8px;
@@ -54,13 +56,13 @@
 
 .comment-author {
     margin-left: 3px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
 }
 
 .comment-body {
     margin-left: 3px;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 5px;
 }
 
@@ -74,7 +76,7 @@
 .comment-like {
     width: auto;
     margin-right: 8px;
-    font-size: 12px;
+    font-size: 12.5px;
     font-family: Tahoma;
     color: #565656;
     font-weight: bolder;
@@ -86,4 +88,30 @@
     font-size: 12px;
     font-family: Tahoma;
     color: #565656;
+}
+
+.comment-like:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.comment-input-full{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    padding-left: 8px;
+}
+
+.comment-input{
+    border-radius: 18px;
+    padding: 7px;
+    padding-left: 9px;
+    background-color: whitesmoke;
+    margin-left: 4px;
+    font-size: 16px;
+    border: none;
+}
+.margin-top{
+    margin-top: 6px;
 }

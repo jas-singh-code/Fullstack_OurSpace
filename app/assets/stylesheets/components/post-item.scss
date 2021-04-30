@@ -49,6 +49,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 4px;
 }
 
 .poster-name-create{
@@ -80,27 +81,31 @@
 }
 .module-holder{
     display: flex;
-    width: auto;
+    width: 573px;
     justify-content: space-around;
     align-items: center;
     margin: 0px;
     border-top: thin solid #a2a2a2;
     border-bottom: thin solid #a2a2a2;
-    padding: 2px;
     margin-top: 8px;
     margin-bottom: 8px;
-    height: 33px;
+    height: 43px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .module-holder span{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 280px;
 }
 .module-holder span:hover{
     cursor: pointer;
     background-color: #eeeeee;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .comments-btn, .likes-btn p{
@@ -112,7 +117,6 @@
     justify-content: center;
     align-items: center;
     margin: 1px;
-    border-radius: 7px;
     height: 30px;
     padding: 4px;
     width: 94px;
