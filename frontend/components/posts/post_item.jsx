@@ -58,9 +58,9 @@ class PostItem extends React.Component{
                             </div>
                         </span>
                     </div>
+                    <CommentIndexContainer className="comment-index-container" post={post}/>
+                    <CommentContainer className="comment-container" post={post}/>
                 </li>
-                <CommentIndexContainer post={post}/>
-                <CommentContainer post={post}/>
             </div>
         )
     }

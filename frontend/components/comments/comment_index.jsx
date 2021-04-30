@@ -18,16 +18,25 @@ class CommentIndex extends React.Component{
             allComments = (
                 Object.values(post.comments).map(comment => {
                     return(
-                        <div className="comment-item">
-                            <div className="comment-item-body">{comment.body}</div>
-                            <div>{comment.createdAt}</div>
+                        <div key={comment.id} className="full-comment">
+                            <img className="profile-pic" src={this.props.currentUser.profilePicture}></img>
+                            <div className="comment-item">
+                                <div className="comment-item-head">
+                                    <div className="comment-author">{comment.author.firstName}</div>
+                                    <div className="comment-body">{comment.body}</div>
+                                </div>
+                                <ul className="comment-actions">
+                                    <li className="comment-like">Like</li>
+                                    <li className="comment-time">{comment.created_at.slice(0, 10)}</li>
+                                </ul>
+                            </div>
                         </div>
                     )
                 })
             )
         }
         return(
-            <div>{allComments}</div>
+            <div className="all-comments">{allComments}</div>
         )
     }
 }
