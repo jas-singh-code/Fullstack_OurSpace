@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { FiMoreHorizontal } from 'react-icons/fi'
 
 class CommentIndex extends React.Component{
     constructor(props){
@@ -29,6 +29,9 @@ class CommentIndex extends React.Component{
                                     <li className="comment-like">Like</li>
                                     <li className="comment-time">{comment.created_at.slice(0, 10)}</li>
                                 </ul>
+                            </div>
+                            <div className="more-comment-actions">
+                                < FiMoreHorizontal size="1x"/>
                             </div>
                         </div>
                     )

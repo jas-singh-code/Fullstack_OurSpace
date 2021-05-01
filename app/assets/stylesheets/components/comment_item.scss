@@ -116,3 +116,21 @@
 .margin-top{
     margin-top: 6px;
 }
+
+.more-comment-actions {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.more-comment-actions svg:hover{
+    border-radius: 20px;
+    background-color: $lightgrey;
+    cursor: pointer;
+}
+
+.more-comment-actions svg{
+width: 18px;
+    height: 18px;
+    padding: 4px;
+}
