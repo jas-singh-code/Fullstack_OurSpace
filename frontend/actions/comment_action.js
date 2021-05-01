@@ -47,9 +47,9 @@ export const postComment = comment => dispatch => {
     )
 }
 
-export const deleteComment = comment => dispatch => {
+export const deleteComment = commentId => dispatch => {
     return (
-        CommentAPIUtil.deleteComment(comment)
+        CommentAPIUtil.deleteComment(commentId)
         .then(
             comment => dispatch(destroyComment(comment)),
             err => dispatch(receiveErrors(err))
