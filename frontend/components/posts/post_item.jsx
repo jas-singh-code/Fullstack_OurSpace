@@ -1,12 +1,39 @@
 import React from 'react';
 import {AiOutlineLike} from "react-icons/ai"
 import {FaRegCommentAlt, FaToggleOff} from "react-icons/fa"
-import CommentContainer from '../comments/comment_container';
 import CommentIndexContainer from '../comments/comment_index_container';
 
 class PostItem extends React.Component{
     constructor(props){
         super(props);
+        this.state = ({
+            body: '',
+            post_id: null,
+            author_id: this.props.currentUser.id
+        });
+        this.focusComment = this.focusComment.bind(this);
+        this.updateBody = this.updateBody.bind(this);
+        this.handelSubmit = this.handelSubmit.bind(this);
+    }
+
+    focusComment(){
+        document.getElementById('comment-input').focus();
+    }
+
+    handelSubmit(e){
+        // e.preventDefault();
+        let comment = Object.assign({}, this.state);
+        comment["post_id"] = this.props.post.id;
+        this.props.createComment(comment);
+        this.setState({
+            body: ''
+        })
+    }
+
+    updateBody(){
+        return e => this.setState({
+            body: e.currentTarget.value
+        })
     }
 
     render(){
@@ -29,7 +56,6 @@ class PostItem extends React.Component{
                 profilePic = def_pic_woman
             }
         }
-        
         return (
             <div className="post-item-div">
                 <li className="post-ltem-li">
@@ -51,7 +77,7 @@ class PostItem extends React.Component{
                                 <p className="p-like">Like</p>
                             </div>
                         </span>
-                        <span>
+                        <span onClick={this.focusComment} tabIndex="0">
                             <div className="comments-btn">
                                 <FaRegCommentAlt className="comment-icon" size="1g"/>
                                 <p className='p-comment'>Comment</p>
@@ -59,7 +85,21 @@ class PostItem extends React.Component{
                         </span>
                     </div>
                     <CommentIndexContainer className="comment-index-container" post={post}/>
-                    <CommentContainer className="comment-container" post={post}/>
+                    <div className="comment-input-full">
+                        <img src={this.props.currentUser.profilePicture} className="profile-pic"></img>
+                        <form onSubmit={this.handelSubmit} className="create-comment">
+                            <input id="comment-input" 
+                            tabIndex="0"
+                             type="text"
+                             placeholder="Write a comment..."
+                             value={this.state.body}
+                             onChange={this.updateBody()}
+                             >
+                            </input>
+                        </form>
+                    </div>
+                    {/* <CommentContainer className="comment-container" post={post}/> */}
+
                 </li>
             </div>
         )

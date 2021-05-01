@@ -17,6 +17,7 @@ const mDTP = dispatch => {
         openCreatePost: () => dispatch(openModal('createPost')),
         fetchComments: postId => dispatch(fetchPostComments(postId)),
         createComment: comment => dispatch(postComment(comment)),
+        deleteComment: comment => dispatch(deleteComment(comment))
     }
 }
 

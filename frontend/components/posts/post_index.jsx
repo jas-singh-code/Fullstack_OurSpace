@@ -29,6 +29,7 @@ class PostIndex extends React.Component{
              className="post-index-item"
             //  comments= {post.comments}
              createComment = {this.props.createComment}
+             deleteComment = {this.props.createComment}
              fetchComments={this.props.fetchComments}/>
             )
         )
