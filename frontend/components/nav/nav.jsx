@@ -64,17 +64,20 @@ class Nav extends React.Component{
                 <div className="arrow-back" onClick={this.showDropDown("dropDown")}></div>
 
                 <ul id={ this.state.dropDown ? "arrow-drop" : "hide-drop"} tabIndex="0" onBlur={this.hideDropDown("dropDown")}>
-                    <div>
-                        <img className="profile-pic-lrg">
+                    <div className="profile-dropdown">
+                        <img className="large-profile-pic" src={currentUser.profilePicture}>
                         </img>
-                        <li className="dropdown-btn">
-                            {currentUser.firstName} {currentUser.lastName}
-                        </li>
-                        <li className="dropdown-btn">
-                            See Your Profile
-                        </li>
+                        <div>
+                            <li className="dropdown-btn username">
+                                {currentUser.firstName} {currentUser.lastName}
+                            </li>
+                            <li className="dropdown-btn details">
+                                See Your Profile
+                            </li>
+                        </div>
                     </div>
-                    <li className="dropdown-btn" onClick={logout}>
+                    <li className='border-bottom'></li>
+                    <li id='padding' className="dropdown-btn" onClick={logout}>
                         Logout
                     </li>
                 </ul>

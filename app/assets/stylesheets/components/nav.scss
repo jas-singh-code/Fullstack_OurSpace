@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: #ffffff;
     /* top: 0; */
     /* bottom: 0; */
     position: sticky;
@@ -123,24 +123,82 @@ width: 87px;
 //     cursor: pointer;
 // }
 
-#arrow-drop{
+#arrow-drop {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 2px;
-    padding: 3px;
+    padding: 12px 8px 8px;
     border-radius: 8px;
     font-size: large;
-    border: thin solid black;
-    width: fit-content;
-    height: fit-content;
+    width: 320px;
+    height: auto;
     position: absolute;
     top: 70px;
-    right: 0;
+    right: 3px;
+    background-color: white;
+    box-shadow: inset #e2e2e2 -1px 2px 0px 2px, #d4d4d4 -3px 6px 20px 9px;
 }
+
 #hide-drop{
     display: none;
+}
+
+.profile-dropdown {
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 6px 6px 2px;
+    position: relative;
+}
+
+.border-bottom{
+    border-bottom: thin solid lightgrey;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.profile-dropdown > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 6px;
+}
+
+#padding{
+    padding: 5px 0px 5px 5px;
+    margin-left: 0px;
+    margin-right: 4px;
+    width: -webkit-fill-available;
+}
+
+.profile-dropdown:hover{
+    background-color: $grey;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.username{
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.details{
+    font-size: 16px;
+    color: #6b6b6b;
+}
+
+.large-profile-pic{
+    border-radius: 170px;
+    max-height: 58px;
+    max-width: 58px;
+    min-height: 58px;
+    min-width: 58px;
+    margin-left: 3px;
+    margin-right: 6px;
 }
 
 .create-icon{
@@ -182,6 +240,7 @@ width: 87px;
 .dropdown-btn:hover{
     cursor: pointer;
     background-color: $grey;
+    border-radius: 5px;
 }
 
 .notif-back{

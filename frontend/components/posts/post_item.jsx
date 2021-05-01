@@ -17,7 +17,7 @@ class PostItem extends React.Component{
     }
 
     focusComment(){
-        document.getElementById('comment-input').focus();
+        document.getElementById(`comment-input-${this.props.id}`).focus();
     }
 
     handelSubmit(e){
@@ -88,8 +88,9 @@ class PostItem extends React.Component{
                     <div className="comment-input-full">
                         <img src={this.props.currentUser.profilePicture} className="profile-pic"></img>
                         <form onSubmit={this.handelSubmit} className="create-comment">
-                            <input id="comment-input" 
-                            tabIndex="0"
+                            <input id={`comment-input-${this.props.id}`}
+                             className="comment-input"
+                             tabIndex="0"
                              type="text"
                              placeholder="Write a comment..."
                              value={this.state.body}
