@@ -13,17 +13,17 @@ class Api::CommentsController < ApplicationController
         if @comment.update(comment_params)
             render :show
         else
-            render json: @post.errors.full_messages, status: 422
+            render json: @comment.errors.full_messages, status: 422
         end
     end
 
     def destroy
-        @comment = Comment.find_by(id: params[:id])
+        @comment = Comment.find_by_id(params[:id])
         if @comment
             @comment.destroy
             render :show
         else
-            render json: ['Unable to find comment with that ID'], status: 404
+            render json: ['Cannot delete comment at this time'], status: 404
         end
     end
 
@@ -33,6 +33,6 @@ class Api::CommentsController < ApplicationController
     end
 
     def comment_params
-        params.require(:comment).permit(:body, :post_id, :author_id)
+        params.require(:comment).permit(:body, :post_id, :author_id, :id)
     end
 end

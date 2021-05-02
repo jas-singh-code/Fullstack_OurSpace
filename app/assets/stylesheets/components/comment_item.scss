@@ -31,6 +31,7 @@
     margin: 4px;
     padding: 3px;
     border-radius: 7px;
+    position: relative;
 }
 
 .comment-item {
@@ -111,6 +112,7 @@
     margin-left: 4px;
     font-size: 16px;
     border: none;
+    width: 500px;
 }
 
 .margin-top{
@@ -129,27 +131,33 @@
     cursor: pointer;
 }
 
+.comment-options svg:active{
+    border: none;
+}
+
 .comment-options svg{
     width: 18px;
     height: 18px;
     padding: 4px;
+    border: none;
 }
 
 .comment-options-holder{
     display: none;
-    position: relative;
+    position: absolute;
     justify-content: flex-start;
     align-items: flex-start;
     font-size: 16px;
     padding: 5px 20px 13px 3px;
     height: 45px;
-    right: 243px;
-    top: 30px;
+    right: 140px;
+    top: 36px;
     width: 110px;
     flex-direction: column;
     background-color: white;
     border-radius: 7px;
     box-shadow: 0px 0px 0px 0, 0px 3px 5px 1px lightgrey;
+    z-index: 10;
 }
 
 .editor, .comment-delete{
@@ -171,4 +179,30 @@
     color: white;
     font-weight: bold;
     background-color: #b60000;
+}
+
+.edit-input{
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 4px;
+}
+
+.edit-actions{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.edit-actions > input{
+    margin-left: 4px;
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 13px;
+    border: none;
+}
+
+.edit-actions > input:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    /* font-weight: bold; */
 }
