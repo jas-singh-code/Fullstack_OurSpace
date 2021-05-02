@@ -48,7 +48,7 @@ class CommentItem extends React.Component{
         const {comment, currentUser} = this.props;
         return (
             <div key={comment.id} className="full-comment">
-                <img className="profile-pic margin-top" src={currentUser.profilePicture}></img>
+                <img className="profile-pic margin-top" src={comment.author.profilePicture}></img>
                 <div className="comment-item">
                     <div className="comment-item-head">
                         <div className="comment-author">{comment.author.firstName}</div>

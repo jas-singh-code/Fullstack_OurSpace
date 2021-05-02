@@ -1,5 +1,5 @@
 import { RECEIVE_ALL_POSTS, RECEIVE_SINGLE_POST, DELETE_POST, CLEAR_POSTS, RECEIVE_POST_COMMENTS} from "../actions/post_actions";
-import { RECEIVE_COMMENT } from "../actions/comment_action"
+import { RECEIVE_COMMENT, DELETE_COMMENT } from "../actions/comment_action"
 
 
 export default (state = {}, action) => {
@@ -16,6 +16,9 @@ export default (state = {}, action) => {
             return newState;
         case RECEIVE_COMMENT: 
             newState[action.comment.post_id]["comments"][action.comment.id] = action.comment;
+            return newState;
+        case DELETE_COMMENT:
+            delete newState[action.comment.post_id]['comments'][action.comment.id]
             return newState;
         case DELETE_POST:
             delete newState[action.post.id];

@@ -22,4 +22,8 @@ else
 end
 if user.cover_picture.attached?
     json.coverPicture url_for(user.cover_picture)
+else 
+    file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/def_cover_pic.png')
+    user.cover_picture.attach(io: file, filename: 'def_cover_pic.png')
+    json.coverPicture url_for(user.cover_picture)
 end
