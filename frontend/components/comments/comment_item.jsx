@@ -8,7 +8,8 @@ class CommentItem extends React.Component{
             edit: false,
             openModule: false,
             focus: false,
-            body: null
+            body: null,
+            changeable: this.props.comment.id === this.props.currentUser.id
         }
         this.renderModule = this.renderModule.bind(this);
         this.closeModule = this.closeModule.bind(this);
@@ -69,11 +70,15 @@ class CommentItem extends React.Component{
                         <li className="comment-time">{comment.created_at.slice(0, 10)}</li>
                     </ul>
                 </div>
-                <div className="comment-options">
-                    < FiMoreHorizontal size="1x"
-                     onClick={this.renderModule}
-                     tabIndex="0"/>
-                </div>
+                {comment.author_id === this.props.currentUser.id ?
+                    <div className="comment-options">
+                        < FiMoreHorizontal size="1x"
+                        onClick={this.renderModule}
+                        tabIndex="0"/>
+                    </div>
+                    :
+                    ""
+                }
                 <div id={`options-holder-${comment.id}`}
                  className="comment-options-holder"
                  style={this.state.openModule ? {display: "flex"} : {display: "none"}}

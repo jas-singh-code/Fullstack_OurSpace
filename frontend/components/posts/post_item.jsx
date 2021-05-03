@@ -9,11 +9,13 @@ class PostItem extends React.Component{
         this.state = ({
             body: '',
             post_id: null,
-            author_id: this.props.currentUser.id
+            author_id: this.props.currentUser.id,
+            liked: false
         });
         this.focusComment = this.focusComment.bind(this);
         this.updateBody = this.updateBody.bind(this);
         this.handelSubmit = this.handelSubmit.bind(this);
+        this.toggleLike = this.toggleLike.bind(this);
     }
 
     focusComment(){
@@ -34,6 +36,14 @@ class PostItem extends React.Component{
         return e => this.setState({
             body: e.currentTarget.value
         })
+    }
+
+    toggleLike(){
+        this.setState({liked: !this.state.liked});
+        if (this.state.liked){
+            this.props.sendLike()
+        }
+
     }
 
     render(){
@@ -72,7 +82,7 @@ class PostItem extends React.Component{
                     </div>
                     <div className='module-holder'>
                         <span>
-                            <div className="likes-btn" onClick={() => toggle('like')}>
+                            <div className="likes-btn" onClick={this.toggleLike}>
                                 <AiOutlineLike className="like-icon" size="1g"/>
                                 <p className="p-like">Like</p>
                             </div>

@@ -12,10 +12,7 @@ class Api::PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        # @post.poster_id = current_user.id
-        debugger
         if @post.save
-            debugger
             render "api/posts/show"
         else
             render json: @post.errors
