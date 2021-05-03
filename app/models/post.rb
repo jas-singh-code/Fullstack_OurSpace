@@ -21,6 +21,9 @@ class Post < ApplicationRecord
     belongs_to :author,
     foreign_key: :poster_id,
     class_name: :User
+
+    has_many :likes, as: :likeable
+
     
     # belongs_to :wall,
     # foreign_key: :wall_id,

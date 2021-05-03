@@ -20,6 +20,8 @@ class Comment < ApplicationRecord
     foreign_key: :post_id,
     class_name: :Post
 
+    has_many :likes, as: :likeable
+
     # has_one :author_profile_picture,
     # through: :author,
     # source: :profile_picture
