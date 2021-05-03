@@ -12,8 +12,10 @@ class Api::PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        @post.poster_id = current_user.id
+        # @post.poster_id = current_user.id
+        debugger
         if @post.save
+            debugger
             render "api/posts/show"
         else
             render json: @post.errors
@@ -39,6 +41,6 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:message)
+        params.require(:post).permit(:message, :photo, :poster_id)
     end
 end

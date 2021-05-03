@@ -48,8 +48,8 @@ export const fetchPosts = () => dispatch => {
 
 export const createPost = (post) => dispatch => {
     return (APIPosts.createPost(post)
-      .then(post => (dispatch(receivePost(post))
-      ), err => (
+      .then(post => (dispatch(receivePost(post))), 
+      err => (
           dispatch(receiveErrors(err.responseJSON))
       ))
     )}

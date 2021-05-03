@@ -133,9 +133,13 @@ padding: 5px;
     background-color: green;
     text-align: center;
 }
-.add-photo-create:hover{
+.addd-photo-create:hover{
     cursor: pointer;
-    background-color: $grey;
+    background-color: #006300;
+}
+
+.addd-photo-create input{
+    display: none;
 }
 
 .btn-post{

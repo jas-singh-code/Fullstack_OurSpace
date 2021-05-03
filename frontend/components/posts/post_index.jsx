@@ -6,6 +6,9 @@ import { IoMdPhotos } from 'react-icons/io';
 class PostIndex extends React.Component{
     constructor(props){
         super(props);
+        this.state ={
+            postFile: null,
+        }
     }
 
     componentDidMount() {
@@ -25,7 +28,7 @@ class PostIndex extends React.Component{
              author= {post.author}
              message={post.message}
              photoURL= {post.photoURL || ""}
-             createdAt={post.createdAt.slice(0, 10) || ""}
+            //  createdAt={post.createdAt.slice(0, 10) || ""}
              className="post-index-item"
             //  comments= {post.comments}
              createComment = {this.props.createComment}
@@ -45,7 +48,10 @@ class PostIndex extends React.Component{
                             <img src={currentUser.profilePicture} className="profile-pic"></img>
                             <input id="create-post-uneditable" type="text"  onClick={this.props.openCreatePost} placeholder={`What's on you're mind, ${currentUser.firstName}?`}/>
                         </div>
-                        <div className="add-photo"><IoMdPhotos className="photo-icon1" />Photo</div>
+                        <label className="add-photo" onClick={this.props.openCreatePost}>
+                            <IoMdPhotos className="photo-icon1"/>
+                            Photo
+                        </label>
                     </div>
                 </div>
                 <div className="post-index-cont">
