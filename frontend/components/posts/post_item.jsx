@@ -41,7 +41,12 @@ class PostItem extends React.Component{
     toggleLike(){
         this.setState({liked: !this.state.liked});
         if (this.state.liked){
-            this.props.sendLike()
+            const likeObj = {
+                user_id: this.props.currentUser.id,
+                likeable_type: "Post",
+                likeable_id: this.props.id
+            }
+            this.props.createLike(likeObj);
         }
 
     }
@@ -83,7 +88,10 @@ class PostItem extends React.Component{
                     <div className='module-holder'>
                         <span>
                             <div className="likes-btn" onClick={this.toggleLike}>
-                                <AiOutlineLike className="like-icon" size="1g"/>
+                                <AiOutlineLike 
+                                 className={this.state.liked ? "like-icon" : "like-icon active-btn"}
+                                 size="1g"
+                                 />
                                 <p className="p-like">Like</p>
                             </div>
                         </span>

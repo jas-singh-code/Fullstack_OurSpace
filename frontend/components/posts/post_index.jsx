@@ -29,6 +29,7 @@ class PostIndex extends React.Component{
              message={post.message}
              photoURL= {post.photoURL || ""}
             //  createdAt={post.createdAt.slice(0, 10) || ""}
+             createLike={this.props.createLike}
              className="post-index-item"
             //  comments= {post.comments}
              createComment = {this.props.createComment}
