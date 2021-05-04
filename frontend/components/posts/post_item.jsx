@@ -40,16 +40,16 @@ class PostItem extends React.Component{
     }
 
     toggleLike(){
-        this.setState({liked: !this.state.liked});
+        const liked = !this.state.liked;
         const likeObj = {
             user_id: this.props.currentUser.id,
             likeable_type: "Post",
             likeable_id: this.props.id
         }
-        if (this.state.liked){
+        if (liked){
             this.props.createLike(likeObj);
         }
-
+        this.setState({liked: !this.state.liked});
     }
 
     componentDidMount(){

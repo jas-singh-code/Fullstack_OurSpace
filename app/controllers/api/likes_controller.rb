@@ -8,6 +8,11 @@ class Api::LikesController < ApplicationController
         end
     end
 
+    def index 
+        @likes = Like.all
+        render :index
+    end
+
     def destroy
         @like = Like.find_by(id: params[:id])
         if @like 

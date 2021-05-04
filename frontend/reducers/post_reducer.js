@@ -30,6 +30,7 @@ export default (state = {}, action) => {
             const postId = action.like.likeable_id;
             debugger;
             newState[postId]['likes'][action.like.id] = action.like;
+            newState[postId]['liker_Ids'].push(action.like.user_id);
             debugger;
             return newState;
         default:

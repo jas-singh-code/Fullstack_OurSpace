@@ -2,12 +2,20 @@ import * as LikeAPIUtil from '../util/like_api_util';
 import { receiveErrors } from './session_action';
 
 export const RECEIVE_LIKE = 'RECEIVE_LIKE';
+export const RECEIVE_ALL_LIKE = 'RECEIVE_ALL_LIKE';
 export const DELETE_LIKE = 'DELETE_LIKE';
 
 const receiveLike = (like) => {
     return ({
         type: RECEIVE_LIKE,
         like
+    })
+}
+
+const receiveAllLike = (likes) => {
+    return ({
+        type: RECEIVE_ALL_LIKE,
+        likes
     })
 }
 

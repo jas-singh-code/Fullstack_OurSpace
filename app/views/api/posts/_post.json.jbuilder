@@ -15,21 +15,29 @@ end
 if post.photo.attached?
     json.photoURL url_for(post.photo)
 end
-if post.likes
+if post.likes && !post.likes.empty?
     json.likes do
-        json.array!(post.likes) do |like|
-            json.partial! 'api/likes/likes', like: like
+        post.likes.each do |like|
+            json.set! like.id do
+                json.partial! 'api/likes/likes', like: like
+            end
         end
     end
     json.likers do
-        json.array!(post.likers) do |liker|
-            debugger
-            json.name liker.first_name
-            json.id liker.id
+        post.likers.each do |liker|
+            json.set! liker.id do
+                json.liker_Id liker.id
+                json.first_name liker.first_name
+                json.last_name liker.last_name
+            end
         end
+        # json.array!(post.likers) do |liker|
+        #     json.name liker.first_name
+        #     json.id liker.id
+        # end
     end
 else 
-    json.likes do
-        []
-    end
+    json.likes Hash.new
+    json.likers Hash.new
 end
+json.liker_Ids Array.new
