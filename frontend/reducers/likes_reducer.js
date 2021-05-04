@@ -1,4 +1,4 @@
-import { RECEIVE_LIKE, DELETE_LIKE } from '../actions/like_actions'
+import { RECEIVE_LIKE, DELETE_LIKE, RECEIVE_ALL_LIKES } from '../actions/like_actions';
 import { RECEIVE_ALL_POSTS } from '../actions/post_actions';
 import { DELETE_COMMENT } from '../actions/comment_action';
 
@@ -10,6 +10,11 @@ const likesReducer = (state={}, action) => {
     switch (action.type){
         case RECEIVE_LIKE:
             newState[action.like.id] = action.like;
+            return newState;
+        case RECEIVE_ALL_LIKES:
+            Object.values(action.likes).forEach(like => {
+                newState[like.id] = like
+            });
             return newState;
         case DELETE_LIKE: 
             delete newState[action.like.id];
