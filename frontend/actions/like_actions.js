@@ -2,7 +2,7 @@ import * as LikeAPIUtil from '../util/like_api_util';
 import { receiveErrors } from './session_action';
 
 export const RECEIVE_LIKE = 'RECEIVE_LIKE';
-export const RECEIVE_ALL_LIKE = 'RECEIVE_ALL_LIKE';
+export const RECEIVE_ALL_LIKES = 'RECEIVE_ALL_LIKES';
 export const DELETE_LIKE = 'DELETE_LIKE';
 
 const receiveLike = (like) => {
@@ -12,9 +12,9 @@ const receiveLike = (like) => {
     })
 }
 
-const receiveAllLike = (likes) => {
+const receiveAllLikes = (likes) => {
     return ({
-        type: RECEIVE_ALL_LIKE,
+        type: RECEIVE_ALL_LIKES,
         likes
     })
 }
@@ -43,5 +43,15 @@ export const deleteLike = (likeId) => (dispatch) => {
                 like => dispatch(deleteLikeObj(like)),
                 err => dispatch(receiveErrors(err))
             )
+    )
+}
+
+export const fetchAllLikes = () => dispatch => {
+    return (
+        LikeAPIUtil.allLikes()
+        .then(
+            likes => dispatch(receiveAllLikes(likes)),
+            err => dispatch(receiveErrors(err))
+        )
     )
 }
