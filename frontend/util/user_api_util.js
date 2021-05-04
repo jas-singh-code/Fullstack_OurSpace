@@ -7,11 +7,12 @@ export const getUser = (id) => {
     )
 }
 
-export const getUsers = () => {
+export const getUsers = (data) => {
     return (
         $.ajax({
             url: '/api/users',
-            method: 'GET'
+            method: 'GET',
+            data
         })
     )
 }
