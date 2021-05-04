@@ -12,6 +12,7 @@ class PostItem extends React.Component{
             author_id: this.props.currentUser.id,
             liked: false
         });
+        // change liked state to reflect if current user is a liker inside post.likes
         this.focusComment = this.focusComment.bind(this);
         this.updateBody = this.updateBody.bind(this);
         this.handelSubmit = this.handelSubmit.bind(this);
@@ -40,12 +41,12 @@ class PostItem extends React.Component{
 
     toggleLike(){
         this.setState({liked: !this.state.liked});
+        const likeObj = {
+            user_id: this.props.currentUser.id,
+            likeable_type: "Post",
+            likeable_id: this.props.id
+        }
         if (this.state.liked){
-            const likeObj = {
-                user_id: this.props.currentUser.id,
-                likeable_type: "Post",
-                likeable_id: this.props.id
-            }
             this.props.createLike(likeObj);
         }
 
@@ -89,10 +90,10 @@ class PostItem extends React.Component{
                         <span>
                             <div className="likes-btn" onClick={this.toggleLike}>
                                 <AiOutlineLike 
-                                 className={this.state.liked ? "like-icon" : "like-icon active-btn"}
+                                 className={this.state.liked ? "like-icon active-btn" : "like-icon"}
                                  size="1g"
                                  />
-                                <p className="p-like">Like</p>
+                                <p className={ this.state.liked ? "p-like active-btn" : "p-like" }>Like</p>
                             </div>
                         </span>
                         <span onClick={this.focusComment} tabIndex="0">

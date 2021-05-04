@@ -1,8 +1,9 @@
 import { RECEIVE_LIKE, DELETE_LIKE } from '../actions/like_actions'
 import { RECEIVE_ALL_POSTS } from '../actions/post_actions';
+import { DELETE_COMMENT } from '../actions/comment_action';
 
 
-export const likeReducer = (state={}, action) => {
+const likesReducer = (state={}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
     let likes;
@@ -38,3 +39,5 @@ export const likeReducer = (state={}, action) => {
             
     }
 }
+
+export default likesReducer;

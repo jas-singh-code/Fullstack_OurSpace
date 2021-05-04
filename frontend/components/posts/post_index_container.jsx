@@ -3,7 +3,7 @@ import { fetchPostComments, postComment } from '../../actions/comment_action';
 import { openModal } from '../../actions/modal_actions';
 import { destroyPost, fetchPosts, updatePost } from '../../actions/post_actions';
 import PostIndex from './post_index';
-import createLike from '../../actions/like_actions';
+import { createLike, deleteLike } from '../../actions/like_actions';
 
 const mSTP = ( state ) => {
     return{
@@ -19,7 +19,8 @@ const mDTP = dispatch => {
         fetchComments: postId => dispatch(fetchPostComments(postId)),
         createComment: comment => dispatch(postComment(comment)),
         deleteComment: comment => dispatch(deleteComment(comment)),
-        createLike: like => dispatch(createLike(like))
+        createLike: like => dispatch(createLike(like)),
+        deleteLike: like => dispatch(deleteLike(like))
     }
 }
 
