@@ -6,7 +6,7 @@ import likes from "./likes_reducer";
 export default combineReducers ({
     // users,
     posts,
-    comments,
     likes, 
+    comments,
     // friends
 })

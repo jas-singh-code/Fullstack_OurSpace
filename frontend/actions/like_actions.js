@@ -18,7 +18,7 @@ const deleteLikeObj = (like) => {
     })
 }
 
-export const createLike = (like) => (dispatch) => {
+export const createLike = like => dispatch => {
     return (
         LikeAPIUtil.createLike(like)
             .then(

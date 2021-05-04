@@ -8,7 +8,6 @@
 #  wall_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  post_img   :string
 #
 class Post < ApplicationRecord
     validates :message, presence: true

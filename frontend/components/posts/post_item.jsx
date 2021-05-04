@@ -52,6 +52,20 @@ class PostItem extends React.Component{
 
     }
 
+    componentDidMount(){
+        // debugger;
+        const id = this.props.id;
+        if (this.props.post.likes){
+            Object.values(this.props.post.likes).forEach(likeObj => {
+                if (likeObj.likeable_type === 'Post' && likeObj.likeable_id === id){
+                    // debugger;
+                    this.setState({liked: true})
+                }
+            })
+        }
+    }
+
+
     render(){
         const {author, createdAt, message, id, photoURL, post} = this.props;
 
@@ -72,6 +86,11 @@ class PostItem extends React.Component{
                 profilePic = def_pic_woman
             }
         }
+        let likers;
+        // if (Object.values(post.likes).length <= 3 && Object.values(post.likes).length > 0){
+        //     likers = [];
+        //     Object.values(post.likes).forEach
+        // }
         return (
             <div className="post-item-div">
                 <li className="post-ltem-li">
@@ -85,6 +104,9 @@ class PostItem extends React.Component{
                     <p>{message}</p>
                     <div className="photos">
                         <img src={postImage}></img>
+                    </div>
+                    <div className="likes-display">
+
                     </div>
                     <div className='module-holder'>
                         <span>

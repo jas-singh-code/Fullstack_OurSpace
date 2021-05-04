@@ -28,8 +28,10 @@ export default (state = {}, action) => {
             return {};
         case RECEIVE_LIKE:
             const postId = action.like.likeable_id;
-            const likeObj = { [action.like.id]: action.like };
-            newState[postId][likes].push(likeObj);
+            debugger;
+            newState[postId]['likes'][action.like.id] = action.like;
+            debugger;
+            return newState;
         default:
             return state;
     }

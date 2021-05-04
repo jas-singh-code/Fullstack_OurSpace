@@ -15,7 +15,7 @@ end
 if post.photo.attached?
     json.photoURL url_for(post.photo)
 end
-if post.likes.length > 0
+if post.likes
     json.likes do
         post.likes.each do |like|
             json.set! like.id do
