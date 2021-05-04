@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
 
     def index
+        @users = author_ids ? User.where({id: author_ids}) : User.all
         render :index
     end
 
@@ -33,10 +34,8 @@ class Api::UsersController < ApplicationController
         end
     end
 
-    def destroy
-        @user = User.find_by_id(id: params[:id])
-        @user.destroy
-        render :show
+    def author_ids
+        params[:author_ids]
     end
 
     def user_params
