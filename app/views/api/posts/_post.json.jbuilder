@@ -17,10 +17,19 @@ if post.photo.attached?
 end
 if post.likes
     json.likes do
-        post.likes.each do |like|
-            json.set! like.id do
-                json.partial! 'api/likes/likes', like: like
-            end
+        json.array!(post.likes) do |like|
+            json.partial! 'api/likes/likes', like: like
         end
+    end
+    json.likers do
+        json.array!(post.likers) do |liker|
+            debugger
+            json.name liker.first_name
+            json.id liker.id
+        end
+    end
+else 
+    json.likes do
+        []
     end
 end

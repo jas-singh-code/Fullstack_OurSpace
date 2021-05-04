@@ -87,10 +87,6 @@ class PostItem extends React.Component{
             }
         }
         let likers;
-        // if (Object.values(post.likes).length <= 3 && Object.values(post.likes).length > 0){
-        //     likers = [];
-        //     Object.values(post.likes).forEach
-        // }
         return (
             <div className="post-item-div">
                 <li className="post-ltem-li">
@@ -106,7 +102,8 @@ class PostItem extends React.Component{
                         <img src={postImage}></img>
                     </div>
                     <div className="likes-display">
-
+                        <img src={like_button_icon} ></img>
+                        <div>{likers}</div>
                     </div>
                     <div className='module-holder'>
                         <span>

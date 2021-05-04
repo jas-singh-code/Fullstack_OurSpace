@@ -154,6 +154,19 @@
     color: blue;
 }
 
+.likes-display{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.likes-display img {
+    width: 4%;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
 .active-btn{
     color: blue;
 }
