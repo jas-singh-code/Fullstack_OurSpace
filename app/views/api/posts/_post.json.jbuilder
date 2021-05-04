@@ -19,7 +19,7 @@ if post.likes && !post.likes.empty?
     json.likes do
         post.likes.each do |like|
             json.set! like.id do
-                json.partial! 'api/likes/likes', like: like
+                json.partial! 'api/likes/like', like: like
             end
         end
     end
