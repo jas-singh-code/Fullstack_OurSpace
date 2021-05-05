@@ -26,6 +26,15 @@ export const postComments = postId => {
     )
 }
 
+export const allComments = () => {
+    return (
+        $.ajax({
+            url: '/api/comments',
+            method: 'GET'
+        })
+    )
+}
+
 export const deleteComment = (commentId) => {
     return (
         $.ajax({

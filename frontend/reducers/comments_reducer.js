@@ -16,6 +16,11 @@ const commentsReducer = (state = {}, action) => {
                 newState[comment.id] = comment;
             });
             return newState;
+        case RECEIVE_ALL_COMMENTS:
+            Object.values(comments).forEach(comment => {
+                newState[comment.id] = comment;
+            });
+            return newState;
         default:
             return state;
     }

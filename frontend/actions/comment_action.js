@@ -3,6 +3,7 @@ import { receiveErrors } from './session_action';
 
 
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
+export const RECEIVE_ALL_COMMENTS = "RECEIVE_ALL_COMMENTS";
 export const DELETE_COMMENT = "DELETE_COMMENT";
 export const POST_COMMENTS = "POST_COMMENTS";
 
@@ -10,6 +11,13 @@ const receiveComment = comment => {
     return ({
         type: RECEIVE_COMMENT,
         comment
+    })
+}
+
+const receiveAllComments = comments => {
+    return ({
+        type: RECEIVE_ALL_COMMENTS,
+        comments
     })
 }
 
@@ -25,6 +33,16 @@ const receivePostComments = comments => {
         type: POST_COMMENTS,
         comments,
     })
+}
+
+export const fetchAllComments = () => dispatch => {
+    return (
+        CommentAPIUtil.allComments()
+        .then(
+            comments => dispatch(receiveAllComments(comments)),
+            err => dispatch(receiveErrors(err.responseJSON))
+        )
+    )
 }
 
 export const fetchPostComments = postId => dispatch => {
