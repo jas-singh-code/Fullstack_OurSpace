@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { deleteComment, fetchPostComments, editComment, fetchAllComments} from '../../actions/comment_action';
+import { deleteComment, fetchPostComments, editComment} from '../../actions/comment_action';
 import CommentIndex from './comment_index';
 import { createLike, deleteLike } from '../../actions/like_actions';
 
@@ -20,6 +20,7 @@ const mSTP = (state, ownProps) => {
         currentUser: state.session.currentUser,
         users: state.entities.users,
         likes: state.entities.likes,
+        comments: state.entities.comments
     })
 
 
@@ -28,7 +29,6 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchPostComments: postId => dispatch(fetchPostComments(postId)),
-        fetchAllComments: () => dispatch(fetchAllComments()),
         editComment: comment => dispatch(editComment(comment)),
         deleteComment: commentId => dispatch(deleteComment(commentId)),
         createLike: like => dispatch(createLike(like)),

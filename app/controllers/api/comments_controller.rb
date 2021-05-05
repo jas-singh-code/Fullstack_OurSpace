@@ -28,8 +28,12 @@ class Api::CommentsController < ApplicationController
     end
 
     def index
-        @comments = Comment.all.where(post_id: params["postId"])
+        @comments = post_ids ? Comment.all.where(post_id: post_ids) : Comment.all
         render :index
+    end
+    
+    def post_ids
+        params[:postId]
     end
 
     def comment_params

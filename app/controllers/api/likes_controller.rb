@@ -23,6 +23,7 @@ class Api::LikesController < ApplicationController
         end 
     end
 
+    private
     def like_params 
         params.require(:like).permit(:likeable_id, :likeable_type, :user_id)
     end

@@ -1,4 +1,4 @@
-import { RECEIVE_COMMENT, DELETE_COMMENT, POST_COMMENTS } from "../actions/comment_action";
+import { RECEIVE_COMMENT, DELETE_COMMENT, POST_COMMENTS, RECEIVE_ALL_COMMENTS } from "../actions/comment_action";
 import { DELETE_POST, RECEIVE_ALL_POSTS } from "../actions/post_actions";
 
 const commentsReducer = (state = {}, action) => {
@@ -17,7 +17,7 @@ const commentsReducer = (state = {}, action) => {
             });
             return newState;
         case RECEIVE_ALL_COMMENTS:
-            Object.values(comments).forEach(comment => {
+            Object.values(action.comments).forEach(comment => {
                 newState[comment.id] = comment;
             });
             return newState;

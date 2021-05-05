@@ -165,7 +165,7 @@ class PostItem extends React.Component{
                     <div className="comment-input-full">
                         <img src={this.props.currentUser.profilePicture} className="profile-pic"></img>
                         <form onSubmit={this.handelSubmit} className="create-comment">
-                            <input id={`comment-input-${this.props.id}`}
+                            <input id={`comment-input-${this.props.post.id}`}
                              className="comment-input"
                              tabIndex="0"
                              type="text"

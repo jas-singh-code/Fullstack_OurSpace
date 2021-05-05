@@ -10,10 +10,6 @@ class CommentIndex extends React.Component{
         };
     }
 
-    componentDidMount(){
-        this.props.fetchAllComments();
-    }
-
     render(){
         const { post } = this.props;
         let allComments = '';
