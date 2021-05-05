@@ -13,7 +13,6 @@ const usersReducer = (state = {}, action) => {
             Object.values(action.users.users).forEach((user)=>{
                 newState[user.id] = user;
             })
-            debugger;
             return newState;
         default:
             return state;

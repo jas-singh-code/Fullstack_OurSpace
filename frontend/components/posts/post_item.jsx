@@ -66,7 +66,7 @@ class PostItem extends React.Component{
 
 
     render(){
-        const {createdAt, message, photoURL, post} = this.props;
+        const {createdAt, photoURL, post} = this.props;
         const { author, message } = post;
 
         let postImage;
