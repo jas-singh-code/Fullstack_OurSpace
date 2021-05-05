@@ -1,6 +1,6 @@
 import { RECEIVE_ALL_POSTS, RECEIVE_SINGLE_POST, DELETE_POST, CLEAR_POSTS, RECEIVE_POST_COMMENTS} from "../actions/post_actions";
 import { RECEIVE_COMMENT, DELETE_COMMENT } from "../actions/comment_action";
-import { RECEIVE_LIKE } from '../actions/like_actions';
+import { RECEIVE_LIKE, DELETE_LIKE } from '../actions/like_actions';
 
 
 export default (state = {}, action) => {
@@ -30,6 +30,10 @@ export default (state = {}, action) => {
             const postId = action.like.likeable_id;
             newState[postId]['likes'][action.like.id] = action.like;
             newState[postId]['liker_Ids'].push(action.like.user_id);
+            return newState;
+        case DELETE_LIKE:
+            const postId2 = action.like.likeable_id;
+            delete newState[postId2]['likes'][action.like.id];
             return newState;
         default:
             return state; 

@@ -2,6 +2,7 @@ import React from 'react';
 import {AiOutlineLike} from "react-icons/ai"
 import {FaRegCommentAlt, FaToggleOff} from "react-icons/fa"
 import CommentIndexContainer from '../comments/comment_index_container';
+import { findLike } from '../../reducers/selectors'
 
 class PostItem extends React.Component{
     constructor(props){
@@ -10,13 +11,16 @@ class PostItem extends React.Component{
             body: '',
             post_id: null,
             author_id: this.props.currentUser.id,
-            liked: false
+            liked: false,
         });
         // change liked state to reflect if current user is a liker inside post.likes
         this.focusComment = this.focusComment.bind(this);
         this.updateBody = this.updateBody.bind(this);
         this.handelSubmit = this.handelSubmit.bind(this);
         this.toggleLike = this.toggleLike.bind(this);
+        this.didCurrentUserLike = this.didCurrentUserLike.bind(this);
+        this.findUserFromLike = this.findUserFromLike.bind(this);
+        this.isObjectEmpty = this.isObjectEmpty.bind(this);
     }
 
     focusComment(){
@@ -40,16 +44,31 @@ class PostItem extends React.Component{
     }
 
     toggleLike(){
-        const liked = !this.state.liked;
+        const liked = this.didCurrentUserLike();
         const likeObj = {
             user_id: this.props.currentUser.id,
             likeable_type: "Post",
             likeable_id: this.props.post.id
         }
-        if (liked){
+        if (!liked){
             this.props.createLike(likeObj);
+        }else{
+
+            const foundLike = findLike(this.props.likes, this.props.post.id, 'Post', this.props.currentUser.id);
+            if (foundLike){
+                this.props.deleteLike(foundLike.id)
+            }
         }
         this.setState({liked: !this.state.liked});
+    }
+
+    didCurrentUserLike(){
+        const foundLike = findLike(this.props.likes, this.props.post.id, 'Post', this.props.currentUser.id);
+        return !!foundLike;
+    }
+
+    findUserFromLike(userId){
+        return this.props.users[userId];
     }
 
     componentDidMount(){
@@ -62,6 +81,10 @@ class PostItem extends React.Component{
                 }
             })
         }
+    }
+
+    isObjectEmpty(obj){
+        return Object.keys(obj).length === 0;
     }
 
 
@@ -86,8 +109,29 @@ class PostItem extends React.Component{
                 profilePic = def_pic_woman
             }
         }
-        let likers;
-        
+        let likers = '';
+        let firstLiker = '';
+        let secondLiker = '';
+        let likeText = '';
+        let likeIcon = '';
+        if(!this.isObjectEmpty(this.props.post.likes)){
+            likeIcon = <img src={like_button_icon} ></img>;
+            likers = [];
+            likers = Object.values(this.props.post.likes).map(like => {
+                const user = this.findUserFromLike(like.user_id);
+                return(
+                    <div className= "each-liker">{user.firstName} {user.lastName} </div>
+                )
+            })
+            firstLiker = <div className="first-liker">{likers[0]}</div>
+            secondLiker = <div className="second-liker">, {likers[1]} </div>
+            likeText = <div className="likes-display-text">liked this post</div>
+        }
+        let additionalLikers;
+        if(likers.length > 2){
+            additionalLikers = (likers.length - 2)
+            additionalLikers = <div className='add-likers'>{additionalLikers}</div>;
+        }
         return (
             <div className="post-item-div">
                 <li className="post-ltem-li">
@@ -103,17 +147,20 @@ class PostItem extends React.Component{
                         <img src={postImage}></img>
                     </div>
                     <div className="likes-display">
-                        <img src={like_button_icon} ></img>
-                        <div>{likers}</div>
+                        {likeIcon}
+                        {firstLiker}
+                        {secondLiker}
+                        {additionalLikers}
+                        {likeText}
                     </div>
                     <div className='module-holder'>
                         <span>
                             <div className="likes-btn" onClick={this.toggleLike}>
                                 <AiOutlineLike 
-                                 className={this.state.liked ? "like-icon active-btn" : "like-icon"}
+                                 className={this.didCurrentUserLike() ? "like-icon active-btn" : "like-icon"}
                                  size="1g"
                                  />
-                                <p className={ this.state.liked ? "p-like active-btn" : "p-like" }>Like</p>
+                                <p className={ this.didCurrentUserLike() ? "p-like active-btn" : "p-like" }>Like</p>
                             </div>
                         </span>
                         <span onClick={this.focusComment} tabIndex="0">
