@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiMoreHorizontal } from 'react-icons/fi';
+import { findLike } from '../../reducers/selectors';
 
 class CommentItem extends React.Component{
     constructor(props){
@@ -15,6 +16,10 @@ class CommentItem extends React.Component{
         this.closeModule = this.closeModule.bind(this);
         this.updateBody = this.updateBody.bind(this);
         this.handleEdited = this.handleEdited.bind(this);
+        this.toggleLike = this.toggleLike.bind(this);
+        this.didCurrentUserLike = this.didCurrentUserLike.bind(this);
+        this.findUserFromLike = this.findUserFromLike.bind(this);
+        this.isObjectEmpty = this.isObjectEmpty.bind(this);
     }
 
     closeModule(e){
@@ -45,8 +50,51 @@ class CommentItem extends React.Component{
         this.setState({edit: false})
     }
 
+    /// LIKE FUNCTIONS
+
+    toggleLike(){
+        const liked = this.didCurrentUserLike();
+        const likeObj = {
+            user_id: this.props.currentUser.id,
+            likeable_type: "Comment",
+            likeable_id: this.props.comment.id
+        }
+        if (!liked){
+            this.props.createLike(likeObj);
+        }else{
+            const foundLike = findLike(
+                this.props.likes, 
+                this.props.comment.id, 
+                'Comment', 
+                this.props.currentUser.id);
+            if (foundLike){
+                this.props.deleteLike(foundLike.id)
+            }
+        }
+    }
+
+    didCurrentUserLike(){
+        const foundLike = findLike(this.props.likes, this.props.comment.id, 'Comment', this.props.currentUser.id);
+        return !!foundLike;
+    }
+
+    findUserFromLike(userId){
+        return this.props.users[userId];
+    }
+
+    isObjectEmpty(obj){
+        return Object.keys(obj).length === 0;
+    }
+
     render() {
         const {comment, currentUser} = this.props;
+
+        let likesCount = '';
+
+        // if(!this.isObjectEmpty(this.props.comment.likes)){
+
+        // }
+
         return (
             <div key={comment.id} className="full-comment">
                 <img className="profile-pic margin-top" src={comment.author.profilePicture}></img>
@@ -64,9 +112,12 @@ class CommentItem extends React.Component{
                         :
                         <div className="comment-body">{comment.body}</div>
                         }
+                        {likesCount}
                     </div>
                     <ul className="comment-actions">
-                        <li className="comment-like">Like</li>
+                        <li className={this.didCurrentUserLike() ? "comment-like liked-comment" : "comment-like unliked-comment"}
+                        onClick={this.toggleLike}
+                        >Like</li>
                         <li className="comment-time">{comment.created_at.slice(0, 10)}</li>
                     </ul>
                 </div>

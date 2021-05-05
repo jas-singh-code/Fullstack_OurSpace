@@ -18,37 +18,15 @@ class CommentIndex extends React.Component{
                 Object.values(post.comments).map(comment => {
                     return(
                         <CommentItem key={comment.id}
-                         comment={comment} currentUser={this.props.currentUser}
+                         comment={comment} 
+                         currentUser={this.props.currentUser}
                          deleteComment={this.props.deleteComment}
                          editComment={this.props.editComment}
+                         users={this.props.users}
+                         likes={this.props.likes}
+                         createLike={this.props.createLike}
+                         deleteLike={this.props.deleteLike}
                          />
-                        // <div key={comment.id} className="full-comment">
-                        //     <img className="profile-pic margin-top" src={this.props.currentUser.profilePicture}></img>
-                        //     <div className="comment-item">
-                        //         <div className="comment-item-head">
-                        //             <div className="comment-author">{comment.author.firstName}</div>
-                        //             {this.state.edit ?
-                        //             <div>
-                        //                 <input type="text" value={comment.body} ></input>
-                        //                 <div>Cancle</div>
-                        //             </div>
-                        //             :
-                        //             <div className="comment-body">{comment.body}</div>
-                        //             }
-                        //         </div>
-                        //         <ul className="comment-actions">
-                        //             <li className="comment-like">Like</li>
-                        //             <li className="comment-time">{comment.created_at.slice(0, 10)}</li>
-                        //         </ul>
-                        //     </div>
-                        //     <div className="comment-options">
-                        //         < FiMoreHorizontal size="1x" onClick={() => this.setState({openModule: true})}/>
-                        //     </div>
-                        //     <div className="comment-options-holder" style={this.state.openModule ? {display: "flex"} : {display: "none"}}>
-                        //        <div className="editor" onClick={() => this.setState({edit: true})}>Edit</div>
-                        //        <div className="comment-delete" onClick={() => this.props.deleteComment(comment.id)}>Delete</div>
-                        //     </div>
-                        // </div>
                     )
                 })
             )

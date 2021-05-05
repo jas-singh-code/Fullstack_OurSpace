@@ -23,7 +23,7 @@ const mDTP = dispatch => {
         createComment: comment => dispatch(postComment(comment)),
         deleteComment: comment => dispatch(deleteComment(comment)),
         createLike: like => dispatch(createLike(like)),
-        deleteLike: like => dispatch(deleteLike(like)),
+        deleteLike: likeId => dispatch(deleteLike(likeId)),
         fetchAllUsers: () => dispatch(getUsers()),
         fetchAllLikes: () => dispatch(fetchAllLikes())
     }

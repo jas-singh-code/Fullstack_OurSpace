@@ -1,8 +1,8 @@
 import React from 'react';
-import {AiOutlineLike} from "react-icons/ai"
-import {FaRegCommentAlt, FaToggleOff} from "react-icons/fa"
+import {AiOutlineLike} from "react-icons/ai";
+import {FaRegCommentAlt, FaToggleOff} from "react-icons/fa";
 import CommentIndexContainer from '../comments/comment_index_container';
-import { findLike } from '../../reducers/selectors'
+import { findLike } from '../../reducers/selectors';
 
 class PostItem extends React.Component{
     constructor(props){
@@ -11,7 +11,6 @@ class PostItem extends React.Component{
             body: '',
             post_id: null,
             author_id: this.props.currentUser.id,
-            liked: false,
         });
         // change liked state to reflect if current user is a liker inside post.likes
         this.focusComment = this.focusComment.bind(this);
@@ -59,7 +58,6 @@ class PostItem extends React.Component{
                 this.props.deleteLike(foundLike.id)
             }
         }
-        this.setState({liked: !this.state.liked});
     }
 
     didCurrentUserLike(){
@@ -69,18 +67,6 @@ class PostItem extends React.Component{
 
     findUserFromLike(userId){
         return this.props.users[userId];
-    }
-
-    componentDidMount(){
-        // debugger;
-        const id = this.props.id;
-        if (this.props.post.likes){
-            Object.values(this.props.post.likes).forEach(likeObj => {
-                if (likeObj.likeable_type === 'Post' && likeObj.likeable_id === id){
-                    this.setState({liked: true})
-                }
-            })
-        }
     }
 
     isObjectEmpty(obj){
