@@ -1,0 +1,22 @@
+.likes-display {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.first-liker, .second-liker, .like-comma, .likes-display-text{
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like-comma{
+    margin-right: 4px;
+}
+
+.likes-display-text{
+    margin-left: 4px;
+}

@@ -112,6 +112,7 @@ class PostItem extends React.Component{
         let likers = '';
         let firstLiker = '';
         let secondLiker = '';
+        let likeComma = '';
         let likeText = '';
         let likeIcon = '';
         if(!this.isObjectEmpty(this.props.post.likes)){
@@ -124,8 +125,11 @@ class PostItem extends React.Component{
                 )
             })
             firstLiker = <div className="first-liker">{likers[0]}</div>
-            secondLiker = <div className="second-liker">, {likers[1]} </div>
-            likeText = <div className="likes-display-text">liked this post</div>
+            if(likers[1]){
+                likeComma = <div className='like-comma'>,  and</div>
+                secondLiker = <div className="second-liker">{likers[1]}</div>
+            }
+            likeText = <div className="likes-display-text"> liked this post</div>
         }
         let additionalLikers;
         if(likers.length > 2){
@@ -149,6 +153,7 @@ class PostItem extends React.Component{
                     <div className="likes-display">
                         {likeIcon}
                         {firstLiker}
+                        {likeComma}
                         {secondLiker}
                         {additionalLikers}
                         {likeText}
@@ -160,7 +165,7 @@ class PostItem extends React.Component{
                                  className={this.didCurrentUserLike() ? "like-icon active-btn" : "like-icon"}
                                  size="1g"
                                  />
-                                <p className={ this.didCurrentUserLike() ? "p-like active-btn" : "p-like" }>Like</p>
+                                <p className={this.didCurrentUserLike() ? "active-btn" : "p-like"}>Like</p>
                             </div>
                         </span>
                         <span onClick={this.focusComment} tabIndex="0">
