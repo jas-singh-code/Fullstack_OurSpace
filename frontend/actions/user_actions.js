@@ -30,11 +30,11 @@ export const getUser = (id) => (dispatch) => {
     ) 
 }
 
-export const getUsers = (idArr) => (dispatch) => {
+export const getUsers = () => (dispatch) => {
     return (
-        UserAPIUtil.getUsers({idArr: idArr})
+        UserAPIUtil.getUsers()
             .then(
-                users => dispatch(receiveUsers(users)),
+                (users) => dispatch(receiveUsers(users)),
                 err => dispatch(receiveErrors(err))
             )
     )

@@ -1,7 +1,8 @@
 class Api::UsersController < ApplicationController
 
     def index
-        @users = author_ids ? User.where({id: author_ids}) : User.all
+        @users = User.all
+        # debugger
         render :index
     end
 

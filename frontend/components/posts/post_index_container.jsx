@@ -4,6 +4,7 @@ import { openModal } from '../../actions/modal_actions';
 import { destroyPost, fetchPosts, updatePost } from '../../actions/post_actions';
 import PostIndex from './post_index';
 import { createLike, deleteLike } from '../../actions/like_actions';
+import { getUsers } from '../../actions/user_actions';
 
 const mSTP = ( state ) => {
     return{
@@ -20,7 +21,8 @@ const mDTP = dispatch => {
         createComment: comment => dispatch(postComment(comment)),
         deleteComment: comment => dispatch(deleteComment(comment)),
         createLike: like => dispatch(createLike(like)),
-        deleteLike: like => dispatch(deleteLike(like))
+        deleteLike: like => dispatch(deleteLike(like)),
+        fetchAllUsers: () => dispatch(getUsers())
     }
 }
 

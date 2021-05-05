@@ -34,7 +34,7 @@ export default (state = {}, action) => {
             debugger;
             return newState;
         default:
-            return state;
+            return state; 
     }
 }
 
