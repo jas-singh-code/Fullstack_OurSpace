@@ -22,21 +22,19 @@ class PostIndex extends React.Component{
         if (!posts) return null;
         const postItem = Object.values(posts).map(post => (
             <PostItem 
+             className="post-index-item"
              key={post.id}
              post={post}
-             id={post.id}
-             currentUser={this.props.currentUser}
-             author= {post.author}
-             message={post.message}
              photoURL= {post.photoURL || ""}
-            //  createdAt={post.createdAt.slice(0, 10) || ""}
+             //  createdAt={post.createdAt.slice(0, 10) || ""}
+             //  comments= {post.comments}
+             currentUser={this.props.currentUser}
              createLike={this.props.createLike}
              deleteLike={this.props.deleteLike}
-             className="post-index-item"
-            //  comments= {post.comments}
              createComment = {this.props.createComment}
              deleteComment = {this.props.createComment}
-             fetchComments={this.props.fetchComments}/>
+             fetchComments={this.props.fetchComments}
+             users={this.props.users}             />
             )
         )
       

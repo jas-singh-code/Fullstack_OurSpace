@@ -20,7 +20,7 @@ class PostItem extends React.Component{
     }
 
     focusComment(){
-        document.getElementById(`comment-input-${this.props.id}`).focus();
+        document.getElementById(`comment-input-${this.props.post.id}`).focus();
     }
 
     handelSubmit(e){
@@ -44,7 +44,7 @@ class PostItem extends React.Component{
         const likeObj = {
             user_id: this.props.currentUser.id,
             likeable_type: "Post",
-            likeable_id: this.props.id
+            likeable_id: this.props.post.id
         }
         if (liked){
             this.props.createLike(likeObj);
@@ -58,7 +58,6 @@ class PostItem extends React.Component{
         if (this.props.post.likes){
             Object.values(this.props.post.likes).forEach(likeObj => {
                 if (likeObj.likeable_type === 'Post' && likeObj.likeable_id === id){
-                    // debugger;
                     this.setState({liked: true})
                 }
             })
@@ -67,7 +66,8 @@ class PostItem extends React.Component{
 
 
     render(){
-        const {author, createdAt, message, id, photoURL, post} = this.props;
+        const {createdAt, message, photoURL, post} = this.props;
+        const { author, message } = post;
 
         let postImage;
         if(photoURL){
@@ -87,6 +87,7 @@ class PostItem extends React.Component{
             }
         }
         let likers;
+        
         return (
             <div className="post-item-div">
                 <li className="post-ltem-li">

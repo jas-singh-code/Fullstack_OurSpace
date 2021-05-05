@@ -11,6 +11,7 @@ const mSTP = ( state ) => {
         posts: state.entities.posts,
         currentUser: state.session.currentUser,
         comments: state.entities.comments,
+        users: state.entities.users,
     }
 }
 const mDTP = dispatch => {
