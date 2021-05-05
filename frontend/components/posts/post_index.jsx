@@ -14,6 +14,7 @@ class PostIndex extends React.Component{
     componentDidMount() {
         this.props.getAllPosts();
         this.props.fetchAllUsers();
+        this.props.fetchAllLikes();
     }
 
     render() {
@@ -34,7 +35,8 @@ class PostIndex extends React.Component{
              createComment = {this.props.createComment}
              deleteComment = {this.props.createComment}
              fetchComments={this.props.fetchComments}
-             users={this.props.users}             />
+             users={this.props.users}
+             />
             )
         )
       
