@@ -10,7 +10,7 @@ class PostItem extends React.Component{
         this.state = ({
             body: '',
             post_id: null,
-            author_id: this.props.currentUser.id,
+            poster_id: this.props.currentUser.id,
         });
         // change liked state to reflect if current user is a liker inside post.likes
         this.focusComment = this.focusComment.bind(this);
@@ -20,6 +20,7 @@ class PostItem extends React.Component{
         this.didCurrentUserLike = this.didCurrentUserLike.bind(this);
         this.findUserFromLike = this.findUserFromLike.bind(this);
         this.isObjectEmpty = this.isObjectEmpty.bind(this);
+        this.getUserProfilePic = this.getUserProfilePic.bind(this);
     }
 
     focusComment(){
@@ -73,10 +74,15 @@ class PostItem extends React.Component{
         return Object.keys(obj).length === 0;
     }
 
+    getUserProfilePic(userId){
+        const user = this.props.users[userId];
+        return user.profilePicture;
+    }
 
     render(){
         const {createdAt, photoURL, post} = this.props;
-        const { author, message } = post;
+        const { message } = post;
+        const author = this.props.users[post.posterId]
 
         let postImage;
         if(photoURL){
@@ -85,16 +91,17 @@ class PostItem extends React.Component{
             postImage = ""
         }
 
-        let profilePic;
-        if (author.profilePicutre){
-            profilePic = author.profilePicture
-        }else{
-            if (author.gender === "male"){
-                profilePic = def_pic_man
-            }else{
-                profilePic = def_pic_woman
-            }
-        }
+        let profilePic = this.getUserProfilePic(this.props.post.posterId);
+
+        // if (author.profilePicutre){
+        //     profilePic = author.profilePicture
+        // }else{
+        //     if (author.gender === "male"){
+        //         profilePic = def_pic_man
+        //     }else{
+        //         profilePic = def_pic_woman
+        //     }
+        // }
         let likers = '';
         let firstLiker = '';
         let secondLiker = '';
@@ -128,7 +135,7 @@ class PostItem extends React.Component{
                     <div className="poster-info">
                         <img src={profilePic} className="profile-pic"></img>
                         <div className='poster-name-create'>
-                            <span className='poster-name'>{author.first_name}</span>
+                            <span className='poster-name'>{author.firstName}</span>
                             <span>{createdAt}</span>
                         </div>
                     </div>

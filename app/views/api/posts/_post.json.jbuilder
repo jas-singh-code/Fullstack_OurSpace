@@ -2,6 +2,7 @@ json.id post.id
 json.message post.message
 json.wallId post.wall_id
 json.createdAt post.created_at
+json.posterId post.poster_id
 json.author post.author
 if post.comments.length > 0
     json.comments do
