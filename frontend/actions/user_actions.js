@@ -39,3 +39,13 @@ export const getUsers = () => (dispatch) => {
             )
     )
 }
+
+export const editUser = data => dispatch => {
+    return (
+        UserAPIUtil.updateUser(data)
+        .then(
+            (user) => dispatch(receiveUser(user)),
+            err => dispatch(receiveErrors(err))
+        )
+    )
+}

@@ -43,11 +43,13 @@ class Nav extends React.Component{
                 <div className="home-icon">
                     <AiFillHome className="home-icon-html"/>
                 </div>
-                <div className='user-profile-module'>
-                    <img src={currentUser.profilePicture}>
-                    </img>
-                    <p>{currentUser.firstName}</p>
-                </div>
+                <Link to={`/users/${currentUser.id}`}>
+                    <div className='user-profile-module'>
+                        <img src={currentUser.profilePicture}>
+                        </img>
+                        <p>{currentUser.firstName}</p>
+                    </div>
+                </Link>
                 <div className="create-icon" onClick={create}>
                     < HiPlusCircle />
                 </div>
