@@ -18,12 +18,15 @@ class CommentIndex extends React.Component{
                 Object.values(post.comments).map(comment => {
                     return(
                         <CommentItem key={comment.id}
-                         comment={comment} 
+                         comment={this.props.commentsState[comment.id]} 
                          currentUser={this.props.currentUser}
                          deleteComment={this.props.deleteComment}
                          editComment={this.props.editComment}
                          users={this.props.users}
                          likes={this.props.likes}
+                         fetchAllLikes={this.props.fetchAllLikes}
+                         fetchAllComments={this.props.fetchAllComments}
+                         commentsState={this.props.commentsState}
                          createLike={this.props.createLike}
                          deleteLike={this.props.deleteLike}
                          />

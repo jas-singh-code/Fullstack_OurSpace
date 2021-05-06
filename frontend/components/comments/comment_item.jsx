@@ -20,6 +20,7 @@ class CommentItem extends React.Component{
         this.didCurrentUserLike = this.didCurrentUserLike.bind(this);
         this.findUserFromLike = this.findUserFromLike.bind(this);
         this.isObjectEmpty = this.isObjectEmpty.bind(this);
+        this.getLikesCountofComment = this.getLikesCountofComment.bind(this);
     }
 
     closeModule(e){
@@ -82,19 +83,34 @@ class CommentItem extends React.Component{
         return this.props.users[userId];
     }
 
+    getLikesCountofComment(){
+        const id = this.props.comment.id;
+        const commentObj = this.props.commentsState[id];
+        this.isObjectEmpty(commentObj.likes) ? null : Object.keys(commentObj.likes).length;
+    }
+
     isObjectEmpty(obj){
         return Object.keys(obj).length === 0;
     }
 
     render() {
-        const {comment, currentUser} = this.props;
-
-        let likesCount = '';
-
-        // if(!this.isObjectEmpty(this.props.comment.likes)){
-
-        // }
-
+        const {comment} = this.props;
+        let thumbIcon = <img src={like_button_icon} ></img>;
+        let showCommentLikes = '';
+        let count = this.getLikesCountofComment();
+        if(!this.isObjectEmpty(comment.likes)){
+            showCommentLikes =
+                <div>
+                    <div className="comment-like-icon">
+                        {thumbIcon}
+                    </div>
+                    <div className="comment-likes-count">
+                        {count}
+                    </div>
+                </div>
+        }else{
+            showCommentLikes = '';
+        }
         return (
             <div key={comment.id} className="full-comment">
                 <img className="profile-pic margin-top" src={comment.author.profilePicture}></img>
@@ -112,7 +128,7 @@ class CommentItem extends React.Component{
                         :
                         <div className="comment-body">{comment.body}</div>
                         }
-                        {likesCount}
+                        {showCommentLikes}
                     </div>
                     <ul className="comment-actions">
                         <li className={this.didCurrentUserLike() ? "comment-like liked-comment" : "comment-like unliked-comment"}

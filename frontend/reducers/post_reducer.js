@@ -27,13 +27,17 @@ export default (state = {}, action) => {
         case CLEAR_POSTS:
             return {};
         case RECEIVE_LIKE:
-            const postId = action.like.likeable_id;
-            newState[postId]['likes'][action.like.id] = action.like;
-            newState[postId]['liker_Ids'].push(action.like.user_id);
+            if(action.like.likeable_type === 'Post'){
+                const postId = action.like.likeable_id;
+                newState[postId]['likes'][action.like.id] = action.like;
+                newState[postId]['liker_Ids'].push(action.like.user_id);
+            }
             return newState;
         case DELETE_LIKE:
-            const postId2 = action.like.likeable_id;
-            delete newState[postId2]['likes'][action.like.id];
+            if(action.like.likeable_type === 'Post'){
+                const postId2 = action.like.likeable_id;
+                delete newState[postId2]['likes'][action.like.id];
+            }
             return newState;
         default:
             return state; 
