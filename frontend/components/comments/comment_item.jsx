@@ -86,7 +86,11 @@ class CommentItem extends React.Component{
     getLikesCountofComment(){
         const id = this.props.comment.id;
         const commentObj = this.props.commentsState[id];
-        this.isObjectEmpty(commentObj.likes) ? null : Object.keys(commentObj.likes).length;
+        if(this.isObjectEmpty(commentObj.likes)){
+            return null;
+         }else{
+            return Object.values(commentObj.likes).length;
+         } 
     }
 
     isObjectEmpty(obj){
@@ -100,7 +104,7 @@ class CommentItem extends React.Component{
         let count = this.getLikesCountofComment();
         if(!this.isObjectEmpty(comment.likes)){
             showCommentLikes =
-                <div>
+                <div className="comment-likes-holder">
                     <div className="comment-like-icon">
                         {thumbIcon}
                     </div>

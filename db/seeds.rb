@@ -20,8 +20,8 @@ Comment.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
     ])
 
     demo = User.create({first_name: 'Guest', last_name: 'User', email: 'guest@ourspace.com', password: 'demouser', birthday: '12345678', gender: 'other', education: 'College University', location: 'New York City', occupation: 'Social Worker'})
-    demo_file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/user2.jfif')
-    demo.profile_picture.attach(io: demo_file, filename: 'user2.jfif')
+    demo_file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/woman_profile.jpg')
+    demo.profile_picture.attach(io: demo_file, filename: 'woman_profile.jpg')
     demo_cover = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/cover1.jpg')
     demo.cover_picture.attach(io: demo_cover, filename: 'cover1.jpg')
 
@@ -55,7 +55,7 @@ Comment.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
         # { wall_id: 5, message: 'People say nothing is impossible, but I do nothing every day.', poster_id: 4},
         # { wall_id: 5, message: 'Hey guys i just bought ', poster_id: 4},
         { wall_id: 4, message: 'Finally, a place where i can talk to people my age and get away from my  annoying family!', poster_id: 4},
-        { wall_id: 1, message: 'The creator of thos app is very handsome ;)', poster_id: 4},
+        { wall_id: 1, message: 'The creator of thos app is very handsome ;)', poster_id: 1},
         # { wall_id: 3, message: 'Is it just me or the name of this app sounds like 2005', poster_id: 3},
         { wall_id: 2, message: 'I dont know if you guys noticed, but theres a birthday option that lets you choose veryold when you sign up', poster_id: 2},
         # { wall_id: 4, message: 'Is it winter yet or what???', poster_id: 1},
@@ -74,51 +74,53 @@ Comment.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
     ])
 
     # likes = Like.create!([
-    #     {id: 1, likable_id: 3, likable_type: 'Post'},
-    #     {id: 2, likable_id: 4, likable_type: 'Post'},
-    #     {id: 3, likable_id: 1, likable_type: 'Post'},
-    #     {id: 4, likable_id: 2, likable_type: 'Post'},
-    #     {id: 5, likable_id: 1, likable_type: 'Post'},
-    #     {id: 6, likable_id: 4, likable_type: 'Post'},
-    #     {id: 7, likable_id: 5, likable_type: 'Post'},
-    #     {id: 8, likable_id: 3, likable_type: 'Post'},
-    #     {id: 9, likable_id: 5, likable_type: 'Post'},
-    #     {id: 10, likable_id: 1, likable_type: 'Comment'},
-    #     {id: 11, likable_id: 1, likable_type: 'Comment'},
-    #     {id: 12, likable_id: 1, likable_type: 'Comment'},
-    #     {id: 13, likable_id: 1, likable_type: 'Comment'},
-    #     {id: 14, likable_id: 2, likable_type: 'Comment'},
-    #     {id: 15, likable_id: 3, likable_type: 'Comment'},
-    #     {id: 16, likable_id: 2, likable_type: 'Comment'},
-    #     {id: 17, likable_id: 3, likable_type: 'Comment'},
-    #     {id: 18, likable_id: 4, likable_type: 'Comment'},
-    #     {id: 19, likable_id: 5, likable_type: 'Comment'}
+    #     {likable_id: 1, likable_type: 'Post', user_id: 1},
+    #     {likable_id: 2, likable_type: 'Post', user_id: 1},
+    #     {likable_id: 4, likable_type: 'Post', user_id: 1},
+    #     {likable_id: 1, likable_type: 'Post', user_id: 2},
+    #     {likable_id: 3, likable_type: 'Post', user_id: 2},
+    #     {likable_id: 4, likable_type: 'Post', user_id: 2},
+    #     {likable_id: 5, likable_type: 'Post', user_id: 2},
+    #     {likable_id: 2, likable_type: 'Post', user_id: 3},
+    #     {likable_id: 5, likable_type: 'Post', user_id: 3},
+    #     {likable_id: 2, likable_type: 'Post', user_id: 3},
+    #     {likable_id: 6, likable_type: 'Post', user_id: 3},
+    #     {likable_id: 1, likable_type: 'Comment', user_id: 1},
+    #     {likable_id: 4, likable_type: 'Comment', user_id: 1},
+    #     {likable_id: 3, likable_type: 'Comment', user_id: 1},
+    #     {likable_id: 2, likable_type: 'Comment', user_id: 2},
+    #     {likable_id: 1, likable_type: 'Comment', user_id: 2},
+    #     {likable_id: 3, likable_type: 'Comment', user_id: 3},
+    #     {likable_id: 2, likable_type: 'Comment', user_id: 3},
+    #     {likable_id: 3, likable_type: 'Comment', user_id: 5},
+    #     {likable_id: 4, likable_type: 'Comment', user_id: 5},
+    #     {likable_id: 5, likable_type: 'Comment', user_id: 5}
     # ])
 
     comments = Comment.create!([
-        {body: "Lemons for sure man", author_id: 3, post_id: 6},
+        {body: "Lemons for sure man", author_id: 3, post_id: 8},
         {body: "Nice shot! why wasnt i invited!?", author_id: 2, post_id: 1},
         {body: "I think ive been there before...", author_id: 3, post_id: 1},
-        {body: "Why are you asking this again", author_id: 1, post_id: 5},
-        {body: "Whats up jassi! its me, Loveleen from highschool!", author_id: 3, post_id: 4},
-        {body: "Hey jas, watch my movie!", author_id: 2, post_id: 9},
-        {body: "Hey jassi! nice post!", author_id: 1, post_id: 9},
-        {body: "Okay okay lets keep it PG-13 here", author_id: 5, post_id: 3}
+        {body: "Why are you asking this again", author_id: 1, post_id: 8},
+        {body: "Whats up jassi! its me, Loveleen from highschool!", author_id: 3, post_id: 6},
+        {body: "Hey jas, watch my movie!", author_id: 2, post_id: 11},
+        {body: "Hey jassi! nice post!", author_id: 1, post_id: 11},
+        {body: "Okay okay lets keep it PG-13 here", author_id: 5, post_id: 5}
     ])
 
     # friends = Friend.create!([
-    #     {id: 1, sender_id: 1, receiver_id: 2, pending: true},
-    #     {id: 2, sender_id: 1, receiver_id: 3, pending: false},
-    #     {id: 3, sender_id: 1, receiver_id: 4, pending: false},
-    #     {id: 4, sender_id: 1, receiver_id: 5, pending: false},
-    #     {id: 6, sender_id: 2, receiver_id: 3, pending: false},
-    #     {id: 7, sender_id: 2, receiver_id: 4, pending: false},
-    #     {id: 8, sender_id: 2, receiver_id: 5, pending: false},
-    #     {id: 9, sender_id: 3, receiver_id: 5, pending: false},
-    #     {id: 10, sender_id: 3, receiver_id: 2, pending: false},
-    #     {id: 11, sender_id: 3, receiver_id: 1, pending: false},
-    #     {id: 12, sender_id: 4, receiver_id: 3, pending: true},
-    #     {id: 12, sender_id: 4, receiver_id: 5, pending: false}
+    #     {sender_id: 1, receiver_id: 2, pending: true},
+    #     {sender_id: 1, receiver_id: 3, pending: false},
+    #     {sender_id: 1, receiver_id: 4, pending: false},
+    #     {sender_id: 1, receiver_id: 5, pending: false},
+    #     {sender_id: 2, receiver_id: 3, pending: false},
+    #     {sender_id: 2, receiver_id: 4, pending: false},
+    #     {sender_id: 2, receiver_id: 5, pending: false},
+    #     {sender_id: 3, receiver_id: 5, pending: false},
+    #     {sender_id: 3, receiver_id: 1, pending: false},
+    #     {sender_id: 4, receiver_id: 3, pending: true},
+    #     {sender_id: 3, receiver_id: 2, pending: false},
+    #     {sender_id: 4, receiver_id: 5, pending: false}
     # ])
 
     # still pending between users 1 => 2('Angeliq', 'Phunsuk') and 4 => 3 ('Jaspreet', 'Loveleen')

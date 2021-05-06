@@ -3,7 +3,7 @@
     justify-content: flex-start;
     align-items: center;
     margin-top: 8px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .first-liker, .second-liker, .like-comma, .likes-display-text{
@@ -11,6 +11,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.first-liker, .second-liker{
+    font-weight: bold;
+    color: #565656;
+}
+
+.first-liker:hover, .second-liker:hover{
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .like-comma{
