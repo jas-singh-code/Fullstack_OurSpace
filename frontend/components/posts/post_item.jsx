@@ -3,6 +3,8 @@ import {AiOutlineLike} from "react-icons/ai";
 import {FaRegCommentAlt, FaToggleOff} from "react-icons/fa";
 import CommentIndexContainer from '../comments/comment_index_container';
 import { findLike } from '../../reducers/selectors';
+import { Link } from 'react-router-dom';
+
 
 class PostItem extends React.Component{
     constructor(props){
@@ -81,7 +83,7 @@ class PostItem extends React.Component{
 
     render(){
         const {createdAt, photoURL, post} = this.props;
-        const { message } = post;
+        const { message, posterId } = post;
         const author = this.props.users[post.posterId]
 
         let postImage;
@@ -133,9 +135,13 @@ class PostItem extends React.Component{
             <div className="post-item-div">
                 <li className="post-ltem-li">
                     <div className="poster-info">
-                        <img src={profilePic} className="profile-pic"></img>
+                        <Link to={`/users/${posterId}`}>
+                            <img src={profilePic} className="profile-pic"></img>
+                        </Link>
                         <div className='poster-name-create'>
-                            <span className='poster-name'>{author.firstName}</span>
+                            <Link to={`/users/${posterId}`}>
+                                <span className='poster-name'>{author.firstName}</span>
+                            </Link>
                             <span>{createdAt}</span>
                         </div>
                     </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { FiMoreHorizontal } from 'react-icons/fi';
 import { findLike } from '../../reducers/selectors';
+import { Link } from 'react-router-dom';
+
 
 class CommentItem extends React.Component{
     constructor(props){
@@ -117,15 +119,27 @@ class CommentItem extends React.Component{
         }
         return (
             <div key={comment.id} className="full-comment">
-                <img className="profile-pic margin-top" src={comment.author.profilePicture}></img>
+                <Link to={`/users/${comment.author_id}`}>
+                    <img className="profile-pic margin-top"
+                     src={comment.author.profilePicture}>
+                    </img>
+                </Link>
                 <div className="comment-item">
                     <div className="comment-item-head">
-                        <div className="comment-author">{comment.author.firstName}</div>
+                        <Link to={`/users/${comment.author_id}`}>
+                            <div className="comment-author">{comment.author.firstName}</div>
+                        </Link>
+
                         {this.state.edit ?
                         <form onSubmit={this.handleEdited}>
-                            <input className="comment-body edit-input" type="text" defaultValue={comment.body} onChange={this.updateBody()}></input>
+                            <input className="comment-body edit-input" 
+                               type="text" defaultValue={comment.body} 
+                               onChange={this.updateBody()}>
+                            </input>
                             <div className='edit-actions'>
-                                <div className="comment-like" onClick={() => this.setState({edit: false})}>Cancle</div>
+                                <div className="comment-like" 
+                                onClick={() => this.setState({edit: false})}>Cancle
+                                </div>
                                 <input type='submit' value="Save"></input>
                             </div>
                         </form>

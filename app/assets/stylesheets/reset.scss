@@ -25,6 +25,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+a{
+	text-decoration: none;
+	width: auto;
+}
+a:visited, a:hover { 
+ 	text-decoration: none; 
+}
 body {
 	line-height: 1;
 	// box-sizing: content-box;

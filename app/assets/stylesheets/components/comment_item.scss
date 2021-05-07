@@ -60,6 +60,11 @@
     margin-left: 3px;
     font-size: 13px;
     font-weight: bold;
+    color: black;
+}
+.comment-author:hover{
+    text-decoration: underline;
+    cursor: pointer
 }
 
 .comment-body {

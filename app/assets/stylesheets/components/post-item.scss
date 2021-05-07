@@ -62,6 +62,11 @@
 .poster-name{
     font-weight: bold;
     font-size: 14px;
+    color: black;
+}
+
+.poster-name:hover{
+    text-decoration: underline;
 }
 
 .photos{
