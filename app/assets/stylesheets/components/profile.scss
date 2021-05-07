@@ -10,6 +10,7 @@
     align-items: center;
     flex-direction: column;
     height: auto;
+    background-color: white;
 }
 
 .profile-cover{
@@ -26,13 +27,13 @@
 .profile-prof-pic{
     position: absolute;
     bottom: -92px;
-    right: 383px;
-    height: 150px;
-    width: 150px;
+    right: 365px;
+    height: 180px;
+    width: 180px;
     padding: 6px;
     border: none;
     border-radius: 90px;
-    background-color: #f0f2f5;
+    background-color: white;
 }
 
 .profile-prof-pic > img{
@@ -45,8 +46,76 @@
 }
 
 .profile-name{
-    margin: 0px;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: bold;
     color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.profile-bio-noedit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-edit-btn{
+    font-size: 14px;
+    font-weight: bold;
+    color: $hover-blue;
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+}
+
+.profile-edit-btn:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+
+.profile-editor input {
+    border-radius: 5px;
+    width: 260px;
+    height: 76px;
+    border: none;
+    background-color: #ececec;
+    font-size: 16px;
+}
+
+.profile-edit-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9px
+}
+
+.edit-save, .edit-cancle{
+    margin: 0px 5px;
+    padding: 2px 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.edit-save:hover, .edit-cancle:hover{
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+}
+
+.edit-cancle:hover{
+    background-color: $delete;
+    color: white
+}
+.edit-save:hover{
+    background-color: $green;
+    color:white
+}
+
+.bio {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: grey;
 }

@@ -8,6 +8,7 @@ json.birthday user.birthday
 json.occupation user.occupation
 json.location user.location
 json.education user.education
+json.bio user.bio
 if user.profile_picture.attached?
     json.profilePicture url_for(user.profile_picture)
 else
