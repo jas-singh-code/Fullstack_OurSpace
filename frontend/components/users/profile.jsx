@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '../nav/nav_container';
-
+import { MdEdit } from 'react-icons/md';
 
 class Profile extends React.Component{
     constructor(props){
@@ -56,7 +56,7 @@ class Profile extends React.Component{
                         </div>
                         {this.state.edit ? 
                         <div className="profile-editor">
-                            <form>
+                            <form className='flex-row'>
                                 <input onChange={this.updateBio} defaultValue={bio}></input>
                             </form>
                             <div className="profile-edit-actions">
@@ -71,6 +71,18 @@ class Profile extends React.Component{
                         </div>
                         }
                         
+                    </div>
+                </div>
+                <div className='profile-nav'>
+                    <div className='profile-nav-left'>
+                        <div className='hover-properties-16'>Timeline</div>
+                        <div className='hover-properties-16'>About</div>
+                        <div className='hover-properties-16'>Friends</div>
+                        <div className='hover-properties-16'>Photo</div>
+                    </div>
+                    <div className='profile-nav-right'>
+                        <MdEdit />
+                        <div>Edit Profile</div>
                     </div>
                 </div>
             </div>
