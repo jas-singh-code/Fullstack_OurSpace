@@ -43,7 +43,7 @@ class Api::UsersController < ApplicationController
         params.require(:user).permit(
          :first_name, :last_name, :email,
          :password, :birthday, :gender, 
-         :location, :occupation, :education)
+         :location, :occupation, :education, :bio)
     end
 
 end

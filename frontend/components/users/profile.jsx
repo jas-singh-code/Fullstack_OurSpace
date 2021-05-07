@@ -1,9 +1,11 @@
 import React from 'react';
+import Nav from '../nav/nav_container';
+
 
 class Profile extends React.Component{
     constructor(props){
         super(props);
-        state={
+        this.state={
             occupation:'',
             education: '',
             location: '',
@@ -12,24 +14,24 @@ class Profile extends React.Component{
             birthday: '',
             gender: ''
         }
-        this.getUserObject = this.getUserObject.bind(this);
-    }
 
-    getUserObject(userId){
-        return this.props.users[userId];
     }
 
     render(){
-        debugger;
+
         const {firstName, lastName,
              bio, occupation,
              education, gender,
-             birthday, email} = this.getUserObject();
+             birthday, email, coverPicture, profilePicture} = this.props.user;
         return(
             <div className="full-profile">
+                <Nav />
                 <div className='profile-head'>
                     <div className='profile-cover'>
-                        <div className='profile-prof-pic'>Profile pic here</div>
+                        <img src={coverPicture}></img>
+                        <div className='profile-prof-pic'>
+                            <img src={profilePicture}></img>
+                        </div>
                     </div>
                     <div className='profile-bio-name'>
                         <div className='profile-name'>

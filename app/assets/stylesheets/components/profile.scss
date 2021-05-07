@@ -1,0 +1,52 @@
+@import "variables";
+
+.full-profile{
+    margin: 0px;
+}
+
+.profile-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+}
+
+.profile-cover{
+    width: 920px;
+    height: 370px;
+    position: relative;
+}
+
+.profile-cover > img{
+    width: 100%;
+    height: 100%;
+}
+
+.profile-prof-pic{
+    position: absolute;
+    bottom: -92px;
+    right: 383px;
+    height: 150px;
+    width: 150px;
+    padding: 6px;
+    border: none;
+    border-radius: 90px;
+    background-color: #f0f2f5;
+}
+
+.profile-prof-pic > img{
+    border-radius: 90px;
+    border: none;
+}
+
+.profile-bio-name{
+    margin-top: 100px;
+}
+
+.profile-name{
+    margin: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
