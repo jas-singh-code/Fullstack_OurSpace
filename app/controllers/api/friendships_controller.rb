@@ -1,4 +1,4 @@
-class Api::FriendsController < ApplicationController
+class Api::FriendshipsController < ApplicationController
     def create
         @friendship = Friendship.new(friendship_params)
         friend_request = FriendRequest.find_by(receiver_id: params[:friendship][:user_id], requester_id: params[:friendship][:friend_id])
