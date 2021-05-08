@@ -1,0 +1,39 @@
+.Timeline-full {
+    margin: 15px 0px;
+    width: 850px;
+    background-color: white;
+    padding: 12px 12px;
+    border-radius: 8px;
+}
+
+.Timeline-full > div {
+    margin: 4px 22px;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 11px;
+}
+
+.photo-preview {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 7px;
+    background-color: white;
+}
+
+.photo-thumb{
+    margin: 0px 15px;
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+}
+
+.photo-thumb img {
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+}

@@ -1,14 +1,14 @@
 @import "variables";
 
-.full-profile{
+.full-profile {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    position: relative;
 }
 
-.profile-head{
+.profile-head {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,17 +16,20 @@
     height: auto;
     background-color: white;
     width: 100%;
+    padding-bottom: 53px;
 }
 
 .profile-cover{
     width: 920px;
     height: 370px;
     position: relative;
+    top: -7px;
 }
 
 .profile-cover > img{
     width: 100%;
     height: 100%;
+    border-radius: 11px;
 }
 
 .profile-prof-pic{
@@ -78,6 +81,7 @@
     justify-content: center;
     align-items: center;
     width: auto;
+    margin: 0px 2px 17px;
 }
 
 .profile-edit-btn:hover{
@@ -92,13 +96,15 @@
     border: none;
     background-color: #ececec;
     font-size: 16px;
+    padding: 6px;
 }
 
 .profile-edit-actions{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 9px
+    margin-top: 9px;
+    margin-bottom: 9px;
 }
 
 .edit-save, .edit-cancle{
@@ -131,18 +137,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 450px;
 }
 
-.profile-nav{
+.profile-nav {
     display: flex;
     justify-content: center;
     align-items: center;
     border-top: thin solid black;
-    padding: 6px 2px;
-    width: 85%;
+    padding: 6px 18px;
+    width: 75%;
     height: 40px;
     font-size: 16px;
     background-color: white;
+    position: absolute;
+    top: 641px;
 }
 
 .profile-nav-right{
@@ -176,6 +185,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 726px;
 }
 
 .profile-nav-left div {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from '../nav/nav_container';
 import { MdEdit } from 'react-icons/md';
+import PhotosContainer from './photos_container'
 
 class Profile extends React.Component{
     constructor(props){
@@ -20,21 +21,24 @@ class Profile extends React.Component{
         this.handleEdited = this.handleEdited.bind(this);
     }
 
-    updateBio(){
+    updateBio(e){
         return e => this.setState({
-            bio: e.currentTarget.value
+            bio: e.currentTarget.value,
         })
     }
 
     handleEdited(){
-        this.props.editUser({
+        const editedUser = {
             id: this.props.user.id,
             bio: this.state.bio
-        });
+        };
+        this.props.editUser(editedUser);
         this.setState({edit: false})
     }
 
     render(){
+
+        const {user} = this.props;
 
         const {firstName, lastName,
              bio, occupation,
@@ -56,8 +60,8 @@ class Profile extends React.Component{
                         </div>
                         {this.state.edit ? 
                         <div className="profile-editor">
-                            <form className='flex-row'>
-                                <input onChange={this.updateBio} defaultValue={bio}></input>
+                            <form onSubmit={this.handleEdited} className='flex-row'>
+                                <input onChange={this.updateBio()} defaultValue={bio}></input>
                             </form>
                             <div className="profile-edit-actions">
                                 <div onClick={() => this.setState({edit: false})} className='edit-cancle'>Cancle</div>
@@ -66,24 +70,28 @@ class Profile extends React.Component{
                         </div>
                         :
                         <div className="profile-bio-noedit">
-                            <div className="bio">{bio}</div>
-                            <div onClick={() => this.setState({edit: true})}className="profile-edit-btn">Edit</div>
+                            <div className="bio">{bio ? bio : 'No bio yet. Click \'Add Bio\' below to add one.'}</div>
+                            <div onClick={() => this.setState({edit: true})}className="profile-edit-btn">{bio ? 'Edit' : 'Add Bio'}</div>
                         </div>
                         }
                         
                     </div>
                 </div>
+                <div className='profile-border'></div>
                 <div className='profile-nav'>
                     <div className='profile-nav-left'>
                         <div className='hover-properties-16'>Timeline</div>
                         <div className='hover-properties-16'>About</div>
                         <div className='hover-properties-16'>Friends</div>
-                        <div className='hover-properties-16'>Photo</div>
+                        <div className='hover-properties-16'>Photos</div>
                     </div>
                     <div className='profile-nav-right'>
                         <MdEdit />
                         <div>Edit Profile</div>
                     </div>
+                </div>
+                <div>
+                    <PhotosContainer userId={user.id}/>
                 </div>
             </div>
         )
