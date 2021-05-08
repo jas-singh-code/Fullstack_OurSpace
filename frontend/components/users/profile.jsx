@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from '../nav/nav_container';
 import { MdEdit } from 'react-icons/md';
 import PhotosContainer from './photos_container'
+import About from './about_container';
 
 class Profile extends React.Component{
     constructor(props){
@@ -38,12 +39,29 @@ class Profile extends React.Component{
 
     render(){
 
-        const {user} = this.props;
+        const {user, currentUser} = this.props;
 
         const {firstName, lastName,
-             bio, occupation,
-             education, gender,
-             birthday, email, coverPicture, profilePicture} = this.props.user;
+            bio, occupation,
+            education, gender,
+            birthday, email, coverPicture, profilePicture} = this.props.user;
+
+        const currenUserEditView = this.state.edit ? 
+            <div className="profile-editor">
+                <form onSubmit={this.handleEdited} className='flex-row'>
+                    <input onChange={this.updateBio()} defaultValue={bio}></input>
+                </form>
+                <div className="profile-edit-actions">
+                    <div onClick={() => this.setState({edit: false})} className='edit-cancle'>Cancle</div>
+                    <div onClick={this.handleEdited} className='edit-save'>Save</div>
+                </div>
+            </div>
+            :
+            <div className="profile-bio-noedit">
+                <div className="bio">{bio ? bio : 'No bio yet. Click \'Add Bio\' below to add one.'}</div>
+                <div onClick={() => this.setState({edit: true})}className="profile-edit-btn">{bio ? 'Edit' : 'Add Bio'}</div>
+            </div>;
+
         return(
             <div className="full-profile">
                 <Nav />
@@ -58,26 +76,14 @@ class Profile extends React.Component{
                         <div className='profile-name'>
                             {firstName} {lastName}
                         </div>
-                        {this.state.edit ? 
-                        <div className="profile-editor">
-                            <form onSubmit={this.handleEdited} className='flex-row'>
-                                <input onChange={this.updateBio()} defaultValue={bio}></input>
-                            </form>
-                            <div className="profile-edit-actions">
-                                <div onClick={() => this.setState({edit: false})} className='edit-cancle'>Cancle</div>
-                                <div onClick={this.handleEdited} className='edit-save'>Save</div>
-                            </div>
-                        </div>
-                        :
-                        <div className="profile-bio-noedit">
-                            <div className="bio">{bio ? bio : 'No bio yet. Click \'Add Bio\' below to add one.'}</div>
-                            <div onClick={() => this.setState({edit: true})}className="profile-edit-btn">{bio ? 'Edit' : 'Add Bio'}</div>
+                        {user.id === currentUser.id ? 
+                        currenUserEditView :
+                        <div>
+                            <div className="bio">{bio ? bio : 'No bio yet'}</div>
                         </div>
                         }
-                        
                     </div>
                 </div>
-                <div className='profile-border'></div>
                 <div className='profile-nav'>
                     <div className='profile-nav-left'>
                         <div className='hover-properties-16'>Timeline</div>
@@ -91,7 +97,8 @@ class Profile extends React.Component{
                     </div>
                 </div>
                 <div>
-                    <PhotosContainer userId={user.id}/>
+                    {/* <PhotosContainer userId={user.id}/> */}
+                    <About user={user}/>
                 </div>
             </div>
         )
