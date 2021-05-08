@@ -21,3 +21,12 @@ export const getPostsByAuthor = ( posts, author_id ) => {
 	}
 	return result;
 };
+
+export const findRequestId = (requests, requesterId, receiverId) => {
+    for (let id in requests){
+        let request = requests[id];
+        if (request.requester_id === requesterId && request.requested_id === receiverId){
+            return id
+        }
+    }
+}
