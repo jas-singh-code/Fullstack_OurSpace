@@ -1,0 +1,66 @@
+.full-about {
+    background-color: white;
+    border-radius: 11px;
+    width: 730px;
+    margin: 22px;
+    padding: 16px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #565656;
+}
+
+.about-rows {
+    background-color: white;
+    border-radius: 11px;
+    margin-top: 11px;
+    font-size: 16px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.about-row >svg {
+    font-size: 32px;
+    margin-right: 18px;
+}
+
+.about-work{
+    margin: 0px;
+}
+
+.about-education{
+    margin: 0px;
+}
+
+.about-location{
+    margin: 0px;
+}
+
+.about-birthday{
+    margin: 0px;
+}
+
+.about-gender{
+    margin: 0px;
+}
+
+svg.about-options{
+    font-size: 18px;
+    padding: 4px;
+    border-radius: 40px;
+    margin-right: 37px;
+}
+
+svg.about-options:hover{
+    cursor: pointer;
+    background-color: lightgrey;
+}

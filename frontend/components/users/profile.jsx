@@ -17,6 +17,7 @@ class Profile extends React.Component{
             gender: '',
             edit: false,
             openEditor: false,
+            editAbout: false,
         }
         this.updateBio = this.updateBio.bind(this);
         this.handleEdited = this.handleEdited.bind(this);
@@ -93,12 +94,12 @@ class Profile extends React.Component{
                     </div>
                     <div className='profile-nav-right'>
                         <MdEdit />
-                        <div>Edit Profile</div>
+                        <div onClick={() => this.setState({aboutEdit: true})}>Edit Profile</div>
                     </div>
                 </div>
                 <div>
                     {/* <PhotosContainer userId={user.id}/> */}
-                    <About user={user}/>
+                    <About user={user} type={this.state.editAbout}/>
                 </div>
             </div>
         )

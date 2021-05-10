@@ -2,7 +2,7 @@ import { RECEIVE_FRIEND_REQUEST, DELETE_FRIEND_REQUEST } from '../actions/friend
 import { RECEIVE_FRIENDSHIP } from '../actions/friendships_actions';
 import { findRequestId } from './selectors';
 
-export const friendRequestReducer = (state = {}, action) => {
+const friendRequestReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state)
     switch (action.type){
@@ -20,3 +20,5 @@ export const friendRequestReducer = (state = {}, action) => {
             return state;
     }
 }
+
+export default friendRequestReducer;

@@ -9,6 +9,7 @@ const mSTP = (state, ownProps) => {
         currentUser: state.session.currentUser,
         errors: state.errors.postErrorsReducer,
         user: ownProps.user,
+        type: ownProps.type
     }
     return toReturn;
 }

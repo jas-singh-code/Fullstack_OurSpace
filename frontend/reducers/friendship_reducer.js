@@ -1,7 +1,7 @@
 import { RECEIVE_FRIENDSHIP, DELETE_FRIENDSHIP } from '../actions/friendships_actions';
 import { findFriendshipId } from './selectors'; 
 
-export const friendshipReducer = (state = {}, action) => {
+const friendshipReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state)
     switch (action.type){
@@ -19,3 +19,5 @@ export const friendshipReducer = (state = {}, action) => {
             return state;
     }
 }
+
+export default friendshipReducer;
