@@ -11,27 +11,29 @@ User.connection.execute('ALTER SEQUENCE users_id_seq RESTART WITH 1')
 Post.destroy_all
 Post.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
 Comment.destroy_all
-Comment.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1') 
+Comment.connection.execute('ALTER SEQUENCE comments_id_seq RESTART WITH 1') 
+Like.destroy_all
+Like.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1') 
 
     users = User.create!([
-        {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '06041999', gender: 'female'},
-        {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password: 'Jaspreet', birthday: '09011998', gender: 'male'},
-        {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password: 'Loveleen', birthday: '10111996', gender: 'female'}
+        {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '04061999', gender: 'female', bio: "Loking to go to Grand Canyons, who's down?", occupation: 'New York College - Student' },
+        {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password: 'Jaspreet', birthday: '01091998', gender: 'male', bio: 'Hey hope everyone is likeing my site!', occupation: 'Ourspace - Lead Software Engineer'},
+        {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password: 'Loveleen', birthday: '11101996', gender: 'female', bio: 'Im never on here add me on snapback', occupation: 'Mont Saini - Registered Nurse'}
     ])
 
-    demo = User.create({first_name: 'Guest', last_name: 'User', email: 'guest@ourspace.com', password: 'demouser', birthday: '13082021', gender: 'other', education: 'College University', location: 'New York City', occupation: 'Social Worker'})
+    demo = User.create({first_name: 'Guest', last_name: 'User', email: 'guest@ourspace.com', password: 'demouser', birthday: '08132021', gender: 'other', education: 'College University', location: 'New York City', occupation: 'Elizabeth Middle School - Teacher'})
     demo_file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/woman_profile.jpg')
     demo.profile_picture.attach(io: demo_file, filename: 'woman_profile.jpg')
     demo_cover = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/cover1.jpg')
     demo.cover_picture.attach(io: demo_cover, filename: 'cover1.jpg')
 
-    mintu = User.create({first_name: 'Mintu', last_name: 'Singh', email: 'msingh12@gmail.com', password: 'Mintuuu', birthday: '22051989', gender: 'male', education: 'City College of New York', location: 'New York City', occupation: 'Electrician'})
+    mintu = User.create({first_name: 'Mintu', last_name: 'Singh', email: 'msingh12@gmail.com', password: 'Mintuuu', birthday: '05221989', gender: 'male', education: 'City College of New York', location: 'New York City', occupation: 'Local-38 Union - Electrician', bio: 'Will never reply or pick up my phone'})
     mintu_file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/user1.jfif')
     mintu.profile_picture.attach(io: mintu_file, filename: 'user1.jfif')
     mintu_cover = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/cover_car.jpg')
     mintu.cover_picture.attach(io: mintu_cover, filename: 'cover_car.jpg')
 
-    p_user = User.create({first_name: 'Phunsuk', last_name: 'Wangroo', email: 'pwangroo121@gmail.com', password: 'Phunsuk', birthday: '01071990', gender: 'male', education: 'Howard University', location: 'New York City', occupation: 'Plumber'})
+    p_user = User.create({first_name: 'Phunsuk', last_name: 'Wangroo', email: 'pwangroo121@gmail.com', password: 'Phunsuk', birthday: '07011990', gender: 'male', education: 'Howard University', location: 'New York City', occupation: 'Plumber', bio: 'Love watching people try to pronounce my last name'})
     p_file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/user3.jpg')
     p_user.profile_picture.attach(io: p_file, filename: 'user3.jpg')
     p_cover= open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/cover_phunsuk.jpg')
@@ -73,29 +75,28 @@ Comment.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
         { wall_id: 6, message: 'Hey, psst... there are links to the owners github page everyhere! You can see their source code there as well!', poster_id: 6}
     ])
 
-    # likes = Like.create!([
-    #     {likable_id: 1, likable_type: 'Post', user_id: 1},
-    #     {likable_id: 2, likable_type: 'Post', user_id: 1},
-    #     {likable_id: 4, likable_type: 'Post', user_id: 1},
-    #     {likable_id: 1, likable_type: 'Post', user_id: 2},
-    #     {likable_id: 3, likable_type: 'Post', user_id: 2},
-    #     {likable_id: 4, likable_type: 'Post', user_id: 2},
-    #     {likable_id: 5, likable_type: 'Post', user_id: 2},
-    #     {likable_id: 2, likable_type: 'Post', user_id: 3},
-    #     {likable_id: 5, likable_type: 'Post', user_id: 3},
-    #     {likable_id: 2, likable_type: 'Post', user_id: 3},
-    #     {likable_id: 6, likable_type: 'Post', user_id: 3},
-    #     {likable_id: 1, likable_type: 'Comment', user_id: 1},
-    #     {likable_id: 4, likable_type: 'Comment', user_id: 1},
-    #     {likable_id: 3, likable_type: 'Comment', user_id: 1},
-    #     {likable_id: 2, likable_type: 'Comment', user_id: 2},
-    #     {likable_id: 1, likable_type: 'Comment', user_id: 2},
-    #     {likable_id: 3, likable_type: 'Comment', user_id: 3},
-    #     {likable_id: 2, likable_type: 'Comment', user_id: 3},
-    #     {likable_id: 3, likable_type: 'Comment', user_id: 5},
-    #     {likable_id: 4, likable_type: 'Comment', user_id: 5},
-    #     {likable_id: 5, likable_type: 'Comment', user_id: 5}
-    # ])
+    likes = Like.create!([
+        {likeable_id: 1, likeable_type: 'Post', user_id: 1},
+        {likeable_id: 2, likeable_type: 'Post', user_id: 1},
+        {likeable_id: 4, likeable_type: 'Post', user_id: 1},
+        {likeable_id: 1, likeable_type: 'Post', user_id: 2},
+        {likeable_id: 3, likeable_type: 'Post', user_id: 2},
+        {likeable_id: 4, likeable_type: 'Post', user_id: 2},
+        {likeable_id: 5, likeable_type: 'Post', user_id: 2},
+        {likeable_id: 5, likeable_type: 'Post', user_id: 3},
+        {likeable_id: 2, likeable_type: 'Post', user_id: 3},
+        {likeable_id: 6, likeable_type: 'Post', user_id: 3},
+        # {likeable_id: 1, likeable_type: 'Comment', user_id: 1},
+        # {likeable_id: 4, likeable_type: 'Comment', user_id: 1},
+        # {likeable_id: 3, likeable_type: 'Comment', user_id: 1},
+        # {likeable_id: 2, likeable_type: 'Comment', user_id: 2},
+        # {likeable_id: 1, likeable_type: 'Comment', user_id: 2},
+        # {likeable_id: 3, likeable_type: 'Comment', user_id: 3},
+        # {likeable_id: 2, likeable_type: 'Comment', user_id: 3},
+        # {likeable_id: 3, likeable_type: 'Comment', user_id: 5},
+        # {likeable_id: 4, likeable_type: 'Comment', user_id: 5},
+        # {likeable_id: 5, likeable_type: 'Comment', user_id: 5}
+    ])
 
     comments = Comment.create!([
         {body: "Lemons for sure man", author_id: 3, post_id: 8},

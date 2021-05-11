@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import About from './about';
+import {editUser} from '../../actions/user_actions'
 
 
 const mSTP = (state, ownProps) => {

@@ -1,7 +1,7 @@
 .full-about {
     background-color: white;
     border-radius: 11px;
-    width: 730px;
+    width: 700px;
     margin: 22px;
     padding: 16px;
     font-size: 22px;
@@ -33,28 +33,28 @@
     margin-right: 18px;
 }
 
-.about-work{
-    margin: 0px;
+.about-work {
+    margin-left: 26px;
 }
 
 .about-education{
-    margin: 0px;
+    margin-left: 26px;
 }
 
 .about-location{
-    margin: 0px;
+    margin-left: 26px;
 }
 
 .about-birthday{
-    margin: 0px;
+    margin-left: 26px;
 }
 
 .about-gender{
-    margin: 0px;
+    margin-left: 26px;
 }
 
 svg.about-options{
-    font-size: 18px;
+    font-size: 23px;
     padding: 4px;
     border-radius: 40px;
     margin-right: 37px;
@@ -63,4 +63,50 @@ svg.about-options{
 svg.about-options:hover{
     cursor: pointer;
     background-color: lightgrey;
+}
+
+.work-unedited svg:first-child {
+    font-size: 34px;
+}
+
+.work-unedited{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-edit-actions{
+    margin-top: 3px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    right: 71px;
+}
+
+.work-edit {
+    position: relative;
+    width: 665px;
+}
+
+.work-edit input {
+    height: 55px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 20px;
+    padding: 10px 10px 0px;
+    width: 570px;
+}
+
+.work-edit label {
+    position: absolute;
+    top: 6px;
+    left: 11px;
+    font-size: 13px;
+    color: blue;
+    width: auto;
+}
+
+.grey{
+    color: grey;
 }
