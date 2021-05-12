@@ -42,17 +42,17 @@ class UserPosts extends React.Component{
             )
         )
         return(
-            <div>
+            <div className='full-user-posts'>
                 <div className="author-post-create-container">
                     <div className="author-post-create-component">
-                        <div className="input-pic">
+                        <div className="author-input-pic">
                             <img src={currentUser.profilePicture} className="profile-pic"></img>
                             <input id="create-post-uneditable" type="text"  onClick={openCreatePost} placeholder={`What's on you're mind, ${currentUser.firstName}?`}/>
                         </div>
                     </div>
                 </div>
-                <div className="post-index-cont">
-                    <ul className="post-index-ul">
+                <div className="author-post-index-cont">
+                    <ul className="author-post-index-ul">
                         {postItem}
                     </ul>
                 </div>

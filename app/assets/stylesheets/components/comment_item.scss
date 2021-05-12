@@ -22,14 +22,14 @@
     width: inherit;
 }
 
-.full-comment{
+.full-comment {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     width: -webkit-fill-available;
     height: auto;
     margin: 4px;
-    padding: 3px;
+    /* padding: 3px; */
     border-radius: 7px;
     position: relative;
 }
@@ -108,15 +108,21 @@
     cursor: pointer;
 }
 
-.comment-input-full{
+.comment-input-full {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1px;
-    padding-left: 8px;
+    /* padding-left: 8px; */
+    width: 99%;
+    height: auto;
 }
 
-.comment-input{
+.comment-input-full > .profile-pic {
+    margin-left: 9px;
+}
+
+.comment-input {
     border-radius: 18px;
     padding: 7px;
     padding-left: 9px;
@@ -124,7 +130,7 @@
     margin-left: 4px;
     font-size: 16px;
     border: none;
-    width: 500px;
+    width: 90%;
 }
 
 .margin-top{
