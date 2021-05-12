@@ -25,11 +25,13 @@ class Profile extends React.Component{
             edit: false,
             openEditor: false,
             editAbout: false,
+            selected: 'Timeline'
         }
         this.updateBio = this.updateBio.bind(this);
         this.handleEdited = this.handleEdited.bind(this);
         this.requested = this.requested.bind(this);
         this.friends = this.friends.bind(this);
+        this.displayPage = this.displayPage.bind(this);
     }
 
     updateBio(e){
@@ -62,6 +64,10 @@ class Profile extends React.Component{
         }else{
             return false;
         }
+    }
+
+    displayPage(component){
+        this.setState({selected: component});
     }
 
     render(){
@@ -105,6 +111,17 @@ class Profile extends React.Component{
             requestButton = <AddFriendButton userId={user.id}/>
         }
 
+        let selectedComponent;
+        if(this.state.selected === 'Timeline'){
+            selectedComponent = <Timeline user={user}/>
+        }else if(this.state.selected === 'About'){
+            selectedComponent = <About user={user} type={this.state.editAbout}/>
+        }else if(this.state.selected === 'Photos'){
+            selectedComponent = <PhotosContainer fullWidth={900} userId={user.id}/>
+        }else if(this.state.selected === 'Posts'){
+            selectedComponent = < UserPosts userId={user.id}/>
+        };
+
         return(
             <div className="full-profile">
                 <Nav />
@@ -129,10 +146,10 @@ class Profile extends React.Component{
                 </div>
                 <div className='profile-nav'>
                     <div className='profile-nav-left'>
-                        <div className='hover-properties-16'>Timeline</div>
-                        <div className='hover-properties-16'>About</div>
-                        <div className='hover-properties-16'>Friends</div>
-                        <div className='hover-properties-16'>Photos</div>
+                        <div className={ this.state.selected === 'Timeline' ? 'active-profile-button' : 'hover-properties-16'} onClick={() => this.displayPage('Timeline')}>Timeline</div>
+                        <div className={ this.state.selected === 'About' ? 'active-profile-button' : 'hover-properties-16'} onClick={() => this.displayPage('About')}>About</div>
+                        <div className='hover-properties-16' >Friends</div>
+                        <div className={ this.state.selected === 'Photos' ? 'active-profile-button' : 'hover-properties-16'} onClick={() => this.displayPage('Photos')}>Photos</div>
                     </div>
                     {currentUser.id === user.id ?
                     <div className='profile-nav-right'>
@@ -149,7 +166,8 @@ class Profile extends React.Component{
                     {/* <PhotosContainer userId={user.id}/> */}
                     {/* < UserPosts userId={user.id}/> */}
                     {/* <About user={user} type={this.state.editAbout}/> */}
-                    <Timeline user={user}/>
+                    {/* <Timeline user={user}/> */}
+                    {selectedComponent}
                 </div>
             </div>
         )

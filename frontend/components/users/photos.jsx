@@ -7,6 +7,7 @@ class Photos extends React.Component{
     }
 
     render() {
+        const {fullWidth} = this.props;
         let photoArr = this.props.photoPosts.length ? 
         this.props.photoPosts.map(photoPost => {
             return (
@@ -16,7 +17,7 @@ class Photos extends React.Component{
             )
         }) : [];
         return (
-            <div className='photos-full'>
+            <div className='photos-full' style={{width: `${fullWidth ? '876px' : '416px'}`}}>
                 <div>Photos</div>
                 <ul className='photo-preview'>
                     {photoArr}

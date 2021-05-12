@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) => {
     const toReturn = {
         currentUser: state.session.currentUser,
         errors: state.errors.postErrorsReducer,
-        photoPosts: getPostsByAuthor(state.entities.posts, ownProps.userId).filter(post => post.photoURL)
+        photoPosts: getPostsByAuthor(state.entities.posts, ownProps.userId).filter(post => post.photoURL),
+        fullWidth: ownProps.fullWidth
     }
     return toReturn;
 }
