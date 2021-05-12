@@ -16,11 +16,12 @@ class Friendship < ApplicationRecord
     class_name: :User 
 
     belongs_to :friend,
-    foreign_key: :friend_id
-    class_name: :User,
+    foreign_key: :friend_id,
+    class_name: :User
 
     def corresponding_friendship
         friendship = Friendship.find_by(friend_id: self.user_id, user_id: self.friend_id)
+        return friendship
     end
     # finds your friend's friendship data.
 

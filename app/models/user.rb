@@ -44,7 +44,11 @@ class User < ApplicationRecord
     # has_many :friends, 
     # class_name: :Friend,
     # foreign_key: :sender_id
-
+    
+    has_many :outgoing_friend_requests,
+    foreign_key: :requester_id,
+    primary_key: :id,
+    class_name: :FriendRequest
 
     has_many :received_friend_requests, 
     foreign_key: :receiver_id,

@@ -17,7 +17,7 @@ Like.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1')
 
     users = User.create!([
         {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '04061999', gender: 'female', bio: "Looking to go to Grand Canyons, who's down?", occupation: 'New York College - Student' },
-        {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password: 'Jaspreet', birthday: '01091998', gender: 'male', bio: 'Hey hope everyone is likeing my site!', occupation: 'Ourspace - Lead Software Engineer'},
+        {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password: 'Jaspreet', birthday: '01091998', gender: 'male', bio: 'Hey hope everyone is liking my site!', occupation: 'Ourspace - Lead Software Engineer'},
         {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password: 'Loveleen', birthday: '11101996', gender: 'female', bio: 'Im never on here add me on snapback', occupation: 'Mont Saini - Registered Nurse'}
     ])
 
