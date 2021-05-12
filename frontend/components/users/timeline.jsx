@@ -1,4 +1,7 @@
 import React from 'react';
+import PhotosContainer from './photos_container'
+import About from './about_container';
+
 
 class Timeline extends React.Component{
     constructor(props){

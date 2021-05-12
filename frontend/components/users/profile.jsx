@@ -3,6 +3,7 @@ import Nav from '../nav/nav_container';
 import { MdEdit } from 'react-icons/md';
 import PhotosContainer from './photos_container'
 import About from './about_container';
+import UserPosts from './user_posts_container';
 import AddFriendButton from '../friends/add_friend_button_container';
 import { findRequestId } from '../../reducers/selectors';
 import { findFriendshipId } from '../../reducers/selectors';
@@ -145,7 +146,8 @@ class Profile extends React.Component{
                 </div>
                 <div>
                     {/* <PhotosContainer userId={user.id}/> */}
-                    <About user={user} type={this.state.editAbout}/>
+                    < UserPosts userId={user.id}/>
+                    {/* <About user={user} type={this.state.editAbout}/> */}
                 </div>
             </div>
         )

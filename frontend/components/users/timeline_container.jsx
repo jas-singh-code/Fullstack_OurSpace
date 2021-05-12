@@ -7,8 +7,10 @@ const mSTP = (state, ownProps) => {
     }
 }
 
-const mSTP = (state, ownProps) => {
+const mDTP = (dispatch) => {
     return {
         editUser: data => dispatch(editUser(data))
     }
 }
+
+export default connect(mSTP, mDTP)(Timeline);
