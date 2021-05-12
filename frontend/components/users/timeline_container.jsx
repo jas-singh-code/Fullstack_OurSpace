@@ -3,7 +3,7 @@ import Timeline from './timeline';
 
 const mSTP = (state, ownProps) => {
     return {
-        userId: ownProps.userId
+        user: ownProps.user
     }
 }
 

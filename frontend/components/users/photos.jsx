@@ -16,7 +16,7 @@ class Photos extends React.Component{
             )
         }) : [];
         return (
-            <div className='Timeline-full'>
+            <div className='photos-full'>
                 <div>Photos</div>
                 <ul className='photo-preview'>
                     {photoArr}

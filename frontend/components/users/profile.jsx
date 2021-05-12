@@ -9,6 +9,7 @@ import { findRequestId } from '../../reducers/selectors';
 import { findFriendshipId } from '../../reducers/selectors';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
 import CancleRequestContainer from '../friends/cancle_request_button_container';
+import Timeline from './timeline_container';
 
 class Profile extends React.Component{
     constructor(props){
@@ -146,8 +147,9 @@ class Profile extends React.Component{
                 </div>
                 <div>
                     {/* <PhotosContainer userId={user.id}/> */}
-                    < UserPosts userId={user.id}/>
+                    {/* < UserPosts userId={user.id}/> */}
                     {/* <About user={user} type={this.state.editAbout}/> */}
+                    <Timeline user={user}/>
                 </div>
             </div>
         )
