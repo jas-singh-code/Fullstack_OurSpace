@@ -128,7 +128,11 @@ class PostItem extends React.Component{
         }
         let additionalLikers;
         if(likers.length > 2){
-            additionalLikers = (likers.length - 2)
+            if ((likers.length - 2) === 1){
+                additionalLikers = `and ${likers.length - 2} other`
+            }else{
+                additionalLikers = `and ${likers.length - 2} others`
+            }
             additionalLikers = <div className='add-likers'>{additionalLikers}</div>;
         }
         return (
