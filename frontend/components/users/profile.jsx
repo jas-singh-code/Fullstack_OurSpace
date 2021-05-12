@@ -3,6 +3,9 @@ import Nav from '../nav/nav_container';
 import { MdEdit } from 'react-icons/md';
 import PhotosContainer from './photos_container'
 import About from './about_container';
+import AddFriendButton from '../friends/add_friend_button_container';
+import { findRequestId } from '../../reducers/selectors';
+
 
 class Profile extends React.Component{
     constructor(props){
@@ -21,6 +24,7 @@ class Profile extends React.Component{
         }
         this.updateBio = this.updateBio.bind(this);
         this.handleEdited = this.handleEdited.bind(this);
+        this.requested = this.requested.bind(this);
     }
 
     updateBio(e){
@@ -36,6 +40,16 @@ class Profile extends React.Component{
         };
         this.props.editUser(editedUser);
         this.setState({edit: false})
+    }
+
+    requested(){
+        const id = findRequestId(this.props.requests, this.props.currentUser.id, this.props.user.id);
+        debugger;
+        if(id){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     render(){
@@ -92,14 +106,24 @@ class Profile extends React.Component{
                         <div className='hover-properties-16'>Friends</div>
                         <div className='hover-properties-16'>Photos</div>
                     </div>
+                    {currentUser.id === user.id ?
                     <div className='profile-nav-right'>
                         <MdEdit />
                         <div onClick={() => this.setState({aboutEdit: true})}>Edit Profile</div>
                     </div>
+                    :
+                    <div className='profile-nav-right'>
+                        {this.requested() ?
+                        <div>Request Pending...</div>
+                        :
+                        <AddFriendButton userId={user.id}/>
+                        }
+                    </div>
+                    }
                 </div>
                 <div>
                     {/* <PhotosContainer userId={user.id}/> */}
-                    <About user={user} type={this.state.editAbout}/>
+                    {/* <About user={user} type={this.state.editAbout}/> */}
                 </div>
             </div>
         )

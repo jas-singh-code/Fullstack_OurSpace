@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { editUser } from '../../actions/user_actions';
 
-
 const mSTP = (state, ownProps) => {
     const id = ownProps.location.pathname.slice(7);
     const userObj = state.entities.users[id];
@@ -10,7 +9,8 @@ const mSTP = (state, ownProps) => {
         currentUser: state.session.currentUser,
         errors: state.errors.postErrorsReducer,
         users: state.entities.users,
-        user: userObj
+        user: userObj,
+        requests: state.entities.friendRequests
     }
 }
 

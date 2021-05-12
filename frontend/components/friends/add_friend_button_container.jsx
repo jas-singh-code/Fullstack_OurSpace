@@ -3,9 +3,10 @@ import { createFriendship } from '../../actions/friendships_actions';
 import { sendFriendRequest } from '../../actions/friend_request_actions';
 import AddFriendButton from './add_friend_button';
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return{
-        currentUser: state.session.currentUser
+        currentUser: state.session.currentUser,
+        userId: ownProps.userId
     }
 }
 

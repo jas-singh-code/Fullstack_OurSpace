@@ -16,6 +16,7 @@ class PostIndex extends React.Component{
         this.props.fetchAllUsers();
         this.props.fetchAllLikes();
         this.props.fetchAllComments();
+        // this.props.fetchAllRequests();
     }
 
     render() {

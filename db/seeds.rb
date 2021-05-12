@@ -16,7 +16,7 @@ Like.destroy_all
 Like.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1') 
 
     users = User.create!([
-        {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '04061999', gender: 'female', bio: "Loking to go to Grand Canyons, who's down?", occupation: 'New York College - Student' },
+        {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '04061999', gender: 'female', bio: "Looking to go to Grand Canyons, who's down?", occupation: 'New York College - Student' },
         {first_name: 'Jaspreet', last_name: 'Singh', email: 'jsingh121@gmail.com', password: 'Jaspreet', birthday: '01091998', gender: 'male', bio: 'Hey hope everyone is likeing my site!', occupation: 'Ourspace - Lead Software Engineer'},
         {first_name: 'Loveleen', last_name: 'Kaur', email: 'lkaur961@gmail.com', password: 'Loveleen', birthday: '11101996', gender: 'female', bio: 'Im never on here add me on snapback', occupation: 'Mont Saini - Registered Nurse'}
     ])
@@ -67,12 +67,12 @@ Like.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1')
         { wall_id: 5, message: 'Wish me luck on passing my NCLX exam', poster_id: 4},
         { wall_id: 2, message: 'Okay really bored with this pandemic, can i go on a vacation already', poster_id: 4},
         { wall_id: 2, message: 'Why does my name sound so familiar?', poster_id: 2},
-        { wall_id: 1, message: 'Should i try to make a sandwich? kinda dreading the cleanup :/', poster_id: 3},
+        { wall_id: 1, message: 'Should i try to make a sandwich? Hungry but dont feel like getting up -_-', poster_id: 3},
         { wall_id: 1, message: 'What a lovely day to be on the interweb!', poster_id: 3},
         { wall_id: 6, message: 'Wow did you guys checkout the cool app i made on THREE.js!? Modeled after Simon Dev', poster_id: 6},
-        { wall_id: 6, message: 'Whats the big deal with crypto anyway...', poster_id: 6},
-        { wall_id: 6, message: 'What a lovely day to be on the interweb!', poster_id: 6},
-        { wall_id: 6, message: 'Hey, psst... there are links to the owners github page everyhere! You can see their source code there as well!', poster_id: 6}
+        # { wall_id: 6, message: 'Whats the big deal with crypto anyway...', poster_id: 6},
+        # { wall_id: 6, message: 'What a lovely day to be on the interweb!', poster_id: 6},
+        # { wall_id: 6, message: 'Hey, psst... there are links to the owners github page everyhere! You can see their source code there as well!', poster_id: 6}
     ])
 
     likes = Like.create!([

@@ -20,7 +20,7 @@ class AddFriendButton extends React.Component{
     render(){
         return(
             <div>
-                <button onClick={this.addFriend}>Add Friend</button>
+                <button className='add-friend' onClick={this.addFriend}>Add Friend</button>
             </div>
         )
     }
