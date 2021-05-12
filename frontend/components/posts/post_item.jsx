@@ -150,7 +150,7 @@ class PostItem extends React.Component{
                         </div>
                     </div>
                     <p>{message}</p>
-                    <div className="photos">
+                    <div className={postImage ? "photos" : "display-none"}>
                         <img src={postImage}></img>
                     </div>
                     <div className="likes-display">
