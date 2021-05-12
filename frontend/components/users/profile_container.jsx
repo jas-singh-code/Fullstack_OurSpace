@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) => {
         errors: state.errors.postErrorsReducer,
         users: state.entities.users,
         user: userObj,
-        requests: state.entities.friendRequests
+        requests: state.entities.friendRequests,
+        friends: state.session.currentUser.friends
     }
 }
 

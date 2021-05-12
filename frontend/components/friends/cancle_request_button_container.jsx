@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import { createFriendship } from '../../actions/friendships_actions';
-import { sendFriendRequest } from '../../actions/friend_request_actions';
+import { sendFriendRequest, deleteFriendRequest } from '../../actions/friend_request_actions';
 import CancleRequestButton from './cancle_request_button';
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return{
         currentUser: state.session.currentUser,
-        requests: state.entities.friendRequests
+        requests: state.entities.friendRequests,
+        userId: ownProps.userId
     }
 }
 
@@ -18,4 +19,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect (mSTP, mDTP)(CancleRequestButton);
+export default connect(mSTP, mDTP)(CancleRequestButton);

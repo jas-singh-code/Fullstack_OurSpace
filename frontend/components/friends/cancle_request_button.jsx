@@ -20,7 +20,9 @@ class CancleRequestButton extends React.Component{
 
     render(){
         return(
-            <button onClick={this.cancleRequest}>Cancle Request</button>
+            <div>
+                <button onClick={this.cancleRequest}>Cancle Request</button>
+            </div>
         )
     }
 }

@@ -5,7 +5,9 @@ import PhotosContainer from './photos_container'
 import About from './about_container';
 import AddFriendButton from '../friends/add_friend_button_container';
 import { findRequestId } from '../../reducers/selectors';
-
+import { findFriendshipId } from '../../reducers/selectors';
+import { BsFillPersonCheckFill } from 'react-icons/bs';
+import CancleRequestContainer from '../friends/cancle_request_button_container';
 
 class Profile extends React.Component{
     constructor(props){
@@ -25,6 +27,7 @@ class Profile extends React.Component{
         this.updateBio = this.updateBio.bind(this);
         this.handleEdited = this.handleEdited.bind(this);
         this.requested = this.requested.bind(this);
+        this.friends = this.friends.bind(this);
     }
 
     updateBio(e){
@@ -44,8 +47,15 @@ class Profile extends React.Component{
 
     requested(){
         const id = findRequestId(this.props.requests, this.props.currentUser.id, this.props.user.id);
-        debugger;
         if(id){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    friends(){
+        if(findFriendshipId(this.props.friends, this.props.currentUser.id, this.props.user.id)){
             return true;
         }else{
             return false;
@@ -54,7 +64,7 @@ class Profile extends React.Component{
 
     render(){
 
-        const {user, currentUser} = this.props;
+        const {user, currentUser, friends} = this.props;
 
         const {firstName, lastName,
             bio, occupation,
@@ -76,6 +86,22 @@ class Profile extends React.Component{
                 <div className="bio">{bio ? bio : 'No bio yet. Click \'Add Bio\' below to add one.'}</div>
                 <div onClick={() => this.setState({edit: true})}className="profile-edit-btn">{bio ? 'Edit' : 'Add Bio'}</div>
             </div>;
+
+        let requestButton;
+        if(this.requested()){
+            requestButton = (
+                <CancleRequestContainer userId={user.id}/>
+            )
+        }else if(this.friends()){
+            requestButton = (
+                <div className='friended'>
+                    <BsFillPersonCheckFill />
+                    <div>Friends</div>
+                </div>
+            )
+        }else{
+            requestButton = <AddFriendButton userId={user.id}/>
+        }
 
         return(
             <div className="full-profile">
@@ -113,17 +139,13 @@ class Profile extends React.Component{
                     </div>
                     :
                     <div className='profile-nav-right'>
-                        {this.requested() ?
-                        <div>Request Pending...</div>
-                        :
-                        <AddFriendButton userId={user.id}/>
-                        }
+                        {requestButton}
                     </div>
                     }
                 </div>
                 <div>
                     {/* <PhotosContainer userId={user.id}/> */}
-                    {/* <About user={user} type={this.state.editAbout}/> */}
+                    <About user={user} type={this.state.editAbout}/>
                 </div>
             </div>
         )
