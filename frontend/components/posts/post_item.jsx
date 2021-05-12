@@ -12,7 +12,7 @@ class PostItem extends React.Component{
         this.state = ({
             body: '',
             post_id: null,
-            poster_id: this.props.currentUser.id,
+            author_id: this.props.currentUser.id,
         });
         // change liked state to reflect if current user is a liker inside post.likes
         this.focusComment = this.focusComment.bind(this);
