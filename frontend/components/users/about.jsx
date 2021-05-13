@@ -119,7 +119,7 @@ class About extends React.Component{
     render(){
         const {user} = this.props;
         return(
-            <div className='full-about'>About
+            <div className='full-about-editable'>About
                 <div className='about-rows'>
 
                     <div className='about-row'>
@@ -140,7 +140,7 @@ class About extends React.Component{
                         <div className='work-unedited'>
                             <MdWork  className='grey'/>
                             <div className='about-work'>Works at: {user.occupation}</div>
-                            <BsThreeDotsVertical className='about-options' onClick={() => this.setState({editOccup: !this.state.editOccup})} />
+                            <BsThreeDotsVertical className='about-options-editable' onClick={() => this.setState({editOccup: !this.state.editOccup})} />
                         </div>
                         }
                     </div>
@@ -162,7 +162,7 @@ class About extends React.Component{
                         <div className='work-unedited'>
                             <MdSchool className='grey' />
                             <div className='about-education'>Studied at {user.education}</div>
-                            <BsThreeDotsVertical className='about-options' onClick={() => this.setState({editEdu: !this.state.editEdu})}/>
+                            <BsThreeDotsVertical className='about-options-editable' onClick={() => this.setState({editEdu: !this.state.editEdu})}/>
                         </div>
                         }
                     </div>
@@ -184,7 +184,7 @@ class About extends React.Component{
                         <div className='work-unedited'>
                             <GoLocation className='grey'/>
                             <div className='about-location'>Lives in {user.location}</div>
-                            <BsThreeDotsVertical className='about-options' onClick={() => this.setState({editLocat: !this.state.editLocat})}/>
+                            <BsThreeDotsVertical className='about-options-editable' onClick={() => this.setState({editLocat: !this.state.editLocat})}/>
                         </div>
                         }
                     </div>
@@ -360,7 +360,7 @@ class About extends React.Component{
                         <div className='work-unedited'>
                             <HiOutlineCake className='grey'/>
                             <div className='about-birthday'>Born on {this.formatBirthday()}</div>
-                            <BsThreeDotsVertical className='about-options' onClick={() => this.setState({editBirth: !this.state.editBirth})} />
+                            <BsThreeDotsVertical className='about-options-editable' onClick={() => this.setState({editBirth: !this.state.editBirth})} />
                         </div>
                         }
                     </div>
@@ -381,7 +381,7 @@ class About extends React.Component{
                         <div className='work-unedited'>
                             <BsPerson className='grey'/>
                             <div className='about-gender'>Gender: {user.gender}</div>
-                            <BsThreeDotsVertical className='about-options' onClick={() => this.setState({editGender: !this.state.editGender})} />
+                            <BsThreeDotsVertical className='about-options-editable' onClick={() => this.setState({editGender: !this.state.editGender})} />
                         </div>
                         }
                     </div>

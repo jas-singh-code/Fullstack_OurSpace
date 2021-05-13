@@ -37,41 +37,36 @@ class Info extends React.Component{
     render(){
         const {user} = this.props;
         return(
-            <div className='full-about'>About
+            <div className='full-about'>Intro
                 <div className='about-rows'>
                     <div className='about-row'>
                         <div className='work-unedited'>
                             <MdWork  className='grey'/>
-                            <div className='about-work'>Works at: {user.occupation}</div>
-                            <BsThreeDotsVertical className='about-options' onClick={() => this.setState({editOccup: !this.state.editOccup})} />
+                            <div className='about-work'>Works at:  {user.occupation}</div>
                         </div>
                     </div>
                     <div className='about-row'>
                         <div className='work-unedited'>
-                            <MdSchool className='grey' />
+                            <MdSchool className='grey'/>
                             <div className='about-education'>Studied at {user.education}</div>
-                            <BsThreeDotsVertical className='about-options' onClick={() => this.setState({editEdu: !this.state.editEdu})}/>
                         </div>
                     </div>
                     <div className='about-row'>
                         <div className='work-unedited'>
                             <GoLocation className='grey'/>
                             <div className='about-location'>Lives in {user.location}</div>
-                            <BsThreeDotsVertical className='about-options' onClick={() => this.setState({editLocat: !this.state.editLocat})}/>
                         </div>
                     </div>
                     <div className='about-row'>
                         <div className='work-unedited'>
                             <HiOutlineCake className='grey'/>
                             <div className='about-birthday'>Born on {this.formatBirthday()}</div>
-                            <BsThreeDotsVertical className='about-options' onClick={() => this.setState({editBirth: !this.state.editBirth})} />
                         </div>
                     </div>
                     <div className='about-row'>
                         <div className='work-unedited'>
-                            <BsPerson className='grey'/>
-                            <div className='about-gender'>Gender: {user.gender}</div>
-                            <BsThreeDotsVertical className='about-options' onClick={() => this.setState({editGender: !this.state.editGender})} />
+                            <BsPerson className='grey'/> 
+                            <div className='about-gender'>Gender:  {user.gender}</div>
                         </div>
                     </div>
                 </div>
