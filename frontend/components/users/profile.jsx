@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '../nav/nav_container';
-import { MdEdit } from 'react-icons/md';
+import { MdEdit, MdPhotoCamera } from 'react-icons/md';
 import PhotosContainer from './photos_container'
 import About from './about_container';
 import UserPosts from './user_posts_container';
@@ -130,6 +130,13 @@ class Profile extends React.Component{
                         <img src={coverPicture}></img>
                         <div className='profile-prof-pic'>
                             <img src={profilePicture}></img>
+                        </div>
+                        <div className='add-cover-photo'>
+                            <MdPhotoCamera />
+                            Add Cover Photo
+                        </div>
+                        <div className='add-profile-picture'>
+                            <MdPhotoCamera />
                         </div>
                     </div>
                     <div className='profile-bio-name'>

@@ -30,9 +30,37 @@
     border-radius: 11px;
 }
 
+.add-cover-photo {
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 10px;
+    background-color: white;
+    padding: 5px 5px 2px 5px;
+    border-radius: 6px;
+    right: 70px;
+    opacity: 0.84;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: system-ui;
+    font-weight: 600;
+}
+
+.add-cover-photo:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+.add-cover-photo > svg {
+    font-size: 24px;
+    margin-right: 6px;
+}
+
 .profile-prof-pic{
     position: absolute;
-    bottom: -92px;
+    bottom: -40px;
     right: 365px;
     height: 180px;
     width: 180px;
@@ -45,6 +73,27 @@
 .profile-prof-pic > img{
     border-radius: 90px;
     border: none;
+}
+
+.add-profile-picture {
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: -14px;
+    background-color: whitesmoke;
+    padding: 5px 5px 2px 5px;
+    border-radius: 42px;
+    right: 362px;
+    /* opacity: 1.5; */
+}
+
+.add-profile-picture > svg {
+    font-size: 30px;
+}
+
+.add-profile-picture:hover {
+    cursor: pointer;
+    background-color: lightgrey;
 }
 
 .profile-bio-name {
