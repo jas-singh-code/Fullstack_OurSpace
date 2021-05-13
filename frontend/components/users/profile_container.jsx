@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 import { editUser } from '../../actions/user_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
     const id = ownProps.location.pathname.slice(7);
@@ -17,7 +18,10 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        editUser: data => dispatch(editUser(data))
+        editUser: data => dispatch(editUser(data)),
+        updateUserPhoto: formData => dispatch(updateUserPhoto(formData)),
+        openUpdateCoverPhoto: () => dispatch(openModal('UpdateCoverPhoto')),
+        openUpdateProfilePhoto: () => dispatch(openModal('UpdateProfilePhoto'))
     }
 }
 

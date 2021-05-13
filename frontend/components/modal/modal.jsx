@@ -16,6 +16,12 @@ function Modal({modal, closeModal}) {
     case 'createPost':
       component = <PostCreateContainer />;
       break;
+    case 'UpdateCoverPhoto':
+      component = <UpdateCoverPhoto type='CoverPhoto'/>
+      break;
+    case 'UpdateProfilePhoto':
+      component = <UpdateCoverPhoto type='ProfilePhoto'/>
+      break;
     default:
       return null;
   }

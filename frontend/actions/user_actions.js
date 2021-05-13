@@ -49,3 +49,13 @@ export const editUser = data => dispatch => {
         )
     )
 }
+
+export const updateUserPhoto = (user) => (dispatch) => {
+    return (
+        UserAPIUtil.updateUserPhoto(user)
+            .then(
+                user => dispatch(receiveUser(user)),
+                err => dispatch(receiveErrors(err))
+            )
+    )
+}

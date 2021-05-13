@@ -25,13 +25,20 @@ class Profile extends React.Component{
             edit: false,
             openEditor: false,
             editAbout: false,
-            selected: 'Timeline'
+            selected: 'Timeline',
+            coverFile: null,
+            profileFile: null,
+            currentUserId: this.props.currentUser.id,
         }
         this.updateBio = this.updateBio.bind(this);
         this.handleEdited = this.handleEdited.bind(this);
         this.requested = this.requested.bind(this);
         this.friends = this.friends.bind(this);
         this.displayPage = this.displayPage.bind(this);
+        this.editCoverPhoto = this.editCoverPhoto.bind(this);
+        this.editProfilePhoto = this.editProfilePhoto.bind(this);
+        this.handleCoverFile = this.handleCoverFile.bind(this);
+        this.handleProfileFile = this.handleProfileFile.bind(this);
     }
 
     updateBio(e){
@@ -68,6 +75,56 @@ class Profile extends React.Component{
 
     displayPage(component){
         this.setState({selected: component});
+    }
+
+    handleCoverFile(e){
+        this.setState({coverFile: e.currentTarget.files[0]})
+    }
+
+    handleProfileFile(e){
+        this.setState({profileFile: e.currentTarget.files[0]})
+    }
+
+
+    editCoverPhoto(e){
+        e.preventDefault();
+        let formData = new FormData();
+
+        formData.append('user[id]', this.state.currentUserId);
+
+        if(this.state.coverFile){
+            formData.append('user[cover_picture]', this.state,coverFile)
+        }
+
+        this.props.updateUserPhoto(formData);
+    }
+
+    // handleSubmit(e){
+    //     e.preventDefault();
+
+    //     const formData = new FormData();
+
+    //     formData.append('post[message]', this.state.message);
+    //     formData.append('post[poster_id]', this.state.poster_id);
+    //     if(this.state.photoFile)
+    //     {
+    //         formData.append('post[photo]', this.state.photoFile);
+    //     }
+
+    //     this.props.createPost(formData)
+    //     .then(this.closeForm)
+    //     .then(() => <Redirect to="home"/>)
+    // }
+
+    editProfilePhoto(e){
+        e.preventDefault();
+        const formData = new FormData();
+
+        const editedUser = {
+            id: this.props.currentUser.id,
+            profile_picture: this.state,
+        }
+        this.props.editUser(editedUser);
     }
 
     render(){
@@ -131,10 +188,13 @@ class Profile extends React.Component{
                         <div className='profile-prof-pic'>
                             <img src={profilePicture}></img>
                         </div>
-                        <div className='add-cover-photo'>
-                            <MdPhotoCamera />
-                            Add Cover Photo
-                        </div>
+                        <form className='add-cover-photo' onSubmit={this.editCoverPhoto}>
+                            <label className='add-cover-photo-label'>
+                                <MdPhotoCamera />
+                                <input type="file" onChange={this.handleCoverFile}></input>
+                                Add Cover Photo
+                            </label>
+                        </form>
                         <div className='add-profile-picture'>
                             <MdPhotoCamera />
                         </div>

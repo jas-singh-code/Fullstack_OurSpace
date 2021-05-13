@@ -53,9 +53,19 @@
     background-color: lightgrey;
 }
 
-.add-cover-photo > svg {
+.add-cover-photo-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-cover-photo-label svg {
     font-size: 24px;
     margin-right: 6px;
+}
+
+.add-cover-photo-label > input{
+    display: none;
 }
 
 .profile-prof-pic{
