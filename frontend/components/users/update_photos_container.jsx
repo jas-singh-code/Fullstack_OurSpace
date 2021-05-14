@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import UpdatePhotos from './update_photos';
 import { updateUserPhoto, editUser } from '../../actions/user_actions';
 import { Router, Route, Switch } from "react-router";
+import {closeModal} from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
     return {

@@ -34,7 +34,8 @@ class UpdatePhoto extends React.Component{
         }
 
         this.props.updateUserPhoto(formData);
-        this.props.closeModal;
+        this.props.closeModal();
+        this.setState({coverFile: null});
     }
 
     // handleSubmit(e){
@@ -71,12 +72,12 @@ class UpdatePhoto extends React.Component{
             <div className='update-photos-full'>
                 <div className='update-photo-header'>{this.props.type === 'CoverPhoto' ? 'Update Cover Photo' : 'Update Profile Page'}</div>
                 <form className='update-photos-form' onSubmit={this.editCoverPhoto}>
-                    <label className='update-photos-label'>
+                    <label className={this.state.coverFile || this.state.profileFile ? 'update-photos-label' : "update-photos-label-nofiles"}>
                         <input type="file" onChange={this.handleCoverFile}></input>
                         Add Photo
                     </label>
                 </form>
-                <div className='update-photos-save' onClick={this.editCoverPhoto}>Save</div>
+                <div className={this.state.coverFile || this.state.profileFile ? 'update-photos-save' : "update-photos-save-nofiles"} onClick={this.editCoverPhoto}>Save</div>
             </div>
         )
     }

@@ -60,14 +60,46 @@
     font-weight: 500;
 }
 
-.update-photos-save:hover{
-    cursor: pointer;
-    background-color: $green;
+.update-photos-label-nofiles{
+    padding: 9px;
+    /* background-color: #1877f2; */
+    border-radius: 9px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 18px;
+    box-shadow: 0px 0px 0px 0, 0px 3px 5px 1px lightgrey;
+    /* color: white; */
+    font-weight: 500;
 }
 
-.update-photos-label:hover{
+.update-photos-save-nofiles {
+    padding: 13px;
+    /* background-color: #42b72a; */
+    border-radius: 10px;
+    width: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 14px;
+    font-size: 18px;
+    box-shadow: 0px 0px 0px 0, 0px 3px 5px 1px lightgrey;
+    /* color: white; */
+    font-weight: 500;
+}
+
+.update-photos-save:hover, .update-photos-save-nofiles:hover{
+    cursor: pointer;
+    background-color: $green;
+    color: white;
+}
+
+.update-photos-label:hover, .update-photos-label-nofiles:hover{
     cursor: pointer;
     background-color: $hover-blue;
+    color: white;
 }
 
 .update-photos-form input {
