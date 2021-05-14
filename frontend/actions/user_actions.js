@@ -54,7 +54,7 @@ export const updateUserPhoto = (user) => (dispatch) => {
     return (
         UserAPIUtil.updateUserPhoto(user)
             .then(
-                user => dispatch(receiveUser(user)),
+                user => dispatch(receiveCurrentUser(user)),
                 err => dispatch(receiveErrors(err))
             )
     )

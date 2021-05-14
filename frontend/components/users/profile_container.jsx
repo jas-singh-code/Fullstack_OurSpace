@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
-import { editUser } from '../../actions/user_actions';
+import { editUser, updateUserPhoto } from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {

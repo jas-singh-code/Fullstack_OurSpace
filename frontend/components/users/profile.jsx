@@ -188,10 +188,9 @@ class Profile extends React.Component{
                         <div className='profile-prof-pic'>
                             <img src={profilePicture}></img>
                         </div>
-                        <form className='add-cover-photo' onSubmit={this.editCoverPhoto}>
+                        <form className='add-cover-photo' onClick={this.props.openUpdateCoverPhoto}>
                             <label className='add-cover-photo-label'>
                                 <MdPhotoCamera />
-                                <input type="file" onChange={this.handleCoverFile}></input>
                                 Add Cover Photo
                             </label>
                         </form>

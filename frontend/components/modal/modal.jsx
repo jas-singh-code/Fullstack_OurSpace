@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import SignupFormContainer from '../session_form/signup_form_container';
 import PostCreateContainer from '../posts/post_create_container';
+import UpdateCoverPhoto from '../users/update_photos_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
