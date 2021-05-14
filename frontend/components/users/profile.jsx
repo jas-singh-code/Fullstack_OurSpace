@@ -194,7 +194,7 @@ class Profile extends React.Component{
                                 Add Cover Photo
                             </label>
                         </form>
-                        <div className='add-profile-picture'>
+                        <div className='add-profile-picture' onClick={this.props.openUpdateProfilePhoto}>
                             <MdPhotoCamera />
                         </div>
                     </div>
@@ -220,7 +220,7 @@ class Profile extends React.Component{
                     {currentUser.id === user.id ?
                     <div className='profile-nav-right'>
                         <MdEdit />
-                        <div onClick={() => this.setState({aboutEdit: true})}>Edit Profile</div>
+                        <div onClick={() => this.displayPage('About')}>Edit Profile</div>
                     </div>
                     :
                     <div className='profile-nav-right'>

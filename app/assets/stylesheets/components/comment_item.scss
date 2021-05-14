@@ -147,6 +147,7 @@
     border-radius: 20px;
     background-color: $lightgrey;
     cursor: pointer;
+    transition: background-color .07s linear;
 }
 
 .comment-options svg:active{

@@ -21,6 +21,10 @@ time, mark, audio, video {
   height: inherit;
   width: inherit;
 }
+
+div:hover, span:hover, :hover{
+	transition: background-color .56s ease-out;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {

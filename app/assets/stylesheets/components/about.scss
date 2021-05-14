@@ -23,9 +23,6 @@
 }
 
 .about-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 10px 0px;
 }
 
@@ -99,6 +96,10 @@ svg.about-options:hover{
     width: 570px;
 }
 
+.work-edit input:focus{
+    border: thin solid rgb(41, 204, 41);
+}
+
 .work-edit label {
     position: absolute;
     top: 6px;
@@ -132,4 +133,9 @@ svg.about-options-editable {
     padding: 4px;
     border-radius: 40px;
     margin-right: 48px;
+}
+
+svg.about-options-editable:hover{
+    cursor: pointer;
+    background-color: lightgrey;
 }

@@ -114,6 +114,7 @@
     cursor: pointer;
     background-color: #eeeeee;
     border-radius: 4px;
+    transition: background-color .1s linear;
 }
 
 .comments-btn, .p-like{

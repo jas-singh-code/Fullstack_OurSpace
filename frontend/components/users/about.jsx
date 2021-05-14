@@ -125,7 +125,7 @@ class About extends React.Component{
                     <div className='about-row'>
                         {this.state.editOccup ?
                         <form className='work-edit' onSubmit={this.handleOccup}>
-                            <input onChange={this.update('occupation')} defaultValue={user.occupation}>
+                            <input onChange={this.update('occupation')} defaultValue={user.occupation} autoFocus>
                             </input>
                             <label>
                                 Work

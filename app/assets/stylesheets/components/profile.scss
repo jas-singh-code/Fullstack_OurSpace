@@ -217,6 +217,7 @@
     justify-content: center;
     align-items: center;
     width: 150px;
+    padding-left: 9px;
 }
 
 .profile-nav-right > svg{
@@ -226,7 +227,7 @@
 
 .profile-nav-right > div {
     margin-left: 6px;
-    padding: 2px 5px;
+    padding: 2px 0px 2px 0px;
     font-weight: bold;
     font-size: 16px;
     display: flex;
@@ -234,7 +235,13 @@
     align-items: center;
 }
 
-.profile-nav-right > div:hover{
+// .profile-nav-right > div:hover{
+//     background-color: lightgrey;
+//     border-radius: 4px;
+//     cursor: pointer;
+// }
+
+.profile-nav-right:hover {
     background-color: lightgrey;
     border-radius: 4px;
     cursor: pointer;
