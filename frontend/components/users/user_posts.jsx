@@ -10,8 +10,8 @@ class UserPosts extends React.Component{
     }
 
     getPosts(){
-        const {posts, userId} = this.props;
-        const postsArr = getPostsByAuthor(posts, userId);
+        const {posts, user} = this.props;
+        const postsArr = getPostsByAuthor(posts, user.id);
         return postsArr;
     }
 
@@ -20,7 +20,7 @@ class UserPosts extends React.Component{
         const { currentUser, openCreatePost, 
         createLike, deleteLike, createComment,
         deleteComment, fetchComments, users,
-        likes} = this.props;
+        likes, user} = this.props;
         const authorPosts = this.getPosts()
         const postItem = authorPosts.map(post => (
             <PostItem 
@@ -43,14 +43,18 @@ class UserPosts extends React.Component{
         )
         return(
             <div className='full-user-posts'>
-                <div className="author-post-create-container">
-                    <div className="author-post-create-component">
-                        <div className="author-input-pic">
-                            <img src={currentUser.profilePicture} className="profile-pic"></img>
-                            <input id="create-post-uneditable" type="text"  onClick={openCreatePost} placeholder={`What's on you're mind, ${currentUser.firstName}?`}/>
+                {user.id === currentUser.id ?
+                    <div className="author-post-create-container">
+                        <div className="author-post-create-component">
+                            <div className="author-input-pic">
+                                <img src={user.profilePicture} className="profile-pic"></img>
+                                <input id="create-post-uneditable" type="text"  onClick={openCreatePost} placeholder={`What's on you're mind, ${user.firstName}?`}/>
+                            </div>
                         </div>
                     </div>
-                </div>
+                :
+                ''
+                }
                 <div className="author-post-index-cont">
                     <ul className="author-post-index-ul">
                         {postItem}

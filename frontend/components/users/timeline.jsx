@@ -19,7 +19,7 @@ class Timeline extends React.Component{
                     <Info user={user} />
                 </div>
                 <div className='timeline-right'>
-                    <UserPosts userId={user.id}/>
+                    <UserPosts user={user}/>
                 </div>
             </div>
         )

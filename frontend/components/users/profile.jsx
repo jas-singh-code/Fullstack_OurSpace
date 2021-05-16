@@ -10,6 +10,7 @@ import { findFriendshipId } from '../../reducers/selectors';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
 import CancleRequestContainer from '../friends/cancle_request_button_container';
 import Timeline from './timeline_container';
+import Info from './info_container';
 
 class Profile extends React.Component{
     constructor(props){
@@ -171,8 +172,10 @@ class Profile extends React.Component{
         let selectedComponent;
         if(this.state.selected === 'Timeline'){
             selectedComponent = <Timeline user={user}/>
-        }else if(this.state.selected === 'About'){
+        }else if(this.state.selected === 'About' && user.id === currentUser.id){
             selectedComponent = <About user={user} type={this.state.editAbout}/>
+        }else if(this.state.selected === 'About' && user.id != currentUser.id){
+            selectedComponent = <Info user={user}/>
         }else if(this.state.selected === 'Photos'){
             selectedComponent = <PhotosContainer fullWidth={900} userId={user.id}/>
         }else if(this.state.selected === 'Posts'){

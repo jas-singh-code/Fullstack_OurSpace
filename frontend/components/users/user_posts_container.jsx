@@ -10,7 +10,7 @@ import { getUsers } from '../../actions/user_actions';
 const mSTP = (state, ownProps) => {
     return {
         currentUser: state.session.currentUser,
-        userId: ownProps.userId,
+        user: ownProps.user,
         posts: state.entities.posts,
         comments: state.entities.comments,
         users: state.entities.users,
