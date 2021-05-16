@@ -47,30 +47,32 @@ class SignupForm extends React.Component {
     }
 
     render () {
-        const fnameErr = this.props.errors.first_name != undefined;
-        const lnameErr = this.props.errors.last_name != undefined;
-        const emailErr = this.props.errors.email != undefined;
-        const passErr = this.props.errors.password != undefined;
-        const genderErr = this.props.errors.gender != undefined;
-        const bdayErr = this.props.errors.birthday != undefined;
+        const {first_name, last_name, email, password, gender, birthday} = this.props.errors;
+
+        const fnameErr = !!first_name ;
+        const lnameErr = !!last_name;
+        const emailErr = !!email;
+        const passErr = !!password;
+        const genderErr = !!gender;
+        const bdayErr = !!birthday;
 
 
-        const errTriangleFname = this.props.errors.first_name != undefined ? <div className="side-err-fname"></div> : '';
-        const errTriangleLname = this.props.errors.last_name != undefined ? <div className="side-err-lname"></div> : '';
-        const errTrianglePass = this.props.errors.password != undefined ? <div className="side-err-pass"></div> : '';
-        const errTriangleEmail = this.props.errors.email != undefined ? <div className="side-err-email"></div> : '';
-        const errTriangleGender = this.props.errors.gender != undefined ? <div className="side-err-gender"></div> : '';
-        const errTrianglebday = this.props.errors.birthday != undefined ? <div className="side-err-bday"></div> : '';
+        const errTriangleFname = first_name ? <div className="side-err-fname"></div> : '';
+        const errTriangleLname = last_name ? <div className="side-err-lname"></div> : '';
+        const errTrianglePass = password ? <div className="side-err-pass"></div> : '';
+        const errTriangleEmail = email ? <div className="side-err-email"></div> : '';
+        const errTriangleGender = gender ? <div className="side-err-gender"></div> : '';
+        const errTrianglebday = birthday ? <div className="side-err-bday"></div> : '';
         
-        const firstNameError = this.props.errors.first_name != undefined ? <div className="fname-err"> {"First Name " + this.props.errors.first_name[0]}</div> : '' ;
-        const lastNameError = this.props.errors.last_name != undefined ? <div className="lname-err"> {"Last Name " + this.props.errors.last_name[0]} </div> : '' ;
-        const emailError = this.props.errors.email != undefined ? <div className="email-err">{"Email input " + this.props.errors.email[0]}</div> : '' ;
-        const passwordError = this.props.errors.password != undefined ? <div className="pass-err">{"Password " + this.props.errors.password[0]}</div> : '' ;
-        const genderError = this.props.errors.gender != undefined ? <div className="gender-err">{"Gender " + this.props.errors.gender[0]}</div> : '' ;
-        const birthdayError = this.props.errors.birthday != undefined ? <div className="birthday-err">{"Birthday " + this.props.errors.birthday[0]}</div> : '' ;
+        const firstNameError = first_name ? <div className="fname-err"> {"First Name " + first_name[0]}</div> : '' ;
+        const lastNameError = last_name ? <div className="lname-err"> {"Last Name " + last_name[0]} </div> : '' ;
+        const emailError = email ? <div className="email-err">{"Email input " + email[0]}</div> : '' ;
+        const passwordError = password ? <div className="pass-err">{"Password " + password[0]}</div> : '' ;
+        const genderError = gender ? <div className="gender-err">{"Gender " + gender[0]}</div> : '' ;
+        const birthdayError = birthday ? <div className="birthday-err">{"Birthday " + birthday[0]}</div> : '' ;
         return(
             <div>
-                <form  className="signup-form-container" onSubmit={this.handleSubmit}>
+                <form className="signup-form-container" onSubmit={this.handleSubmit}>
                     <div className="signup-header">
                         <div className="signup-div1">Sign Up</div>
                         <div className="signup-div2">It's quick and easy.</div>

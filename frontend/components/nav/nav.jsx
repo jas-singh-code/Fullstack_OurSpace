@@ -37,8 +37,9 @@ class Nav extends React.Component{
                 <div className="search-bar"></div>
                     <Link to={'/home'}>
                         <div className="logo-init">
-                            <img src={logoInitialsURL}></img>
+                            Ourspace
                         </div>
+                        <div className='logo-init-opc'></div>
                     </Link>
                 <div className="home-icon">
                     <AiFillHome className="home-icon-html"/>

@@ -20,12 +20,43 @@
 }
 
 .logo-init {
-width: 87px;
-    height: 87px;
+    width: auto;
+    height: auto;
     position: absolute;
-    top: -44px;
-    left: -56px;
+    top: 27px;
+    left: 35px;
+    font-size: 30px;
+    padding: 9px;
+    border-radius: 5px;
 }
+
+// .logo-init-opc {
+//     width: 121px;
+//     height: 1px;
+//     position: absolute;
+//     left: 24px;
+//     top: 50px;
+//     background-color: #f77500;
+//     opacity: .7;
+//     border-radius: 5px;
+// }
+
+.logo-init:hover {
+    transition: box-shadow .76s ease-out;
+    box-shadow: -13px 17px 20px #e0e0e0;
+    border-radius: 9px;
+}
+
+// .logo-init:hover {
+//     background-image: linear-gradient(
+// 180deg
+// , #ffffff 61%, #f77500 50%, #673ab7 59%);
+//     -webkit-transition: background-image 3s ease-in;
+//     color: black;
+//     opacity: .7;
+// }
+
+
 /* Resize images */
 .logo-init img {
     width: 250%;
@@ -37,21 +68,21 @@ width: 87px;
   cursor: pointer;
 }
 
-.home-icon{
+.home-icon {
     font-size: 32px;
     color: blue;
     display: flex;
     width: 42px;
     border-bottom: thick;
-    border: thick solid blue;
     border-top: 0;
     border-left: 0;
     border-right: 0;
     justify-content: center;
     position: absolute;
     top: 33px;
-    padding-bottom: 0px;
     height: auto;
+    padding: 0px 5px 1px 5px;
+    border-radius: 12px;
 }
 
 .home-icon-html{

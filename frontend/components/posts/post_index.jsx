@@ -45,7 +45,7 @@ class PostIndex extends React.Component{
       
         return (
             <div className="post-nav-create-index">
-                <div className="nav-bar">
+                <div>
                     {<NavContainer />}
                 </div>
                 <div className="post-create-container">
