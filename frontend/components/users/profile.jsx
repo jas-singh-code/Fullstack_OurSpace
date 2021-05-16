@@ -8,6 +8,8 @@ import AddFriendButton from '../friends/add_friend_button_container';
 import { findRequestId } from '../../reducers/selectors';
 import { findFriendshipId } from '../../reducers/selectors';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
+import {RiUserAddLine} from 'react-icons/ri';
+import {FiUserMinus} from 'react-icons/fi';
 import CancleRequestContainer from '../friends/cancle_request_button_container';
 import Timeline from './timeline_container';
 import Info from './info_container';
@@ -155,8 +157,11 @@ class Profile extends React.Component{
 
         let requestButton;
         if(this.requested()){
-            requestButton = (
-                <CancleRequestContainer userId={user.id}/>
+            requestButton = (      
+                <div className='profile-friend-btn'>
+                    <FiUserMinus />
+                    <CancleRequestContainer userId={user.id}/>
+                </div>              
             )
         }else if(this.friends()){
             requestButton = (
@@ -166,7 +171,12 @@ class Profile extends React.Component{
                 </div>
             )
         }else{
-            requestButton = <AddFriendButton userId={user.id}/>
+            requestButton = (
+                <div className='profile-friend-btn'>
+                    <RiUserAddLine />
+                    <AddFriendButton userId={user.id}/>
+                </div>
+            )
         }
 
         let selectedComponent;
@@ -191,15 +201,21 @@ class Profile extends React.Component{
                         <div className='profile-prof-pic'>
                             <img src={profilePicture}></img>
                         </div>
-                        <form className='add-cover-photo' onClick={this.props.openUpdateCoverPhoto}>
-                            <label className='add-cover-photo-label'>
+                        {user.id === currentUser.id ? 
+                        <div className='edit-photos-holder'>
+                            <form className='add-cover-photo' onClick={this.props.openUpdateCoverPhoto}>
+                                <label className='add-cover-photo-label'>
+                                    <MdPhotoCamera />
+                                    Add Cover Photo
+                                </label>
+                            </form>
+                            <div className='add-profile-picture' onClick={this.props.openUpdateProfilePhoto}>
                                 <MdPhotoCamera />
-                                Add Cover Photo
-                            </label>
-                        </form>
-                        <div className='add-profile-picture' onClick={this.props.openUpdateProfilePhoto}>
-                            <MdPhotoCamera />
+                            </div>
                         </div>
+                        :
+                        ''
+                        }
                     </div>
                     <div className='profile-bio-name'>
                         <div className='profile-name'>

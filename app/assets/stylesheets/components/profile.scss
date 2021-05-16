@@ -48,7 +48,12 @@
     font-weight: 600;
 }
 
-.add-cover-photo:hover {
+.edit-photos-holder{
+    width: auto;
+    height: auto;
+}
+
+.add-cover-photo:hover, .add-cover-photo-label:hover {
     cursor: pointer;
     background-color: lightgrey;
 }
@@ -200,6 +205,12 @@
     width: 100%;
 }
 
+.profile-friend-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .profile-nav {
     display: flex;
     justify-content: center;
@@ -218,33 +229,33 @@
     align-items: center;
     width: 150px;
     padding-left: 9px;
+    background-color: $blue-btn;
 }
 
-.profile-nav-right > svg{
-    width: 30px;
-    height: 30px;
+.profile-nav-right:hover {
+    background-color: $hover-blue;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.profile-nav-right > div {
-    margin-left: 6px;
-    padding: 2px 0px 2px 0px;
-    font-weight: bold;
-    font-size: 16px;
+.profile-friend-btn {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
 }
 
-// .profile-nav-right > div:hover{
-//     background-color: lightgrey;
-//     border-radius: 4px;
-//     cursor: pointer;
-// }
+.profile-friend-btn > svg {
+    margin-right: 10px;
+    font-size: 31px;
+    color: blue;
+    background-color: blue;
+    color: white;
+}
 
-.profile-nav-right:hover {
-    background-color: lightgrey;
-    border-radius: 4px;
-    cursor: pointer;
+.profile-friend-btn > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-nav-left {
@@ -272,13 +283,6 @@
 .hover-properties-16:hover{
     background-color: lightgrey;
     cursor: pointer;
-}
-
-.profile-nav-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
 }
 
 .active-profile-button{

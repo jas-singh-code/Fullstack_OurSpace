@@ -1,7 +1,9 @@
-.add-friend{
+.add-friend {
     font-size: 18px;
-}
-
-.add-friend:hover{
-    cursor: pointer;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: blue;
+    color: white;
+    font-weight: 500;
 }
