@@ -75,7 +75,7 @@ class UpdatePhoto extends React.Component{
         const {user} = this.props;
         return(
             <div className='update-photos-full'>
-                <div className='update-photo-header'>{this.props.type === 'CoverPhoto' ? 'Update Cover Photo' : 'Update Profile Page'}</div>
+                <div className='update-photo-header'>{this.props.type === 'CoverPhoto' ? 'Update Cover Photo' : 'Update Profile Picture'}</div>
                 <form className='update-photos-form' onSubmit={this.editCoverPhoto}>
                     <label className={this.state.coverFile || this.state.profileFile ? 'update-photos-label' : "update-photos-label-nofiles"}>
                         <input type="file" onChange={this.props.type === 'CoverPhoto' ? this.handleCoverFile : this.handleProfileFile}></input>
