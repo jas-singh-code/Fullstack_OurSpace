@@ -44,7 +44,6 @@ class LoginForm extends React.Component {
 
     render () {
         let {errors} = this.props;
-        // debugger;
         let error = "";
         let error2 = "";
         let sidePass = "";
@@ -58,7 +57,6 @@ class LoginForm extends React.Component {
             sidePass = <div className="login-pass-side-err"></div>;
             sideEmail = <div className="login-email-side-err"></div>;
         }
-        // debugger;
         return(
         <div className="full-container">
             <div className="login-and-logo">
