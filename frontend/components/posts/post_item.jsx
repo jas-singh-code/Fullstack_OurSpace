@@ -94,16 +94,6 @@ class PostItem extends React.Component{
         }
 
         let profilePic = this.getUserProfilePic(this.props.post.posterId);
-
-        // if (author.profilePicutre){
-        //     profilePic = author.profilePicture
-        // }else{
-        //     if (author.gender === "male"){
-        //         profilePic = def_pic_man
-        //     }else{
-        //         profilePic = def_pic_woman
-        //     }
-        // }
         let likers = '';
         let firstLiker = '';
         let secondLiker = '';
