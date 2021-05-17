@@ -1,18 +1,15 @@
 // classes nav-bar logo logout-btn fa fa-home
 @import "variables";
 .nav-bar {
-    box-shadow: lightgrey 0px 0px, lightgrey 0px 1px 2px;
+    box-shadow: lightgrey 0px 0px, lightgrey 0px 1px 5px;
     width: 100%;
-    height: 55px;
+    height: 46px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #ffffff;
-    /* top: 0; */
-    /* bottom: 0; */
-    position: sticky;
+    position: fixed;
     z-index: 9;
-    // margin-bottom: 12px;
 }
 
 .logout-btn{
@@ -22,40 +19,15 @@
 .logo-init {
     width: auto;
     height: auto;
-    position: absolute;
+    /* position: absolute; */
     top: 27px;
     left: 35px;
     font-size: 30px;
     padding: 9px;
     border-radius: 5px;
+    margin-left: 8px;
+    color: $blue-btn
 }
-
-// .logo-init-opc {
-//     width: 121px;
-//     height: 1px;
-//     position: absolute;
-//     left: 24px;
-//     top: 50px;
-//     background-color: #f77500;
-//     opacity: .7;
-//     border-radius: 5px;
-// }
-
-// .logo-init:hover {
-//     transition: box-shadow .76s ease-out;
-//     box-shadow: -13px 17px 20px #e0e0e0;
-//     border-radius: 9px;
-// }
-
-// .logo-init:hover {
-//     background-image: linear-gradient(
-// 180deg
-// , #ffffff 61%, #f77500 50%, #673ab7 59%);
-//     -webkit-transition: background-image 3s ease-in;
-//     color: black;
-//     opacity: .7;
-// }
-
 
 /* Resize images */
 .logo-init img {
@@ -78,11 +50,12 @@
     border-left: 0;
     border-right: 0;
     justify-content: center;
-    position: absolute;
+    // position: absolute;
     top: 33px;
     height: auto;
     padding: 0px 5px 1px 5px;
     border-radius: 12px;
+    margin-top: 10px;
 }
 
 .home-icon-html{
@@ -94,7 +67,7 @@
     background-color: $grey;
 }
 
-.user-profile-module{
+.user-profile-module {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -102,8 +75,8 @@
     width: auto;
     height: 30px;
     position: absolute;
-    right: 185px;
-    top: 32px;
+    right: 226px;
+    top: 15px;
     border-radius: 44px;
     padding: 3px;
 }
@@ -114,7 +87,6 @@
     max-width: 26px;
     min-height: 26px;
     min-width: 26px;
-    // border: thin solid black;
     margin-left: 3px;
     margin-right: 3px;
 }
@@ -126,33 +98,14 @@
     font-size: 14px;
     margin-left: 3px;
     margin-right: 11px;
+    color: #565656;
+    z-index: 1;
 }
 
 .user-profile-module:hover{
     cursor: pointer;
     background-color: $grey;
 }
-
-.dropdown-acc{
-    font-size: 32px;
-    display: flex;
-    width: 29px;
-    justify-content: center;
-    position: absolute;
-    top: 33px;
-    right: 32px;
-    padding-bottom: 6px;
-    border-radius: 90px;
-    align-items: center;
-    height: 32px;
-    z-index: 1;
-}
-
-
-// .dropdown-acc:hover{
-//     background-color: darkgray;
-//     cursor: pointer;
-// }
 
 #arrow-drop {
     display: flex;
@@ -166,7 +119,7 @@
     width: 320px;
     height: auto;
     position: absolute;
-    top: 70px;
+    top: 47px;
     right: 3px;
     background-color: white;
     box-shadow: inset #e2e2e2 -1px 2px 0px 2px, #d4d4d4 -3px 6px 20px 9px;
@@ -222,6 +175,13 @@
     color: #6b6b6b;
 }
 
+a.profile-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
 .large-profile-pic{
     border-radius: 170px;
     max-height: 58px;
@@ -232,83 +192,71 @@
     margin-right: 6px;
 }
 
-.create-icon{
-    font-size: 32px;
+.create-icon {
+    font-size: 26px;
     display: flex;
-    width: 50px;
+    width: 38px;
+    height: 38px;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 135px;
+    top: 8px;
+    z-index: 1;
+    background-color: #e2e2e2;
+    z-index: 1;
+}
+
+.create-icon:hover, .notif-icon:hover, dropdown-acc:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+.notif-icon {
+    font-size: 26px;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     padding-bottom: 0px;
-    right: 110px;
-    top: 22px;
+    right: 93px;
+    top: 9px;
     z-index: 1;
-}
-.create-icon:hover{
-    cursor: pointer;
-}
-
-.notif-icon{
-    font-size: 32px;
-    display: flex;
-    width: 28px;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    padding-bottom: 0px;
-    right: 77px;
-    top: 20px;
+    background-color: #e2e2e2;
+    width: 34px;
+    height: 36px;
+    border-radius: 40px;
     z-index: 1;
 }
 
-.notif-icon:hover{
-    cursor: pointer;
-}
-
-.dropdown-btn{
+.dropdown-btn {
     padding: 1px;
+    color: #424242;
 }
+
 .dropdown-btn:hover{
     cursor: pointer;
     background-color: $grey;
     border-radius: 5px;
 }
 
-.notif-back{
+.dropdown-acc {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 9px;
+    right: 48px;
+    border-radius: 90px;
+    align-items: center;
+    z-index: 1;
     width: 38px;
     height: 38px;
-    background-color: darkgrey;
-    border-radius: 30px;
-    position: absolute;
-    right: 72px;
-    top: 31px;
-    z-index: 2;
-    opacity: 0.3;
+    background-color: #e2e2e2;
+    z-index: 1;
 }
 
-.create-back{
-    width: 40px;
-    height: 40px;
-    background-color: darkgrey;
-    border-radius: 30px;
-    position: absolute;
-    right: 115px;
-    top: 30px;
-    z-index: 2;
-    opacity: 0.3;
-}
-
-.arrow-back{
-    width: 38px;
-    height: 38px;
-    background-color: darkgrey;
-    border-radius: 40px;
-    position: absolute;
-    top: 30px;
-    right: 27px;
-    opacity: 0.3;
-    z-index: 2;
-}
 .arrow-back:hover{
     cursor: pointer;
     background-color: rgb(107, 107, 107);
@@ -321,4 +269,34 @@
 .create-back:hover{
     cursor: pointer;
     background-color: rgb(107, 107, 107);
+}
+
+
+//////////
+
+.nav-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.nav-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0px;
+}
+
+.nav-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-right {
+    height: 100%;
+    width: 100%;
 }

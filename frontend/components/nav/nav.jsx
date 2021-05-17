@@ -34,58 +34,72 @@ class Nav extends React.Component{
         const {currentUser, logout, create} = this.props;
         return (
             <header className="nav-bar">
-                <div className="search-bar"></div>
+                <div className='nav-left'>
                     <Link to={'/home'}>
                         <div className="logo-init">
                             Ourspace
                         </div>
-                        <div className='logo-init-opc'></div>
                     </Link>
-                <div className="home-icon">
-                    <AiFillHome className="home-icon-html"/>
                 </div>
-                <Link to={`/users/${currentUser.id}`}>
-                    <div className='user-profile-module'>
-                        <img src={currentUser.profilePicture}>
-                        </img>
-                        <p>{currentUser.firstName}</p>
+
+
+                <div className='nav-mid'>
+                    <div className="home-icon">
+                        <AiFillHome className="home-icon-html"/>
                     </div>
-                </Link>
-                <div className="create-icon" onClick={create}>
-                    < HiPlusCircle />
                 </div>
 
-                <div className="notif-icon">
-                    <MdNotifications/>
-                </div>
 
-                <div className="dropdown-acc" onClick={this.showDropDown("dropDown")} tabIndex="0" >
-                    <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
-                </div>
-                <div className="notif-back"></div>
-                <div className="create-back" onClick={create}></div>
-                <div className="arrow-back" onClick={this.showDropDown("dropDown")}></div>
-
-                <ul id={ this.state.dropDown ? "arrow-drop" : "hide-drop"} tabIndex="0" onBlur={this.hideDropDown("dropDown")}>
-                    <div className="profile-dropdown">
-                        <img className="large-profile-pic" src={currentUser.profilePicture}>
-                        </img>
-                        <div>
-                            <li className="dropdown-btn username">
-                                {currentUser.firstName} {currentUser.lastName}
-                            </li>
-                            <li className="dropdown-btn details">
-                                See Your Profile
-                            </li>
+                <div className='nav-right'>
+                    <Link to={`/users/${currentUser.id}`}>
+                        <div className='user-profile-module'>
+                            <img src={currentUser.profilePicture}>
+                            </img>
+                            <p>{currentUser.firstName}</p>
                         </div>
-                    </div>
-                    <li className='border-bottom'></li>
-                    <li id='padding' className="dropdown-btn" onClick={logout}>
-                        Logout
-                    </li>
-                </ul>
+                    </Link>
 
-            </header>    
+                    <div className='nav-actions'>
+                        <div className="create-icon" onClick={create}>
+                            < HiPlusCircle />
+                        </div>
+
+                        <div className="notif-icon">
+                            <MdNotifications/>
+                        </div>
+
+                        <div className="dropdown-acc" onClick={this.showDropDown("dropDown")} tabIndex="0" >
+                            <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
+                        </div>
+                        <ul id={ this.state.dropDown ? "arrow-drop" : "hide-drop"} tabIndex="0" onBlur={this.hideDropDown("dropDown")}>
+                            <Link className='profile-link' to={`/users/${currentUser.id}`}>
+                                <div className="profile-dropdown">
+                                    <img className="large-profile-pic" src={currentUser.profilePicture}>
+                                    </img>
+                                    <div>
+                                        <li className="dropdown-btn username">
+                                            {currentUser.firstName} {currentUser.lastName}
+                                        </li>
+                                        <li className="dropdown-btn details">
+                                            See Your Profile
+                                        </li>
+                                    </div>
+                                </div>
+                            </Link>
+                            <li className='border-bottom'></li>
+                            <li id='padding' className="dropdown-btn" onClick={logout}>
+                                Logout
+                            </li>
+                        </ul>
+                    </div>
+{/* 
+                    <div className="notif-back"></div>
+                    <div className="create-back" onClick={create}></div>
+                    <div className="arrow-back" onClick={this.showDropDown("dropDown")}></div> */}
+                </div>
+
+
+            </header>
         );
     };
 }
