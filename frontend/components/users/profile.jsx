@@ -231,19 +231,32 @@ class Profile extends React.Component{
                 </div>
                 <div className='profile-nav'>
                     <div className='profile-nav-left'>
-                        <div className={ this.state.selected === 'Timeline' ? 'active-profile-button' : 'hover-properties-16'} onClick={() => this.displayPage('Timeline')}>Timeline</div>
-                        <div className={ this.state.selected === 'About' ? 'active-profile-button' : 'hover-properties-16'} onClick={() => this.displayPage('About')}>About</div>
+                        <div className={ this.state.selected === 'Timeline' ? 'active-profile-button' : 'hover-properties-16'}
+                         onClick={() => this.displayPage('Timeline')}
+                         style={this.state.selected === 'Timeline' ? {color: '#1877f2'} : {color: 'grey'} }>Timeline</div>
+
+                        <div className={ this.state.selected === 'About' ? 'active-profile-button' : 'hover-properties-16'}
+                         onClick={() => this.displayPage('About')}
+                         style={this.state.selected === 'About' ? {color: '#1877f2'} : {color: 'grey'}}>About</div>
+
                         <div className='hover-properties-16' >Friends</div>
-                        <div className={ this.state.selected === 'Photos' ? 'active-profile-button' : 'hover-properties-16'} onClick={() => this.displayPage('Photos')}>Photos</div>
+
+                        <div className={ this.state.selected === 'Photos' ? 'active-profile-button' : 'hover-properties-16'}
+                         onClick={() => this.displayPage('Photos')}
+                         style={this.state.selected === 'Photos' ? {color: '#1877f2'} : {color: 'grey'}}>Photos</div>
                     </div>
                     {currentUser.id === user.id ?
                     <div className='profile-nav-right'>
-                        <MdEdit />
-                        <div onClick={() => this.displayPage('About')}>Edit Profile</div>
+                        <div className='profile-edit' onClick={() => this.displayPage('About')}>
+                            <MdEdit />
+                            Edit Profile
+                        </div>
                     </div>
                     :
                     <div className='profile-nav-right'>
-                        {requestButton}
+                        <div className='request-btn'>
+                            {requestButton}
+                        </div>
                     </div>
                     }
                 </div>

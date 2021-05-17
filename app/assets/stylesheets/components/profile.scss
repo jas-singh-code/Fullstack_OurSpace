@@ -223,33 +223,68 @@
     top: 641px;
 }
 
-.profile-nav-right{
+.profile-nav-right {
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    padding-left: 9px;
-    background-color: $blue-btn;
 }
 
-.profile-nav-right:hover {
-    background-color: $hover-blue;
-    border-radius: 4px;
-    cursor: pointer;
+.request-btn {
+    width: 100%;
+    height: 93%;
 }
+
+
+
+.profile-edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    font-weight: 500;
+}
+
+.profile-edit:hover{
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+.profile-edit > svg {
+    font-size: 19px;
+    margin-right: 3px;
+}
+
+// .profile-nav-right:hover {
+//     background-color: $hover-blue;
+//     border-radius: 4px;
+//     cursor: pointer;
+// }
 
 .profile-friend-btn {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: $blue-btn;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.profile-friend-btn:hover{
+    cursor: pointer;
+    background-color: $hover-blue;
 }
 
 .profile-friend-btn > svg {
-    margin-right: 10px;
-    font-size: 31px;
-    color: blue;
-    background-color: blue;
-    color: white;
+    margin-right: 0px;
+    font-size: 26px;
 }
 
 .profile-friend-btn > div {
@@ -269,7 +304,7 @@
     width: auto;
     margin-right: 20px;
     font-weight: bold;
-    color: $font-color;
+    color: grey;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -287,5 +322,7 @@
 
 .active-profile-button{
     color: $blue-btn;
-    border-bottom: thin solid $blue-btn;
+    border-bottom: thick solid $blue-btn;
+    cursor: pointer;
+    font-weight: 500px;
 }
