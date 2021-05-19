@@ -156,14 +156,13 @@ class PostItem extends React.Component{
                             <div className="likes-btn" onClick={this.toggleLike}>
                                 <AiOutlineLike 
                                  className={this.didCurrentUserLike() ? "like-icon active-btn" : "like-icon"}
-                                 size="1g"
                                  />
                                 <p className={this.didCurrentUserLike() ? "active-btn" : "p-like"}>Like</p>
                             </div>
                         </span>
                         <span onClick={this.focusComment} tabIndex="0">
                             <div className="comments-btn">
-                                <FaRegCommentAlt className="comment-icon" size="1g"/>
+                                <FaRegCommentAlt className="comment-icon"/>
                                 <p className='p-comment'>Comment</p>
                             </div>
                         </span>

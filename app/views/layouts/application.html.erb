@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
     <title>OurSpace</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -26,6 +27,7 @@
     <script type="text/javascript">window.logoiconURL= "<%= image_url('logo_with_icon_transparent.png')%>";</script>
     <script type="text/javascript">window.logoInitialsURL= "<%= image_url('Ourspace_O_logo.png')%>";</script>
     <script type="text/javascript">window.like_button_icon= "<%= image_url('like_icon.png')%>";</script>
+    <%= favicon_link_tag asset_path('favicon5.ico') %>
   </head>
 
   <body>

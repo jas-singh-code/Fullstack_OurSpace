@@ -187,8 +187,25 @@
     margin-bottom: 4px;
 }
 
-.btn-links > *:hover{
+.github-icon:hover, .LinkedIn-icon:hover, .Personalsite-icon:hover{
     cursor: pointer;
+    color: $hover-blue
+}
+
+svg.github-icon {
+    font-size: 32px;
+    color: #58007d;
+}
+
+svg.LinkedIn-icon {
+    font-size: 33px;
+    margin: 0 10px;
+    color: #58007d;
+}
+
+svg.Personalsite-icon {
+    font-size: 34px;
+    color: #58007d;
 }
 
 .on-error{
