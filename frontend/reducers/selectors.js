@@ -39,3 +39,13 @@ export const findFriendshipId = (friendships, user_id, friend_id) => {
         }
     }
 }
+
+export const getIncomingFriendRequests = (requests, receiverId) => {
+    let result = [];
+    for (let id in requests) {
+        if (requests[id].receiver_id === parseInt(receiverId)) {
+            result.push(requests[id].requester_id); // returns user id of requester
+        }
+    }
+    return result;
+}
