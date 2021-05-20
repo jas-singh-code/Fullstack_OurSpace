@@ -1,0 +1,90 @@
+.notifications-full {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: auto;
+    background-color: white;
+    padding: 6px;
+    border-radius: 5px;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+}
+
+.notifications-header {
+    font-size: 17px;
+    font-weight: 500;
+    color: #565656;
+    padding: 4px;
+}
+
+.friend-requests {
+    font-size: 16px;
+    border-bottom: thin solid black;
+    padding-bottom: 6px;
+}
+
+.friendRequest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 3px;
+    padding: 3px;
+    border-radius: 4px;
+    background-color: #e6e6e6;
+}
+
+.requester-img {
+    border-radius: 170px;
+    max-height: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.requester-info-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.requester-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.requester-info > div {
+    width: auto;
+    margin: 0px 2px;
+}
+
+.request-actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.request-actions > div {
+    width: auto;
+    /* background-color: grey; */
+    padding: 1px 4px 2px 4px;
+    border-radius: 4px;
+    margin: 0px 2px;
+    font-size: 14px;
+}
+
+.request-actions > div:hover{
+    cursor: pointer;
+    background-color: lightgrey;
+}

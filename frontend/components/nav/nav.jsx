@@ -5,6 +5,7 @@ import {AiFillHome} from 'react-icons/ai';
 import { IoMdArrowDropdownCircle} from 'react-icons/io';
 import { HiPlusCircle } from "react-icons/hi";
 import { MdNotifications } from "react-icons/md";
+import Notifications from './notifications_container';
 
 class Nav extends React.Component{
     constructor(props){
@@ -68,6 +69,12 @@ class Nav extends React.Component{
                             <MdNotifications/>
                         </div>
 
+
+                        <div className='notification-container'>
+                            <Notifications />
+                        </div>
+
+                        
                         <div className="dropdown-acc" onClick={this.showDropDown("dropDown")} tabIndex="0" >
                             <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
                         </div>

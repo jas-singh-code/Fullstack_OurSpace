@@ -8,7 +8,7 @@ const friendshipReducer = (state = {}, action) => {
     switch (action.type){
         case RECEIVE_CURRENT_USER:
             if(action.currentUser.friendships){
-                Object.values(action.data.friendships).forEach(friendship => {
+                Object.values(action.currentUser.friendships).forEach(friendship => {
                     newState[friendship.id] = friendship
                 })
             }

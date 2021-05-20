@@ -9,7 +9,7 @@ import Notifications from './notifications';
 const mSTP = state => {
     return{
         currentUser: state.session.currentUser,
-        requests: state.friendRequests,
+        requests: state.entities.friendRequests,
         users : state.entities.users,
     }
 }
