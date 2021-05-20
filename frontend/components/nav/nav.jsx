@@ -6,6 +6,8 @@ import { IoMdArrowDropdownCircle} from 'react-icons/io';
 import { HiPlusCircle } from "react-icons/hi";
 import { MdNotifications } from "react-icons/md";
 import Notifications from './notifications_container';
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+// import { BsFillPersonLinesFill } from "react-icons/bs"
 
 class Nav extends React.Component{
     constructor(props){
@@ -46,9 +48,17 @@ class Nav extends React.Component{
 
 
                 <div className='nav-mid'>
-                    <div className="home-icon">
+                    <a className='nav-mid-1' href="https://github.com/jas-singh-code">
+                        <FaGithub className='github-icon' style={{fontSize: '38px', color: '#1877f2'}}/>
+                    </a>
+
+                    <Link className="home-icon" to='/'>
                         <AiFillHome className="home-icon-html"/>
-                    </div>
+                    </Link>
+
+                    <a className='nav-mid-2' href="https://www.linkedin.com/in/jaspreet-singh-software-engineer/">
+                        <FaLinkedin className='LinkedIn-icon' style={{fontSize: '38px', color: '#1877f2'}}/>
+                    </a>
                 </div>
 
 
@@ -70,12 +80,9 @@ class Nav extends React.Component{
                             <MdNotifications/>
                         </div>
 
-
                         <div autoFocus className={this.state.notifications ? 'notification-container' : 'display-none'} tabIndex='2' onBlur={() => this.setState({notifications: false})}>
                             <Notifications />
                         </div>
-
-                        
                         <div className="dropdown-acc" onClick={this.showDropDown("dropDown")} tabIndex="0" >
                             <IoMdArrowDropdownCircle className="dropdown-acc-icon" />
                         </div>

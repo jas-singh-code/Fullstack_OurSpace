@@ -42,8 +42,8 @@
 }
 
 .home-icon {
-    font-size: 32px;
-    color: blue;
+    font-size: 38px;
+    color: #1877f2;
     display: flex;
     width: 42px;
     border-bottom: thick;
@@ -51,12 +51,15 @@
     border-left: 0;
     border-right: 0;
     justify-content: center;
-    // position: absolute;
     top: 33px;
     height: auto;
     padding: 0px 5px 1px 5px;
     border-radius: 12px;
-    margin-top: 10px;
+    margin-top: 2px;
+}
+
+a.nav-mid-2 {
+    margin-left: -13px;
 }
 
 .home-icon-html{
@@ -293,10 +296,11 @@ a.profile-link {
 
 .nav-mid {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: baseline;
+    height: auto;
+    width: 350px;
 }
-
 .nav-right {
     height: 100%;
     width: 100%;
