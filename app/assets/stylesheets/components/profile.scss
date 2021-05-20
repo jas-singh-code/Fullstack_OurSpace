@@ -228,14 +228,73 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .request-btn {
-    width: 100%;
+    width: 90%;
     height: 93%;
 }
 
+.friended {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+    border-radius: 4px;
+    font-size: 16px;
+}
 
+.friended:hover{
+    cursor: pointer;
+    background-color: grey;
+}
+
+.friended > svg {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.friended > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.friends-unfollow-dd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    border-radius: 3px;
+    background-color: white;
+    height: auto;
+    width: 100px;
+    position: absolute;
+    top: 36px;
+    right: 6px;
+    z-index: 4;
+}
+
+.friends-unfollow-dd:hover{
+    cursor: pointer;
+    color: red;
+    text-decoration: underline;
+}
+
+.friends-unfollow-dd > svg {
+    font-size: 22px;
+    color: red;
+    margin-right: 5px;
+}
+
+.friends-unfollow-dd > div {
+    color: red;
+    margin-left: 3px;
+    width: auto;
+}
 
 .profile-edit {
     display: flex;

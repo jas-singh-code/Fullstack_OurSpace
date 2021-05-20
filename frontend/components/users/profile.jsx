@@ -5,10 +5,9 @@ import PhotosContainer from './photos_container'
 import About from './about_container';
 import UserPosts from './user_posts_container';
 import AddFriendButton from '../friends/add_friend_button_container';
-import { findRequestId } from '../../reducers/selectors';
-import { findFriendshipId } from '../../reducers/selectors';
+import { findFriendshipId, getFriendships, findRequestId} from '../../reducers/selectors';
 import { BsFillPersonCheckFill } from 'react-icons/bs';
-import {RiUserAddLine} from 'react-icons/ri';
+import {RiUserAddLine, RiUserUnfollowLine} from 'react-icons/ri';
 import {FiUserMinus} from 'react-icons/fi';
 import CancleRequestContainer from '../friends/cancle_request_button_container';
 import Timeline from './timeline_container';
@@ -32,6 +31,7 @@ class Profile extends React.Component{
             coverFile: null,
             profileFile: null,
             currentUserId: this.props.currentUser.id,
+            friendsDropDown: false,
         }
         this.updateBio = this.updateBio.bind(this);
         this.handleEdited = this.handleEdited.bind(this);
@@ -42,6 +42,7 @@ class Profile extends React.Component{
         this.editProfilePhoto = this.editProfilePhoto.bind(this);
         this.handleCoverFile = this.handleCoverFile.bind(this);
         this.handleProfileFile = this.handleProfileFile.bind(this);
+        this.handleUnfriend = this.handleUnfriend.bind(this);
     }
 
     updateBio(e){
@@ -88,6 +89,12 @@ class Profile extends React.Component{
         this.setState({profileFile: e.currentTarget.files[0]})
     }
 
+    handleUnfriend(){
+        const id = findFriendshipId(this.props.friends, this.props.currentUser.id, this.props.user.id);
+        this.props.deleteFriendship(id);
+        this.setState({friendsDropDown: false})
+    }
+
 
     editCoverPhoto(e){
         e.preventDefault();
@@ -101,23 +108,6 @@ class Profile extends React.Component{
 
         this.props.updateUserPhoto(formData);
     }
-
-    // handleSubmit(e){
-    //     e.preventDefault();
-
-    //     const formData = new FormData();
-
-    //     formData.append('post[message]', this.state.message);
-    //     formData.append('post[poster_id]', this.state.poster_id);
-    //     if(this.state.photoFile)
-    //     {
-    //         formData.append('post[photo]', this.state.photoFile);
-    //     }
-
-    //     this.props.createPost(formData)
-    //     .then(this.closeForm)
-    //     .then(() => <Redirect to="home"/>)
-    // }
 
     editProfilePhoto(e){
         e.preventDefault();
@@ -159,20 +149,20 @@ class Profile extends React.Component{
         if(this.requested()){
             requestButton = (      
                 <div className='profile-friend-btn'>
-                    <FiUserMinus />
+                    <RiUserUnfollowLine />
                     <CancleRequestContainer userId={user.id}/>
                 </div>              
             )
         }else if(this.friends()){
             requestButton = (
-                <div className='friended'>
+                <div className='friended' onClick={() => this.setState({friendsDropDown: !this.state.friendsDropDown})}>
                     <BsFillPersonCheckFill />
                     <div>Friends</div>
                 </div>
             )
-        }else{
+        }else if(!this.requested() && !this.friends()){
             requestButton = (
-                <div className='profile-friend-btn'>
+                <div className='profile-friend-btn' >
                     <RiUserAddLine />
                     <AddFriendButton userId={user.id}/>
                 </div>
@@ -256,6 +246,10 @@ class Profile extends React.Component{
                     <div className='profile-nav-right'>
                         <div className='request-btn'>
                             {requestButton}
+                        </div>
+                        <div className={ this.state.friendsDropDown ? 'friends-unfollow-dd' : 'display-none'} onClick={this.handleUnfriend}>
+                            <RiUserUnfollowLine />
+                            <div>Unfriend</div>
                         </div>
                     </div>
                     }

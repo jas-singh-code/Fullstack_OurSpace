@@ -12,6 +12,7 @@ class Nav extends React.Component{
         super(props);
         this.state={
             dropDown: false,
+            notifications: false,
         }
         this.showDropDown = this.showDropDown.bind(this);
         this.hideDropDown = this.hideDropDown.bind(this);
@@ -65,12 +66,12 @@ class Nav extends React.Component{
                             < HiPlusCircle />
                         </div>
 
-                        <div className="notif-icon">
+                        <div className="notif-icon" onClick={() => this.setState({notifications: !this.state.notifications})}>
                             <MdNotifications/>
                         </div>
 
 
-                        <div className='notification-container'>
+                        <div autoFocus className={this.state.notifications ? 'notification-container' : 'display-none'} tabIndex='2' onBlur={() => this.setState({notifications: false})}>
                             <Notifications />
                         </div>
 

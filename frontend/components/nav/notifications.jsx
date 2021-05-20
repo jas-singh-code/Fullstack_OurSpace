@@ -39,7 +39,6 @@ class Notifications extends React.Component{
             let user;
             friendReqNotif = (requestIds.map( id => {
                 user = users[id];
-                debugger;
                 return(
                     <div className='friendRequest' key={id}>
                         <img className='requester-img' src={user.profilePicture}></img>

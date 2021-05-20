@@ -49,3 +49,13 @@ export const getIncomingFriendRequests = (requests, receiverId) => {
     }
     return result;
 }
+
+export const getFriendships = (user_id, friendships) => {
+    let result = [];
+    for (let id in friendships) {
+        if (friendships[id].user_id === parseInt(user_id)){
+            result.push(friendships[id]);
+        }
+    }
+    return result
+}
