@@ -226,7 +226,6 @@ a.profile-link {
     padding-bottom: 0px;
     right: 93px;
     top: 9px;
-    z-index: 1;
     background-color: #e2e2e2;
     width: 34px;
     height: 36px;
@@ -304,4 +303,16 @@ a.profile-link {
 .nav-right {
     height: 100%;
     width: 100%;
+}
+
+.notification-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 50px;
+    padding: 5px;   
+    right: 93px;
+    top: 9px;
+    z-index: 2;
 }

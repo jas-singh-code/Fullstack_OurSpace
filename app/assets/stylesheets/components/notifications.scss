@@ -24,13 +24,13 @@
     font-size: 16px;
     border-bottom: thin solid black;
     padding-bottom: 6px;
+    width: 95%;
 }
 
 .friendRequest {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 190px;
     margin-top: 3px;
     padding: 3px;
     border-radius: 4px;
@@ -43,7 +43,7 @@
     max-width: 40px;
     min-height: 40px;
     min-width: 40px;
-    margin-left: 6px;
+    margin-left: 2px;
     margin-right: 6px;
 }
 

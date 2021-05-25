@@ -6,7 +6,8 @@ import Nav from './nav';
 
 const mSTP = state => {
     return{
-        currentUser: state.session.currentUser
+        currentUser: state.session.currentUser,
+        requests: state.entities.friendRequests
     }
 }
 

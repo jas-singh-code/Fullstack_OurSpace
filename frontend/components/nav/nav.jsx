@@ -8,6 +8,8 @@ import { MdNotifications } from "react-icons/md";
 import Notifications from './notifications_container';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 // import { BsFillPersonLinesFill } from "react-icons/bs"
+import { getIncomingFriendRequests } from '../../reducers/selectors';
+
 
 class Nav extends React.Component{
     constructor(props){
@@ -18,6 +20,7 @@ class Nav extends React.Component{
         }
         this.showDropDown = this.showDropDown.bind(this);
         this.hideDropDown = this.hideDropDown.bind(this);
+        this.getRequestIds = this.getRequestIds.bind(this);
     }
 
     showDropDown(feild){
@@ -32,10 +35,23 @@ class Nav extends React.Component{
             this.setState({[feild]: false});
         }
     }
+
+    getRequestIds(){
+        const requestIds =  getIncomingFriendRequests(this.props.requests, this.props.currentUser.id);
+        return requestIds;
+    }
  
     render(){
         // document.body.addEventListener("click", this.hideDropDown("dropDown"));
         const {currentUser, logout, create} = this.props;
+
+        let requestCount = this.getRequestIds().length;
+        if (requestCount.length > 0){
+            requestCount = requestCount.length
+        }else{
+            requestCount = null;
+        }
+        
         return (
             <header className="nav-bar">
                 <div className='nav-left'>
@@ -79,6 +95,10 @@ class Nav extends React.Component{
 
                         <div className="notif-icon" onClick={() => this.setState({notifications: !this.state.notifications})}>
                             <MdNotifications/>
+                        </div>
+                        
+                        <div className={requestCount ? 'notification-count' : 'display-none'}>
+                            {requestCount}
                         </div>
 
                         <div autoFocus className={this.state.notifications ? 'notification-container' : 'display-none'} tabIndex='2' onBlur={() => this.setState({notifications: false})}>
