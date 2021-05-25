@@ -5,7 +5,7 @@ class Api::PostsController < ApplicationController
     # end
 
     def index
-        @posts = Post.all.order(created_at: :ASC)
+        @posts = Post.all.order('id DESC')
         render :index
         #need to use .where( !id: current_user.id)
     end

@@ -9,5 +9,4 @@ export default (preloadedState = {}) => createStore(
     rootReducer, preloadedState,
     composeWithDevTools(applyMiddleware(thunk, logger))
 );
-  
 

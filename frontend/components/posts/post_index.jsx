@@ -23,7 +23,7 @@ class PostIndex extends React.Component{
         const { currentUser } = this.props;
         const { posts } = this.props;
         if (!posts) return null;
-        const postItem = Object.values(posts).map(post => (
+        const postItem = Object.values(posts).reverse().map(post => (
             <PostItem 
              className="post-index-item"
              key={post.id}

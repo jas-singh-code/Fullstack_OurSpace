@@ -157,7 +157,7 @@ class CommentItem extends React.Component{
                 </div>
                 {comment.author_id === this.props.currentUser.id ?
                     <div className="comment-options">
-                        < FiMoreHorizontal size="1x"
+                        < FiMoreHorizontal style={{fontSize: '22px'}}
                         onClick={this.renderModule}
                         tabIndex="0"/>
                     </div>

@@ -48,15 +48,6 @@ Like.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1')
     demo2_cover = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/cover1.jpg')
     demo2.cover_picture.attach(io: demo2_cover, filename: 'cover2.jpg')
     ##########################POSTS###################################
-
-    post1 = Post.create({ wall_id: 3, message: 'Took this beautiful shot by the beach today. Click the like button below to show some support!', poster_id: 6})
-    file1 = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/post1.jfif')
-    post1.photo.attach(io: file1, filename: 'post1.jfif')
-
-    post2 = Post.create({ wall_id: 3, message: 'Took a strool to look at the city and captured this amazing photo. Click the like button below to show some support!', poster_id: 6})
-    file2 = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/post2.jfif')
-    post2.photo.attach(io: file2, filename: 'post2.jfif')
-
     posts = Post.create! ([
         { wall_id: 3, message: 'Wine is constant proof that God loves us and loves to see us happy - Ben. Franklin', poster_id: 3},
         # { wall_id: 2, message: 'Anyone wanna have a blockbuster party at my place!?', poster_id: 2},
@@ -70,34 +61,43 @@ Like.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1')
         { wall_id: 2, message: 'I dont know if you guys noticed, but theres a birthday option that lets you choose veryold when you sign up', poster_id: 2},
         # { wall_id: 4, message: 'Is it winter yet or what???', poster_id: 1},
         { wall_id: 4, message: 'Why are there only old people on this app!? Also, im secretly in love with user 3!', poster_id: 1},
-        { wall_id: 5, message: 'Asking for a friend, but whats worse to eat whole? ripe lemon or rotten apple?', poster_id: 4},
+        { wall_id: 5, message: 'Asking for a friend, but whats worse to eat whole? ripe lemon or rotten apple?', poster_id: 5},
         # { wall_id: 3, message: 'Hello OurSpace, well its kind of only MY own SPACE...', poster_id: 4},
-        { wall_id: 5, message: 'Wish me luck on passing my NCLX exam', poster_id: 4},
+        { wall_id: 5, message: 'Wish me luck on passing my NCLX exam', poster_id: 3},
         { wall_id: 2, message: 'Okay really bored with this pandemic, can i go on a vacation already', poster_id: 4},
         { wall_id: 2, message: 'Why does my name sound so familiar?', poster_id: 2},
         { wall_id: 1, message: 'Should i try to make a sandwich? Hungry but dont feel like getting up -_-', poster_id: 3},
-        { wall_id: 1, message: 'What a lovely day to be on the interweb!', poster_id: 3},
-        { wall_id: 6, message: 'Wow did you guys checkout the cool app i made on THREE.js!? Modeled after Simon Dev', poster_id: 6},
+        { wall_id: 1, message: 'What a lovely day to be on the interweb!', poster_id: 5},
+        { wall_id: 6, message: 'Wow did you guys checkout the cool app i made on THREE.js!? Modeled after Simon Dev', poster_id: 2},
         # { wall_id: 6, message: 'Whats the big deal with crypto anyway...', poster_id: 6},
         # { wall_id: 6, message: 'What a lovely day to be on the interweb!', poster_id: 6},
         # { wall_id: 6, message: 'Hey, psst... there are links to the owners github page everyhere! You can see their source code there as well!', poster_id: 6}
     ])
 
+    post2 = Post.create({ wall_id: 3, message: 'Took a strool to look at the city and captured this amazing photo. Click the like button below to show some support!', poster_id: 6})
+    file2 = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/post2.jfif')
+    post2.photo.attach(io: file2, filename: 'post2.jfif')
+    
+    post1 = Post.create({ wall_id: 3, message: 'Took this beautiful shot by the beach today. Click the like button below to show some support!', poster_id: 6})
+    file1 = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/post1.jfif')
+    post1.photo.attach(io: file1, filename: 'post1.jfif')
+
+
     likes = Like.create!([
-        {likeable_id: 1, likeable_type: 'Post', user_id: 1},
-        {likeable_id: 2, likeable_type: 'Post', user_id: 1},
-        {likeable_id: 4, likeable_type: 'Post', user_id: 1},
-        {likeable_id: 1, likeable_type: 'Post', user_id: 2},
-        {likeable_id: 3, likeable_type: 'Post', user_id: 2},
-        {likeable_id: 4, likeable_type: 'Post', user_id: 2},
-        {likeable_id: 5, likeable_type: 'Post', user_id: 2},
-        {likeable_id: 5, likeable_type: 'Post', user_id: 3},
-        {likeable_id: 2, likeable_type: 'Post', user_id: 3},
-        {likeable_id: 6, likeable_type: 'Post', user_id: 3},
-        {likeable_id: 1, likeable_type: 'Post', user_id: 5},
-        {likeable_id: 3, likeable_type: 'Post', user_id: 5},
-        {likeable_id: 2, likeable_type: 'Post', user_id: 5},
-        {likeable_id: 6, likeable_type: 'Post', user_id: 5},
+        {likeable_id: 13, likeable_type: 'Post', user_id: 1},
+        {likeable_id: 14, likeable_type: 'Post', user_id: 1},
+        {likeable_id: 12, likeable_type: 'Post', user_id: 1},
+        {likeable_id: 13, likeable_type: 'Post', user_id: 2},
+        {likeable_id: 10, likeable_type: 'Post', user_id: 2},
+        {likeable_id: 12, likeable_type: 'Post', user_id: 2},
+        {likeable_id: 11, likeable_type: 'Post', user_id: 2},
+        {likeable_id: 11, likeable_type: 'Post', user_id: 3},
+        {likeable_id: 14, likeable_type: 'Post', user_id: 3},
+        {likeable_id: 9, likeable_type: 'Post', user_id: 3},
+        {likeable_id: 8, likeable_type: 'Post', user_id: 5},
+        {likeable_id: 10, likeable_type: 'Post', user_id: 5},
+        {likeable_id: 14, likeable_type: 'Post', user_id: 5},
+        {likeable_id: 9, likeable_type: 'Post', user_id: 5},
         # {likeable_id: 1, likeable_type: 'Comment', user_id: 1},
         # {likeable_id: 4, likeable_type: 'Comment', user_id: 1},
         # {likeable_id: 3, likeable_type: 'Comment', user_id: 1},
@@ -111,14 +111,14 @@ Like.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1')
     ])
 
     comments = Comment.create!([
-        {body: "Lemons for sure man", author_id: 3, post_id: 8},
-        {body: "Nice shot! why wasnt i invited!?", author_id: 2, post_id: 1},
-        {body: "I think ive been there before...", author_id: 3, post_id: 1},
-        {body: "Why are you asking this again", author_id: 1, post_id: 8},
-        {body: "Whats up jassi! its me, Loveleen from highschool!", author_id: 3, post_id: 6},
-        {body: "Hey jas, watch my movie!", author_id: 2, post_id: 11},
-        {body: "Hey jassi! nice post!", author_id: 1, post_id: 11},
-        {body: "Okay okay lets keep it PG-13 here", author_id: 5, post_id: 5}
+        {body: "Lemons for sure man", author_id: 3, post_id: 6},
+        {body: "Nice shot! why wasnt i invited!?", author_id: 2, post_id: 13},
+        {body: "I think ive been there before...", author_id: 3, post_id: 13},
+        {body: "Why are you asking this again", author_id: 1, post_id: 6},
+        {body: "Whats up jassi! its me, Loveleen from highschool!", author_id: 3, post_id: 4},
+        {body: "Hey jas, watch my movie!", author_id: 2, post_id: 9},
+        {body: "Hey jassi! nice post!", author_id: 1, post_id: 9},
+        {body: "Okay okay lets keep it PG-13 here", author_id: 5, post_id: 3}
     ])
 
     # friends = Friend.create!([
