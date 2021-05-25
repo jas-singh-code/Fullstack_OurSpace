@@ -33,3 +33,5 @@ class FriendsIndex extends React.Component{
         )
     }
 }
+
+export default FriendsIndex;

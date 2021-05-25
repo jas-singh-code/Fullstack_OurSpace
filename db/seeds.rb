@@ -13,7 +13,11 @@ Post.connection.execute('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
 Comment.destroy_all
 Comment.connection.execute('ALTER SEQUENCE comments_id_seq RESTART WITH 1') 
 Like.destroy_all
-Like.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1') 
+Like.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1')
+Friendship.destroy_all
+Friendship.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1') 
+FriendRequest.destroy_all
+FriendRequest.connection.execute('ALTER SEQUENCE likes_id_seq RESTART WITH 1') 
 
     users = User.create!([
         {first_name: 'Angelique', last_name: 'Sugrim', email: 'asugrim991@gmail.com', password: 'Angelique', birthday: '04061999', gender: 'female', bio: "Looking to go to Grand Canyons, who's down?", occupation: 'New York College - Student' },

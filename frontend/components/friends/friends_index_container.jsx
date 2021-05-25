@@ -3,12 +3,13 @@ import { createFriendship } from '../../actions/friendships_actions';
 import { sendFriendRequest } from '../../actions/friend_request_actions';
 import FriendsIndex from './friends_index';
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return{
         currentUser: state.session.currentUser,
         requests: state.entities.friendRequests,
         friends: state.entities.friendships,
-        users: state.entities.users
+        users: state.entities.users,
+        user: ownProps.user
     }
 }
 

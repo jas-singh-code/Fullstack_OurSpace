@@ -41,9 +41,9 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     :dependent => :destroy
   
-    # has_many :friends, 
-    # class_name: :Friend,
-    # foreign_key: :sender_id
+    has_many :friends, 
+    class_name: :Friendship,
+    foreign_key: :friend_id
     
     has_many :outgoing_friend_requests,
     foreign_key: :requester_id,

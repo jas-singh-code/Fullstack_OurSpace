@@ -12,6 +12,7 @@ import {FiUserMinus} from 'react-icons/fi';
 import CancleRequestContainer from '../friends/cancle_request_button_container';
 import Timeline from './timeline_container';
 import Info from './info_container';
+import Friends from '../friends/friends_index_container';
 
 class Profile extends React.Component{
     constructor(props){
@@ -180,6 +181,8 @@ class Profile extends React.Component{
             selectedComponent = <PhotosContainer fullWidth={900} userId={user.id}/>
         }else if(this.state.selected === 'Posts'){
             selectedComponent = < UserPosts userId={user.id}/>
+        }else if(this.state.selected === 'Friends'){
+            selectedComponent = < Friends user={user}/>
         };
 
         return(
@@ -229,7 +232,9 @@ class Profile extends React.Component{
                          onClick={() => this.displayPage('About')}
                          style={this.state.selected === 'About' ? {color: '#1877f2'} : {color: 'grey'}}>About</div>
 
-                        <div className='hover-properties-16' >Friends</div>
+                        <div className={this.state.selected === 'Friends' ? 'active-profile-button' : 'hover-properties-16'} 
+                        onClick={() => this.displayPage('Friends')}
+                        style={this.state.selected === 'Friends' ? {color: '#1877f2'} : {color: 'grey'}}>Friends</div>
 
                         <div className={ this.state.selected === 'Photos' ? 'active-profile-button' : 'hover-properties-16'}
                          onClick={() => this.displayPage('Photos')}

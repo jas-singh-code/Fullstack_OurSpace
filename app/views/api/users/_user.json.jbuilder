@@ -28,3 +28,6 @@ else
     user.cover_picture.attach(io: file, filename: 'def_cover_pic.png')
     json.coverPicture url_for(user.cover_picture)
 end
+if user.friends
+    json.friends user.friends
+end
