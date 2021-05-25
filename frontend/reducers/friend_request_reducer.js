@@ -1,4 +1,4 @@
-import { RECEIVE_FRIEND_REQUEST, DELETE_FRIEND_REQUEST } from '../actions/friend_request_actions';
+import { RECEIVE_FRIEND_REQUEST, DELETE_FRIEND_REQUEST, RECEIVE_ALL_FRIEND_REQUESTS } from '../actions/friend_request_actions';
 import { RECEIVE_FRIENDSHIP } from '../actions/friendships_actions';
 import {RECEIVE_CURRENT_USER} from '../actions/session_action';
 import { findRequestId } from './selectors';
@@ -16,6 +16,9 @@ const friendRequestReducer = (state = {}, action) => {
             return nextState;
         case RECEIVE_FRIEND_REQUEST:
             nextState[action.friendRequest.id] = action.friendRequest;
+            return nextState;
+        case RECEIVE_ALL_FRIEND_REQUESTS:
+            action.friendRequests
             return nextState;
         case DELETE_FRIEND_REQUEST:
             delete nextState[action.friendRequest.id];

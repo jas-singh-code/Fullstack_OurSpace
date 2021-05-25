@@ -16,3 +16,12 @@ export const deleteFriendRequest = requestId => {
         })
     )
 }
+
+export const allRequests = () => {
+    return (
+        $.ajax({
+            url: '/api/friend_requests',
+            method: 'GET'
+        })
+    )
+}

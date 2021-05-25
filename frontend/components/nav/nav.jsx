@@ -51,7 +51,7 @@ class Nav extends React.Component{
         }else{
             requestCount = null;
         }
-        
+        debugger;
         return (
             <header className="nav-bar">
                 <div className='nav-left'>

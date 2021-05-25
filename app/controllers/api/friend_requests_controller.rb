@@ -9,6 +9,11 @@ class Api::FriendRequestsController < ApplicationController
         end
     end
 
+    def index 
+        @friend_requests = FriendRequest.all
+        render :index
+    end
+
     def destroy
         @friend_request = FriendRequest.find_by(id: params[:id])
         if @friend_request 
