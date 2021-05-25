@@ -39,10 +39,11 @@ class Nav extends React.Component{
         return (
             <header className="nav-bar">
                 <div className='nav-left'>
-                    <Link to={'/home'}>
-                        <div className="logo-init">
+                    <Link to={'/home'} className='logo-holder'>
+                        {/* <div className="logo-init">
                             Ourspace
-                        </div>
+                        </div> */}
+                        <img className="logo-icon" src={logoiconURL}></img>
                     </Link>
                 </div>
 
