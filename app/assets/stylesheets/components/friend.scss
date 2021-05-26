@@ -32,3 +32,39 @@
     cursor: pointer;
     background-color: inherit;
 }
+
+.friendObject {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-friends{
+    width: 100%;
+}
+
+.friends-container-full {
+    width: 900px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 6px;
+    margin-top: 7px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.friendObject {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 70px;
+}
+
+.friend-identity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

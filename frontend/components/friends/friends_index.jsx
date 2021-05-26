@@ -7,16 +7,21 @@ class FriendsIndex extends React.Component{
     }
 
     render(){
-        const {friends, currentUser, users} = this.props;
-        if(friends && Object.values(friends).length > 0){
-            Object.values(friends).map(friendObj => {
-                let user = users[friendObj.friend_id];
+        const {currentUser, users, user} = this.props;
+        const friends = user.friends;
+        let allFriends;
+        if(friends && friends.length > 0){
+            allFriends = (
+            friends.map(friendObj => {
+                let user = users[friendObj.id];
                 return(
                     <div className='friendObject'>
-                        <div>{user.profilePicture}</div>
-                        <div>
-                            <div>{user.firstName}</div>
-                            <div>{user.lastName}</div>
+                        <div className='friend-identity'>
+                            <img className='profile-pic' src={user.profilePicture}></img>
+                            <div className='friend-name'>
+                                <div className='firstname'>{user.firstName}</div>
+                                <div className='lastname'>{user.lastName}</div>
+                            </div>
                         </div>
                         <div className='friendship-actions'>
                             <RiUserUnfollowFill />
@@ -24,11 +29,11 @@ class FriendsIndex extends React.Component{
                         </div>
                     </div>
                 )
-            })
+            }))
         }
         return(
-            <div>
-                All Friends
+            <div className='friends-container-full'>
+                {allFriends}
             </div>
         )
     }

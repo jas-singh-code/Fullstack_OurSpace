@@ -182,7 +182,7 @@ class Profile extends React.Component{
         }else if(this.state.selected === 'Posts'){
             selectedComponent = < UserPosts userId={user.id}/>
         }else if(this.state.selected === 'Friends'){
-            selectedComponent = < Friends user={user}/>
+            selectedComponent = < Friends user={user} className='profile-friends'/>
         };
 
         return(
@@ -259,7 +259,7 @@ class Profile extends React.Component{
                     </div>
                     }
                 </div>
-                <div>
+                <div className='selected-component'>
                     {/* <PhotosContainer userId={user.id}/> */}
                     {/* < UserPosts userId={user.id}/> */}
                     {/* <About user={user} type={this.state.editAbout}/> */}

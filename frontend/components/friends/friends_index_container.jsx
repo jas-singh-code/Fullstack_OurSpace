@@ -7,7 +7,7 @@ const mSTP = (state, ownProps) => {
     return{
         currentUser: state.session.currentUser,
         requests: state.entities.friendRequests,
-        friends: state.entities.friendships,
+        allFriendships: state.entities.friendships,
         users: state.entities.users,
         user: ownProps.user
     }
