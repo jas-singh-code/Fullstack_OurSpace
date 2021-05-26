@@ -16,3 +16,12 @@ export const deleteFriendship = friendshipId => {
         })
     )
 }
+
+export const allFriendships = () => {
+    return (
+        $.ajax({
+            url: '/api/friendships',
+            method: 'GET'
+        })
+    )
+}
