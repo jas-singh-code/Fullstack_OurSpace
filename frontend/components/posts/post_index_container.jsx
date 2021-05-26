@@ -5,6 +5,7 @@ import { destroyPost, fetchPosts, updatePost } from '../../actions/post_actions'
 import PostIndex from './post_index';
 import { createLike, deleteLike, fetchAllLikes } from '../../actions/like_actions';
 import { getUsers } from '../../actions/user_actions';
+import { fetchAllFriendRequests } from '../../actions/friend_request_actions';
 
 const mSTP = ( state ) => {
     return{
@@ -26,7 +27,8 @@ const mDTP = dispatch => {
         createLike: like => dispatch(createLike(like)),
         deleteLike: likeId => dispatch(deleteLike(likeId)),
         fetchAllUsers: () => dispatch(getUsers()),
-        fetchAllLikes: () => dispatch(fetchAllLikes())
+        fetchAllLikes: () => dispatch(fetchAllLikes()),
+        fetchAllRequests: () => dispatch(fetchAllFriendRequests())
     }
 }
 

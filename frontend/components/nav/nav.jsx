@@ -46,12 +46,11 @@ class Nav extends React.Component{
         const {currentUser, logout, create} = this.props;
 
         let requestCount = this.getRequestIds().length;
-        if (requestCount.length > 0){
-            requestCount = requestCount.length
+        if (requestCount > 0){
+            requestCount = requestCount
         }else{
             requestCount = null;
         }
-        debugger;
         return (
             <header className="nav-bar">
                 <div className='nav-left'>
