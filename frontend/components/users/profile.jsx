@@ -44,6 +44,16 @@ class Profile extends React.Component{
         this.handleCoverFile = this.handleCoverFile.bind(this);
         this.handleProfileFile = this.handleProfileFile.bind(this);
         this.handleUnfriend = this.handleUnfriend.bind(this);
+        this.getFriends = this.getFriends.bind(this);
+    }
+
+    getFriends(){
+        const friendshipIds = getFriendships(this.props.currentUser.id, this.props.friendships);
+        const friends = {};
+        friendshipIds.forEach(obj => {
+            friends[obj.id] = obj
+        })
+        return friends
     }
 
     updateBio(e){
@@ -71,7 +81,8 @@ class Profile extends React.Component{
     }
 
     friends(){
-        if(findFriendshipId(this.props.friends, this.props.currentUser.id, this.props.user.id)){
+        const allFriends = this.getFriends();
+        if(findFriendshipId(allFriends, this.props.currentUser.id, this.props.user.id)){
             return true;
         }else{
             return false;

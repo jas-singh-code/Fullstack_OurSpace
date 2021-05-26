@@ -19,7 +19,8 @@ const mSTP = (state, ownProps) => {
         users: state.entities.users,
         user: userObj,
         requests: state.entities.friendRequests,
-        friends: friends
+        friends: friends,
+        friendships: state.entities.friendships
     }
 }
 

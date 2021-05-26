@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createFriendship } from '../../actions/friendships_actions';
+import { createFriendship, deleteFriendship } from '../../actions/friendships_actions';
 import { sendFriendRequest } from '../../actions/friend_request_actions';
 import RemoveFriendButton from './remove_friend_button';
 
@@ -15,7 +15,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         createFriendship: friendShip => dispatch(createFriendship(friendShip)),
-        deleteRequest: friendRequest => dispatch(deleteFriendRequest(friendRequest)),
+        deleteFriendship: friendshipId => dispatch(deleteFriendship(friendshipId)),
         sendRequest: friendRequest => dispatch(sendFriendRequest(friendRequest))
     }
 }

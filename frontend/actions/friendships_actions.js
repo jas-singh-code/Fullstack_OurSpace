@@ -47,9 +47,9 @@ export const fetchAllFriendships = () => (dispatch) => {
     )
 }
 
-export const deleteFriendship = (friendship) => (dispatch) => {
+export const deleteFriendship = (friendshipId) => (dispatch) => {
     return (
-        FriendshipAPIUtil.deleteFriendship(friendship)
+        FriendshipAPIUtil.deleteFriendship(friendshipId)
             .then(
                 friendship => dispatch(deleteFriendshipObj(friendship)),
                 err => dispatch(receiveErrors(err))

@@ -14,16 +14,16 @@ class RemoveFriendButton extends React.Component{
         const userId = this.props.currentUser.id;
         const friendId = this.props.userId;
 
-        const requestId = findFriendshipId(friendships, userId, friendId );
+        const friendshipId = findFriendshipId(friendships, userId, friendId );
 
-        this.props.deleteRequest(requestId); 
+        this.props.deleteFriendship(friendshipId); 
     }
 
     render(){
         return(
-            <div className='remove-friend-button'>
+            <div className='remove-friend-button' onClick={this.removeFriend}>
                 <RiUserUnfollowLine />
-                <div className='rf-text' onClick={this.removeFriend}>Unfriend</div>
+                <div className='rf-text' >Unfriend</div>
             </div>
         )
     }

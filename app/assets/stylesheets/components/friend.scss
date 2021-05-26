@@ -5,15 +5,14 @@
     border: none;
     padding: 0px 2px;
     border-radius: 6px;
-    background-color: inherit;
     color: white;
     font-weight: 500;
 }
 
-.add-friend:hover{
-    cursor: pointer;
-    background-color: inherit;
-}
+// .add-friend:hover{
+//     cursor: pointer;
+//     background-color: inherit;
+// }
 
 // .cr-text {
 //     font-size: 16px;
@@ -33,11 +32,6 @@
     justify-content: center;
     align-items: center;
     font-size: 16px;
-}
-
-.cr-text:hover{
-    cursor: pointer;
-    background-color: inherit;
 }
 
 .profile-friends{
