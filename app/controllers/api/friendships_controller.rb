@@ -12,6 +12,11 @@ class Api::FriendshipsController < ApplicationController
         end
     end
 
+    def index 
+        @friends = Friendship.all
+        render :index
+    end
+
     def destroy
         @friendship = Friendship.find_by(id: params[:id])
         corresponding_friendship = @friendship.corresponding_friendship

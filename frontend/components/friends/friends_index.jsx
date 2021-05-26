@@ -7,7 +7,7 @@ class FriendsIndex extends React.Component{
     }
 
     render(){
-        const {friends, currentUser} = this.props;
+        const {friends, currentUser, users} = this.props;
         if(friends && Object.values(friends).length > 0){
             Object.values(friends).map(friendObj => {
                 let user = users[friendObj.friend_id];
