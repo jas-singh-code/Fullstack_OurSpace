@@ -160,10 +160,7 @@ class Profile extends React.Component{
             )
         }else if(!this.requested() && !this.friends()){
             requestButton = (
-                <div className='profile-friend-btn' >
-                    <RiUserAddLine />
-                    <AddFriendButton userId={user.id}/>
-                </div>
+                <AddFriendButton userId={user.id}/>    
             )
         }
 

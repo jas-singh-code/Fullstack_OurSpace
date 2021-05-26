@@ -21,9 +21,9 @@ class CancleRequestButton extends React.Component{
 // .profile-friend-button
     render(){
         return(
-            <div className='cancle-request-button'>
+            <div className='cancle-request-button' onClick={this.cancleRequest}>
                 <RiUserUnfollowLine />
-                <div className='cr-text' onClick={this.cancleRequest}>Cancle Request</div>
+                <div className='cr-text'>Cancle Request</div>
             </div>
         )
     }

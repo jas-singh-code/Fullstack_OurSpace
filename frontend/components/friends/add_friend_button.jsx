@@ -1,4 +1,5 @@
 import React from 'react';
+import {RiUserAddLine} from 'react-icons/ri';
 
 class AddFriendButton extends React.Component{
     constructor(props){
@@ -19,8 +20,9 @@ class AddFriendButton extends React.Component{
 
     render(){
         return(
-            <div>
-                <button className='add-friend' onClick={this.addFriend}>Add Friend</button>
+            <div className='profile-friend-btn' onClick={this.addFriend}>
+                <RiUserAddLine />
+                <div className='add-friend'>Add Friend</div>
             </div>
         )
     }
