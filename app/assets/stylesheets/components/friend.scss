@@ -15,20 +15,27 @@
     background-color: inherit;
 }
 
-.cancle-request {
+// .cr-text {
+//     font-size: 16px;
+//     border: none;
+//     padding: 0px 0px;
+//     border-radius: 6px;
+//     background-color: inherit;
+//     color: white;
+//     height: 100%;
+//     /* font-weight: 600; */
+//     width: 100%;
+//     margin-left: 0px;
+// }
+
+.cr-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 16px;
-    border: none;
-    padding: 0px 0px;
-    border-radius: 6px;
-    background-color: inherit;
-    color: white;
-    height: 100%;
-    /* font-weight: 600; */
-    width: 100%;
-    margin-left: 0px;
 }
 
-.cancle-request:hover{
+.cr-text:hover{
     cursor: pointer;
     background-color: inherit;
 }

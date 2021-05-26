@@ -1,5 +1,6 @@
 import React from 'react';
 import { findRequestId } from '../../reducers/selectors';
+import {RiUserUnfollowLine} from 'react-icons/ri';
 
 class CancleRequestButton extends React.Component{
     constructor(props){
@@ -17,11 +18,12 @@ class CancleRequestButton extends React.Component{
 
         this.props.deleteRequest(requestId); 
     }
-
+// .profile-friend-button
     render(){
         return(
-            <div>
-                <button className='cancle-request' onClick={this.cancleRequest}>Cancle Request</button>
+            <div className='cancle-request-button'>
+                <RiUserUnfollowLine />
+                <div className='cr-text' onClick={this.cancleRequest}>Cancle Request</div>
             </div>
         )
     }

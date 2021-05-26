@@ -205,12 +205,6 @@
     width: 100%;
 }
 
-.profile-friend-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .profile-nav {
     display: flex;
     justify-content: center;
@@ -232,8 +226,8 @@
 }
 
 .request-btn {
-    width: 90%;
-    height: 93%;
+    width: 100%;
+    height: 100%;
 }
 
 .friended {
@@ -336,9 +330,27 @@
     padding-left: 5px;
 }
 
-.profile-friend-btn:hover{
+.cancle-request-button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.cancle-request-button:hover{
     cursor: pointer;
     background-color: $hover-blue;
+}
+
+.cancle-request-button > svg {
+    margin-right: 0px;
+    font-size: 26px;
 }
 
 .profile-friend-btn > svg {

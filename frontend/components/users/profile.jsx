@@ -149,10 +149,7 @@ class Profile extends React.Component{
         let requestButton;
         if(this.requested()){
             requestButton = (      
-                <div className='profile-friend-btn'>
-                    <RiUserUnfollowLine />
-                    <CancleRequestContainer userId={user.id}/>
-                </div>              
+                <CancleRequestContainer userId={user.id}/>
             )
         }else if(this.friends()){
             requestButton = (
