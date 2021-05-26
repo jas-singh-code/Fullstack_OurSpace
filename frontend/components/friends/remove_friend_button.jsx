@@ -1,5 +1,6 @@
 import React from 'react';
 import { findFriendshipId } from '../../reducers/selectors';
+import { RiUserUnfollowLine } from 'react-icons/ri';
 
 class RemoveFriendButton extends React.Component{
     constructor(props){
@@ -20,7 +21,10 @@ class RemoveFriendButton extends React.Component{
 
     render(){
         return(
-            <button onClick={this.removeFriend}>Unfriend</button>
+            <div className='remove-friend-button'>
+                <RiUserUnfollowLine />
+                <div className='rf-text' onClick={this.removeFriend}>Unfriend</div>
+            </div>
         )
     }
 }

@@ -33,12 +33,6 @@
     background-color: inherit;
 }
 
-.friendObject {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .profile-friends{
     width: 100%;
 }
@@ -58,9 +52,9 @@
 
 .friendObject {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    width: 400px;
+    width: 436px;
     height: 98px;
     place-self: center;
     /* background-color: lightgrey; */
@@ -76,7 +70,7 @@
     /* flex-direction: column; */
     width: auto;
     height: auto;
-    margin-right: 60px;
+    /* margin-right: 25px; */
     margin-left: 9px;
 }
 
@@ -119,4 +113,30 @@
 }
 .friend-location{
     color: rgb(41, 41, 41)
+}
+
+.remove-friend-button > svg {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+.remove-friend-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $blue-btn;
+    color: whitesmoke;
+    padding: 6px;
+    border-radius: 4px;
+    margin-right: 12px;
+}
+
+.remove-friend-button:hover{
+    cursor: pointer;
+    background-color: $hover-blue;
+}
+
+.rf-text {
+    font-size: 18px;
+    font-weight: 500;
 }

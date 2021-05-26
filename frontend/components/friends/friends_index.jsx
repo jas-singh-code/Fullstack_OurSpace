@@ -26,7 +26,6 @@ class FriendsIndex extends React.Component{
                         <RemoveFriendButton user={user}/>
                     )
                 }
-                debugger;
 
                 return(
                     <div className='friendObject' key={user.id}>
