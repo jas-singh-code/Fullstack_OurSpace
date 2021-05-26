@@ -1,4 +1,4 @@
-import { RECEIVE_FRIENDSHIP, DELETE_FRIENDSHIP } from '../actions/friendships_actions';
+import { RECEIVE_FRIENDSHIP, DELETE_FRIENDSHIP, RECEIVE_ALL_FRIENDSHIPS } from '../actions/friendships_actions';
 import { findFriendshipId } from './selectors'; 
 import { RECEIVE_CURRENT_USER } from '../actions/session_action';
 
@@ -15,6 +15,9 @@ const friendshipReducer = (state = {}, action) => {
             return newState;        
         case RECEIVE_FRIENDSHIP:
             newState[action.friendship.id] = action.friendship;
+            return newState;
+        case RECEIVE_ALL_FRIENDSHIPS:
+            newState = Object.assign({}, action.friendships, newState);
             return newState;
         case DELETE_FRIENDSHIP:
             let correspondingFriendship = findFriendshipId(newState, action.friendship.friend_id, action.friendship.user_id);
