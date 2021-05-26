@@ -35,7 +35,7 @@ export const findFriendshipId = (friendships, user_id, friend_id) => {
     for (let id in friendships){
         let friendship = friendships[id];
         if (friendship.user_id === user_id && friendship.friend_id === friend_id){
-            return id
+            return id;
         }
     }
 }

@@ -3,11 +3,12 @@ import { createFriendship } from '../../actions/friendships_actions';
 import { sendFriendRequest } from '../../actions/friend_request_actions';
 import RemoveFriendButton from './remove_friend_button';
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return{
         currentUser: state.session.currentUser,
         requests: state.entities.friendRequests,
-        friendships: state.entities.friendships
+        friendships: state.entities.friendships,
+        userId: ownProps.user.id
     }
 }
 

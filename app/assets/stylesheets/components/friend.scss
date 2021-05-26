@@ -52,19 +52,71 @@
     margin-top: 7px;
     display: grid;
     grid-template-columns: auto auto;
+    column-gap: 7px;
+    row-gap: 7px;
 }
 
 .friendObject {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 200px;
-    height: 70px;
+    width: 400px;
+    height: 98px;
+    place-self: center;
+    /* background-color: lightgrey; */
+    border-radius: 10px;
+    margin: 0px;
+    border: 2px solid #f7f7f7;
 }
 
 .friend-identity {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
+    width: auto;
+    height: auto;
+    margin-right: 60px;
+    margin-left: 9px;
+}
+
+.friend-identity:hover{
+    cursor: pointer;
+
+}
+
+.friendship-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+.friend-pic {
+    border-radius: 5px;
+    /* max-height: 36px; */
+    /* max-width: 36px; */
+    /* min-height: 36px; */
+    /* min-width: 36px; */
+    /* margin-left: 6px; */
+    /* margin-right: 3px; */
+    height: 80px;
+    width: 80px;
+    margin-right: 7px;
+}
+
+.friend-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: #292929;
+}
+
+.firstname {
+    margin-right: 5px;
+}
+.friend-location{
+    color: rgb(41, 41, 41)
 }
