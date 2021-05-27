@@ -45,6 +45,19 @@
     background-color: white;
     border-radius: 6px;
     margin-top: 7px;
+    margin-bottom: 13px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #565656;
+}
+
+.friends-index {
+    width: 850px;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 6px;
+    margin-top: 7px;
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 7px;
@@ -52,14 +65,14 @@
     margin-bottom: 13px;
 }
 
+
 .friendObject {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 436px;
+    width: 400px;
     height: 98px;
     place-self: center;
-    /* background-color: lightgrey; */
     border-radius: 10px;
     margin: 0px;
     border: 2px solid #f7f7f7;
@@ -113,8 +126,14 @@
 .firstname {
     margin-right: 5px;
 }
-.friend-location{
-    color: rgb(41, 41, 41)
+
+.friend-location {
+    color: #292929;
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .remove-friend-button > svg {

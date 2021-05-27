@@ -13,6 +13,7 @@ class FriendsIndex extends React.Component{
     render(){
         const {currentUser, users, user, allFriendships} = this.props;
         const friends = getFriendships(user.id, allFriendships);
+        debugger;
 
         let allFriends;
         if(friends && friends.length > 0){
@@ -28,7 +29,7 @@ class FriendsIndex extends React.Component{
                 }
 
                 return(
-                    <div className='friendObject' key={user.id}>
+                    <div className='friendObject' key={friendObj.id}>
                         <Link className='friend-identity' to={`/users/${user.id}`}>
                             <img className='friend-pic' src={user.profilePicture}></img>
                             <div>
@@ -48,7 +49,10 @@ class FriendsIndex extends React.Component{
         }
         return(
             <div className='friends-container-full'>
-                {allFriends}
+                Friends
+                <div className='friends-index'>
+                    {allFriends}
+                </div>
             </div>
         )
     }

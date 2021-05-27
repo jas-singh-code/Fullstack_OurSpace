@@ -22,7 +22,7 @@ const friendshipReducer = (state = {}, action) => {
                 created_at: action.friendship.created_at
             }
             newState[action.friendship.id] = action.friendship;
-            newState[`${id2}`] = action.friendship;
+            newState[`${id2}`] = friendship2;
             return newState;
         case RECEIVE_ALL_FRIENDSHIPS:
             newState = Object.assign({}, action.friendships, newState);
