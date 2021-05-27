@@ -15,7 +15,7 @@ else
     if user.gender == "male"
         file = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/def_pic_man.jpg')
         user.profile_picture.attach(io: file, filename: "def_pic_man.jpg")
-    elsif (user.gender == "female" || user.gender == "other")
+    else
         file2 = open('https://ourspace-seeds.s3.us-east-2.amazonaws.com/def_pic_woman.jpg')
         user.profile_picture.attach(io: file2, filename: "def_pic_woman.jpg")
     end

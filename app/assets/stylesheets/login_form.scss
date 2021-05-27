@@ -59,6 +59,7 @@ img.logo-icon {
     align-items: center;
     font-size: 22px;
     box-shadow: 0 2px 4px, 0 8px 16px;
+    position: relative;
 }
 
 .login-form{
@@ -220,77 +221,77 @@ svg.Personalsite-icon {
     border: thin solid red;
 }
 
-.login-pass-err{
+.login-pass-err {
     background-color: darkred;
     color: white;
     width: fit-content;
     border-radius: 4px;
     padding: 11px;
-    position: relative;
+    position: absolute;
     height: auto;
     font-size: 14px;
-    top: -255px;
-    right: 237px;
+    top: 103px;
+    left: -105px;
     box-shadow: 1px 3px 20px 3px #969696;
 }
 
-.login-pass-err2{
+.login-pass-err2 {
     background-color: darkred;
     color: white;
     width: fit-content;
     border-radius: 4px;
     padding: 11px;
-    position: relative;
+    position: absolute;
     height: auto;
     font-size: 14px;
-    top: -291px;
-    right: 237px;
+    top: 103px;
+    right: 367px;
     box-shadow: 1px 3px 20px 3px #969696;
 }
 
-.login-pass-side-err{
+.login-pass-side-err {
     width: 0px;
     height: 0px;
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
     border-left: 6px solid darkred;
-    position: relative;
-    bottom: 313px;
-    right: 171px;
+    position: absolute;
+    bottom: 306px;
+    right: 361px;
 }
 
-.login-pass-side-err2{
+.login-pass-side-err2 {
     width: 0px;
     height: 0px;
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
     border-left: 6px solid darkred;
-    position: relative;
-    bottom: 278px;
-    right: 171px;
+    position: absolute;
+    bottom: 305px;
+    right: 361px;
 }
 
-.login-email-err{
+.login-email-err {
     background-color: darkred;
     color: white;
     width: fit-content;
     border-radius: 4px;
     padding: 11px;
-    position: relative;
+    position: absolute;
     height: auto;
     font-size: 14px;
-    top: -310px;
-    right: 270px;
+    top: 47px;
+    right: 367px;
     box-shadow: 1px 3px 20px 3px #969696;
 }
 
-.login-email-side-err{
+.login-email-side-err {
     width: 0px;
     height: 0px;
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
     border-left: 6px solid darkred;
-    position: relative;
-    bottom: 381px;
-    right: 171px;
+    position: absolute;
+    bottom: 361px;
+    right: 361px;
 }

@@ -81,6 +81,19 @@ class PostItem extends React.Component{
         return user.profilePicture;
     }
 
+    // getPostedTime(createdAt){
+    //     const year = createdAt.slice(0, 4);
+    //     const month = createdAt.slice(5, 7);
+    //     const day = createdAt.slice(8, 10);
+
+    //     const dateNow = new Date
+    //     const curMonth = dateNow.getMonth() + 1;
+    //     const curYear = dateNow.getFullYear();
+    //     const curDay = dateNow.getDate();
+    //     const curHour = dateNow.getHours();
+    //     const curMin = dateNow.getMinutes();
+    // }
+
     render(){
         const {createdAt, photoURL, post} = this.props;
         const { message, posterId } = post;
