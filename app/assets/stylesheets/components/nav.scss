@@ -80,30 +80,72 @@ a.nav-mid-2 {
     height: 30px;
     position: absolute;
     right: 226px;
-    top: 15px;
+    top: 9px;
     border-radius: 44px;
-    padding: 3px;
+    padding: 6px 7px 6px 3px;
 }
 
-.user-profile-module img {
+
+.current-user-profile-module{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    height: 30px;
+    position: absolute;
+    right: 226px;
+    top: 9px;
+    border-radius: 44px;
+    padding: 6px 7px 6px 3px;
+    background-color: #E7F3FF;
+}
+
+.current-user-profile-module:hover{
+    cursor: pointer;
+    background-color: #d3d3d3;
+}
+
+// color: 1877f2
+
+
+
+.user-mod-img {
     border-radius: 170px;
-    max-height: 26px;
-    max-width: 26px;
-    min-height: 26px;
-    min-width: 26px;
-    margin-left: 3px;
-    margin-right: 3px;
+    max-height: 34px;
+    max-width: 34px;
+    min-height: 34px;
+    min-width: 34px;
+    margin: 0px 3px;
 }
 
-.user-profile-module > p {
+.user-mod-p {
     height: 15px;
     width: auto;
-    font-weight: bold;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 17px;
+    margin-left: 6px;
+    margin-right: 11px;
+    color: #252525;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.current-user-mod-p {
+    height: 15px;
+    width: auto;
+    font-weight: 600;
+    font-size: 17px;
     margin-left: 3px;
     margin-right: 11px;
-    color: #565656;
+    color: #1877f2;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-profile-module:hover{

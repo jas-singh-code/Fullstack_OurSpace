@@ -4,10 +4,11 @@ import { logout } from '../../actions/session_action';
 import Nav from './nav';
 
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return{
         currentUser: state.session.currentUser,
-        requests: state.entities.friendRequests
+        requests: state.entities.friendRequests,
+        page: ownProps.page
     }
 }
 

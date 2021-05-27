@@ -2,7 +2,7 @@ import React from 'react';
 import {RiUserUnfollowFill} from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import RemoveFriendButton from './remove_friend_button_container';
-import { findFriendshipId } from '../../reducers/selectors';
+import { findFriendshipId, getFriendships } from '../../reducers/selectors';
 
 class FriendsIndex extends React.Component{
     constructor(props){
@@ -11,14 +11,14 @@ class FriendsIndex extends React.Component{
     }
 
     render(){
-        const {currentUser, users, user} = this.props;
-        const friends = user.friends;
+        const {currentUser, users, user, allFriendships} = this.props;
+        const friends = getFriendships(user.id, allFriendships);
 
         let allFriends;
         if(friends && friends.length > 0){
             allFriends = (
             friends.map(friendObj => {
-                let user = users[friendObj.id];
+                let user = users[friendObj.friend_id];
                 let requestButton;
 
                 if(findFriendshipId(this.props.allFriendships, currentUser.id, user.id)){

@@ -80,10 +80,10 @@ class Nav extends React.Component{
 
                 <div className='nav-right'>
                     <Link to={`/users/${currentUser.id}`}>
-                        <div className='user-profile-module'>
-                            <img src={currentUser.profilePicture}>
+                        <div className={this.props.page === 'Profile' ? 'current-user-profile-module' : 'user-profile-module'}>
+                            <img src={currentUser.profilePicture} className='user-mod-img'>
                             </img>
-                            <p>{currentUser.firstName}</p>
+                            <p className={this.props.page === 'Profile' ? 'current-user-mod-p' : 'user-mod-p'}>{currentUser.firstName}</p>
                         </div>
                     </Link>
 

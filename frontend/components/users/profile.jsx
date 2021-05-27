@@ -192,7 +192,7 @@ class Profile extends React.Component{
 
         return(
             <div className="full-profile">
-                <Nav />
+                <Nav page={currentUser.id === user.id ? 'Profile' : 'None'}/>
                 <div className='profile-head'>
                     <div className='profile-cover'>
                         <img src={coverPicture}></img>

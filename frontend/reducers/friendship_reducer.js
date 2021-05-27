@@ -14,7 +14,15 @@ const friendshipReducer = (state = {}, action) => {
             }
             return newState;        
         case RECEIVE_FRIENDSHIP:
+            let id2 = action.friendship.id + 1;
+            let friendship2 = {
+                id: id2,
+                user_id: action.friendship.friend_id,
+                friend_id: action.friendship.user_id,
+                created_at: action.friendship.created_at
+            }
             newState[action.friendship.id] = action.friendship;
+            newState[`${id2}`] = action.friendship;
             return newState;
         case RECEIVE_ALL_FRIENDSHIPS:
             newState = Object.assign({}, action.friendships, newState);
