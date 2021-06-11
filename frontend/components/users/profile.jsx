@@ -47,6 +47,17 @@ class Profile extends React.Component{
         this.getFriends = this.getFriends.bind(this);
     }
 
+    componentDidMount(){
+        if(!this.props.user){
+        this.props.getAllPosts();
+        this.props.fetchAllComments();
+        this.props.fetchAllUsers();
+        this.props.fetchAllLikes();
+        this.props.fetchAllRequests();
+        this.props.fetchAllFriendships();
+        }
+    }
+
     getFriends(){
         const friendshipIds = getFriendships(this.props.currentUser.id, this.props.friendships);
         const friends = {};

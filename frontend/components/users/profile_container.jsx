@@ -1,9 +1,15 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
-import { editUser, updateUserPhoto } from '../../actions/user_actions';
+
+import { editUser, updateUserPhoto, getUsers} from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
-import { deleteFriendship } from '../../actions/friendships_actions';
+import { deleteFriendship, fetchAllFriendships} from '../../actions/friendships_actions';
 import { getFriendships } from '../../reducers/selectors';
+import { fetchPosts} from '../../actions/post_actions';
+import { fetchAllLikes} from '../../actions/like_actions';
+import { fetchAllFriendRequests } from '../../actions/friend_request_actions';
+import { fetchAllComments } from '../../actions/comment_action';
+
 
 const mSTP = (state, ownProps) => {
     const id = ownProps.location.pathname.slice(7);
@@ -31,6 +37,13 @@ const mDTP = dispatch => {
         openUpdateCoverPhoto: () => dispatch(openModal('UpdateCoverPhoto')),
         openUpdateProfilePhoto: () => dispatch(openModal('UpdateProfilePhoto')),
         deleteFriendship: id => dispatch(deleteFriendship(id)),
+
+        getAllPosts: () => dispatch(fetchPosts()),
+        fetchAllComments: () => dispatch(fetchAllComments()),
+        fetchAllUsers: () => dispatch(getUsers()),
+        fetchAllLikes: () => dispatch(fetchAllLikes()),
+        fetchAllRequests: () => dispatch(fetchAllFriendRequests()),
+        fetchAllFriendships: () => dispatch(fetchAllFriendships())
     }
 }
 

@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
-    <title>OurSpace</title>
+
+    <title>Ourspace</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta property="og:title" content="Ourspace" />
+    <meta property='og:image' content="<%= image_url('Project_pic.png') %>"/>
+    <meta property="og:description"
+      content="Single-page React application clone of Facebook.com"
+    />
+    <meta property="og:url"
+      content="https://ourspace-1.herokuapp.com/"
+    />
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
