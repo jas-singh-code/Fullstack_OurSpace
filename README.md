@@ -4,7 +4,7 @@
 
 ## Background
 
-Ourspace is a full stack web application modeling Facebook. Users have the ability to signup and login. A signed in user has the ability to create posts and view the posts of the community on Ourspace.
+Ourspace is a full stack web application modeling Facebook. Users have the ability to signup and login. A signed in user has the ability to create posts, view the posts of the community on Ourspace, like posts, like comments, add friends, and create a custom profile page.
 
 The framework of the website is Ruby on Rails, for the backend with ActiveRecord which helps avoid making N + 1 queries. I used PostgreSQL as the database stroage and AWS S3 which is used to store the images for posts and user profiles. The frontend uses React and Redux to allow this single-page app to render efficiently and seemlessly for the useer.
 
