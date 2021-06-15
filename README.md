@@ -4,6 +4,11 @@
 
 ## Background
 
+Welcome to ![favicon (10)](https://user-images.githubusercontent.com/75297616/121967894-358d0480-cd3f-11eb-9a07-da6613f99b2f.png) OurSpace!
+
+
+![Intro_gif](https://user-images.githubusercontent.com/75297616/121966306-66b80580-cd3c-11eb-8498-42780ec63b88.gif)
+
 Ourspace is a full stack web application modeling Facebook. Users have the ability to signup and login. A signed in user has the ability to create posts, view the posts of the community on Ourspace, like posts, like comments, add friends, and create a custom profile page.
 
 The framework of the website is Ruby on Rails, for the backend with ActiveRecord which helps avoid making N + 1 queries. I used PostgreSQL as the database stroage and AWS S3 which is used to store the images for posts and user profiles. The frontend uses React and Redux to allow this single-page app to render efficiently and seemlessly for the useer.
@@ -21,30 +26,16 @@ The framework of the website is Ruby on Rails, for the backend with ActiveRecord
 ## Features
 
 ### User Auth
+Users will see which feilds are incorrect upon improper signup or login.
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/75297616/112651238-954fcf80-8e22-11eb-8e43-2a2f4cd0084f.gif)
-* Users will see which feilds are incorrect upon improper signup or login.
 - Full video: 
 https://user-images.githubusercontent.com/75297616/112650189-84eb2500-8e21-11eb-809c-bed9e8a0d564.mp4
 
+### Creating Posts
+
+Users can create posts with images and a caption. 
 
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+When users click the create post icon, a modal opens and auto focuses on the input field. 
