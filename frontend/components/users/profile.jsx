@@ -144,7 +144,6 @@ class Profile extends React.Component{
     }
 
     render(){
-        // debugger;
         if(!this.props.user){return null};
         const {user, currentUser, friends} = this.props;
 

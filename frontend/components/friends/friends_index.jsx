@@ -13,7 +13,6 @@ class FriendsIndex extends React.Component{
     render(){
         const {currentUser, users, user, allFriendships} = this.props;
         const friends = getFriendships(user.id, allFriendships);
-        debugger;
 
         let allFriends;
         if(friends && friends.length > 0){
