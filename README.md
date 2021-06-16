@@ -4,9 +4,9 @@
 
 ## Background
 
-Welcome to ![favicon (10)](https://user-images.githubusercontent.com/75297616/121967894-358d0480-cd3f-11eb-9a07-da6613f99b2f.png) OurSpace!
+### Welcome to ![favicon (10)](https://user-images.githubusercontent.com/75297616/121967894-358d0480-cd3f-11eb-9a07-da6613f99b2f.png) OurSpace!
 
-[View the Live site here!](https://ourspace-1.herokuapp.com/)
+### [View the Live site here!](https://ourspace-1.herokuapp.com/)
 
 ![Intro_gif](https://user-images.githubusercontent.com/75297616/121966306-66b80580-cd3c-11eb-8498-42780ec63b88.gif)
 
