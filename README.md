@@ -47,6 +47,24 @@ Users can fully edit their Profile Page.
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/75297616/122152118-c5f64280-ce2e-11eb-8280-cd764b254cdd.gif)
 
 If a user doesnt have a bio, a placeholder instructs the user to click the bio button to add one.
+However, as you may assume, these edit buttons only appear if the profile page being viewed is the Currrent User's profile page.
+
+        {user.id === currentUser.id ? 
+                        <div className='edit-photos-holder'>
+                            <form className='add-cover-photo' onClick={this.props.openUpdateCoverPhoto}>
+                                <label className='add-cover-photo-label'>
+                                    <MdPhotoCamera />
+                                    Add Cover Photo
+                                </label>
+                            </form>
+                            <div className='add-profile-picture' onClick={this.props.openUpdateProfilePhoto}>
+                                <MdPhotoCamera />
+                            </div>
+                        </div>
+                        :
+                        ''
+                        }
+                        
 A user can add their Birthday, Occupation, Gender, Location, and much more.
 
 
