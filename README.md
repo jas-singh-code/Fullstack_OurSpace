@@ -36,6 +36,25 @@ https://user-images.githubusercontent.com/75297616/112650189-84eb2500-8e21-11eb-
 
 Users can create posts with images and a caption. 
 
-
+![Post_create_gif](https://user-images.githubusercontent.com/75297616/122151677-f38ebc00-ce2d-11eb-85ab-ef88e56a248e.gif)
 
 When users click the create post icon, a modal opens and auto focuses on the input field. 
+
+### Editing Profile Page
+Users can fully edit their Profile Page.
+
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/75297616/122152118-c5f64280-ce2e-11eb-8280-cd764b254cdd.gif)
+
+If a user doesnt have a bio, a placeholder instructs the user to click the bio button to add one.
+A user can add their Birthday, Occupation, Gender, Location, and much more.
+
+
+### Adding and Removing Friends
+Users can send, accept, and deny friend requests, along with adding and removing friends they encounter through the home page/ postIndex page.
+
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/75297616/122152949-0904e580-ce30-11eb-8ecb-0346e80bb661.gif)
+
+To quickly view these features, use the two Demo accounts that are easily accessable on the login page.
+
+
+
