@@ -12,26 +12,27 @@
 
 Ourspace is a full stack web application modeling Facebook. Users have the ability to signup and login. A signed in user has the ability to create posts, view the posts of the community on Ourspace, like posts, like comments, add friends, and create a custom profile page.
 
-The framework of the website is Ruby on Rails, for the backend with ActiveRecord which helps avoid making N + 1 queries. I used PostgreSQL as the database stroage and AWS S3 which is used to store the images for posts and user profiles. The frontend uses React and Redux to allow this single-page app to render efficiently and seemlessly for the useer.
+The framework of the website is built on **_Rails_** with **_ActiveRecord_** helping which avoids making N + 1 queries to the database. I used **_PostgreSQL_** as the database stroage and **_AWS S3_** to store the images for posts and user profiles. The frontend uses **_React_** and **_Redux_** to allow this single-page app to reload only the components which have changed, rendering efficiently.
 
 ## Technologies
 
-* Ruby on Rails
-* React.js
-* Redux.js
-* Node.js
-* PostgreSQL
-* Webpack
-* Amazon AWS S3
+* *Ruby on Rails*
+* *React.js*
+* *Redux.js*
+* *Node.js*
+* *PostgreSQL*
+* *Webpack*
+* *Amazon AWS S3*
+* *jbuilder*
 
 ## Features
 
 ### User Auth
-Users will see which feilds are incorrect upon improper signup or login.
+Users will see which fields are incorrect upon improper signup or login.
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/75297616/112651238-954fcf80-8e22-11eb-8e43-2a2f4cd0084f.gif)
-- Full video: 
-https://user-images.githubusercontent.com/75297616/112650189-84eb2500-8e21-11eb-809c-bed9e8a0d564.mp4
+
+- [Full video](https://user-images.githubusercontent.com/75297616/112650189-84eb2500-8e21-11eb-809c-bed9e8a0d564.mp4)
 
 ### Creating Posts
 
@@ -39,17 +40,17 @@ Users can create posts with images and a caption.
 
 ![Post_create_gif](https://user-images.githubusercontent.com/75297616/122151677-f38ebc00-ce2d-11eb-85ab-ef88e56a248e.gif)
 
-When users click the create post icon, a modal opens and auto focuses on the input field. 
+* When users click the create post icon, a modal opens and auto focuses on the input field. 
 
 ### Editing Profile Page
 Users can fully edit their Profile Page.
 
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/75297616/122152118-c5f64280-ce2e-11eb-8280-cd764b254cdd.gif)
 
-If a user doesnt have a bio, a placeholder instructs the user to click the bio button to add one.
-However, as you may assume, these edit buttons only appear if the profile page being viewed is the Currrent User's profile page.
+* If a user doesnt have a bio, a placeholder instructs the user to *click the bio button* to add one.
+> However, as you may assume, these edit buttons only appear if the profile page being viewed is the Currrent User's profile page.
 
-Here's a snippit from the profile.jsx file:
+Here's a snippit from the [profile.jsx](https://github.com/jas-singh-code/Fullstack_OurSpace/blob/6af1b0fc44b339d8cde524dc53009cffc266fccd/frontend/components/users/profile.jsx#L213-L227) file:
 
 ```javascript
 {user.id === currentUser.id ? 
@@ -69,7 +70,8 @@ Here's a snippit from the profile.jsx file:
 }
 ```
 
-The user object on the first line is selected from the url specifiing the id of the user 
+The user object on the first line is selected from the url specifiing the id of the user in the profile container.
+From there, buttons allowing edits conditionally render depending on if the profile page being viewed is the same as the currentUser's id. 
 A user can add their Bio, Birthday, Occupation, Gender, Location, and much more.
 
 
