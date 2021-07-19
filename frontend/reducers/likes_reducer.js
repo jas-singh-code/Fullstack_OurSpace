@@ -35,7 +35,7 @@ const likesReducer = (state={}, action) => {
         //     })
         //     return newState;
         case DELETE_COMMENT:
-            action.comment.likes.forEach(like => {
+            Object.values(action.comment.likes).forEach(like => {
                 delete newState[like.id];
             })
             return newState;
