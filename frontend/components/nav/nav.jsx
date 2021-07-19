@@ -64,7 +64,7 @@ class Nav extends React.Component{
 
 
                 <div className='nav-mid'>
-                    <a className='nav-mid-1' href="https://github.com/jas-singh-code">
+                    <a className='nav-mid-1' href="https://github.com/jas-singh-code"  target='_blank'>
                         <FaGithub className='github-icon' style={{fontSize: '38px', color: '#1877f2'}}/>
                     </a>
 
@@ -72,7 +72,7 @@ class Nav extends React.Component{
                         <AiFillHome className="home-icon-html"/>
                     </Link>
 
-                    <a className='nav-mid-2' href="https://www.linkedin.com/in/jaspreet-singh-software-engineer/">
+                    <a className='nav-mid-2' href="https://www.linkedin.com/in/jaspreet-singh-software-engineer/" target='_blank'>
                         <FaLinkedin className='LinkedIn-icon' style={{fontSize: '38px', color: '#1877f2'}}/>
                     </a>
                 </div>

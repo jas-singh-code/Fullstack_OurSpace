@@ -110,9 +110,9 @@ class LoginForm extends React.Component {
             </div>
             <footer className="login-footer">
                 <div className="btn-links">
-                    <a href="https://github.com/jas-singh-code">{<FaGithub className='github-icon'/>}</a>
-                    <a href="https://www.linkedin.com/in/jaspreet-singh-software-engineer/"><FaLinkedin className='LinkedIn-icon'/></a>
-                    <a><BsFillPersonLinesFill className='Personalsite-icon'/></a>
+                    <a target="_blank" href="https://github.com/jas-singh-code">{<FaGithub className='github-icon'/>}</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/jaspreet-singh-software-engineer/"><FaLinkedin className='LinkedIn-icon'/></a>
+                    <a target="_blank" href="https://jas-singh-code.github.io/" ><BsFillPersonLinesFill className='Personalsite-icon'/></a>
                 </div>
                 <p> a Jaspreet Singh Production </p>
                 <p>TheOurspace <BiCopyright /> 2021</p>
