@@ -1,10 +1,12 @@
-# Welcome to ![favicon (10)](https://user-images.githubusercontent.com/75297616/121967894-358d0480-cd3f-11eb-9a07-da6613f99b2f.png) OurSpace!
+# <div align='center'> Welcome to <img src='https://user-images.githubusercontent.com/75297616/121967894-358d0480-cd3f-11eb-9a07-da6613f99b2f.png'/> OurSpace! </div>
 
-## [View the Live site here!](https://ourspace-1.herokuapp.com/)
+## <div align='center'><a href = 'https://ourspace-1.herokuapp.com/' target='_blank'> View the Live site here!</a></div>
 
-![Intro_gif](https://user-images.githubusercontent.com/75297616/121966306-66b80580-cd3c-11eb-8498-42780ec63b88.gif)
+<a href= 'https://ourspace-1.herokuapp.com/' target='_blank'><img src = 'https://user-images.githubusercontent.com/75297616/121966306-66b80580-cd3c-11eb-8498-42780ec63b88.gif'/></a>
 
-Ourspace is a full stack web application modeling Facebook. Users have the ability to signup and login. A signed in user has the ability to create posts, view the posts of the community on Ourspace, like posts, like comments, add friends, and create a custom profile page.
+<!-- ![Intro_gif](https://user-images.githubusercontent.com/75297616/121966306-66b80580-cd3c-11eb-8498-42780ec63b88.gif) -->
+
+Ourspace is a full stack web application modeling Facebook. Users have the ability to signup and login. A signed in user has the ability to **_create posts_**, view the posts of the community on Ourspace, **_like posts and comments_**, **_add friends_**, and create a custom **_profile page_**.
 
 The framework of the website is built on **_Rails_** with **_ActiveRecord_** helping which avoids making N + 1 queries to the database. I used **_PostgreSQL_** as the database stroage and **_AWS S3_** to store the images for posts and user profiles. The frontend uses **_React_** and **_Redux_** to allow this single-page app to reload only the components which have changed, rendering efficiently.
 
