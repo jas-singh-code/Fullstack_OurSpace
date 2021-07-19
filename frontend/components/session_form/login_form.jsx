@@ -71,7 +71,6 @@ class LoginForm extends React.Component {
         <div className="full-container">
             <div className="login-and-logo">
                 <div className="login-text">
-                    {/* <img className="logo-icon" src={logoiconURL}></img> */}
                     <h2>Ourspace</h2>
                     <h4 className="login-title">Connect with friends and the world around you on Ourspace.</h4>
                 </div>
