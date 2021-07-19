@@ -111,6 +111,7 @@ A user can add their Bio, Birthday, Occupation, Gender, Location, and much more.
 Users can send, accept, and deny friend requests, along with adding and removing friends they encounter through the home page/ postIndex page.
 
 <div align='center'> <img src= 'https://user-images.githubusercontent.com/75297616/122152949-0904e580-ce30-11eb-8ecb-0346e80bb661.gif'/> </div>
+<br/>
 
 ```javascript
 // friendship_reducer.js
