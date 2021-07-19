@@ -65,14 +65,18 @@ render(){
 
 Users can create posts with images and a caption. 
 
-![Post_create_gif](https://user-images.githubusercontent.com/75297616/122151677-f38ebc00-ce2d-11eb-85ab-ef88e56a248e.gif)
+<div align='center'> <img src= 'https://user-images.githubusercontent.com/75297616/122151677-f38ebc00-ce2d-11eb-85ab-ef88e56a248e.gif'/> </div>
+
+<br/>
 
 * When users click the create post icon, a modal opens and auto focuses on the input field. 
 
 ### Editing Profile Page / Dynamic Rendering
 Users can fully edit their Profile Page.
 
-![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/75297616/122152118-c5f64280-ce2e-11eb-8280-cd764b254cdd.gif)
+<div align='center'> <img src= 'https://user-images.githubusercontent.com/75297616/122152118-c5f64280-ce2e-11eb-8280-cd764b254cdd.gif' /> </div>
+
+<br/>
 
 * If a user doesnt have a bio, a placeholder instructs the user to *click the bio button* to add one.
 > However, as you may assume, these edit buttons only appear if the profile page being viewed is the Currrent User's profile page.
@@ -106,7 +110,23 @@ A user can add their Bio, Birthday, Occupation, Gender, Location, and much more.
 ### Adding and Removing Friends
 Users can send, accept, and deny friend requests, along with adding and removing friends they encounter through the home page/ postIndex page.
 
-![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/75297616/122152949-0904e580-ce30-11eb-8ecb-0346e80bb661.gif)
+<div align='center'> <img src= 'https://user-images.githubusercontent.com/75297616/122152949-0904e580-ce30-11eb-8ecb-0346e80bb661.gif'/> </div>
+
+```javascript
+// friendship_reducer.js
+
+    case RECEIVE_FRIENDSHIP:
+            let id2 = action.friendship.id + 1;
+            let friendship2 = {
+                id: id2,
+                user_id: action.friendship.friend_id,
+                friend_id: action.friendship.user_id,
+                created_at: action.friendship.created_at
+            }
+            newState[action.friendship.id] = action.friendship;
+            newState[`${id2}`] = friendship2;
+            return newState;
+```
 
 To quickly view these features, use the two Demo accounts that are easily accessable on the login page.
 
