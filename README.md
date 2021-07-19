@@ -1,14 +1,18 @@
 # <div align='center'> Welcome to <img src='https://user-images.githubusercontent.com/75297616/121967894-358d0480-cd3f-11eb-9a07-da6613f99b2f.png'/> OurSpace! </div>
 
+<div align='center'><img align='center' src = 'https://user-images.githubusercontent.com/75297616/126221868-7ca5e2a9-69b7-42ad-9136-edaf1fbda354.gif'/></div>
+
+<!-- <a align='center' href= 'https://ourspace-1.herokuapp.com/' target='_blank'> -->
+<!-- ![Intro_gif](https://user-images.githubusercontent.com/75297616/121966306-66b80580-cd3c-11eb-8498-42780ec63b88.gif) -->
+
+
 ## <div align='center'><a href = 'https://ourspace-1.herokuapp.com/' target='_blank'> View the Live site here!</a></div>
 
-<a href= 'https://ourspace-1.herokuapp.com/' target='_blank'><img src = 'https://user-images.githubusercontent.com/75297616/121966306-66b80580-cd3c-11eb-8498-42780ec63b88.gif'/></a>
-
-<!-- ![Intro_gif](https://user-images.githubusercontent.com/75297616/121966306-66b80580-cd3c-11eb-8498-42780ec63b88.gif) -->
+<br/>
 
 Ourspace is a full stack web application modeling Facebook. Users have the ability to signup and login. A signed in user has the ability to **_create posts_**, view the posts of the community on Ourspace, **_like posts and comments_**, **_add friends_**, and create a custom **_profile page_**.
 
-The framework of the website is built on **_Rails_** with **_ActiveRecord_** helping which avoids making N + 1 queries to the database. I used **_PostgreSQL_** as the database stroage and **_AWS S3_** to store the images for posts and user profiles. The frontend uses **_React_** and **_Redux_** to allow this single-page app to reload only the components which have changed, rendering efficiently.
+The framework of the website is built on **_Rails_** with **_ActiveRecord_** preventing _n_ + 1 queries to the database. I used **_PostgreSQL_** as the database stroage and **_AWS S3_** to store the images for posts and user profiles. The frontend uses **_React_** and **_Redux_** to allow this single-page app to reload only the components which have changed, rendering efficiently.
 
 ## Technologies
 
@@ -26,9 +30,36 @@ The framework of the website is built on **_Rails_** with **_ActiveRecord_** hel
 ### User Auth
 Users will see which fields are incorrect upon improper signup or login.
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/75297616/112651238-954fcf80-8e22-11eb-8e43-2a2f4cd0084f.gif)
+<div align='center'><img src = 'https://user-images.githubusercontent.com/75297616/112651238-954fcf80-8e22-11eb-8e43-2a2f4cd0084f.gif' /></div>
 
-- [Full video](https://user-images.githubusercontent.com/75297616/112650189-84eb2500-8e21-11eb-809c-bed9e8a0d564.mp4)
+<br/>
+
+```javascript
+// signup_form.jsx
+
+render(){
+    const {first_name, last_name, email, password, gender, birthday} = this.props.errors; // Retrieved from the container component which recieves errors from the backend
+    
+    const fnameErr = !!first_name ; // Holds the value of whether or not there an error for the firstname input feild
+    
+    const firstNameError = first_name ? <div className="fname-err"> {"First Name " + first_name[0]}</div> : ''; 
+    // holds information of what will display is the first name input reveives an error
+    
+    return(
+    // Inside return function:
+    
+        <input type='text'
+        onChange={this.update('first_name')}
+        value={this.state.first_name}
+        placeholder="First Name"
+        className="signup-input-fname"
+        style={fnameErr ? {border:' thin solid red'} : {} } />
+        
+        {firstNameError}
+        // This is the code we wrote above written in React/jsx to render dynamically    
+        )
+    }
+```
 
 ### Creating Posts
 
@@ -38,7 +69,7 @@ Users can create posts with images and a caption.
 
 * When users click the create post icon, a modal opens and auto focuses on the input field. 
 
-### Editing Profile Page
+### Editing Profile Page / Dynamic Rendering
 Users can fully edit their Profile Page.
 
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/75297616/122152118-c5f64280-ce2e-11eb-8280-cd764b254cdd.gif)
@@ -49,6 +80,7 @@ Users can fully edit their Profile Page.
 Here's a snippit from the [profile.jsx](https://github.com/jas-singh-code/Fullstack_OurSpace/blob/6af1b0fc44b339d8cde524dc53009cffc266fccd/frontend/components/users/profile.jsx#L213-L227) file:
 
 ```javascript
+
 {user.id === currentUser.id ? 
 <div className='edit-photos-holder'>
     <form className='add-cover-photo' onClick={this.props.openUpdateCoverPhoto}>
