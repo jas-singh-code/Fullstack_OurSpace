@@ -23,6 +23,7 @@ class PostItem extends React.Component{
         this.findUserFromLike = this.findUserFromLike.bind(this);
         this.isObjectEmpty = this.isObjectEmpty.bind(this);
         this.getUserProfilePic = this.getUserProfilePic.bind(this);
+        this.getPostedTime = this.getPostedTime.bind(this);
     }
 
     focusComment(){
@@ -81,22 +82,54 @@ class PostItem extends React.Component{
         return user.profilePicture;
     }
 
-    // getPostedTime(createdAt){
-    //     const year = createdAt.slice(0, 4);
-    //     const month = createdAt.slice(5, 7);
-    //     const day = createdAt.slice(8, 10);
+    getPostedTime(createdAt){
+        const dayNumerals = {
+            0: "Sun",
+            1: "Mon",
+            2: "Tues",
+            3: "Wed",
+            4: "Thurs",
+            5: "Fri",
+            6: "Sat"
+        }
 
-    //     const dateNow = new Date
-    //     const curMonth = dateNow.getMonth() + 1;
-    //     const curYear = dateNow.getFullYear();
-    //     const curDay = dateNow.getDate();
-    //     const curHour = dateNow.getHours();
-    //     const curMin = dateNow.getMinutes();
-    // }
+        const monthNumerals = {
+            "01": 'January',
+            "02": 'February',
+            "03": 'March',
+            "04": 'April',
+            "05": 'May',
+            "06": 'June',
+            "07": 'July',
+            "08": 'August',
+            "09": 'September',
+            "10": 'October',
+            "11": 'November',
+            "12": 'December'
+        }
+        const date = new Date(createdAt);
+        const dayNum = date.getDay();
+        const createDay = dayNumerals[dayNum];
+
+        const year = createdAt.slice(0, 4);
+        const monthNum = createdAt.slice(5, 7);
+        const dayDate = createdAt.slice(8, 10);
+        const month = monthNumerals[monthNum];
+
+        return `${createDay}, ${month} ${dayDate}`
+        // const day = createdAt.slice(8, 10);
+
+        // const dateNow = new Date
+        // const curMonth = dateNow.getMonth() + 1;
+        // const curYear = dateNow.getFullYear();
+        // const curDay = dateNow.getDate();
+        // const curHour = dateNow.getHours();
+        // const curMin = dateNow.getMinutes();
+    }
 
     render(){
-        const {createdAt, photoURL, post} = this.props;
-        const { message, posterId } = post;
+        const {photoURL, post} = this.props;
+        const { message, posterId, createdAt } = post;
         const author = this.props.users[post.posterId]
 
         let postImage;
@@ -149,7 +182,7 @@ class PostItem extends React.Component{
                             <Link to={`/users/${posterId}`}>
                                 <span className='poster-name'>{author.firstName}</span>
                             </Link>
-                            <span>{createdAt}</span>
+                            <span>{this.getPostedTime(createdAt)}</span>
                         </div>
                     </div>
                     <p>{message}</p>
